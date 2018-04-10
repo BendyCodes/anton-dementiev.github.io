@@ -1,0 +1,43 @@
+﻿{"frames": [
+
+{
+	"filename": "introBG_0000",
+	"frame": {"x":2,"y":602,"w":662,"h":498},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":662,"h":498},
+	"sourceSize": {"w":662,"h":498}
+}
+,{
+	"filename": "introDude_0000",
+	"frame": {"x":621,"y":1102,"w":161,"h":297},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":161,"h":297},
+	"sourceSize": {"w":161,"h":297}
+}
+,{
+	"filename": "introTxtBG_0000",
+	"frame": {"x":2,"y":1102,"w":617,"h":138},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":617,"h":138},
+	"sourceSize": {"w":617,"h":138}
+}
+,{
+	"filename": "mainMenu_0000",
+	"frame": {"x":2,"y":2,"w":791,"h":598},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":791,"h":598},
+	"sourceSize": {"w":791,"h":598}
+}],
+"meta": {
+	"app": "Adobe Flash Professional",
+	"version": "15.0.1.179",
+	"image": "mainMenu.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":2048},
+	"scale": "1"
+}
+}

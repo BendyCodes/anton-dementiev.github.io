@@ -1,0 +1,35 @@
+﻿{"frames": [
+
+{
+	"filename": "block_0000",
+	"frame": {"x":2,"y":2,"w":32,"h":30},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":30},
+	"sourceSize": {"w":32,"h":30}
+}
+,{
+	"filename": "level27BG_0000",
+	"frame": {"x":36,"y":2,"w":616,"h":663},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":616,"h":663},
+	"sourceSize": {"w":616,"h":663}
+}
+,{
+	"filename": "level27FG_0000",
+	"frame": {"x":2,"y":667,"w":612,"h":658},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":612,"h":658},
+	"sourceSize": {"w":612,"h":658}
+}],
+"meta": {
+	"app": "Adobe Flash Professional",
+	"version": "15.0.1.179",
+	"image": "level27.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":2048},
+	"scale": "1"
+}
+}

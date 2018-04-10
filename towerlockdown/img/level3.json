@@ -1,0 +1,27 @@
+﻿{"frames": [
+
+{
+	"filename": "level3BG_0000",
+	"frame": {"x":2,"y":437,"w":641,"h":318},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":641,"h":318},
+	"sourceSize": {"w":641,"h":318}
+}
+,{
+	"filename": "level3FG_0000",
+	"frame": {"x":2,"y":2,"w":754,"h":433},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":754,"h":433},
+	"sourceSize": {"w":754,"h":433}
+}],
+"meta": {
+	"app": "Adobe Flash Professional",
+	"version": "15.0.1.179",
+	"image": "level3.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":1024},
+	"scale": "1"
+}
+}

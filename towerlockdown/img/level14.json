@@ -1,0 +1,35 @@
+﻿{"frames": [
+
+{
+	"filename": "level14BG_0000",
+	"frame": {"x":423,"y":2,"w":260,"h":605},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":260,"h":605},
+	"sourceSize": {"w":260,"h":605}
+}
+,{
+	"filename": "level14FG_0000",
+	"frame": {"x":2,"y":2,"w":419,"h":661},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":419,"h":661},
+	"sourceSize": {"w":419,"h":661}
+}
+,{
+	"filename": "platform_0000",
+	"frame": {"x":423,"y":609,"w":123,"h":59},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":123,"h":59},
+	"sourceSize": {"w":123,"h":59}
+}],
+"meta": {
+	"app": "Adobe Flash Professional",
+	"version": "15.0.1.179",
+	"image": "level14.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":1024},
+	"scale": "1"
+}
+}

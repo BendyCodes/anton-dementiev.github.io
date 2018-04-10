@@ -1,0 +1,59 @@
+﻿{"frames": [
+
+{
+	"filename": "endScreen_0000",
+	"frame": {"x":2,"y":430,"w":641,"h":480},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":641,"h":480},
+	"sourceSize": {"w":641,"h":480}
+}
+,{
+	"filename": "finishScreen_0000",
+	"frame": {"x":2,"y":912,"w":641,"h":480},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":641,"h":480},
+	"sourceSize": {"w":641,"h":480}
+}
+,{
+	"filename": "girl_0000",
+	"frame": {"x":482,"y":1711,"w":39,"h":88},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":39,"h":88},
+	"sourceSize": {"w":39,"h":88}
+}
+,{
+	"filename": "level30BG_0000",
+	"frame": {"x":2,"y":1394,"w":813,"h":315},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":813,"h":315},
+	"sourceSize": {"w":813,"h":315}
+}
+,{
+	"filename": "level30FG_0000",
+	"frame": {"x":2,"y":2,"w":935,"h":426},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":935,"h":426},
+	"sourceSize": {"w":935,"h":426}
+}
+,{
+	"filename": "winTxtPlash_0000",
+	"frame": {"x":2,"y":1711,"w":478,"h":104},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":478,"h":104},
+	"sourceSize": {"w":478,"h":104}
+}],
+"meta": {
+	"app": "Adobe Flash Professional",
+	"version": "15.0.1.179",
+	"image": "level30.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":2048},
+	"scale": "1"
+}
+}
