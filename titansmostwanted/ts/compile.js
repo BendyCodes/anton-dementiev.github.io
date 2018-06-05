@@ -1962,6 +1962,7 @@ var com;
                     this.addEventListener(com.CustomMouseEvent.CLICK, this.click, this.instanceClip, this);
                 }
                 /*override*/ buttonAction() {
+                    //fixit debug
                     if (Controller.isLevelUnlocked(this.level))
                         Controller.selectLevel(this.level);
                 }
@@ -4230,7 +4231,8 @@ var com;
                     Main.addCustomEfFunc('BattleAnimController.battleAnimHolder.panel1.onEnterFrame', function () {
                         if (BattleAnimController.battleAnimHolder == undefined)
                             console.log("alarm battleAnimHolder undefined");
-                        if (BattleAnimController.battleAnimHolder.panel1.currentFrame == 6) {
+                        console.log("battleAnimHolder panel currentFrame", BattleAnimController.battleAnimHolder.panel1.currentFrame);
+                        if (BattleAnimController.battleAnimHolder.panel1.currentFrame >= 6) {
                             Main.removeCustomEfFunc("BattleAnimController.battleAnimHolder.panel1.onEnterFrame");
                             BattleAnimController.populateBattleHolder();
                         }
@@ -4241,9 +4243,14 @@ var com;
                     this.defendingClip.scale.x = -3.5;
                 }
                 static populateBattleHolder() {
-                    if (this.battleAnimHolder.animHolder.children > 0) {
+                    console.log("populateBattleHolder");
+                    //if (this.battleAnimHolder.animHolder.children.length > 0) {
+                    //	this.battleAnimHolder.animHolder.removeChildAt(0);
+                    while (this.battleAnimHolder.animHolder.children[0]) {
                         this.battleAnimHolder.animHolder.removeChildAt(0);
+                        console.log("remove anim", this.battleAnimHolder.animHolder.children.length);
                     }
+                    //}
                     if (this.attackingUnit.unit.unitActions[this.attackingUnit.selectedAction].actionPhase == battleTactics.Action.PERFORM) {
                         console.log(">>1");
                         this.actionAnim = this.attackingUnit.unit.newAttackAnimClipClass;
@@ -4257,7 +4264,6 @@ var com;
                                     this.showDamageNew(clcr);
                             }
                         }
-                        this.actionAnim.gotoAndPlay(this.newStyleActionLabel);
                     }
                     else if (this.attackingUnit.unit.unitActions[this.attackingUnit.selectedAction].actionPhase == battleTactics.Action.RETALIATE) {
                         console.log(">>2");
@@ -4272,27 +4278,11 @@ var com;
                                     this.showDamageNew(clcr);
                             }
                         }
-                        this.actionAnim.gotoAndPlay(this.newStyleActionLabel);
                     }
+                    this.actionAnim.gotoAndPlay(this.newStyleActionLabel);
                     this.battleAnimHolder.animHolder.addChild(this.actionAnim);
                     this.battleStarted = true;
-                }
-                static gotoDefend() {
-                    if (this.longRange) {
-                        this.battleStarted = false;
-                        this.battleAnimHolder.gotoAndPlay("defend");
-                    }
-                }
-                static gotoDefend_multiple() {
-                    if (this.longRange) {
-                        this.battleStarted = false;
-                        if (Main.getCurrentLabel(this.battleAnimHolder) == "defend") {
-                            this.battleAnimHolder.gotoAndPlay("out3");
-                        }
-                        else {
-                            this.battleAnimHolder.gotoAndPlay("out4");
-                        }
-                    }
+                    console.log("add anim", this.battleAnimHolder.animHolder);
                 }
                 static gotoRetaliate() {
                     this.battleAnimHolder.counter.gotoAndPlay(2);
@@ -4303,7 +4293,7 @@ var com;
                         this.battleAnimHolder.gotoAndPlay("out");
                         console.log("openPanels");
                         Main.addCustomEfFunc('BattleAnimController.battleAnimHolder.onEnterFrame', function () {
-                            console.log("battleAnimHolder.currentFrame", BattleAnimController.battleAnimHolder.currentFrame, BattleAnimController.battleAnimHolder.totalFrames);
+                            //console.log("battleAnimHolder.currentFrame", BattleAnimController.battleAnimHolder.currentFrame, BattleAnimController.battleAnimHolder.totalFrames);
                             if (BattleAnimController.battleAnimHolder.currentFrame == 4 ||
                                 BattleAnimController.battleAnimHolder.currentFrame == 1) {
                                 console.log("removePanels");
@@ -4543,7 +4533,7 @@ var com;
                         }
                     }
                     else if (battleTactics.BattleAnimController.battleAnimHolder.parent) {
-                        if (battleTactics.BattleAnimController.battleAnimHolder.currentFrame == 20) {
+                        if (battleTactics.BattleAnimController.battleAnimHolder.currentFrame >= 20) {
                             Controller.root.infoPanels.actionSelectorPanel.x = battleTactics.ActionSelectorPanel.OFFX;
                             Controller.root.infoPanels.actionSelectorPanel._titanID = -1;
                             Controller.root.infoPanels.actionSelectorPanel._unitInPlay = null;
@@ -7342,6 +7332,8 @@ var com;
                         Controller.root.l10.gotoAndStop(!Controller.isLevelUnlocked(10) ? "locked" : "out");
                         Controller.root.l11.gotoAndStop(!Controller.isLevelUnlocked(11) ? "locked" : "out");
                         Controller.root.l12.gotoAndStop(!Controller.isLevelUnlocked(12) ? "locked" : "out");
+                        //fixit debug
+                        //Controller.root.l3.gotoAndStop("out");
                     }
                     if (this.frameLabel == "levelUp") {
                         general.SoundController.playMusic("tune3");

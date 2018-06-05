@@ -12,7 +12,7 @@
     
     "include": [
         "pixi.js.d.ts",
-        "types.d.ts",
+        "types_glow.d.ts",
 
         "com/md",
 
