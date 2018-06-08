@@ -1028,14 +1028,69 @@ var com;
                     if (Main.inited)
                         return;
                     Main.inited = true;
+                    WebFont.load({
+                        google: {
+                            families: [Main.web_font]
+                        }
+                    });
                     this.loader = PIXI.loader;
-                    this.loader.add("localisedtext.xml");
+                    this.loader.add("localisedtext.xml").add("cnlogo.jpg").add("preloader_bar.png").add("preloader_progress.png");
                     this.loader.once('complete', function () {
                         this.onPreloaderLoaded();
                     }.bind(this));
                     this.loader.load();
                 }
                 onPreloaderLoaded() {
+                    Main.score = new MochiDigits();
+                    Main.lives = new MochiDigits();
+                    Main.level = new MochiDigits();
+                    Main.stats = new Stats();
+                    Main.updateRender();
+                    Main.preload_imageBitmap = PIXI.Sprite.fromImage(PIXI.loader.resources["cnlogo.jpg"].url);
+                    Main.preload_barBitmap = PIXI.Sprite.fromImage(PIXI.loader.resources["preloader_bar.png"].url);
+                    Main.preload_progressBitmap = PIXI.Sprite.fromImage(PIXI.loader.resources["preloader_progress.png"].url);
+                    Main.preload_progressBitmap2 = PIXI.Sprite.fromImage(PIXI.loader.resources["preloader_progress.png"].url);
+                    Main.preload_progressBarContainer = new PIXI.Container;
+                    Main.renderer = PIXI.autoDetectRenderer(Main.globalWidth, Main.globalHeight, { antialias: false, transparent: true });
+                    document.body.appendChild(Main.renderer.view);
+                    Main.stage = new PIXI.Container();
+                    Main.onResize();
+                    Main.preload_graphicsBitmap = new PIXI.Graphics();
+                    Main.preload_graphicsBitmap.beginFill(0);
+                    Main.preload_graphicsBitmap.drawRect(0, 0, 640 * 2, 480 * 2);
+                    Main.preload_maskBitmap = new PIXI.Graphics();
+                    Main.preload_maskBitmap.beginFill(0);
+                    Main.preload_maskBitmap.drawRect(0, 0, 330, 50);
+                    Main.preload_maskBitmap2 = new PIXI.Graphics();
+                    Main.preload_maskBitmap2.beginFill(0);
+                    Main.preload_maskBitmap2.drawRect(0, 0, 330, 50);
+                    Main.preload_progressBitmap.mask = Main.preload_maskBitmap;
+                    Main.preload_progressBitmap2.mask = Main.preload_maskBitmap;
+                    Main.preload_progressBitmap.x = -310;
+                    Main.stage.addChild(Main.preload_graphicsBitmap);
+                    Main.preload_progressBarContainer.addChild(Main.preload_maskBitmap);
+                    Main.preload_progressBarContainer.addChild(Main.preload_progressBitmap);
+                    Main.preload_progressBarContainer.addChild(Main.preload_progressBitmap2);
+                    Main.preload_progressBarContainer.addChild(Main.preload_maskBitmap2);
+                    Main.preload_progressBarContainer.addChild(Main.preload_barBitmap);
+                    Main.stage.addChild(Main.preload_progressBarContainer);
+                    Main.preload_progressBarContainer.scale.x = 2;
+                    Main.preload_progressBarContainer.scale.y = 2;
+                    Main.preload_progressBarContainer.x = 310;
+                    Main.preload_progressBarContainer.y = 650;
+                    Main.preload_imageBitmap.x = 340;
+                    Main.preload_imageBitmap.y = 200;
+                    Main.preload_imageBitmap.scale.x = 2;
+                    Main.preload_imageBitmap.scale.y = 2;
+                    Main.stage.addChild(Main.preload_imageBitmap);
+                    Main.addCustomEfFunc('preloader.onEnterFrame', function () {
+                        Main.preload_progressBitmap.x += 2;
+                        Main.preload_progressBitmap2.x += 2;
+                        if (Main.preload_progressBitmap.x > 0) {
+                            Main.preload_progressBitmap2.x = 0;
+                            Main.preload_progressBitmap.x = -310;
+                        }
+                    });
                     var currAudioFormat = "ogg";
                     if (Howler.codecs("mp3")) {
                         currAudioFormat = "mp3";
@@ -1053,8 +1108,11 @@ var com;
                             urls: [soundPreloadData[s].url],
                             loop: _loop,
                             onload: function () {
-                                //var percentValue = ((soundPreloadData.length - soundPreloadNum) / soundPreloadData.length) / 2;
                                 soundPreloadNum--;
+                                var percentValue = ((soundPreloadData.length - soundPreloadNum) / soundPreloadData.length) / 1;
+                                //console.log("sound loaded percent", percentValue);
+                                Main.preload_maskBitmap2.width = 330 - 330 / 5 * percentValue;
+                                Main.preload_maskBitmap2.x = 330 - Main.preload_maskBitmap2.width;
                                 if (soundPreloadNum == 0)
                                     Main.initialization();
                             }
@@ -1062,78 +1120,60 @@ var com;
                     }
                 }
                 static initialization() {
-                    Main.score = new MochiDigits();
-                    Main.lives = new MochiDigits();
-                    Main.level = new MochiDigits();
-                    Main.stats = new Stats();
-                    Main.updateRender();
-                    Main.preload_image = document.createElement("img");
-                    Main.preload_image.src = "loading_splash.png";
-                    Main.preload_image.onload = function () {
-                        Main.preload_imageBitmap = PIXI.Sprite.fromImage(Main.preload_image.src);
-                        Main.renderer = PIXI.autoDetectRenderer(Main.globalWidth, Main.globalHeight, { antialias: false, transparent: true });
-                        document.body.appendChild(Main.renderer.view);
-                        Main.stage = new PIXI.Container();
-                        Main.preload_imageBitmap.scale.x = 2;
-                        Main.preload_imageBitmap.scale.y = 2;
-                        Main.stage.addChild(Main.preload_imageBitmap);
-                        Main.onResize();
-                        Main.stats.showPanel(0);
-                        document.body.appendChild(Main.stats.dom);
-                        var converter_gaf = new GAF.ZipToGAFAssetConverter();
-                        converter_gaf.convert("././././tmw/tmw.gaf");
-                        converter_gaf.on(GAF.GAFEvent.PROGRESS, converter_gaf_progress);
-                        function converter_gaf_progress(pEvent) {
-                            //console.log("main load", pEvent.progress);
-                        }
-                        converter_gaf.on(GAF.GAFEvent.COMPLETE, converter_gaf_complete);
-                        function converter_gaf_complete(pEvent) {
-                            console.log("gaf assets", pEvent);
-                            Main.gafBundle_instance_nesting = pEvent;
+                    Main.stats.showPanel(0);
+                    document.body.appendChild(Main.stats.dom);
+                    var converter_gaf = new GAF.ZipToGAFAssetConverter();
+                    converter_gaf.convert("././././tmw/tmw.gaf");
+                    converter_gaf.on(GAF.GAFEvent.PROGRESS, converter_gaf_progress);
+                    function converter_gaf_progress(pEvent) {
+                        var percentValue = Math.floor(pEvent.progress);
+                        Main.preload_maskBitmap2.width = (330 - 330 / 5) - 330 * (percentValue / 100);
+                        Main.preload_maskBitmap2.x = 330 - Main.preload_maskBitmap2.width;
+                        //console.log("main load", percentValue);
+                    }
+                    converter_gaf.on(GAF.GAFEvent.COMPLETE, converter_gaf_complete);
+                    function converter_gaf_complete(pEvent) {
+                        //console.log("gaf assets", pEvent);
+                        Main.gafBundle_instance_nesting = pEvent;
+                        //Main.stage.removeChild(Main.preload_imageBitmap);
+                        Main.preload_imageBitmap = undefined;
+                        Localizer.startLocalizer();
+                        var rootGafTimeline = Main.addGAFMovieClip("rootTimeline", true, true);
+                        rootGafTimeline.scale.x = 2;
+                        rootGafTimeline.scale.y = 2;
+                        Main.stage.addChild(rootGafTimeline);
+                        var gameMain = new BattleQuestMain();
+                        new TitansCinematicInitialiser().init();
+                        game.Controller.setRoot(rootGafTimeline);
+                        var transition = new Transitioner(Main.gafBundle_instance_nesting.target.gafBundle.getGAFTimeline("tmw", "rootTimeline"));
+                        Transitioner.setRoot(rootGafTimeline);
+                        game.Controller.init(gameMain, transition);
+                        new PlayButton(rootGafTimeline.titleScreen.PlayButton, "menu");
+                        new CreditsButton(rootGafTimeline.titleScreen.CreditsButton, "menu");
+                        new SoundButton(game.Controller.root.soundBtn);
+                        new MusicButton(game.Controller.root.musicBtn);
+                        SoundController.playMusic("tune1");
+                        setTimeout(function () {
+                            Transitioner.theRoot.gotoAndStop("menu");
+                            Main.stage.removeChild(Main.preload_graphicsBitmap);
+                            Main.stage.removeChild(Main.preload_progressBarContainer);
                             Main.stage.removeChild(Main.preload_imageBitmap);
-                            Main.preload_imageBitmap = undefined;
-                            Localizer.startLocalizer();
-                            var rootGafTimeline = Main.addGAFMovieClip("rootTimeline", true, true);
-                            rootGafTimeline.scale.x = 2;
-                            rootGafTimeline.scale.y = 2;
-                            Main.stage.addChild(rootGafTimeline);
-                            //var tempClip = Main.addGAFMovieClip("dots1");
-                            //tempClip.x = 300;
-                            //tempClip.y = 300;
-                            //tempClip.gotoAndStop(5);
-                            //Main.changeText(tempClip.hpDown, " -299");
-                            //tempClip.cacheAsBitmap = true;
-                            //Main.stage.addChild(tempClip);
-                            var gameMain = new BattleQuestMain();
-                            new TitansCinematicInitialiser().init();
-                            game.Controller.setRoot(rootGafTimeline);
-                            var transition = new Transitioner(Main.gafBundle_instance_nesting.target.gafBundle.getGAFTimeline("tmw", "rootTimeline"));
-                            Transitioner.setRoot(rootGafTimeline);
-                            game.Controller.init(gameMain, transition);
-                            //Transitioner.theRoot.transition.gotoAndStop(7);
-                            //Transitioner.theRoot.loader.bar.gotoAndPlay(2);
-                            Transitioner.theRoot.loader.gotoAndStop(9);
-                            Transitioner.theRoot.loader.cn.visible = false;
-                            Transitioner.theRoot.loader.cn.gotoAndStop(1);
-                            setTimeout(function () {
-                                Transitioner.theRoot.loader.cn.visible = true;
-                                Transitioner.theRoot.loader.cn.gotoAndPlay(1);
-                            }, 100);
-                            Main.addCustomEfFunc('cn.onEnterFrame', function () {
-                                if (Transitioner.theRoot.loader.cn.currentFrame == 42) {
-                                    Main.removeCustomEfFunc("cn.onEnterFrame");
-                                    new PlayButton(rootGafTimeline.titleScreen.PlayButton, "menu");
-                                    new CreditsButton(rootGafTimeline.titleScreen.CreditsButton, "menu");
-                                    new SoundButton(game.Controller.root.soundBtn);
-                                    new MusicButton(game.Controller.root.musicBtn);
-                                    SoundController.playMusic("tune1");
-                                    setTimeout(function () {
-                                        Transitioner.theRoot.gotoAndStop("menu");
-                                    }, 0);
-                                }
-                            });
-                        }
-                    };
+                            Main.preload_progressBarContainer.removeChild(Main.preload_maskBitmap);
+                            Main.preload_progressBarContainer.removeChild(Main.preload_progressBitmap);
+                            Main.preload_progressBarContainer.removeChild(Main.preload_progressBitmap2);
+                            Main.preload_progressBarContainer.removeChild(Main.preload_maskBitmap2);
+                            Main.preload_progressBarContainer.removeChild(Main.preload_barBitmap);
+                            Main.preload_graphicsBitmap = null;
+                            Main.preload_progressBarContainer = null;
+                            Main.preload_imageBitmap = null;
+                            Main.preload_maskBitmap = null;
+                            Main.preload_progressBitmap = null;
+                            Main.preload_progressBitmap2 = null;
+                            Main.preload_maskBitmap2 = null;
+                            Main.preload_barBitmap = null;
+                            Main.removeCustomEfFunc('preloader.onEnterFrame');
+                        }, 0);
+                    }
                 }
                 static updateRender() {
                     Main.stats.begin();
@@ -1198,11 +1238,6 @@ var com;
                         Main.inGamePanel.openPanel("paused", "Main.gamePaused = false");
                     }
                 }
-                static inGameHelp() {
-                    if (!com.ussgames.general.GamePanel.panelOpen) {
-                        Main.inGamePanel.openPanel("help");
-                    }
-                }
                 gameLoop(e) {
                     if (!Main.gamePaused) {
                         BattleController.update();
@@ -1229,9 +1264,8 @@ var com;
                     var cufe = mc.currentFrame;
                     for (var sa = 0; sa < mc._gafTimeline._config._animationSequences._sequences.length; sa++) {
                         var currfr = mc._gafTimeline._config._animationSequences._sequences[sa];
-                        if (currfr._startFrameNo <= cufe && currfr._endFrameNo >= cufe) {
+                        if (currfr._startFrameNo <= cufe && currfr._endFrameNo >= cufe)
                             return currfr._id;
-                        }
                     }
                     return res;
                 }
@@ -1389,8 +1423,7 @@ var com;
                         clip_.textField.text = clip_.textField.text + text_[0];
                     else
                         clip_.textField.text = text_[0];
-                    //clip_.textField.style.fontFamily = "Lobster";
-                    clip_.textField.style.fontFamily = "Baloo Paaji";
+                    clip_.textField.style.fontFamily = Main.web_font;
                     if (shadowType != "null") {
                         if (shadowType == "hp" || shadowType == "speech" || shadowType == "xp") {
                             clip_.textField.style.stroke = "white";
@@ -1482,6 +1515,7 @@ var com;
                     return new PIXI.filters.GlowFilter(blurX * strength, strength, inner ? strength : 0, color, quality);
                 }
             }
+            Main.web_font = "Baloo Paaji";
             Main.gamePaused = false;
             Main.inited = false;
             Main.visibilityState = true;
@@ -4231,7 +4265,7 @@ var com;
                     Main.addCustomEfFunc('BattleAnimController.battleAnimHolder.panel1.onEnterFrame', function () {
                         if (BattleAnimController.battleAnimHolder == undefined)
                             console.log("alarm battleAnimHolder undefined");
-                        console.log("battleAnimHolder panel currentFrame", BattleAnimController.battleAnimHolder.panel1.currentFrame);
+                        //console.log("battleAnimHolder panel currentFrame", BattleAnimController.battleAnimHolder.panel1.currentFrame);
                         if (BattleAnimController.battleAnimHolder.panel1.currentFrame >= 6) {
                             Main.removeCustomEfFunc("BattleAnimController.battleAnimHolder.panel1.onEnterFrame");
                             BattleAnimController.populateBattleHolder();
@@ -4243,16 +4277,12 @@ var com;
                     this.defendingClip.scale.x = -3.5;
                 }
                 static populateBattleHolder() {
-                    console.log("populateBattleHolder");
-                    //if (this.battleAnimHolder.animHolder.children.length > 0) {
-                    //	this.battleAnimHolder.animHolder.removeChildAt(0);
                     while (this.battleAnimHolder.animHolder.children[0]) {
                         this.battleAnimHolder.animHolder.removeChildAt(0);
-                        console.log("remove anim", this.battleAnimHolder.animHolder.children.length);
+                        //console.log("remove anim", this.battleAnimHolder.animHolder.children.length);
                     }
-                    //}
                     if (this.attackingUnit.unit.unitActions[this.attackingUnit.selectedAction].actionPhase == battleTactics.Action.PERFORM) {
-                        console.log(">>1");
+                        //console.log(">>1");
                         this.actionAnim = this.attackingUnit.unit.newAttackAnimClipClass;
                         this.newStyleActionLabel = "action" + String(this.attackingUnit.selectedAction);
                         for (var sa = 0; sa < this.actionAnim.children.length; sa++) {
@@ -4266,7 +4296,7 @@ var com;
                         }
                     }
                     else if (this.attackingUnit.unit.unitActions[this.attackingUnit.selectedAction].actionPhase == battleTactics.Action.RETALIATE) {
-                        console.log(">>2");
+                        //console.log(">>2");
                         this.actionAnim = this.defendingUnit.unit.newAttackAnimClipClass;
                         this.newStyleActionLabel = "action" + String(this.defendingUnit.unit.retaliationAction);
                         for (var sa = 0; sa < this.actionAnim.children.length; sa++) {
