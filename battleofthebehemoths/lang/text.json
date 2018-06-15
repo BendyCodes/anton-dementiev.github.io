@@ -37,6 +37,7 @@
   "you are the":"you are the",
   "WINNER!":"WINNER!",
   "CONTINUE?":"CONTINUE?",
+  "GAME OVER!":"GAME\nOVER!",
   "CONGRATULATIONS!":"CONGRATULATIONS!",
   "YOU DEFEATED ALL YOUR ENEMIES!":"YOU DEFEATED ALL YOUR ENEMIES!",
   "loading":"loading",
@@ -60,5 +61,6 @@
   "MONSTER MOVIE MARATHON!":"MONSTER MOVIE MARATHON!",
   "WOW! THESE OLD 3-D GLASSES REALLY WORK.":"WOW! THESE OLD 3-D GLASSES REALLY WORK.",
   "OOOOHHHH!!!!":"OOOOHHHH!!!!",
-  "Skip":"Skip"
+  "Skip":"Skip",
+  "please, wait":"please, wait"
 }
