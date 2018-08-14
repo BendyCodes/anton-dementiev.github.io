@@ -180,4 +180,3 @@ if (typeof JSON.retrocycle !== "function") {
         return $;
     };
 }
-

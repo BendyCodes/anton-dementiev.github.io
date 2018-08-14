@@ -18,10 +18,10 @@
     _scope = 'all',
     // modifier keys
     _MODIFIERS = {
-      'в‡§': 16, shift: 16,
-      'вЊҐ': 18, alt: 18, option: 18,
-      'вЊѓ': 17, ctrl: 17, control: 17,
-      'вЊ': 91, command: 91
+      '⇧': 16, shift: 16,
+      '⌥': 18, alt: 18, option: 18,
+      '⌃': 17, ctrl: 17, control: 17,
+      '⌘': 91, command: 91
     },
     // special keys
     _MAP = {
@@ -319,4 +319,3 @@
 }
 forceFocus();
 })(this);
-

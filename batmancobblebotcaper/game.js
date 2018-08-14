@@ -23,10 +23,13 @@ var PhaserGame;
                 _this.state.add(States.INSTRUCTIONS, Client.gsInstructions, false);
                 _this.state.add(States.CLIP1, Client.gsClip1, false);
                 _this.state.add(States.CLIP2, Client.gsClip2, false);
+                _this.state.add(States.CLIP3, Client.gsClip3, false);
+                _this.state.add(States.CLIP4, Client.gsClip4, false);
                 _this.state.add(States.LEVEL1A, Client.gslevel1a, false);
                 _this.state.add(States.LEVEL1B, Client.gslevel1b, false);
                 _this.state.add(States.LEVEL1C, Client.gslevel1c, false);
                 _this.state.add(States.LEVEL2A, Client.gslevel2a, false);
+                _this.state.add(States.LEVEL2B, Client.gslevel2b, false);
                 _this.state.add(States.CONTINUE, Client.gsContinue, false);
                 _this.state.start(States.BOOT);
                 return _this;
@@ -64,6 +67,7 @@ var GlobalVar;
     GlobalVar.levelContinue = '';
     GlobalVar.bRight = 0;
     GlobalVar.bleft = 0;
+    GlobalVar.dontFollow = false;
 })(GlobalVar || (GlobalVar = {}));
 var Params;
 (function (Params) {
@@ -376,7 +380,7 @@ var PhaserGame;
                 if (!this.attack && !this.pain) {
                     if (this.checkIfCanJump()) {
                         SndMng.sfxPlay(SndMng.SFX_JUMP);
-                        this.body.velocity.y = -840;
+                        this.body.velocity.y = -900;
                         if (this.sprite.animations.currentAnim.name != 'jump') {
                             this.sprite.play('jump');
                         }
@@ -425,7 +429,6 @@ var PhaserGame;
                         this.pain = true;
                         this.health--;
                         this.sprite.play('die');
-                        console.log('сменили йопта');
                     }
                 }
             };
@@ -434,9 +437,11 @@ var PhaserGame;
             };
             goBatman.prototype.update = function () {
                 if (!this.attack && !this.pain) {
-                    if (this.body.velocity.y > 50) {
-                        if (this.sprite.animations.currentAnim.name != 'fall') {
-                            this.sprite.play('fall');
+                    if (!this.checkIfCanJump()) {
+                        if (this.body.velocity.y > 50) {
+                            if (this.sprite.animations.currentAnim.name != 'fall') {
+                                this.sprite.play('fall');
+                            }
                         }
                     }
                 }
@@ -494,6 +499,48 @@ var PhaserGame;
             return goCan;
         }(Phaser.Sprite));
         Client.goCan = goCan;
+    })(Client = PhaserGame.Client || (PhaserGame.Client = {}));
+})(PhaserGame || (PhaserGame = {}));
+var PhaserGame;
+(function (PhaserGame) {
+    var Client;
+    (function (Client) {
+        var goDoor = (function (_super) {
+            __extends(goDoor, _super);
+            function goDoor(game, x, y) {
+                var _this = _super.call(this, game, x, y) || this;
+                _this.anchor.set(0.5);
+                _this.sprite = new Phaser.Sprite(_this.game, 0, 0, 'gameObjectAtlas', 'door0001');
+                _this.sprite.animations.add('open', Phaser.Animation.generateFrameNames('door', 1, 10, '', 4), 25, false);
+                _this.sprite.animations.add('close', Phaser.Animation.generateFrameNames('door', 10, 20, '', 4), 25, false);
+                _this.sprite.anchor.set(0.5);
+                _this.addChild(_this.sprite);
+                return _this;
+            }
+            goDoor.prototype.useEvent = function () {
+            };
+            goDoor.prototype.attack = function (posX, posY) {
+                var distance = uMath.distance(posX, posY - 100, this.x, this.y);
+                if (distance < 120) {
+                }
+            };
+            goDoor.prototype.logicUpdate = function (posX, posY) {
+                var distance = uMath.distance(posX, posY - 100, this.x, this.y);
+                if (distance < 320) {
+                    if (this.sprite.animations.currentAnim.name != 'open') {
+                        this.sprite.play('open');
+                        SndMng.sfxPlay(SndMng.SFX_DOOR);
+                    }
+                }
+                else {
+                    if (this.sprite.animations.currentAnim.name != 'close') {
+                        this.sprite.play('close');
+                    }
+                }
+            };
+            return goDoor;
+        }(Phaser.Sprite));
+        Client.goDoor = goDoor;
     })(Client = PhaserGame.Client || (PhaserGame.Client = {}));
 })(PhaserGame || (PhaserGame = {}));
 var PhaserGame;
@@ -603,6 +650,240 @@ var PhaserGame;
             return goEBiker;
         }(Phaser.Sprite));
         Client.goEBiker = goEBiker;
+    })(Client = PhaserGame.Client || (PhaserGame.Client = {}));
+})(PhaserGame || (PhaserGame = {}));
+var PhaserGame;
+(function (PhaserGame) {
+    var Client;
+    (function (Client) {
+        var goEBio = (function (_super) {
+            __extends(goEBio, _super);
+            function goEBio(game, x, y) {
+                var _this = _super.call(this, game, x, y) || this;
+                _this.sStand = 'stand';
+                _this.sIdle = 'idle';
+                _this.sWalk = 'walk';
+                _this.sRetreat = 'retreat';
+                _this.sAttack = 'attack';
+                _this.sHurt = 'hurt';
+                _this.sFall = 'fall';
+                _this.sDie = 'die';
+                _this.allState = [_this.sIdle, _this.sAttack, _this.sWalk, _this.sRetreat];
+                _this.state = _this.sStand;
+                _this.oldstate = _this.sStand;
+                _this.polRetreat = true;
+                _this.startX = 0;
+                _this.retreatX = 0;
+                _this.idleTime = 100;
+                _this.healthPotion = 7;
+                _this.onAttack = new Phaser.Signal();
+                _this.speed = 200;
+                _this.startFrameFromAtlas = 'enemy_bio0001';
+                _this.death = false;
+                _this.game.physics.p2.enable(_this);
+                _this.body.setRectangle(50, 100, 10, -50);
+                _this.body.fixedRotation = true;
+                _this.body.setCollisionGroup(GlobalVar.enemyCollisionGroup);
+                _this.body.collides([GlobalVar.worldCollisionGroup]);
+                _this.data.name = 'enemy';
+                _this.anchor.set(0.5);
+                _this.sprite = new Phaser.Sprite(_this.game, 0, 0, 'enemyAtlas', _this.startFrameFromAtlas);
+                _this.sprite.animations.add(_this.sStand, Phaser.Animation.generateFrameNames('enemy_bio', 1, 1, '', 4), 25, true);
+                _this.sprite.animations.add(_this.sIdle, Phaser.Animation.generateFrameNames('enemy_bio', 1, 1, '', 4), 25, true);
+                _this.sprite.animations.add(_this.sWalk, Phaser.Animation.generateFrameNames('enemy_bio', 2, 18, '', 4), 25, true);
+                _this.sprite.animations.add(_this.sRetreat, Phaser.Animation.generateFrameNames('enemy_bio', 19, 35, '', 4), 25, true);
+                _this.sprite.animations.add(_this.sAttack, Phaser.Animation.generateFrameNames('enemy_bio', 36, 47, '', 4), 25, false).onComplete.add(_this.randomState, _this);
+                _this.sprite.animations.add(_this.sHurt, Phaser.Animation.generateFrameNames('enemy_bio', 48, 52, '', 4), 25, false).onComplete.add(_this.stand, _this);
+                _this.sprite.animations.add(_this.sFall, Phaser.Animation.generateFrameNames('enemy_bio', 53, 60, '', 4), 12, false).onComplete.add(_this.stand, _this);
+                _this.sprite.animations.add(_this.sDie, Phaser.Animation.generateFrameNames('enemy_bio', 61, 67, '', 4), 25, false).onComplete.add(_this.Die, _this);
+                ;
+                _this.sprite.anchor.set(0.45, 0.92);
+                _this.sprite.play(_this.sStand);
+                _this.addChild(_this.sprite);
+                return _this;
+            }
+            goEBio.prototype.Die = function () {
+                this.game.add.tween(this.sprite).to({ alpha: 0 }, 50, Phaser.Easing.Linear.None, true, 50, 11, true).onComplete.addOnce(this.unvisible, this);
+            };
+            goEBio.prototype.unvisible = function () {
+                this.death = true;
+                this.sprite.visible = false;
+                this.body.clearShapes();
+            };
+            goEBio.prototype.stand = function () {
+                this.randomState();
+            };
+            goEBio.prototype.randomState = function () {
+                this.body.velocity.x = 0;
+                var flag = false;
+                while (!flag) {
+                    var randomSt = this.allState[uMath.random(0, this.allState.length - 1)];
+                    if (this.oldstate != randomSt) {
+                        flag = true;
+                        if (randomSt == this.sRetreat) {
+                            if (this.distanceToPlayer > 100) {
+                                flag = false;
+                            }
+                        }
+                    }
+                }
+                this.oldstate = this.state;
+                switch (randomSt) {
+                    case this.sWalk: {
+                        this.sprite.play(this.sWalk);
+                        this.state = this.sWalk;
+                        break;
+                    }
+                    case this.sAttack: {
+                        this.sprite.play(this.sAttack);
+                        this.state = this.sAttack;
+                        break;
+                    }
+                    case this.sRetreat: {
+                        this.sprite.play(this.sRetreat);
+                        this.state = this.sRetreat;
+                        if (uMath.random(0, 50) < 20) {
+                            this.scale.x = -this.scale.x;
+                        }
+                        if (this.scale.x > 0) {
+                            this.retreatX = this.x - 150;
+                            this.polRetreat = true;
+                        }
+                        else {
+                            this.retreatX = this.x + 150;
+                            this.polRetreat = false;
+                        }
+                        break;
+                    }
+                    case this.sIdle: {
+                        this.sprite.play(this.sIdle);
+                        this.state = this.sIdle;
+                        this.idleTime = 50;
+                        break;
+                    }
+                }
+            };
+            goEBio.prototype.useEvent = function () {
+                if (this.state != this.sHurt && this.state != this.sFall) {
+                    this.healthPotion--;
+                    if (this.healthPotion >= 0) {
+                        this.sprite.play(this.sHurt);
+                        this.state = this.sHurt;
+                        this.body.velocity.x = 0;
+                    }
+                    else {
+                        if (this.state != this.sDie) {
+                            SndMng.sfxPlay(SndMng.SFX_DOWN);
+                            SndMng.sfxPlay(SndMng.SFX_DIE1);
+                            this.sprite.play(this.sDie);
+                            this.state = this.sDie;
+                            this.body.velocity.x = 0;
+                            GlobalVar.score += 100;
+                        }
+                    }
+                }
+            };
+            goEBio.prototype.attack = function (posX, posY, kick) {
+                if (this.state != this.sHurt && this.state != this.sFall) {
+                    if (this.distanceToPlayer < 120) {
+                        this.healthPotion--;
+                        if (this.healthPotion >= 0) {
+                            SndMng.sfxPlay(SndMng.SFX_PUNCH);
+                            if (kick == 'low') {
+                                this.sprite.play(this.sFall);
+                                this.state = this.sFall;
+                                this.body.velocity.x = -this.scale.x * 500;
+                                this.body.velocity.y = -500;
+                            }
+                            else {
+                                this.sprite.play(this.sHurt);
+                                this.state = this.sHurt;
+                            }
+                            this.body.velocity.x = -this.scale.x * 100;
+                        }
+                        else {
+                            if (this.state != this.sDie) {
+                                SndMng.sfxPlay(SndMng.SFX_DOWN);
+                                SndMng.sfxPlay(SndMng.SFX_DIE1);
+                                this.sprite.play(this.sDie);
+                                this.state = this.sDie;
+                                this.body.velocity.x = 0;
+                                GlobalVar.score += 100;
+                            }
+                        }
+                    }
+                }
+            };
+            goEBio.prototype.activate = function (posX, posY) {
+                this.sprite.play(this.sWalk);
+                this.state = this.sWalk;
+            };
+            goEBio.prototype.logicUpdate = function (posX, posY) {
+                this.distanceToPlayer = uMath.distance(this.x, this.y, posX, posY);
+                if (this.state == this.sStand) {
+                    if (this.distanceToPlayer < 300) {
+                        this.activate(posX, posY);
+                    }
+                }
+                else if (this.state == this.sWalk) {
+                    if (posX > this.x) {
+                        this.scale.x = 1;
+                    }
+                    else {
+                        this.scale.x = -1;
+                    }
+                    if (this.distanceToPlayer < 80) {
+                        this.body.velocity.x = 0;
+                        this.randomState();
+                    }
+                    else {
+                        if (posX > this.x) {
+                            this.body.velocity.x = this.speed;
+                        }
+                        else {
+                            this.body.velocity.x = -this.speed;
+                        }
+                    }
+                }
+                else if (this.state == this.sRetreat) {
+                    if (this.polRetreat) {
+                        if (this.x < this.retreatX) {
+                            this.body.velocity.x = 0;
+                            this.randomState();
+                        }
+                        else {
+                            this.body.velocity.x = -this.speed;
+                        }
+                    }
+                    else {
+                        if (this.x > this.retreatX) {
+                            this.body.velocity.x = 0;
+                            this.randomState();
+                        }
+                        else {
+                            this.body.velocity.x = this.speed;
+                        }
+                    }
+                }
+                else if (this.state == this.sIdle) {
+                    if (this.idleTime > 0) {
+                        this.idleTime--;
+                    }
+                    else {
+                        this.randomState();
+                    }
+                }
+                if (this.sprite.animations.currentAnim.frame == (this.sprite.animations.frameData.getFrameByName(this.startFrameFromAtlas).index + 36)) {
+                    var disttoattack = uMath.distance(this.x, this.y, posX, posY);
+                    if (disttoattack < 170) {
+                        SndMng.sfxPlay(SndMng.SFX_BITA);
+                        this.onAttack.dispatch();
+                    }
+                }
+            };
+            return goEBio;
+        }(Phaser.Sprite));
+        Client.goEBio = goEBio;
     })(Client = PhaserGame.Client || (PhaserGame.Client = {}));
 })(PhaserGame || (PhaserGame = {}));
 var PhaserGame;
@@ -1077,6 +1358,184 @@ var PhaserGame;
 (function (PhaserGame) {
     var Client;
     (function (Client) {
+        var goElevator = (function (_super) {
+            __extends(goElevator, _super);
+            function goElevator(game, x, y) {
+                var _this = _super.call(this, game, x, y) || this;
+                _this.down = true;
+                _this.moveCamera = 5;
+                _this.use = false;
+                _this.game.physics.p2.enable(_this);
+                _this.body.setRectangle(400, 50, 0, 0);
+                _this.body.fixedRotation = true;
+                _this.body.kinematic = true;
+                _this.data.name = 'elevator';
+                _this.body.setCollisionGroup(GlobalVar.worldCollisionGroup);
+                _this.body.collides([GlobalVar.playerCollisionGroup]);
+                _this.anchor.set(0.5);
+                _this.sprite = new Phaser.Sprite(_this.game, 0, 0, 'gameObjectAtlas', 'elevator');
+                _this.sprite.anchor.set(0.5);
+                _this.addChild(_this.sprite);
+                return _this;
+            }
+            goElevator.prototype.useEvent = function () {
+                this.use = true;
+                if (this.down) {
+                    if (this.y < this.maxY) {
+                        this.body.velocity.y = 200;
+                        GlobalVar.dontFollow = true;
+                        this.game.camera.deadzone.setTo(0, 280, 600, 0);
+                    }
+                }
+                else {
+                    if (this.y > this.maxY) {
+                        this.body.velocity.y = -200;
+                        GlobalVar.dontFollow = true;
+                        this.game.camera.deadzone.setTo(0, 280, 600, 0);
+                    }
+                }
+            };
+            goElevator.prototype.attack = function () {
+            };
+            goElevator.prototype.setLength = function (maxY) {
+                this.maxY = maxY;
+                if (maxY < this.y) {
+                    this.down = false;
+                }
+            };
+            goElevator.prototype.logicUpdate = function (posX, posY) {
+                if (this.use) {
+                    var dist = uMath.distance(this.game.world.camera.position.x, this.game.world.camera.position.y, this.x, this.game.world.camera.position.y);
+                    if (dist > 20) {
+                        if (this.game.world.camera.position.x < this.x - 300) {
+                            var nX = this.game.camera.position.x + this.moveCamera;
+                            this.game.camera.setPosition(nX, this.game.camera.position.y);
+                        }
+                        else
+                            (this.game.world.camera.position.x > this.x - 300);
+                        {
+                            var nX = this.game.camera.position.x - this.moveCamera;
+                            this.game.camera.setPosition(nX, this.game.camera.position.y);
+                        }
+                    }
+                }
+                if (this.down) {
+                    if (this.y >= this.maxY) {
+                        this.use = false;
+                        if (this.body.velocity.y != 0) {
+                            GlobalVar.dontFollow = false;
+                        }
+                        this.body.velocity.y = 0;
+                    }
+                }
+                else {
+                    if (this.y <= this.maxY) {
+                        this.use = false;
+                        if (this.body.velocity.y != 0) {
+                            GlobalVar.dontFollow = false;
+                        }
+                        this.body.velocity.y = 0;
+                    }
+                }
+            };
+            return goElevator;
+        }(Phaser.Sprite));
+        Client.goElevator = goElevator;
+    })(Client = PhaserGame.Client || (PhaserGame.Client = {}));
+})(PhaserGame || (PhaserGame = {}));
+var PhaserGame;
+(function (PhaserGame) {
+    var Client;
+    (function (Client) {
+        var goElevator2 = (function (_super) {
+            __extends(goElevator2, _super);
+            function goElevator2(game, x, y) {
+                var _this = _super.call(this, game, x, y) || this;
+                _this.down = true;
+                _this.moveCamera = 5;
+                _this.use = false;
+                _this.game.physics.p2.enable(_this);
+                _this.body.setRectangle(400, 50, 0, 0);
+                _this.body.fixedRotation = true;
+                _this.body.kinematic = true;
+                _this.data.name = 'elevator';
+                _this.body.setCollisionGroup(GlobalVar.worldCollisionGroup);
+                _this.body.collides([GlobalVar.playerCollisionGroup]);
+                _this.anchor.set(0.5);
+                _this.sprite = new Phaser.Sprite(_this.game, 0, 0, 'gameObjectAtlas', 'elevator2');
+                _this.sprite.anchor.set(0.5, 0.3);
+                _this.addChild(_this.sprite);
+                return _this;
+            }
+            goElevator2.prototype.useEvent = function () {
+                this.use = true;
+                if (this.down) {
+                    if (this.y < this.maxY) {
+                        this.body.velocity.y = 200;
+                        GlobalVar.dontFollow = true;
+                        this.game.camera.deadzone.setTo(0, 280, 600, 0);
+                    }
+                }
+                else {
+                    if (this.y > this.maxY) {
+                        this.body.velocity.y = -200;
+                        GlobalVar.dontFollow = true;
+                        this.game.camera.deadzone.setTo(0, 280, 600, 0);
+                    }
+                }
+            };
+            goElevator2.prototype.attack = function () {
+            };
+            goElevator2.prototype.setLength = function (maxY) {
+                this.maxY = maxY;
+                if (maxY < this.y) {
+                    this.down = false;
+                }
+            };
+            goElevator2.prototype.logicUpdate = function (posX, posY) {
+                if (this.use) {
+                    var dist = uMath.distance(this.game.world.camera.position.x, this.game.world.camera.position.y, this.x, this.game.world.camera.position.y);
+                    if (dist > 20) {
+                        if (this.game.world.camera.position.x < this.x - 300) {
+                            var nX = this.game.camera.position.x + this.moveCamera;
+                            this.game.camera.setPosition(nX, this.game.camera.position.y);
+                        }
+                        else
+                            (this.game.world.camera.position.x > this.x - 300);
+                        {
+                            var nX = this.game.camera.position.x - this.moveCamera;
+                            this.game.camera.setPosition(nX, this.game.camera.position.y);
+                        }
+                    }
+                }
+                if (this.down) {
+                    if (this.y >= this.maxY) {
+                        this.use = false;
+                        if (this.body.velocity.y != 0) {
+                            GlobalVar.dontFollow = false;
+                        }
+                        this.body.velocity.y = 0;
+                    }
+                }
+                else {
+                    if (this.y <= this.maxY) {
+                        this.use = false;
+                        if (this.body.velocity.y != 0) {
+                            GlobalVar.dontFollow = false;
+                        }
+                        this.body.velocity.y = 0;
+                    }
+                }
+            };
+            return goElevator2;
+        }(Phaser.Sprite));
+        Client.goElevator2 = goElevator2;
+    })(Client = PhaserGame.Client || (PhaserGame.Client = {}));
+})(PhaserGame || (PhaserGame = {}));
+var PhaserGame;
+(function (PhaserGame) {
+    var Client;
+    (function (Client) {
         var goEWhiteGoon = (function (_super) {
             __extends(goEWhiteGoon, _super);
             function goEWhiteGoon(game, x, y) {
@@ -1311,6 +1770,42 @@ var PhaserGame;
 (function (PhaserGame) {
     var Client;
     (function (Client) {
+        var goHealth = (function (_super) {
+            __extends(goHealth, _super);
+            function goHealth(game, x, y) {
+                var _this = _super.call(this, game, x, y) || this;
+                _this.game.physics.p2.enable(_this);
+                _this.body.setRectangle(30, 30, 0, 0);
+                _this.body.fixedRotation = true;
+                _this.body.data.shapes[0].sensor = true;
+                _this.body.static = true;
+                _this.data.name = 'can';
+                _this.body.setCollisionGroup(GlobalVar.worldCollisionGroup);
+                _this.body.collides([GlobalVar.playerCollisionGroup]);
+                _this.anchor.set(0.5);
+                _this.sprite = new Phaser.Sprite(_this.game, 0, 0, 'gameObjectAtlas', 'life');
+                _this.sprite.anchor.set(0.5);
+                _this.addChild(_this.sprite);
+                return _this;
+            }
+            goHealth.prototype.useEvent = function () {
+                this.visible = false;
+                GlobalVar.life++;
+                this.body.clearShapes();
+            };
+            goHealth.prototype.attack = function () {
+            };
+            goHealth.prototype.logicUpdate = function (posX, posY) {
+            };
+            return goHealth;
+        }(Phaser.Sprite));
+        Client.goHealth = goHealth;
+    })(Client = PhaserGame.Client || (PhaserGame.Client = {}));
+})(PhaserGame || (PhaserGame = {}));
+var PhaserGame;
+(function (PhaserGame) {
+    var Client;
+    (function (Client) {
         var goInstructions = (function (_super) {
             __extends(goInstructions, _super);
             function goInstructions(game, x, y) {
@@ -1328,6 +1823,9 @@ var PhaserGame;
                 _this.sprite.animations.add('tostreet', Phaser.Animation.generateFrameNames('hud', 145, 153, '', 4), 25, true);
                 _this.sprite.animations.add('fightbtns', Phaser.Animation.generateFrameNames('hud', 80, 88, '', 4), 25, true);
                 _this.sprite.animations.add('fight', Phaser.Animation.generateFrameNames('hud', 107, 144, '', 4), 25, true);
+                _this.sprite.animations.add('find', Phaser.Animation.generateFrameNames('hud', 71, 79, '', 4), 25, true);
+                _this.sprite.animations.add('escape', Phaser.Animation.generateFrameNames('hud', 89, 97, '', 4), 25, true);
+                _this.sprite.animations.add('elevator', Phaser.Animation.generateFrameNames('hud', 98, 106, '', 4), 25, true);
                 _this.addChild(_this.sprite);
                 _this.sprite.visible = false;
                 return _this;
@@ -1341,7 +1839,7 @@ var PhaserGame;
                 {
                     this.sprite.visible = true;
                     this.sprite.play(instruction);
-                    this.tween = this.game.add.tween(this.sprite).to({ visible: false }, 1, Phaser.Easing.Linear.None, true, 2000);
+                    this.tween = this.game.add.tween(this.sprite).to({ visible: false }, 1, Phaser.Easing.Linear.None, true, 2500);
                     if (instruction == 'fight') {
                         this.onUse.dispatch();
                     }
@@ -1398,6 +1896,62 @@ var PhaserGame;
             return goMailBox;
         }(Phaser.Sprite));
         Client.goMailBox = goMailBox;
+    })(Client = PhaserGame.Client || (PhaserGame.Client = {}));
+})(PhaserGame || (PhaserGame = {}));
+var PhaserGame;
+(function (PhaserGame) {
+    var Client;
+    (function (Client) {
+        var goTimer = (function (_super) {
+            __extends(goTimer, _super);
+            function goTimer(game, x, y) {
+                var _this = _super.call(this, game, x, y) || this;
+                _this.fps = 60;
+                _this.timerComplete = false;
+                _this.onComplete = new Phaser.Signal();
+                _this.timeUntil = 80;
+                _this.anchor.set(0.5);
+                _this.sprite = new Phaser.Sprite(_this.game, 0, 0, 'gameObjectAtlas', 'paneltime');
+                _this.sprite.anchor.set(0.5);
+                _this.addChild(_this.sprite);
+                _this.timerText = new Phaser.BitmapText(_this.game, 0, 13, 'myFont3', '', 40);
+                _this.timerText.text = '80 :00';
+                _this.timerText.smoothed = true;
+                _this.timerText.tint = 0xFF0000;
+                _this.timerText.anchor.set(0.5);
+                _this.addChild(_this.timerText);
+                return _this;
+            }
+            goTimer.prototype.update = function () {
+                this.fps--;
+                if (this.fps <= 0) {
+                    this.timeUntil--;
+                    this.fps = 60;
+                }
+                var ttext;
+                if (this.timeUntil <= 0) {
+                    this.timeUntil = 0;
+                    ttext = '00: 00';
+                    if (!this.timerComplete) {
+                        this.timerComplete = true;
+                        this.onComplete.dispatch();
+                        SndMng.sfxPlay(SndMng.SFX_EXPLODE);
+                    }
+                }
+                else {
+                    if (this.timeUntil < 10) {
+                        ttext = '0' + this.timeUntil;
+                    }
+                    else {
+                        ttext = '' + this.timeUntil;
+                    }
+                }
+                ttext += ' :' + uMath.random(10, 99);
+                this.timerText.text = ttext;
+            };
+            return goTimer;
+        }(Phaser.Sprite));
+        Client.goTimer = goTimer;
     })(Client = PhaserGame.Client || (PhaserGame.Client = {}));
 })(PhaserGame || (PhaserGame = {}));
 var PhaserGame;
@@ -1750,6 +2304,223 @@ var PhaserGame;
             return gsClip2;
         }(Phaser.State));
         Client.gsClip2 = gsClip2;
+    })(Client = PhaserGame.Client || (PhaserGame.Client = {}));
+})(PhaserGame || (PhaserGame = {}));
+var PhaserGame;
+(function (PhaserGame) {
+    var Client;
+    (function (Client) {
+        var gsClip3 = (function (_super) {
+            __extends(gsClip3, _super);
+            function gsClip3() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            gsClip3.prototype.destroy = function () {
+                this.game.world.setBounds(0, 0, 600, 400);
+                this.mainDummy = new Phaser.Sprite(this.game, Config.GW / 2, Config.GH / 2);
+                this.mainDummy.anchor.set(0.5);
+                this.add.existing(this.mainDummy);
+                this.bg1 = new Phaser.Sprite(this.game, 0, 0, 'clip3Atlas', 'lab');
+                this.bg1.scale.set(0.6);
+                this.bg1.anchor.set(0.5);
+                this.mainDummy.addChild(this.bg1);
+                this.game.add.tween(this.bg1.scale).to({ x: 1 }, 900, Phaser.Easing.Linear.None, true);
+                this.game.add.tween(this.bg1.scale).to({ y: 1 }, 900, Phaser.Easing.Linear.None, true);
+                this.game.add.tween(this.bg1).to({ y: -100 }, 900, Phaser.Easing.Linear.None, true).onComplete.addOnce(this.startTv, this);
+                this.tv = new Phaser.Sprite(this.game, 4, 6, 'clip3Atlas', 'tv0001');
+                this.tv.anchor.set(0.5);
+                this.tv.animations.add('tv', Phaser.Animation.generateFrameNames('tv', 1, 62, '', 4), 25, false);
+                this.mainDummy.addChild(this.tv);
+                this.bg2 = new Phaser.Sprite(this.game, 0, 0, 'clip3Atlas', 'bg');
+                this.bg2.visible = false;
+                this.bg2.anchor.set(0.5);
+                this.bg2.scale.set(2);
+                this.mainDummy.addChild(this.bg2);
+                this.batman = new Phaser.Sprite(this.game, 0, 100, 'clip3Atlas', 'bat');
+                this.batman.visible = false;
+                this.batman.anchor.set(0.5);
+                this.batman.scale.set(0.5);
+                this.mainDummy.addChild(this.batman);
+                this.ttime = new Phaser.Sprite(this.game, 0, 0, 'clip3Atlas', 'time0001');
+                this.ttime.anchor.set(0.5);
+                this.ttime.visible = false;
+                this.ttime.animations.add('time', Phaser.Animation.generateFrameNames('time', 1, 45, '', 4), 25, false);
+                this.ttime.animations.add('fade', Phaser.Animation.generateFrameNames('time', 45, 65, '', 4), 25, false);
+                this.mainDummy.addChild(this.ttime);
+                this.ttext = new Phaser.Sprite(this.game, 0, 180, 'clip3Atlas', 'text0001');
+                this.ttext.anchor.set(0.5);
+                this.ttext.visible = false;
+                this.mainDummy.addChild(this.ttext);
+                this.skipBtn = new Phaser.Button(this.game, 250, 175, 'clip2Atlas', this.clickSkip, this, 'skip0002', 'skip0001');
+                this.skipBtn.anchor.set(0.5);
+                this.mainDummy.addChild(this.skipBtn);
+                SndMng.playMusic(SndMng.CLIP_1, 1, 1);
+            };
+            gsClip3.prototype.startTv = function () {
+                this.ttext.visible = true;
+                this.tv.play('tv').onComplete.addOnce(this.showBatman, this);
+            };
+            gsClip3.prototype.showBatman = function () {
+                this.ttext.frameName = 'text0002';
+                this.ttext.y = 100;
+                this.bg2.visible = true;
+                this.batman.visible = true;
+                this.game.add.tween(this.batman.scale).to({ x: 1.6 }, 900, Phaser.Easing.Linear.None, true);
+                this.game.add.tween(this.batman.scale).to({ y: 1.6 }, 900, Phaser.Easing.Linear.None, true);
+                this.game.add.tween(this.bg2.scale).to({ x: 1 }, 900, Phaser.Easing.Linear.None, true);
+                this.game.add.tween(this.bg2.scale).to({ y: 1 }, 900, Phaser.Easing.Linear.None, true).onComplete.addOnce(this.shakeWorld, this);
+            };
+            gsClip3.prototype.shakeWorld = function () {
+                SndMng.sfxPlay(SndMng.SFX_EXPLODE);
+                this.game.add.tween(this.bg2).to({ y: -5 }, 100, Phaser.Easing.Linear.None, true, 0, 3);
+                this.game.add.tween(this.bg2).to({ x: -5 }, 100, Phaser.Easing.Linear.None, true, 0, 3);
+                this.game.add.tween(this.batman).to({ visible: false }, 100, Phaser.Easing.Linear.None, true, 1000).onComplete.addOnce(this.hideBatman, this);
+            };
+            gsClip3.prototype.hideBatman = function () {
+                this.bg2.visible = false;
+                this.tv.visible = false;
+                this.ttime.visible = true;
+                this.ttext.visible = false;
+                this.ttime.play('time').onComplete.addOnce(this.showFade, this);
+            };
+            gsClip3.prototype.showFade = function () {
+                this.ttime.play('fade');
+                this.clickSkip();
+            };
+            gsClip3.prototype.clickSkip = function () {
+                this.fade = new Client.gFade(this.game, 0, 0);
+                this.fade.onComplete.addOnce(this.startGame, this);
+                this.fade.start();
+                this.mainDummy.addChild(this.fade);
+            };
+            gsClip3.prototype.hideLetter = function () {
+                this.skipBtn.visible = false;
+                this.game.add.tween(this.letterboxUp).to({ height: 400 }, 200, Phaser.Easing.Linear.None, true);
+                this.game.add.tween(this.letterboxDown).to({ height: 400 }, 200, Phaser.Easing.Linear.None, true);
+            };
+            gsClip3.prototype.startGame = function () {
+                this.game.state.start(States.LEVEL2B, true, false);
+            };
+            gsClip3.prototype.create = function () {
+                this.game.sound.stopAll();
+                this.destroy();
+            };
+            gsClip3.prototype.update = function () {
+                if (this.fade) {
+                    this.fade.update();
+                }
+            };
+            return gsClip3;
+        }(Phaser.State));
+        Client.gsClip3 = gsClip3;
+    })(Client = PhaserGame.Client || (PhaserGame.Client = {}));
+})(PhaserGame || (PhaserGame = {}));
+var PhaserGame;
+(function (PhaserGame) {
+    var Client;
+    (function (Client) {
+        var gsClip4 = (function (_super) {
+            __extends(gsClip4, _super);
+            function gsClip4() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            gsClip4.prototype.destroy = function () {
+                this.game.world.setBounds(0, 0, 600, 400);
+                this.mainDummy.anchor.set(0.5);
+                this.add.existing(this.mainDummy);
+                this.bg1 = new Phaser.Sprite(this.game, 0, 0, 'clip3Atlas', 'lab');
+                this.bg1.scale.set(0.6);
+                this.bg1.anchor.set(0.5);
+                this.mainDummy.addChild(this.bg1);
+                this.game.add.tween(this.bg1.scale).to({ x: 1 }, 900, Phaser.Easing.Linear.None, true);
+                this.game.add.tween(this.bg1.scale).to({ y: 1 }, 900, Phaser.Easing.Linear.None, true);
+                this.game.add.tween(this.bg1).to({ y: -100 }, 900, Phaser.Easing.Linear.None, true).onComplete.addOnce(this.startTv, this);
+                this.tv = new Phaser.Sprite(this.game, 4, 6, 'clip3Atlas', 'tv0001');
+                this.tv.anchor.set(0.5);
+                this.tv.animations.add('tv', Phaser.Animation.generateFrameNames('tv', 1, 62, '', 4), 25, false);
+                this.mainDummy.addChild(this.tv);
+                this.bg2 = new Phaser.Sprite(this.game, 0, 0, 'clip3Atlas', 'bg');
+                this.bg2.visible = false;
+                this.bg2.anchor.set(0.5);
+                this.bg2.scale.set(2);
+                this.mainDummy.addChild(this.bg2);
+                this.batman = new Phaser.Sprite(this.game, 0, 100, 'clip3Atlas', 'bat');
+                this.batman.visible = false;
+                this.batman.anchor.set(0.5);
+                this.batman.scale.set(0.5);
+                this.mainDummy.addChild(this.batman);
+                this.ttime = new Phaser.Sprite(this.game, 0, 0, 'clip3Atlas', 'time0001');
+                this.ttime.anchor.set(0.5);
+                this.ttime.visible = false;
+                this.ttime.animations.add('time', Phaser.Animation.generateFrameNames('time', 1, 45, '', 4), 25, false);
+                this.ttime.animations.add('fade', Phaser.Animation.generateFrameNames('time', 45, 65, '', 4), 25, false);
+                this.mainDummy.addChild(this.ttime);
+                this.ttext = new Phaser.Sprite(this.game, 0, 180, 'clip3Atlas', 'text0001');
+                this.ttext.anchor.set(0.5);
+                this.ttext.visible = false;
+                this.mainDummy.addChild(this.ttext);
+                this.skipBtn = new Phaser.Button(this.game, 250, 175, 'clip2Atlas', this.clickSkip, this, 'skip0002', 'skip0001');
+                this.skipBtn.anchor.set(0.5);
+                this.mainDummy.addChild(this.skipBtn);
+                SndMng.playMusic(SndMng.CLIP_1, 1, 1);
+            };
+            gsClip4.prototype.startTv = function () {
+                this.ttext.visible = true;
+                this.tv.play('tv').onComplete.addOnce(this.showBatman, this);
+            };
+            gsClip4.prototype.showBatman = function () {
+                this.ttext.frameName = 'text0002';
+                this.ttext.y = 100;
+                this.bg2.visible = true;
+                this.batman.visible = true;
+                this.game.add.tween(this.batman.scale).to({ x: 1.6 }, 900, Phaser.Easing.Linear.None, true);
+                this.game.add.tween(this.batman.scale).to({ y: 1.6 }, 900, Phaser.Easing.Linear.None, true);
+                this.game.add.tween(this.bg2.scale).to({ x: 1 }, 900, Phaser.Easing.Linear.None, true);
+                this.game.add.tween(this.bg2.scale).to({ y: 1 }, 900, Phaser.Easing.Linear.None, true).onComplete.addOnce(this.shakeWorld, this);
+            };
+            gsClip4.prototype.shakeWorld = function () {
+                SndMng.sfxPlay(SndMng.SFX_EXPLODE);
+                this.game.add.tween(this.bg2).to({ y: -5 }, 100, Phaser.Easing.Linear.None, true, 0, 3);
+                this.game.add.tween(this.bg2).to({ x: -5 }, 100, Phaser.Easing.Linear.None, true, 0, 3);
+                this.game.add.tween(this.batman).to({ visible: false }, 100, Phaser.Easing.Linear.None, true, 1000).onComplete.addOnce(this.hideBatman, this);
+            };
+            gsClip4.prototype.hideBatman = function () {
+                this.bg2.visible = false;
+                this.tv.visible = false;
+                this.ttime.visible = true;
+                this.ttext.visible = false;
+                this.ttime.play('time').onComplete.addOnce(this.showFade, this);
+            };
+            gsClip4.prototype.showFade = function () {
+                this.ttime.play('fade');
+                this.clickSkip();
+            };
+            gsClip4.prototype.clickSkip = function () {
+                this.fade = new Client.gFade(this.game, 0, 0);
+                this.fade.onComplete.addOnce(this.startGame, this);
+                this.fade.start();
+                this.mainDummy.addChild(this.fade);
+            };
+            gsClip4.prototype.hideLetter = function () {
+                this.skipBtn.visible = false;
+                this.game.add.tween(this.letterboxUp).to({ height: 400 }, 200, Phaser.Easing.Linear.None, true);
+                this.game.add.tween(this.letterboxDown).to({ height: 400 }, 200, Phaser.Easing.Linear.None, true);
+            };
+            gsClip4.prototype.startGame = function () {
+                this.game.state.start(States.LEVEL2B, true, false);
+            };
+            gsClip4.prototype.create = function () {
+                this.game.sound.stopAll();
+                this.destroy();
+            };
+            gsClip4.prototype.update = function () {
+                if (this.fade) {
+                    this.fade.update();
+                }
+            };
+            return gsClip4;
+        }(Phaser.State));
+        Client.gsClip4 = gsClip4;
     })(Client = PhaserGame.Client || (PhaserGame.Client = {}));
 })(PhaserGame || (PhaserGame = {}));
 var PhaserGame;
@@ -2921,15 +3692,34 @@ var PhaserGame;
             __extends(gslevel2a, _super);
             function gslevel2a() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.objectX = [-449];
-                _this.objectY = [75];
-                _this.objectName = ['goEBoss1'];
+                _this.gfX = [373, 3024, -903.45, -903.45, -903.45, -903.45, -903.45, -903.45, -432.90, -177.3, 175, 578.55, 930.75, 1183, 1650.9, 1650.9, 2121, 2428, 2831, 3222, 3626, 3930, 5312.8, 4172, 4212, 4178, 4365, 4122, 4219, 4352, 4632, 4944, 5080, 5216, 5331, 5364, 5345, 5564, 5544, 4200, 5833, 6023, 6087, 6152, 6446, 6849, 6849, 6849, 6849, 6849, 6849, 6399, 5532, 5025, 5501, 5968, 6429, 6150, 5256, 4396, 4801, 5194, 5587, 5989, 6372, 4519, 4924, 5675, 6456, 6491, 4623, 6429, 6413, 6033, 6033, 6129, 6032, 5932, 6402, 6338, 5859, 5826, 5844, 5731, 5703, 5645, 5498, 5434, 5370, 5466, 5402, 5311, 5279, 5232, 5032, 5025, 4693, 4481, 4577, 4481, 4380, 4086, 3801, 3503, 3295, 3228, 2975, 2943, 2960, 2848, 2820, 2761, 6164, 5064, 4052, 5651, 5095, 4661, 3897, 3292, 2838, 2926, 3315, 3934, 4401, 4790, 5182, 5575, 5968, 6361, 6480, 6444, 3102, 3438, 3560, 3799, 4577, 2273, 2475, 2365, 2169, 2000, 2088, 2089, 1987];
+                _this.gfY = [2020, 2809, -1635.9, -864.85, -113.1, 657.9, 1434.7, 2205.75, 2287, 2287, 2287, 2287, 2287, 2286, 2204, 2975, 3075, 3075, 3075, 3075, 3075, 3075, 2985.7, 3137, 3138, 3260, 2948, 3522, 3538, 3525, 3465, 3482, 3485, 3485, 3486, 3487, 3543, 3534, 3571, 3563, 3554, 3540, 3540, 3540, 3548, 2631, 3404, 4179, 4950, 5711, 6483, 3384, 3299, 3184, 3008, 2901, 2895, 2746, 2754, 2517, 2517, 2517, 2517, 2517, 2517, 2515, 2515, 2526, 2518, 2505, 4967, 5217, 5552, 5393, 5433, 5560, 5560, 5560, 5616, 5616, 5582, 5580, 5628, 5604, 5649, 5592, 5610, 5610, 5610, 5514, 5514, 5588, 5587, 5628, 5558, 5645, 5612, 5433, 5560, 5560, 5560, 5612, 5543, 5577, 5538, 6330, 5578, 5577, 5625, 5612, 5645, 5588, 4942, 4942, 4942, 5124, 5060, 4936, 5077, 4954, 4824, 4413, 4413, 4413, 4413, 4413, 4413, 4413, 4413, 4413, 4401, 4415, 4404, 4411, 3560, 4415, 4404, 4604, 4490, 4492, 4471, 4570, 4698, 4731, 4722];
+                _this.gName = ['g29', 'g29', 'g1', 'g1', 'g1', 'g1', 'g1', 'g1', 'g2', 'g3', 'g4', 'g4', 'g3', 'g5', 'g1', 'g1', 'g2', 'g4', 'g4', 'g6', 'g6', 'g5', 'g7', 'g8', 'g9', 'g10', 'g11', 'g12', 'g13', 'g14', 'g15', 'g16', 'g16', 'g16', 'g8', 'g9', 'g11', 'g13', 'g17', 'g17', 'g11', 'g18', 'g18', 'g18', 'g19', 'g1', 'g1', 'g1', 'g1', 'g11', 'g11', 'g20', 'g20', 'g20', 'g20', 'g20', 'g10', 'g11', 'g11', 'g21', 'g21', 'g21', 'g21', 'g21', 'g21', 'g22', 'g22', 'g22', 'g22', 'g22', 'g23', 'g10', 'g10', 'g24', 'g24', 'g16', 'g16', 'g16', 'g18', 'g18', 'g9', 'g8', 'g11', 'g13', 'g17', 'g12', 'g18', 'g18', 'g18', 'g18', 'g18', 'g9', 'g8', 'g11', 'g25', 'g17', 'g18', 'g24', 'g16', 'g16', 'g16', 'g18', 'g15', 'g14', 'g26', 'g27', 'g9', 'g8', 'g11', 'g13', 'g17', 'g12', 'g11', 'g11', 'g11', 'g20', 'g20', 'g20', 'g20', 'g20', 'g10', 'g21', 'g21', 'g21', 'g21', 'g21', 'g21', 'g21', 'g21', 'g21', 'g22', 'g22', 'g22', 'g22', 'g22', 'g22', 'g22', 'g28', 'g21', 'g22', 'g22', 'g11', 'g13', 'g17', 'g19'];
+                _this.gScaleX = [10, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.7, 1, 1, 1, 0.7, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, -1, 1, 1, 1, 1, 1, 1, 1, 1, 0.8, -0.6, -0.8, 1.1, 0.6, 10, -1, -1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.6, 1, 1, 1, 1, 1, 1, 1, 1, 1, -1, 1, 1, 1, 1, 0.6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.6, 1, -1, 0.6, 0.6, 1, 1, 1, 2, 1, 1, 0.6, 0.7, 1, 1, 1];
+                _this.gScaleY = [10, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.7, 1, 1, 1, 0.7, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.8, 0.6, 0.8, 1.1, 0.6, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.6, 1, 1, 0.6, 0.6, 1, 1, 1, 2, 1, 1, 0.6, 0.7, 1, 1, 1];
+                _this.gArray = [];
+                _this.physPosX = [-902.75, -489.85, -612.5, -185.6, 1319.05, -1285.65, 603.45, 1351.6, 1773.3, 1951.3, 3105.65, 2807.65, 4047.35, 4207.75, 4063.9, 5312.45, 6588.9, 6505.1, 6583.75, 6865.2, 7138.4, 5302.1, 5024.25, 5498.2, 5527.7, 5962.3, 6364.35, 6784, 6042, 5655.5, 2971.15, 2699.5, 2215.7, 1865.4, 2325.4, 2832.45, 3280.55, 3894.7, 4666.2, 5097.2, 4492.35, 3297.1, 3474.05, 2653.45, 2823.65, 3102.55, 3335.9, 5017.5, 6859, 6767.95, 2724.85, 3370.05, 3759.7];
+                _this.physPosY = [-2172.1, 31.6, 2187.65, 2699.4, 3053.8, 189.4, 1965.2, 2176.8, 1911.35, 2513.65, 2751.65, 3451.7, 2932.75, 3244.75, 2554, 2459.3, 2558.65, 2869.6, 3948.95, 2459.3, 3785.95, 3961.9, 3208, 3035.2, 3320.8, 2935.35, 3410.3, 5204.7, 5411.15, 5154, 4239.2, 4465.35, 4374.8, 4778.35, 4957.9, 4792.85, 4978.6, 5106.4, 4958.45, 5088.8, 5428.25, 5480.5, 5602.6, 5428.25, 6139.2, 5723.15, 5726.3, 6138.65, 5378.05, 5602.6, 6978.45, 7143.5, 6736.8];
+                _this.physW = [1260.95, 455.85, 230.25, 2706.6, 326, 455.85, 1738, 252.5, 609, 257.15, 2058.8, 2655.4, 182.65, 146.9, 152.65, 2354.75, 215.2, 382.9, 216.3, 358.6, 208, 2355.8, 287.7, 291.8, 293.9, 290.3, 234.9, 907, 304.75, 284.6, 2327.85, 180.6, 810.8, 116.9, 823.7, 213.7, 283, 283, 284.6, 289.25, 285.1, 344.6, 124.2, 159.9, 500.9, 84.35, 76.05, 3313, 755.4, 937.6, 311.5, 1011.55, 198.2];
+                _this.physH = [280.4, 4122.25, 195.05, 579, 1293.5, 4452.35, 256.1, 179.55, 159.4, 1050.4, 139.7, 490, 234.9, 74.5, 261.8, 72.95, 271.65, 56.9, 2102.25, 72.95, 2773.9, 749.75, 60, 64.2, 67.3, 69.85, 58.5, 90, 114.35, 63.1, 209, 280.4, 91.6, 742.5, 390.1, 57.45, 47.6, 47.6, 58.5, 60, 60, 55.9, 223.5, 562.9, 884.8, 53.3, 52.8, 869.6, 272.2, 220.4, 823.2, 470.8, 362.7];
+                _this.objectX = [-470, -720, 1469, 1220, 2080, 1831, 4128, 3966, 6662, 6500, 6668, 6482, 2769, 2604, 340, 792, 3020, 3442, 4800, 5794, 5505, 3835, 2170, 2302, -900, 1652, 6853];
+                _this.objectY = [2330, 2330, 2322, 2322, 3111, 3111, 3105, 3105, 2758, 2758, 5068, 5068, 4675, 4675, 2266, 2266, 3057, 3057, 3452, 3452, 5554, 5554, 4620, 4640, 187, 2468, 2910];
+                _this.objectP = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2449, 3240, 5190];
+                _this.objectSX = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, -1];
+                _this.objectName = ['goDoor', 'goDoor', 'goDoor', 'goDoor', 'goDoor', 'goDoor', 'goDoor', 'goDoor', 'goDoor', 'goDoor', 'goDoor', 'goDoor', 'goDoor', 'goDoor', 'goEBio', 'goEBio', 'goEBio', 'goEBio', 'goEBio', 'goEBio', 'goEBio', 'goEBio', 'goEBio', 'goHealth', 'goElevator', 'goElevator2', 'goElevator'];
                 _this.objectArray = [];
+                _this.doorFrameX = [-597, 1345, 1955, 4048, 6580, 6589, 2688, 3227];
+                _this.doorFrameY = [2236, 2227, 3017, 3035, 2688, 5000, 4606, 5744];
+                _this.doorFrameName = ['g30', 'g30', 'g30', 'g31', 'g31', 'g32', 'g31', 'g33'];
                 _this.enemyArray = [];
-                _this.batarangX = [-1091, -762, -245.75];
-                _this.batarangY = [-39.8, -29.6, -44];
+                _this.chckX = [4281];
+                _this.chckY = [3035];
+                _this.chckV = ['glide'];
+                _this.chckArray = [];
+                _this.batarangX = [-922, 181, 576, 2440, 2820, 5998, 6138, 6057, 3218];
+                _this.batarangY = [757, 2290, 2290, 3087, 3087, 3184, 3391, 5009, 5602];
                 _this.batarangArray = [];
-                _this.wievCamera = 200;
+                _this.timeToEnd = 50;
                 _this.endLevel = false;
                 return _this;
             }
@@ -2946,7 +3736,7 @@ var PhaserGame;
             };
             gslevel2a.prototype.create = function () {
                 this.destroy();
-                GlobalVar.levelContinue = States.LEVEL1C;
+                GlobalVar.levelContinue = States.LEVEL2A;
                 this.game.physics.startSystem(Phaser.Physics.P2JS);
                 this.game.physics.p2.gravity.y = 1900;
                 this.game.physics.p2.restitution = 0;
@@ -2957,22 +3747,35 @@ var PhaserGame;
                 GlobalVar.enemyCollisionGroup = this.game.physics.p2.createCollisionGroup();
                 GlobalVar.worldCollisionGroup = this.game.physics.p2.createCollisionGroup();
                 this.game.physics.p2.updateBoundsCollisionGroup();
+                this.mainDummy = new Phaser.Sprite(this.game, 0, 0);
                 this.add.existing(this.mainDummy);
-                this.bg = new Phaser.Sprite(this.game, 0, 0, 'level1aAtlas', 'bg');
-                this.mainDummy.addChild(this.bg);
-                this.bg.fixedToCamera = true;
                 this.buildLevel();
-                this.game.world.setBounds(-1400, -280, 2330, 500);
+                this.game.world.setBounds(-1400, -200, 8730, 9600);
                 GlobalVar.bleft = this.game.world.position.x;
                 GlobalVar.bRight = this.game.world.position.x + this.game.world.width;
-                this.player = new Client.goBatman(this.game, -1250, 42.5);
+                this.player = new Client.goBatman(this.game, -983, 85);
                 this.player.scale.x = 1;
                 this.player.onAttack.add(this.checkAttack, this);
                 this.player.onBatarang.add(this.fireBatarang, this);
                 this.mainDummy.addChild(this.player);
-                this.game.camera.follow(this.player, Phaser.Camera.FOLLOW_LOCKON, 0.05, 0.05);
+                this.game.camera.follow(this.player, Phaser.Camera.FOLLOW_LOCKON, 0.05, 0.1);
                 this.game.camera.setPosition(this.player.x, this.player.y);
+                this.buildFrame();
                 this.game.camera.deadzone = new Phaser.Rectangle(100, 280, 0, 0);
+                this.night = new Phaser.Sprite(this.game, 0, 0, 'level2aAtlas', 'blur');
+                this.night.anchor.set(0.5);
+                this.night.scale.set(5);
+                this.mainDummy.addChild(this.night);
+                this.infoLevel = new Phaser.Sprite(this.game, 300, 100, 'level2aAtlas', 'info0001');
+                this.infoLevel.animations.add('play', Phaser.Animation.generateFrameNames('info', 1, 99, '', 4), 25, false).onComplete.addOnce(this.instructionStart, this);
+                this.infoLevel.anchor.set(0.5);
+                this.mainDummy.addChild(this.infoLevel);
+                this.infoLevel.fixedToCamera = true;
+                this.infoLevel.play('play');
+                this.instruction = new Client.goInstructions(this.game, 300, 200);
+                this.instruction.anchor.set(0.5);
+                this.mainDummy.addChild(this.instruction);
+                this.instruction.fixedToCamera = true;
                 this.guiPanel = new Client.goGuiPanel(this.game, 300, 35);
                 this.guiPanel.anchor.set(0.5);
                 this.mainDummy.addChild(this.guiPanel);
@@ -2989,7 +3792,18 @@ var PhaserGame;
                 this.punchButton = this.game.input.keyboard.addKey(Phaser.Keyboard.S);
                 this.batarangButton = this.game.input.keyboard.addKey(Phaser.Keyboard.A);
                 this.kickButton = this.game.input.keyboard.addKey(Phaser.Keyboard.D);
-                SndMng.playMusic(SndMng.LEVEL1C, 1, 1);
+                SndMng.playMusic(SndMng.LEVEL2A, 1, 1);
+            };
+            gslevel2a.prototype.buildFrame = function () {
+                for (var i = 0; i < this.doorFrameX.length; i++) {
+                    var newroof = new Phaser.Sprite(this.game, this.doorFrameX[i], this.doorFrameY[i], 'level2aAtlas', this.doorFrameName[i]);
+                    newroof.anchor.set(0.5);
+                    this.gArray.push(newroof);
+                    this.mainDummy.addChild(newroof);
+                }
+            };
+            gslevel2a.prototype.instructionStart = function () {
+                this.instruction.showInstruction('find');
             };
             gslevel2a.prototype.fireBatarang = function (e) {
                 GlobalVar.batarang--;
@@ -3073,37 +3887,73 @@ var PhaserGame;
                         }
                     }
                 }
+                if (bodyB && body) {
+                    if (bodyB.parent && body.parent) {
+                        if (bodyB.parent.sprite && body.parent.sprite) {
+                            if (bodyB.parent.sprite.data.name == 'elevator' && body.parent.sprite.data.name == 'player') {
+                                bodyB.parent.sprite.useEvent();
+                            }
+                            if (body.parent.sprite.data.name == 'elevator' && bodyB.parent.sprite.data.name == 'player') {
+                                body.parent.sprite.useEvent();
+                            }
+                        }
+                    }
+                }
             };
             gslevel2a.prototype.buildLevel = function () {
-                var down = new Phaser.Sprite(this.game, -870, 310, 'level1cAtlas', 'down');
-                down.scale.set(100, 10);
-                down.anchor.set(0.5);
-                this.mainDummy.addChild(down);
-                var top = new Phaser.Sprite(this.game, -870, -402, 'level1cAtlas', 'top');
-                top.scale.set(100, 5);
-                top.anchor.set(0.5);
-                this.mainDummy.addChild(top);
-                var ground = new Phaser.Sprite(this.game, -238, -85.3, 'level1cAtlas', 'front');
-                var scle = 1 + (1 - uMath.fromPercent(80, 100) / 100);
-                console.log(scle);
-                ground.scale.set(scle);
-                ground.anchor.set(0.5);
-                this.mainDummy.addChild(ground);
-                var car = new Phaser.Sprite(this.game, 832.15, 10.05, 'level1cAtlas', 'car0001');
-                car.anchor.set(0.5);
-                car.animations.add('car', Phaser.Animation.generateFrameNames('car', 1, 19, '', 4), 25, true);
-                this.mainDummy.addChild(car);
-                car.play('car');
-                this.game.physics.p2.enable(ground);
-                ground.body.setRectangle(ground.width - 50, 50, 0, 210);
-                ground.body.static = true;
-                ground.body.setCollisionGroup(GlobalVar.worldCollisionGroup);
-                ground.body.collides([GlobalVar.worldCollisionGroup, GlobalVar.playerCollisionGroup, GlobalVar.enemyCollisionGroup]);
+                for (var i = 0; i < this.physPosX.length; i++) {
+                    var ground = new Phaser.Sprite(this.game, this.physPosX[i], this.physPosY[i], 'level2aAtlas', 'phys');
+                    ground.anchor.set(0.5);
+                    ground.width = this.physW[i];
+                    ground.height = this.physH[i];
+                    ground.visible = false;
+                    this.mainDummy.addChild(ground);
+                    this.game.physics.p2.enable(ground);
+                    ground.body.setRectangle(ground.width, ground.height, 0, 0);
+                    ground.body.static = true;
+                    ground.body.setCollisionGroup(GlobalVar.worldCollisionGroup);
+                    ground.body.collides([GlobalVar.worldCollisionGroup, GlobalVar.playerCollisionGroup, GlobalVar.enemyCollisionGroup]);
+                }
+                for (var i = 0; i < this.gfX.length; i++) {
+                    var newroof = new Phaser.Sprite(this.game, this.gfX[i], this.gfY[i], 'level2aAtlas', this.gName[i]);
+                    newroof.anchor.set(0.5);
+                    newroof.scale.x = this.gScaleX[i];
+                    newroof.scale.y = this.gScaleY[i];
+                    this.gArray.push(newroof);
+                    this.mainDummy.addChild(newroof);
+                }
                 for (var i = 0; i < this.objectName.length; i++) {
                     var newobj;
                     switch (this.objectName[i]) {
-                        case 'goEBoss1': {
-                            newobj = new Client.goEBoss1(this.game, this.objectX[i], this.objectY[i]);
+                        case 'goElevator': {
+                            newobj = new Client.goElevator(this.game, this.objectX[i], this.objectY[i]);
+                            this.objectArray.push(newobj);
+                            newobj.setLength(this.objectP[i]);
+                            newobj.scale.x = this.objectSX[i];
+                            break;
+                        }
+                        case 'goElevator2': {
+                            newobj = new Client.goElevator2(this.game, this.objectX[i], this.objectY[i]);
+                            this.objectArray.push(newobj);
+                            newobj.setLength(this.objectP[i]);
+                            newobj.scale.x = this.objectSX[i];
+                            break;
+                        }
+                        case 'goDoor': {
+                            newobj = new Client.goDoor(this.game, this.objectX[i], this.objectY[i]);
+                            this.objectArray.push(newobj);
+                            newobj.scale.x = this.objectSX[i];
+                            break;
+                        }
+                        case 'goHealth': {
+                            newobj = new Client.goHealth(this.game, this.objectX[i], this.objectY[i]);
+                            this.objectArray.push(newobj);
+                            newobj.scale.x = this.objectSX[i];
+                            console.log(this.objectX[i], this.objectY[i]);
+                            break;
+                        }
+                        case 'goEBio': {
+                            newobj = new Client.goEBio(this.game, this.objectX[i], this.objectY[i]);
                             newobj.onAttack.add(this.attackedBatman, this);
                             this.enemyArray.push(newobj);
                             break;
@@ -3124,8 +3974,24 @@ var PhaserGame;
                     btrng.body.setCollisionGroup(GlobalVar.worldCollisionGroup);
                     btrng.body.collides(GlobalVar.playerCollisionGroup, GlobalVar.worldCollisionGroup);
                 }
+                for (var i = 0; i < this.chckX.length; i++) {
+                    var chck = new Phaser.Sprite(this.game, this.chckX[i] - 100, this.chckY[i] + 100);
+                    chck.anchor.set(0.5);
+                    this.mainDummy.addChild(chck);
+                    this.chckArray.push(chck);
+                    this.game.physics.p2.enable(chck);
+                    chck.body.setRectangle(100, 100, 0, 0);
+                    chck.body.static = true;
+                    chck.body.setCollisionGroup(GlobalVar.worldCollisionGroup);
+                    chck.body.collides([GlobalVar.playerCollisionGroup]);
+                    chck.body.data.shapes[0].sensor = true;
+                    chck.data.name = 'chck';
+                    chck.data.var = this.chckV[i];
+                }
             };
             gslevel2a.prototype.update = function () {
+                this.night.x = this.player.x - 10;
+                this.night.y = this.player.y - 50;
                 for (var i = 0; i < this.objectArray.length; i++) {
                     this.objectArray[i].logicUpdate(this.player.x, this.player.y);
                 }
@@ -3156,12 +4022,14 @@ var PhaserGame;
                     }
                 }
                 if (this.cursors.left.isDown) {
-                    this.game.camera.deadzone.setTo(500, 280, 0, 0);
+                    if (!GlobalVar.dontFollow)
+                        this.game.camera.deadzone.setTo(500, 280, 0, 0);
                     this.player.moveLeft();
                     this.player.scale.x = -1;
                 }
                 else if (this.cursors.right.isDown) {
-                    this.game.camera.deadzone.setTo(100, 280, 0, 0);
+                    if (!GlobalVar.dontFollow)
+                        this.game.camera.deadzone.setTo(100, 280, 0, 0);
                     this.player.moveRight();
                     this.player.scale.x = 1;
                 }
@@ -3196,15 +4064,11 @@ var PhaserGame;
                 this.guiPanel.setLife(GlobalVar.life);
                 this.guiPanel.setScore(GlobalVar.score);
                 this.guiPanel.setBatarantg(GlobalVar.batarang);
-                {
-                    var pass = true;
-                    for (var i = 0; i < this.enemyArray.length; i++) {
-                        if (!this.enemyArray[i].death) {
-                            pass = false;
-                        }
-                    }
-                    if (pass) {
-                        console.log(this.enemyArray.length);
+                if (this.player.y > 6850) {
+                    this.endLevel = true;
+                }
+                if (this.endLevel) {
+                    if (this.timeToEnd < 0) {
                         if (!this.fade.visible) {
                             this.fade.visible = true;
                             this.fade.setFadeOut(true);
@@ -3212,6 +4076,9 @@ var PhaserGame;
                             this.fade.onComplete.addOnce(this.nextLevel, this);
                             this.game.camera.unfollow();
                         }
+                    }
+                    else {
+                        this.timeToEnd--;
                     }
                 }
                 if (this.player.health <= 0) {
@@ -3226,7 +4093,7 @@ var PhaserGame;
             };
             gslevel2a.prototype.nextLevel = function () {
                 this.game.physics.p2.onBeginContact.remove(this.beginContactListeners, this);
-                this.game.state.start(States.CLIP2, true, false);
+                this.game.state.start(States.CLIP3, true, false);
             };
             gslevel2a.prototype.showClipDeath = function () {
                 if (GlobalVar.life > 0) {
@@ -3248,12 +4115,466 @@ var PhaserGame;
 (function (PhaserGame) {
     var Client;
     (function (Client) {
+        var gslevel2b = (function (_super) {
+            __extends(gslevel2b, _super);
+            function gslevel2b() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.gfX = [373, 3024, -903.45, -903.45, -903.45, -903.45, -903.45, -903.45, -432.90, -177.3, 175, 578.55, 930.75, 1183, 1650.9, 1650.9, 2121, 2428, 2831, 3222, 3626, 3930, 5312.8, 4172, 4212, 4178, 4365, 4122, 4219, 4352, 4632, 4944, 5080, 5216, 5331, 5364, 5345, 5564, 5544, 4200, 5833, 6023, 6087, 6152, 6446, 6849, 6849, 6849, 6849, 6849, 6849, 6399, 5532, 5025, 5501, 5968, 6429, 6150, 5256, 4396, 4801, 5194, 5587, 5989, 6372, 4519, 4924, 5675, 6456, 6491, 3228, 3873, 4113, 4465, 4869, 5163, 5470, 6174, 5873, 6391, 5131, 6849, 6849, 6849];
+                _this.gfY = [2020, 2809, -1635.9, -864.85, -113.1, 657.9, 1434.7, 2205.75, 2287, 2287, 2287, 2287, 2287, 2286, 2204, 2975, 3075, 3075, 3075, 3075, 3075, 3075, 2985.7, 3137, 3138, 3260, 2948, 3522, 3538, 3525, 3465, 3482, 3485, 3485, 3486, 3487, 3543, 3534, 3571, 3563, 3554, 3540, 3540, 3540, 3548, 2631, 3404, 4179, 4950, 5711, 6483, 3384, 3299, 3184, 3008, 2901, 2895, 2746, 2754, 2517, 2517, 2517, 2517, 2517, 2517, 2515, 2515, 2526, 2518, 2505, 6330, 6785, 6785, 6785, 6785, 6785, 6785, 6785, 6785, 6785, 6517, 7909, 7138, 6483];
+                _this.gName = ['g29', 'g29', 'g1', 'g1', 'g1', 'g1', 'g1', 'g1', 'g2', 'g3', 'g4', 'g4', 'g3', 'g5', 'g1', 'g1', 'g2', 'g4', 'g4', 'g6', 'g6', 'g5', 'g7', 'g8', 'g9', 'g10', 'g11', 'g12', 'g13', 'g14', 'g15', 'g16', 'g16', 'g16', 'g8', 'g9', 'g11', 'g13', 'g17', 'g17', 'g11', 'g18', 'g18', 'g18', 'g19', 'g1', 'g1', 'g1', 'g1', 'g1', 'g11', 'g20', 'g20', 'g20', 'g20', 'g20', 'g10', 'g11', 'g11', 'g21', 'g21', 'g21', 'g21', 'g21', 'g21', 'g22', 'g22', 'g22', 'g22', 'g22', 'g27', 'g2', 'g3', 'g6', 'g6', 'g3', 'g4', 'g3', 'g4', 'g5', 'g29', 'g1', 'g1', 'g1'];
+                _this.gScaleX = [10, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.7, 1, 1, 1, 0.7, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, -1, 1, 1, 1, 1, 1, 1, 1, 1, 0.8, -0.6, -0.8, 1.1, 0.6, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, 13.5, 1, 1, 1];
+                _this.gScaleY = [10, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.7, 1, 1, 1, 0.7, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.8, 0.6, 0.8, 1.1, 0.6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 10, 1, 1, 1];
+                _this.gArray = [];
+                _this.physPosX = [-902.75, -489.85, -612.5, -185.6, 1319.05, -1285.65, 603.45, 1351.6, 1773.3, 1951.3, 3105.65, 2807.65, 4047.35, 4207.75, 4063.9, 5312.45, 6588.9, 6505.1, 6583.75, 6865.2, 7138.4, 5302.1, 5024.25, 5498.2, 5527.7, 5962.3, 6364.35, 2823.65, 5017.5, 2724.85, 4768.1, 3759.7, 6569.75, 6949.55];
+                _this.physPosY = [-2172.15, 31.55, 2187.6, 2699.35, 3053.75, 189.35, 1965.15, 2176.75, 1911.3, 2513.6, 2751.6, 3451.65, 2932.7, 3244.7, 2553.95, 2459.25, 2558.6, 2869.55, 4311.1, 2459.25, 4792.8, 3961.85, 3207.95, 3035.15, 3320.75, 2935.3, 3410.25, 6139.15, 6138.6, 6978.4, 7143.45, 6672.05, 6657.6, 7268.65];
+                _this.physW = [1260.95, 455.85, 230.25, 2706.6, 326, 455.85, 1738, 252.5, 609, 257.15, 2058.8, 2655.4, 182.65, 146.9, 152.65, 2354.75, 215.2, 382.9, 216.3, 358.6, 208, 2355.8, 287.7, 291.8, 293.9, 290.3, 234.9, 500.9, 3333.8, 311.5, 3838.95, 198.2, 238.45, 593.15];
+                _this.physH = [280.4, 4122.25, 195.05, 579, 1293.5, 4452.35, 256.1, 179.55, 159.4, 1050.4, 139.7, 490, 234.9, 74.5, 261.8, 72.95, 271.65, 56.9, 2830.2, 72.95, 4795.95, 749.75, 60, 64.2, 67.3, 69.85, 58.5, 884.8, 869.6, 823.2, 470.8, 199.7, 199.7, 199.7];
+                _this.objectX = [-470, -720, 1469, 1220, 2080, 1831, 4128, 3966, 6662, 6500, 2769, 2604, 3838, 3678, 6670, 6418, -900, 1652, 6853];
+                _this.objectY = [2330, 2330, 2322, 2322, 3111, 3111, 3105, 3105, 2758, 2758, 4675, 4675, 6829, 6829, 6833, 6833, 2430, 3225, 6962];
+                _this.objectP = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 137, 2455, 2890];
+                _this.objectSX = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, 1, -1];
+                _this.objectName = ['goDoor', 'goDoor', 'goDoor', 'goDoor', 'goDoor', 'goDoor', 'goDoor', 'goDoor', 'goDoor', 'goDoor', 'goDoor', 'goDoor', 'goDoor', 'goDoor', 'goDoor', 'goDoor', 'goElevator', 'goElevator2', 'goElevator'];
+                _this.objectArray = [];
+                _this.doorFrameX = [-597, 1345, 1955, 4048, 6580, 2688, 3227, 6544, 3758];
+                _this.doorFrameY = [2236, 2227, 3017, 3035, 2688, 4606, 5744, 6739, 6760];
+                _this.doorFrameName = ['g30', 'g30', 'g30', 'g31', 'g31', 'g31', 'g33', 'g30', 'g31'];
+                _this.enemyArray = [];
+                _this.chckX = [3531, 6170];
+                _this.chckY = [6799, 6767];
+                _this.chckV = ['escape', 'elevator'];
+                _this.chckArray = [];
+                _this.batarangX = [-922, 181, 576, 2440, 2820, 5998, 6138, 6057, 3218];
+                _this.batarangY = [757, 2290, 2290, 3087, 3087, 3184, 3391, 5009, 5602];
+                _this.batarangArray = [];
+                _this.timeToEnd = 50;
+                _this.endLevel = false;
+                return _this;
+            }
+            gslevel2b.prototype.destroy = function () {
+                for (var i = 0; i < this.objectArray.length; i++) {
+                    this.objectArray[i] = null;
+                }
+                this.objectArray = [];
+                for (var i = 0; i < this.enemyArray.length; i++) {
+                    this.enemyArray[i] = null;
+                }
+                this.enemyArray = [];
+                this.endLevel = false;
+            };
+            gslevel2b.prototype.create = function () {
+                this.destroy();
+                GlobalVar.levelContinue = States.LEVEL2B;
+                console.log(this.gfX.length);
+                console.log(this.gfY.length);
+                console.log(this.gName.length);
+                console.log(this.gScaleX.length);
+                console.log(this.gScaleY.length);
+                this.game.physics.startSystem(Phaser.Physics.P2JS);
+                this.game.physics.p2.gravity.y = 1900;
+                this.game.physics.p2.restitution = 0;
+                this.game.physics.p2.setBounds(-4150, -1500, 10000, 2000);
+                this.game.physics.p2.onBeginContact.add(this.beginContactListeners, this);
+                this.game.physics.p2.setImpactEvents(true);
+                GlobalVar.playerCollisionGroup = this.game.physics.p2.createCollisionGroup();
+                GlobalVar.enemyCollisionGroup = this.game.physics.p2.createCollisionGroup();
+                GlobalVar.worldCollisionGroup = this.game.physics.p2.createCollisionGroup();
+                this.game.physics.p2.updateBoundsCollisionGroup();
+                this.mainDummy = new Phaser.Sprite(this.game, 0, 0);
+                this.add.existing(this.mainDummy);
+                this.buildLevel();
+                this.game.world.setBounds(-1400, -200, 8730, 9600);
+                GlobalVar.bleft = this.game.world.position.x;
+                GlobalVar.bRight = this.game.world.position.x + this.game.world.width;
+                this.player = new Client.goBatman(this.game, 3202, 6616);
+                this.player.scale.x = 1;
+                this.player.onAttack.add(this.checkAttack, this);
+                this.player.onBatarang.add(this.fireBatarang, this);
+                this.mainDummy.addChild(this.player);
+                this.game.camera.follow(this.player, Phaser.Camera.FOLLOW_LOCKON, 0.05, 0.1);
+                this.game.camera.setPosition(this.player.x, this.player.y);
+                this.buildFrame();
+                this.game.camera.deadzone = new Phaser.Rectangle(100, 280, 0, 0);
+                this.night = new Phaser.Sprite(this.game, 300, 200, 'gameObjectAtlas', 'blood');
+                this.night.anchor.set(0.5);
+                this.night.scale.set(15);
+                this.night.alpha = 0;
+                this.night.fixedToCamera = true;
+                this.mainDummy.addChild(this.night);
+                this.game.add.tween(this.night).to({ alpha: 0.3 }, 600, Phaser.Easing.Linear.None, true, 0, -1, true);
+                this.smoke = new Phaser.Sprite(this.game, 300, 200, 'gameObjectAtlas', 'smoke0001');
+                this.smoke.anchor.set(0.5);
+                this.smoke.scale.set(2);
+                this.smoke.animations.add('smoke', Phaser.Animation.generateFrameNames('smoke', 1, 4, '', 4), 4, false).onComplete.addOnce(this.showDefeat, this);
+                this.smoke.fixedToCamera = true;
+                this.smoke.visible = false;
+                this.mainDummy.addChild(this.smoke);
+                this.instruction = new Client.goInstructions(this.game, 300, 200);
+                this.instruction.anchor.set(0.5);
+                this.mainDummy.addChild(this.instruction);
+                this.instruction.fixedToCamera = true;
+                this.guiPanel = new Client.goGuiPanel(this.game, 300, 35);
+                this.guiPanel.anchor.set(0.5);
+                this.mainDummy.addChild(this.guiPanel);
+                this.guiPanel.setLife(2);
+                this.guiPanel.fixedToCamera = true;
+                this.timerPanel = new Client.goTimer(this.game, 80, 35);
+                this.timerPanel.anchor.set(0.5);
+                this.timerPanel.scale.set(0.8);
+                this.timerPanel.onComplete.addOnce(this.defeat, this);
+                this.mainDummy.addChild(this.timerPanel);
+                this.timerPanel.fixedToCamera = true;
+                this.fade = new Client.gFade(this.game, 300, 200);
+                this.mainDummy.addChild(this.fade);
+                this.fade.fixedToCamera = true;
+                this.fade.setFadeOut(false);
+                this.fade.onComplete.addOnce(this.destroyFade, this);
+                this.fade.start();
+                this.cursors = this.game.input.keyboard.createCursorKeys();
+                this.jumpButton = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+                this.punchButton = this.game.input.keyboard.addKey(Phaser.Keyboard.S);
+                this.batarangButton = this.game.input.keyboard.addKey(Phaser.Keyboard.A);
+                this.kickButton = this.game.input.keyboard.addKey(Phaser.Keyboard.D);
+                SndMng.playMusic(SndMng.LEVEL2B, 1, 1);
+            };
+            gslevel2b.prototype.defeat = function () {
+                this.smoke.play('smoke');
+                this.smoke.visible = true;
+            };
+            gslevel2b.prototype.showDefeat = function () {
+                if (!this.fade.visible) {
+                    this.fade.visible = true;
+                    this.fade.setFadeOut(true);
+                    this.fade.onComplete.addOnce(this.showClipDeath, this);
+                    this.fade.start();
+                    this.player.death = true;
+                }
+            };
+            gslevel2b.prototype.buildFrame = function () {
+                for (var i = 0; i < this.doorFrameX.length; i++) {
+                    var newroof = new Phaser.Sprite(this.game, this.doorFrameX[i], this.doorFrameY[i], 'level2aAtlas', this.doorFrameName[i]);
+                    newroof.anchor.set(0.5);
+                    this.gArray.push(newroof);
+                    this.mainDummy.addChild(newroof);
+                }
+            };
+            gslevel2b.prototype.instructionStart = function () {
+                this.instruction.showInstruction('find');
+            };
+            gslevel2b.prototype.fireBatarang = function (e) {
+                GlobalVar.batarang--;
+                var btrng = new Client.goBatarang(this.game, this.player.x + (this.player.scale.x * 50), this.player.y - e.y);
+                this.objectArray.push(btrng);
+                this.mainDummy.addChild(btrng);
+                btrng.body.velocity.x = this.player.scale.x * 1000;
+            };
+            gslevel2b.prototype.checkAttack = function (e) {
+                for (var i = 0; i < this.objectArray.length; i++) {
+                    this.objectArray[i].attack(this.player.x, this.player.y, e);
+                }
+                for (var i = 0; i < this.enemyArray.length; i++) {
+                    this.enemyArray[i].attack(this.player.x, this.player.y, e);
+                }
+            };
+            gslevel2b.prototype.attackedBatman = function (e) {
+                this.player.hurt(e);
+            };
+            gslevel2b.prototype.destroyFade = function () {
+                this.fade.visible = false;
+            };
+            gslevel2b.prototype.beginContactListeners = function (body, bodyB, shapeA, shapeB, equation) {
+                if (bodyB && body) {
+                    if (bodyB.parent && body.parent) {
+                        if (bodyB.parent.sprite && body.parent.sprite) {
+                            if (bodyB.parent.sprite.data.name == 'chck' && body.parent.sprite.data.name == 'player') {
+                                this.instruction.showInstruction(bodyB.parent.sprite.data.var);
+                            }
+                            if (body.parent.sprite.data.name == 'chck' && bodyB.parent.sprite.data.name == 'player') {
+                                this.instruction.showInstruction(body.parent.sprite.data.var);
+                            }
+                        }
+                    }
+                }
+                if (bodyB && body) {
+                    if (bodyB.parent && body.parent) {
+                        if (bodyB.parent.sprite && body.parent.sprite) {
+                            if (bodyB.parent.sprite.data.name == 'batarang' && body.parent.sprite.data.name == 'player') {
+                                bodyB.parent.sprite.body.clearShapes();
+                                bodyB.parent.sprite.visible = false;
+                                SndMng.sfxPlay(SndMng.SFX_ITEM);
+                                GlobalVar.batarang += 5;
+                                GlobalVar.score += 5;
+                            }
+                            if (body.parent.sprite.data.name == 'batarang' && bodyB.parent.sprite.data.name == 'player') {
+                                body.parent.sprite.body.clearShapes();
+                                body.parent.sprite.visible = false;
+                                SndMng.sfxPlay(SndMng.SFX_ITEM);
+                                GlobalVar.batarang += 5;
+                                GlobalVar.score += 5;
+                            }
+                        }
+                    }
+                }
+                if (bodyB && body) {
+                    if (bodyB.parent && body.parent) {
+                        if (bodyB.parent.sprite && body.parent.sprite) {
+                            if (bodyB.parent.sprite.data.name == 'firebatarang' && body.parent.sprite.data.name == 'enemy') {
+                                if (body.parent.sprite.useEvent()) {
+                                    bodyB.parent.sprite.visible = false;
+                                }
+                            }
+                            if (body.parent.sprite.data.name == 'firebatarang' && bodyB.parent.sprite.data.name == 'enemy') {
+                                if (bodyB.parent.sprite.useEvent()) {
+                                    body.parent.sprite.visible = false;
+                                }
+                            }
+                        }
+                    }
+                }
+                if (bodyB && body) {
+                    if (bodyB.parent && body.parent) {
+                        if (bodyB.parent.sprite && body.parent.sprite) {
+                            if (bodyB.parent.sprite.data.name == 'can' && body.parent.sprite.data.name == 'player') {
+                                bodyB.parent.sprite.useEvent();
+                            }
+                            if (body.parent.sprite.data.name == 'can' && bodyB.parent.sprite.data.name == 'player') {
+                                body.parent.sprite.useEvent();
+                            }
+                        }
+                    }
+                }
+                if (bodyB && body) {
+                    if (bodyB.parent && body.parent) {
+                        if (bodyB.parent.sprite && body.parent.sprite) {
+                            if (bodyB.parent.sprite.data.name == 'elevator' && body.parent.sprite.data.name == 'player') {
+                                bodyB.parent.sprite.useEvent();
+                            }
+                            if (body.parent.sprite.data.name == 'elevator' && bodyB.parent.sprite.data.name == 'player') {
+                                body.parent.sprite.useEvent();
+                            }
+                        }
+                    }
+                }
+            };
+            gslevel2b.prototype.buildLevel = function () {
+                for (var i = 0; i < this.physPosX.length; i++) {
+                    var ground = new Phaser.Sprite(this.game, this.physPosX[i], this.physPosY[i], 'level2aAtlas', 'phys');
+                    ground.anchor.set(0.5);
+                    ground.width = this.physW[i];
+                    ground.height = this.physH[i];
+                    ground.visible = false;
+                    this.mainDummy.addChild(ground);
+                    this.game.physics.p2.enable(ground);
+                    ground.body.setRectangle(ground.width, ground.height, 0, 0);
+                    ground.body.static = true;
+                    ground.body.setCollisionGroup(GlobalVar.worldCollisionGroup);
+                    ground.body.collides([GlobalVar.worldCollisionGroup, GlobalVar.playerCollisionGroup, GlobalVar.enemyCollisionGroup]);
+                }
+                for (var i = 0; i < this.gfX.length; i++) {
+                    var newroof = new Phaser.Sprite(this.game, this.gfX[i], this.gfY[i], 'level2aAtlas', this.gName[i]);
+                    newroof.anchor.set(0.5);
+                    newroof.scale.x = this.gScaleX[i];
+                    newroof.scale.y = this.gScaleY[i];
+                    this.gArray.push(newroof);
+                    this.mainDummy.addChild(newroof);
+                }
+                for (var i = 0; i < this.objectName.length; i++) {
+                    var newobj;
+                    switch (this.objectName[i]) {
+                        case 'goElevator': {
+                            newobj = new Client.goElevator(this.game, this.objectX[i], this.objectY[i]);
+                            this.objectArray.push(newobj);
+                            newobj.setLength(this.objectP[i]);
+                            newobj.scale.x = this.objectSX[i];
+                            break;
+                        }
+                        case 'goElevator2': {
+                            newobj = new Client.goElevator2(this.game, this.objectX[i], this.objectY[i]);
+                            this.objectArray.push(newobj);
+                            newobj.setLength(this.objectP[i]);
+                            newobj.scale.x = this.objectSX[i];
+                            break;
+                        }
+                        case 'goDoor': {
+                            newobj = new Client.goDoor(this.game, this.objectX[i], this.objectY[i]);
+                            this.objectArray.push(newobj);
+                            newobj.scale.x = this.objectSX[i];
+                            break;
+                        }
+                        case 'goHealth': {
+                            newobj = new Client.goHealth(this.game, this.objectX[i], this.objectY[i]);
+                            this.objectArray.push(newobj);
+                            newobj.scale.x = this.objectSX[i];
+                            break;
+                        }
+                        case 'goEBio': {
+                            newobj = new Client.goEBio(this.game, this.objectX[i], this.objectY[i]);
+                            newobj.onAttack.add(this.attackedBatman, this);
+                            this.enemyArray.push(newobj);
+                            break;
+                        }
+                    }
+                    this.mainDummy.addChild(newobj);
+                }
+                for (var i = 0; i < this.batarangX.length; i++) {
+                    var btrng = new Phaser.Sprite(this.game, this.batarangX[i] + 25, this.batarangY[i], 'gameObjectAtlas', 'batarang');
+                    btrng.anchor.set(0.5);
+                    this.mainDummy.addChild(btrng);
+                    this.batarangArray.push(btrng);
+                    this.game.physics.p2.enable(btrng);
+                    btrng.body.setRectangle(50, 50, 0, 0);
+                    btrng.body.static = true;
+                    btrng.body.data.shapes[0].sensor = true;
+                    btrng.data.name = 'batarang';
+                    btrng.body.setCollisionGroup(GlobalVar.worldCollisionGroup);
+                    btrng.body.collides(GlobalVar.playerCollisionGroup, GlobalVar.worldCollisionGroup);
+                }
+                for (var i = 0; i < this.chckX.length; i++) {
+                    var chck = new Phaser.Sprite(this.game, this.chckX[i] - 100, this.chckY[i] + 100);
+                    chck.anchor.set(0.5);
+                    this.mainDummy.addChild(chck);
+                    this.chckArray.push(chck);
+                    this.game.physics.p2.enable(chck);
+                    chck.body.setRectangle(100, 100, 0, 0);
+                    chck.body.static = true;
+                    chck.body.setCollisionGroup(GlobalVar.worldCollisionGroup);
+                    chck.body.collides([GlobalVar.playerCollisionGroup]);
+                    chck.body.data.shapes[0].sensor = true;
+                    chck.data.name = 'chck';
+                    chck.data.var = this.chckV[i];
+                }
+            };
+            gslevel2b.prototype.update = function () {
+                this.timerPanel.update();
+                for (var i = 0; i < this.objectArray.length; i++) {
+                    this.objectArray[i].logicUpdate(this.player.x, this.player.y);
+                }
+                for (var i = 0; i < this.enemyArray.length; i++) {
+                    this.enemyArray[i].logicUpdate(this.player.x, this.player.y);
+                }
+                if (this.fade) {
+                    if (this.fade.visible) {
+                        this.fade.update();
+                    }
+                }
+                if (this.endLevel) {
+                    var pass = true;
+                    for (var i = 0; i < this.enemyArray.length; i++) {
+                        if (!this.enemyArray[i].death) {
+                            pass = false;
+                        }
+                    }
+                    if (pass) {
+                        console.log(this.enemyArray.length);
+                        if (!this.fade.visible) {
+                            this.fade.visible = true;
+                            this.fade.setFadeOut(true);
+                            this.fade.start();
+                            this.fade.onComplete.addOnce(this.nextLevel, this);
+                            this.game.camera.unfollow();
+                        }
+                    }
+                }
+                if (this.cursors.left.isDown) {
+                    if (!GlobalVar.dontFollow)
+                        this.game.camera.deadzone.setTo(500, 280, 0, 0);
+                    this.player.moveLeft();
+                    this.player.scale.x = -1;
+                }
+                else if (this.cursors.right.isDown) {
+                    if (!GlobalVar.dontFollow)
+                        this.game.camera.deadzone.setTo(100, 280, 0, 0);
+                    this.player.moveRight();
+                    this.player.scale.x = 1;
+                }
+                else if (this.cursors.up.isDown) {
+                    this.player.seeUp();
+                }
+                else if (this.cursors.down.isDown) {
+                    this.player.sitDown();
+                }
+                else {
+                    this.player.stopMove();
+                }
+                if (this.jumpButton.isDown) {
+                    this.player.jump();
+                }
+                if (this.punchButton.isDown) {
+                    this.player.punch();
+                }
+                if (this.kickButton.isDown) {
+                    this.player.kick();
+                }
+                if (this.punchButton.isUp) {
+                    this.player.punchButtonUp();
+                }
+                if (this.batarangButton.isDown) {
+                    if (GlobalVar.batarang > 0) {
+                        this.player.batarang();
+                    }
+                }
+                this.player.update();
+                this.guiPanel.setHealth(this.player.health);
+                this.guiPanel.setLife(GlobalVar.life);
+                this.guiPanel.setScore(GlobalVar.score);
+                this.guiPanel.setBatarantg(GlobalVar.batarang);
+                if (this.player.y < 80) {
+                    this.endLevel = true;
+                }
+                if (this.endLevel) {
+                    if (this.timeToEnd < 0) {
+                        if (!this.fade.visible) {
+                            this.fade.visible = true;
+                            this.fade.setFadeOut(true);
+                            this.fade.start();
+                            this.fade.onComplete.addOnce(this.nextLevel, this);
+                            this.game.camera.unfollow();
+                        }
+                    }
+                    else {
+                        this.timeToEnd--;
+                    }
+                }
+                if (this.player.health <= 0) {
+                    if (!this.fade.visible) {
+                        this.fade.visible = true;
+                        this.fade.setFadeOut(true);
+                        this.fade.onComplete.addOnce(this.showClipDeath, this);
+                        this.fade.start();
+                        this.player.death = true;
+                    }
+                }
+            };
+            gslevel2b.prototype.nextLevel = function () {
+                this.game.physics.p2.onBeginContact.remove(this.beginContactListeners, this);
+                this.game.state.start(States.CLIP4, true, false);
+            };
+            gslevel2b.prototype.showClipDeath = function () {
+                if (GlobalVar.life > 0) {
+                    this.game.physics.p2.onBeginContact.remove(this.beginContactListeners, this);
+                    GlobalVar.life--;
+                    this.game.state.start(States.CONTINUE, true, false);
+                }
+                else {
+                    this.game.physics.p2.onBeginContact.remove(this.beginContactListeners, this);
+                    this.game.state.start(States.MAINMENU, true, false);
+                }
+            };
+            return gslevel2b;
+        }(Phaser.State));
+        Client.gslevel2b = gslevel2b;
+    })(Client = PhaserGame.Client || (PhaserGame.Client = {}));
+})(PhaserGame || (PhaserGame = {}));
+var PhaserGame;
+(function (PhaserGame) {
+    var Client;
+    (function (Client) {
         var gsMainMenu = (function (_super) {
             __extends(gsMainMenu, _super);
             function gsMainMenu() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
             gsMainMenu.prototype.create = function () {
+                this.stage.setBackgroundColor(0x211D1B);
                 this.mainDummy = new Phaser.Sprite(this.game, Config.GW / 2, Config.GH / 2);
                 this.mainDummy.anchor.set(0.5);
                 this.add.existing(this.mainDummy);
@@ -3342,7 +4663,10 @@ var PhaserGame;
                 this.load.atlasJSONArray('continueAtlas', './assets/atlases/continue_atlas.png', './assets/atlases/continue_atlas.json');
                 this.load.atlasJSONArray('enemyAtlas', './assets/atlases/enemy_atlas.png', './assets/atlases/enemy_atlas.json');
                 this.load.atlasJSONArray('bossAtlas1', './assets/atlases/boss1_atlas.png', './assets/atlases/boss1_atlas.json');
+                this.load.atlasJSONArray('level2aAtlas', './assets/atlases/level2a_atlas.png', './assets/atlases/level2a_atlas.json');
+                this.load.atlasJSONArray('clip3Atlas', './assets/atlases/clip3_atlas.png', './assets/atlases/clip3_atlas.json');
                 this.load.bitmapFont('myFont', './assets/atlases/font.png', './assets/atlases/font.xml');
+                this.load.bitmapFont('myFont3', './assets/atlases/font3.png', './assets/atlases/font3.xml');
                 SndMng.init(this.game, true, true);
                 var sndFiles = SndMng.LOAD_SOUNDS;
                 for (var i = 0; i < sndFiles.length; i++) {
@@ -3409,10 +4733,13 @@ var States;
     States.INSTRUCTIONS = 'Instructions';
     States.CLIP1 = 'Clip1';
     States.CLIP2 = 'Clip2';
+    States.CLIP3 = 'Clip3';
+    States.CLIP4 = 'Clip4';
     States.LEVEL1A = 'Level1a';
     States.LEVEL1B = 'Level1b';
     States.LEVEL1C = 'Level1c';
     States.LEVEL2A = 'Level2a';
+    States.LEVEL2B = 'Level2b';
     States.CONTINUE = 'Continue';
 })(States || (States = {}));
 var PhaserGame;
@@ -3848,6 +5175,8 @@ var SndMng;
     SndMng.LEVEL1A = 'level1a';
     SndMng.LEVEL1B = 'level1b';
     SndMng.LEVEL1C = 'level1c';
+    SndMng.LEVEL2A = 'level2a';
+    SndMng.LEVEL2B = 'level2b';
     SndMng.SFX_JUMP = 'jump';
     SndMng.SFX_ITEM = 'item';
     SndMng.SFX_BITA = 'attackbita';
@@ -3862,7 +5191,8 @@ var SndMng;
     SndMng.SFX_BATIG = 'batig';
     SndMng.SFX_EXPLODE = 'explode';
     SndMng.SFX_ELECTRO = 'electro';
-    SndMng.LOAD_SOUNDS = [SndMng.SFX_METAL1, SndMng.SFX_ELECTRO, SndMng.LEVEL1C, SndMng.SFX_EXPLODE, SndMng.SFX_BATIG, SndMng.SFX_HIHI, SndMng.SFX_BIKE_DIE, SndMng.SFX_KICK, SndMng.CLIP_1, SndMng.SFX_BIKE, SndMng.SFX_DIE1, SndMng.SFX_PUNCH, SndMng.SFX_DOWN, SndMng.MENU, SndMng.LEVEL1A, SndMng.SFX_JUMP, SndMng.SFX_ITEM, SndMng.LEVEL1B, SndMng.SFX_BITA];
+    SndMng.SFX_DOOR = 'door';
+    SndMng.LOAD_SOUNDS = [SndMng.SFX_METAL1, SndMng.LEVEL2B, SndMng.SFX_DOOR, SndMng.LEVEL2A, SndMng.SFX_ELECTRO, SndMng.LEVEL1C, SndMng.SFX_EXPLODE, SndMng.SFX_BATIG, SndMng.SFX_HIHI, SndMng.SFX_BIKE_DIE, SndMng.SFX_KICK, SndMng.CLIP_1, SndMng.SFX_BIKE, SndMng.SFX_DIE1, SndMng.SFX_PUNCH, SndMng.SFX_DOWN, SndMng.MENU, SndMng.LEVEL1A, SndMng.SFX_JUMP, SndMng.SFX_ITEM, SndMng.LEVEL1B, SndMng.SFX_BITA];
     var MUS_MAX_VOL = 1;
     var game;
     var enabledMusic;
