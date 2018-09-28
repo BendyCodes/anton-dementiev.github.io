@@ -1,0 +1,229 @@
+{
+  "resources": [
+    "audiosprite.ogg",
+    "audiosprite.m4a",
+    "audiosprite.mp3"
+  ],
+  "spritemap": {
+    "ax_attack": {
+      "start": 0,
+      "end": 2.089795918367347,
+      "loop": false
+    },
+    "boss_attack": {
+      "start": 4,
+      "end": 5.645714285714286,
+      "loop": false
+    },
+    "boss_die": {
+      "start": 7,
+      "end": 9.873469387755101,
+      "loop": false
+    },
+    "boss_hurt_a": {
+      "start": 11,
+      "end": 12.410612244897958,
+      "loop": false
+    },
+    "boss_hurt_b": {
+      "start": 14,
+      "end": 15.358367346938776,
+      "loop": false
+    },
+    "button_click": {
+      "start": 17,
+      "end": 18.54122448979592,
+      "loop": false
+    },
+    "consumable": {
+      "start": 20,
+      "end": 22.795102040816328,
+      "loop": false
+    },
+    "critical": {
+      "start": 24,
+      "end": 27.186938775510203,
+      "loop": false
+    },
+    "critical_shield": {
+      "start": 29,
+      "end": 32.944489795918365,
+      "loop": false
+    },
+    "enemy1_hurt_a": {
+      "start": 34,
+      "end": 35.28,
+      "loop": false
+    },
+    "enemy1_hurt_b": {
+      "start": 37,
+      "end": 38.48897959183674,
+      "loop": false
+    },
+    "enemy1_lose_a": {
+      "start": 40,
+      "end": 41.85469387755102,
+      "loop": false
+    },
+    "enemy1_lose_b": {
+      "start": 43,
+      "end": 45.14204081632653,
+      "loop": false
+    },
+    "enemy2_attack": {
+      "start": 47,
+      "end": 50.47428571428571,
+      "loop": false
+    },
+    "enemy2_attack_fire": {
+      "start": 52,
+      "end": 55.265306122448976,
+      "loop": false
+    },
+    "enemy2_attack_ice": {
+      "start": 57,
+      "end": 59.63836734693878,
+      "loop": false
+    },
+    "enemy2_hurt_a": {
+      "start": 61,
+      "end": 63.06367346938775,
+      "loop": false
+    },
+    "enemy2_hurt_b": {
+      "start": 65,
+      "end": 66.28,
+      "loop": false
+    },
+    "enemy2_lose_a": {
+      "start": 68,
+      "end": 70.03755102040816,
+      "loop": false
+    },
+    "enemy2_lose_b": {
+      "start": 72,
+      "end": 73.77632653061224,
+      "loop": false
+    },
+    "finn_hurt_a": {
+      "start": 75,
+      "end": 76.48897959183674,
+      "loop": false
+    },
+    "finn_hurt_b": {
+      "start": 78,
+      "end": 79.6195918367347,
+      "loop": false
+    },
+    "finn_hurt_c": {
+      "start": 81,
+      "end": 82.20163265306122,
+      "loop": false
+    },
+    "fire_attack": {
+      "start": 84,
+      "end": 85.75020408163266,
+      "loop": false
+    },
+    "fist_attack": {
+      "start": 87,
+      "end": 87.9665306122449,
+      "loop": false
+    },
+    "fist_block": {
+      "start": 89,
+      "end": 90.6195918367347,
+      "loop": false
+    },
+    "ice_attack": {
+      "start": 92,
+      "end": 94.06367346938775,
+      "loop": false
+    },
+    "item_click": {
+      "start": 96,
+      "end": 97.56734693877551,
+      "loop": false
+    },
+    "item_drop_back": {
+      "start": 99,
+      "end": 99.86204081632653,
+      "loop": false
+    },
+    "item_drop_ok": {
+      "start": 101,
+      "end": 102.56734693877551,
+      "loop": false
+    },
+    "item_trash": {
+      "start": 104,
+      "end": 105.56734693877551,
+      "loop": false
+    },
+    "level_up": {
+      "start": 107,
+      "end": 109.69061224489796,
+      "loop": false
+    },
+    "loot": {
+      "start": 111,
+      "end": 112.54122448979592,
+      "loop": false
+    },
+    "mix_click": {
+      "start": 114,
+      "end": 116.45551020408163,
+      "loop": false
+    },
+    "mix_done": {
+      "start": 118,
+      "end": 120.08979591836734,
+      "loop": false
+    },
+    "mouse_over": {
+      "start": 122,
+      "end": 122.20897959183674,
+      "loop": false
+    },
+    "pop_up": {
+      "start": 124,
+      "end": 124.20897959183674,
+      "loop": false
+    },
+    "shield_block": {
+      "start": 126,
+      "end": 127.33224489795919,
+      "loop": false
+    },
+    "shield_block_fire": {
+      "start": 129,
+      "end": 130.9069387755102,
+      "loop": false
+    },
+    "shield_block_ice": {
+      "start": 132,
+      "end": 133.5934693877551,
+      "loop": false
+    },
+    "sorcerer_attack": {
+      "start": 135,
+      "end": 136.98530612244897,
+      "loop": false
+    },
+    "sword_attack": {
+      "start": 138,
+      "end": 139.9069387755102,
+      "loop": false
+    },
+    "transition_close": {
+      "start": 141,
+      "end": 143.66448979591837,
+      "loop": false
+    },
+    "transition_open": {
+      "start": 145,
+      "end": 149.02285714285713,
+      "loop": false
+    }
+  }
+}
