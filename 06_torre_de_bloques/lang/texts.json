@@ -1,0 +1,44 @@
+{
+	"en": {
+		"areYouSure":"Are you sure you want exit?",
+		"blocks":"Blocks",
+		"great":"Great!",
+		"ellySneezed":"Oh no! Elly has sneezed. Try again.",
+		"title":"A tower of blocks"
+	},
+	"en_US": {
+		"areYouSure":"Are you sure you want exit?",
+		"blocks":"Blocks",
+		"great":"Great!",
+		"ellySneezed":"Oh no! Elly has sneezed. Try again.",
+		"title":"A tower of blocks"
+	},
+	"es": {
+        "areYouSure":"¿Seguro que quieres salir?",
+		"blocks":"Bloques",
+		"great":"¡Bravo por Pocoyo!",
+		"ellySneezed":"¡Oh no! Elly ha estornudado. \nInténtalo de nuevo",
+		"title":"Torre de Bloques"
+	},
+	"it": {
+      "areYouSure":"Sei sicuro di voler uscire?",
+      "blocks":"Mattoncini",
+      "great":"Bravo!",
+      "ellySneezed":"Oh, no, Elly ha starnutito! Prova di nuovo.",
+      "title":"Una torre di mattoncini"
+	},
+	"pt": {
+      "areYouSure":"Tens a certeza de que queres sair?",
+      "blocks":"Blocos",
+      "great":"Boa, Pocoyó!",
+      "ellySneezed":"Oh não! A Elly espirrou. Tenta novamente",
+      "title":"Torre de blocos"
+	},
+	"zh": {
+      "areYouSure":"你确定吗？",
+      "blocks":"积木",
+      "great":"好极了！",
+      "ellySneezed":"哦不！艾丽打喷嚏了，再试一次。",
+      "title":"积木塔"
+	}
+}
