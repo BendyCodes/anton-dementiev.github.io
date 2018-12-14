@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<localization languages="es,en,en_US,it,pt,zh">
+	<fonts>
+		<shared>
+			<font family="Futura Md">
+				<plain><![CDATA[ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ]]></plain>
+				<bold><![CDATA[ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ]]></bold>
+				<italic/>
+				<bold_italic/>
+			</font>
+		</shared>
+	</fonts>
+	<styles>
+		<style name="HelpHeader">
+			<data color="1189cc" fontFamily="Futura Md" fontSize="13.5" fontStyle="normal" fontWeight="bold" languages="en,en_US,es,it,pt" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+			<data color="1189cc" fontFamily="SimSun" fontSize="13.5" fontStyle="normal" fontWeight="bold" languages="zh" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+		</style>
+		<style name="HelpText">
+			<data color="1189cc" fontFamily="Futura Md" fontSize="10.5" fontStyle="normal" fontWeight="bold" languages="en,en_US,es,it,pt" multilineAlign="left_center" textAlign="left" textDecoration="none"/>
+			<data color="1189cc" fontFamily="SimSun" fontSize="10.5" fontStyle="normal" fontWeight="bold" languages="zh" multilineAlign="left_center" textAlign="left" textDecoration="none"/>
+		</style>
+		<style name="Text">
+			<data color="1189cc" fontFamily="Futura Md" fontSize="24.0" fontStyle="normal" fontWeight="bold" languages="en,en_US,es,it,pt" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+			<data color="1189cc" fontFamily="SimSun" fontSize="24.0" fontStyle="normal" fontWeight="bold" languages="zh" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+		</style>
+		<style name="TextInvert">
+			<data color="a5c9de" fontFamily="Futura Md" fontSize="24.0" fontStyle="normal" fontWeight="bold" languages="en,en_US,es,it,pt" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+			<data color="a5c9de" fontFamily="SimSun" fontSize="24.0" fontStyle="normal" fontWeight="bold" languages="zh" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+		</style>
+		<style name="TextResult">
+			<data color="1189cc" fontFamily="Futura Md" fontSize="19.5" fontStyle="normal" fontWeight="bold" languages="en,en_US,es,it,pt" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+			<data color="1189cc" fontFamily="SimSun" fontSize="19.5" fontStyle="normal" fontWeight="bold" languages="zh" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+		</style>
+		<style name="TextResultInvert">
+			<data color="a5c9de" fontFamily="Futura Md" fontSize="19.5" fontStyle="normal" fontWeight="bold" languages="en,en_US,es,it,pt" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+			<data color="a5c9de" fontFamily="SimSun" fontSize="19.5" fontStyle="normal" fontWeight="bold" languages="zh" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+		</style>
+		<style name="Title">
+			<data color="1189cc" fontFamily="Futura Md" fontSize="26.25" fontStyle="normal" fontWeight="bold" languages="en,en_US,es,it,pt" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+			<data color="1189cc" fontFamily="SimSun" fontSize="26.25" fontStyle="normal" fontWeight="bold" languages="zh" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+		</style>
+		<style name="ToolTip">
+			<data color="ccebff" fontFamily="Futura Md" fontSize="10.5" fontStyle="normal" fontWeight="bold" languages="en,en_US,es,it,pt" multilineAlign="__ignore__" textAlign="left" textDecoration="none"/>
+			<data color="ccebff" fontFamily="SimSun" fontSize="10.5" fontStyle="normal" fontWeight="bold" languages="zh" multilineAlign="__ignore__" textAlign="left" textDecoration="none"/>
+		</style>
+		<style name="estilo">
+			<data color="1189cc" fontFamily="Futura Md" fontSize="30.0" fontStyle="normal" fontWeight="bold" languages="en,en_US,es,it,pt" multilineAlign="center_top" textAlign="center" textDecoration="none"/>
+			<data color="1189cc" fontFamily="SimSun" fontSize="30.0" fontStyle="normal" fontWeight="bold" languages="zh" multilineAlign="center_top" textAlign="center" textDecoration="none"/>
+		</style>
+	</styles>
+	<strings>
+		<client>
+			<string id="txtFin">
+				<es><![CDATA[¡Bien hecho!]]></es>
+				<en><![CDATA[Well done!]]></en>
+				<en_US><![CDATA[Well done!]]></en_US>
+				<it><![CDATA[Bravo!]]></it>
+				<pt><![CDATA[Muito bem!]]></pt>
+				<zh><![CDATA[做得好！]]></zh>
+			</string>
+			<string id="txtJuego">
+				<es><![CDATA[Modo juego]]></es>
+				<en><![CDATA[Game mode]]></en>
+				<en_US><![CDATA[Game mode]]></en_US>
+				<it><![CDATA[Modalità di gioco]]></it>
+				<pt><![CDATA[Modo de jogo]]></pt>
+				<zh><![CDATA[比赛模式]]></zh>
+			</string>
+			<string id="txtLibre">
+				<es><![CDATA[Modo libre]]></es>
+				<en><![CDATA[Free mode]]></en>
+				<en_US><![CDATA[Free mode]]></en_US>
+				<it><![CDATA[Modalità libera]]></it>
+				<pt><![CDATA[Modo livre]]></pt>
+				<zh><![CDATA[自由模式]]></zh>
+			</string>
+			<string id="txtSeguroSalir">
+				<es><![CDATA[¿Seguro que quieres salir?]]></es>
+				<en><![CDATA[Are you sure you want exit?]]></en>
+				<en_US><![CDATA[Are you sure you want exit?]]></en_US>
+				<it><![CDATA[Sei sicuro di voler uscire?]]></it>
+				<pt><![CDATA[Tens a certeza de que queres sair?]]></pt>
+				<zh><![CDATA[你确定要退出吗？]]></zh>
+			</string>
+			<string id="txtTitulo">
+				<es><![CDATA[Juego de construcciones]]></es>
+				<en><![CDATA[Building game]]></en>
+				<en_US><![CDATA[Building game]]></en_US>
+				<it><![CDATA[Costruzioni]]></it>
+				<pt><![CDATA[Jogo de construções]]></pt>
+				<zh><![CDATA[建筑学院]]></zh>
+			</string>
+			<string id="txtTituloModo">
+				<es><![CDATA[Elige el modo de juego]]></es>
+				<en><![CDATA[Choose your game mode]]></en>
+				<en_US><![CDATA[Choose your game mode]]></en_US>
+				<it><![CDATA[Scegli la tua modalità di gioco]]></it>
+				<pt><![CDATA[Escolhe o modo de jogo]]></pt>
+				<zh><![CDATA[选择你的游戏方式]]></zh>
+			</string>
+		</client>
+		<server/>
+	</strings>
+</localization>

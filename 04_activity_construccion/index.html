@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0,  minimum-scale=1.0, target-densitydpi=device-dpi"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <title>myGame</title>
+
+  <style>
+    html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: rgb(255, 255, 255);
+  color: #eee;
+  font: caption;
+}
+
+canvas {
+  /* And see postBoot() in JS */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* <https://caniuse.com/#feat=object-fit> */
+}
+
+#game {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+#version {
+  position: absolute;
+  left: 5px;
+  top: 605px;
+}
+
+.center-img {
+  position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    visibility: hidden;
+}
+  </style>
+  
+
+  
+  <script src="js/phaser.min.js"></script>
+  <script src="game.js"></script>
+</head>
+
+<body>
+
+  <div id="game">
+      <img id="bg-img" src="assets/sprites/bg.png"  class="center-img" width = 100% height = 100%/>
+    <img id="rp-img" src="assets/sprites/rotate-phone-icon-bl.png"  class="center-img"/>
+  </div>
+
+</body>
+
+</html>
