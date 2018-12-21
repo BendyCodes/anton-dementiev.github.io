@@ -1,0 +1,38 @@
+section.form
+  .wrapper
+    h2.form__title
+      | Let's make something awesome.
+    form(class="form__form" action="" method="")
+      input(type="text" class="form__input form__input--company" placeholder="Company")
+      input(type="text" class="form__input form__input--firstname form__important" placeholder="Firstname" required)
+      input(type="text" class="form__input form__input--lastname form__important" placeholder="Lastname" required)
+      input(type="email" class="form__input form__input--email form__important" placeholder="Email Address" required)
+
+      .form__row.form__row--checkbox
+        label(class="form__checkbox")
+          input(type="checkbox")
+          span.text
+            | Programming
+          span.text-invisible
+            | Programming
+        label(class="form__checkbox")
+          input(type="checkbox")
+          span.text
+            | Art
+          span.text-invisible
+            | Art
+        label(class="form__checkbox")
+          input(type="checkbox")
+          span.text-invisible
+            | Other
+          span.text
+            | Other
+        label(class="form__checkbox")
+          input(type="checkbox")
+          span.text
+            | Technical Art
+          span.text-invisible
+            | Technical Art
+      textarea(class="form__message")
+      .form__row.form__row--submit
+        +button('Submit','--small animated-button--white','1','2','5','8.5','contact.html')

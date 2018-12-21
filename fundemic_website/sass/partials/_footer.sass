@@ -1,0 +1,210 @@
++b(footer)
+  min-height: 31rem
+  padding-bottom: 8rem
+  color: $white
+  background-size: auto 100%
+  -webkit-tap-highlight-color: transparent
+  overflow: hidden
+  .wrapper
+    display: flex
+    +max(1150)
+      width: 80%
+      margin: auto
+      flex-wrap: wrap
+    +max(800)
+      width: 85%
+
+  +e(column)
+    padding-top: 7.4rem
+    +m(logo)
+      width: $col-width * 2
+      padding-left: 8.8rem
+      align-items: center
+      +max(1250)
+        padding-left: 3.6rem
+        width: $col-width * 1.5
+      +max(1150)
+        padding-left: 2.6rem
+        width: 100%
+        order: 1
+      +max(500)
+        padding-left: 0
+        margin-left: -1.5rem
+      +max(300)
+        margin-left: 0
+    +m(links)
+      width: $col-width
+      text-transform: uppercase
+      padding-left: 6.3rem
+      order: 2
+      +max(1150)
+        padding-left: 3.6rem
+      +max(500)
+        display: flex
+        flex-direction: column
+        align-items: center
+        padding-left: 0 !important
+        opacity: 0.7
+
+    +m(links-first)
+      padding-left: 6.8rem
+      order: 2
+      +max(1150)
+        padding-left: 3.6rem
+    +m(links-second)
+      +max(700)
+        padding-left: 6.6rem
+      +max(500)
+        padding-top: 2.7rem
+    +m(contact)
+      width: $col-width
+      padding-left: 3.6rem
+      order: 4
+      +max(700)
+        padding-left: 0
+        text-align: right
+      +max(500)
+        padding-left: 0
+        text-align: center
+        opacity: 0.7
+        padding-top: 4.7rem
+    +m(social)
+      width: 18.3%
+      margin-left: auto
+      display: flex
+      justify-content: center
+      align-items: flex-start
+      order: 5
+      +max(1150)
+        order: 4
+        justify-content: flex-end
+      +max(700)
+        order: 5
+        width: 50%
+        justify-content: flex-end
+      +max(500)
+        justify-content: center
+    &--links,
+    &--social,
+    &--contact
+      +max(1150)
+        width: calc(100% / 4.5)
+      +max(700)
+        width: calc(100% / 3)
+    &--social
+      +max(1150)
+        width: calc(100% / 4)
+        margin-left: auto
+    &--links,
+    &--social,
+    &--contact,
+    &--logo
+      +max(500)
+        width: 100%
+
+  +e(logo)
+    display: flex
+    +max(500)
+      flex-wrap: wrap
+      justify-content: center
+      width: 100%
+    .copyright
+      font-size: 1.4rem
+      font-weight: 600
+      margin-left: .3rem
+      display: inline-block
+      +max(300)
+        width: 100%
+        margin-left: 0
+        text-align: center
+        margin-top: 1.7rem
+    .image-holder
+      width: 40px
+      position: relative
+      display: inline-block
+      +max(300)
+        height: 40px
+      .image
+        position: absolute
+        bottom: 0
+        left: 0
+        top: 0
+        margin: auto
+        width: 100%
+        +max(300)
+          bottom: 0
+
+  +e(link)
+    display: block
+    font-weight: 600
+    font-size: 1.4rem
+    &:not(:first-child)
+      margin-top: 2.7rem
+  +e(link-contact)
+    +contact
+    border-color: $white
+    transform: translate(0, -1.6rem)
+
+  +e(social)
+    &:not(:last-child)
+      margin-right: 2.4rem
+      +max(500)
+        margin-right: 5.4rem
+      +max(300)
+        margin-right: 3.4rem
+    .logo
+      width: 3.6rem
+      transform: translateY(-1rem)
+      +max(1150)
+        transform: translateY(-1.5rem)
+      +max(991)
+        transform: translateY(-1.2rem)
+
+  +m(bg-red)
+    background-color: $red
+    background-image: url(../img/footer-bg.svg)
+  +m(bg-green)
+    background-color: $green
+    background-image: url(../img/footer-bg-dark.svg)
+
+  +m(bg-blue)
+    background-color: $blue
+    background-image: url(../img/footer-bg.svg)
+  .animated-button
+    transform: translate(-2rem, -3rem)
+    +max(1150)
+      width: 130px !important
+      height: 60px !important
+      transform: translate(-5rem, -3rem) !important
+    +max(991)
+      width: 117px !important
+      height: 54px !important
+      text
+        font-size: 23px !important
+    +max(700)
+      transform: translate(0.5rem, -3.2rem) !important
+      margin-left: auto !important
+      margin-right: initial !important
+
+    +max(500)
+      transform: none !important
+      margin-left: auto !important
+      margin-right: auto !important
+    +max(300)
+      width: 100%!important
+.footer--bg-green
+  text
+    font-weight: 600
+  .svg--1
+    .visible
+      stroke: #60c393  !important
+      +max(600)
+        stroke: #64d6a2 !important
+.footer--bg-blue
+  .svg--1
+    .visible
+      stroke: $blue  !important
+.footer--bg-red
+  .svg--1
+    .visible
+      stroke: $red  !important
