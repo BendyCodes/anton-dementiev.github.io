@@ -1,0 +1,461 @@
+{
+	"textures": [
+		{
+			"image": "nube.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1011,
+				"h": 1208
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "nube0017.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 541,
+						"h": 370
+					},
+					"spriteSourceSize": {
+						"x": 214,
+						"y": 5,
+						"w": 327,
+						"h": 365
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 327,
+						"h": 365
+					}
+				},
+				{
+					"filename": "nube0018.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 541,
+						"h": 370
+					},
+					"spriteSourceSize": {
+						"x": 214,
+						"y": 5,
+						"w": 327,
+						"h": 365
+					},
+					"frame": {
+						"x": 330,
+						"y": 1,
+						"w": 327,
+						"h": 365
+					}
+				},
+				{
+					"filename": "nube0019.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 541,
+						"h": 370
+					},
+					"spriteSourceSize": {
+						"x": 214,
+						"y": 5,
+						"w": 327,
+						"h": 365
+					},
+					"frame": {
+						"x": 330,
+						"y": 1,
+						"w": 327,
+						"h": 365
+					}
+				},
+				{
+					"filename": "nube0020.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 541,
+						"h": 370
+					},
+					"spriteSourceSize": {
+						"x": 214,
+						"y": 5,
+						"w": 327,
+						"h": 365
+					},
+					"frame": {
+						"x": 330,
+						"y": 1,
+						"w": 327,
+						"h": 365
+					}
+				},
+				{
+					"filename": "nube0021.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 541,
+						"h": 370
+					},
+					"spriteSourceSize": {
+						"x": 214,
+						"y": 5,
+						"w": 327,
+						"h": 365
+					},
+					"frame": {
+						"x": 330,
+						"y": 1,
+						"w": 327,
+						"h": 365
+					}
+				},
+				{
+					"filename": "nube0016.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 541,
+						"h": 370
+					},
+					"spriteSourceSize": {
+						"x": 214,
+						"y": 6,
+						"w": 327,
+						"h": 364
+					},
+					"frame": {
+						"x": 659,
+						"y": 1,
+						"w": 327,
+						"h": 364
+					}
+				},
+				{
+					"filename": "nube0015.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 541,
+						"h": 370
+					},
+					"spriteSourceSize": {
+						"x": 214,
+						"y": 7,
+						"w": 327,
+						"h": 363
+					},
+					"frame": {
+						"x": 659,
+						"y": 367,
+						"w": 327,
+						"h": 363
+					}
+				},
+				{
+					"filename": "nube0014.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 541,
+						"h": 370
+					},
+					"spriteSourceSize": {
+						"x": 214,
+						"y": 8,
+						"w": 295,
+						"h": 329
+					},
+					"frame": {
+						"x": 1,
+						"y": 732,
+						"w": 295,
+						"h": 329
+					}
+				},
+				{
+					"filename": "nube0005.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 541,
+						"h": 370
+					},
+					"spriteSourceSize": {
+						"x": 209,
+						"y": 5,
+						"w": 112,
+						"h": 132
+					},
+					"frame": {
+						"x": 1,
+						"y": 1063,
+						"w": 112,
+						"h": 132
+					}
+				},
+				{
+					"filename": "nube0008.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 541,
+						"h": 370
+					},
+					"spriteSourceSize": {
+						"x": 214,
+						"y": 1,
+						"w": 107,
+						"h": 132
+					},
+					"frame": {
+						"x": 115,
+						"y": 1063,
+						"w": 107,
+						"h": 132
+					}
+				},
+				{
+					"filename": "nube0001.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 541,
+						"h": 370
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 5,
+						"w": 321,
+						"h": 320
+					},
+					"frame": {
+						"x": 298,
+						"y": 368,
+						"w": 321,
+						"h": 320
+					}
+				},
+				{
+					"filename": "nube0002.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 541,
+						"h": 370
+					},
+					"spriteSourceSize": {
+						"x": 51,
+						"y": 5,
+						"w": 270,
+						"h": 273
+					},
+					"frame": {
+						"x": 1,
+						"y": 368,
+						"w": 270,
+						"h": 273
+					}
+				},
+				{
+					"filename": "nube0006.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 541,
+						"h": 370
+					},
+					"spriteSourceSize": {
+						"x": 214,
+						"y": 5,
+						"w": 107,
+						"h": 85
+					},
+					"frame": {
+						"x": 1,
+						"y": 643,
+						"w": 107,
+						"h": 85
+					}
+				},
+				{
+					"filename": "nube0007.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 541,
+						"h": 370
+					},
+					"spriteSourceSize": {
+						"x": 214,
+						"y": 3,
+						"w": 107,
+						"h": 96
+					},
+					"frame": {
+						"x": 224,
+						"y": 1063,
+						"w": 107,
+						"h": 96
+					}
+				},
+				{
+					"filename": "nube0013.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 541,
+						"h": 370
+					},
+					"spriteSourceSize": {
+						"x": 214,
+						"y": 9,
+						"w": 262,
+						"h": 294
+					},
+					"frame": {
+						"x": 298,
+						"y": 732,
+						"w": 262,
+						"h": 294
+					}
+				},
+				{
+					"filename": "nube0004.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 541,
+						"h": 370
+					},
+					"spriteSourceSize": {
+						"x": 157,
+						"y": 5,
+						"w": 164,
+						"h": 179
+					},
+					"frame": {
+						"x": 333,
+						"y": 1028,
+						"w": 164,
+						"h": 179
+					}
+				},
+				{
+					"filename": "nube0009.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 541,
+						"h": 370
+					},
+					"spriteSourceSize": {
+						"x": 214,
+						"y": 0,
+						"w": 129,
+						"h": 167
+					},
+					"frame": {
+						"x": 499,
+						"y": 1028,
+						"w": 129,
+						"h": 167
+					}
+				},
+				{
+					"filename": "nube0012.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 541,
+						"h": 370
+					},
+					"spriteSourceSize": {
+						"x": 214,
+						"y": 6,
+						"w": 229,
+						"h": 263
+					},
+					"frame": {
+						"x": 562,
+						"y": 732,
+						"w": 229,
+						"h": 263
+					}
+				},
+				{
+					"filename": "nube0003.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 541,
+						"h": 370
+					},
+					"spriteSourceSize": {
+						"x": 104,
+						"y": 5,
+						"w": 217,
+						"h": 226
+					},
+					"frame": {
+						"x": 793,
+						"y": 732,
+						"w": 217,
+						"h": 226
+					}
+				},
+				{
+					"filename": "nube0010.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 541,
+						"h": 370
+					},
+					"spriteSourceSize": {
+						"x": 214,
+						"y": 1,
+						"w": 162,
+						"h": 200
+					},
+					"frame": {
+						"x": 630,
+						"y": 997,
+						"w": 162,
+						"h": 200
+					}
+				},
+				{
+					"filename": "nube0011.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 541,
+						"h": 370
+					},
+					"spriteSourceSize": {
+						"x": 214,
+						"y": 4,
+						"w": 195,
+						"h": 231
+					},
+					"frame": {
+						"x": 794,
+						"y": 960,
+						"w": 195,
+						"h": 231
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:778c2c794bc7d58d72b13fb113ca35ba:a4526a22fcf84aabde560e9d9bda5d1a:fb7d9964c0ed9e5978a8b7727ea87d75$"
+	}
+}

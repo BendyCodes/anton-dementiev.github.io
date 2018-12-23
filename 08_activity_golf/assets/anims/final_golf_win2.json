@@ -1,0 +1,2015 @@
+{
+	"textures": [
+		{
+			"image": "final_golf_win2.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 2035,
+				"h": 1400
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "final_golf_win20001.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 624,
+						"h": 198
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 624,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20002.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 0,
+						"w": 606,
+						"h": 198
+					},
+					"frame": {
+						"x": 627,
+						"y": 1,
+						"w": 606,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20003.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 36,
+						"y": 0,
+						"w": 588,
+						"h": 198
+					},
+					"frame": {
+						"x": 1235,
+						"y": 1,
+						"w": 588,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20028.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 415,
+						"y": 0,
+						"w": 209,
+						"h": 198
+					},
+					"frame": {
+						"x": 1825,
+						"y": 1,
+						"w": 209,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20004.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 50,
+						"y": 0,
+						"w": 574,
+						"h": 198
+					},
+					"frame": {
+						"x": 1,
+						"y": 201,
+						"w": 574,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20005.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 61,
+						"y": 0,
+						"w": 563,
+						"h": 198
+					},
+					"frame": {
+						"x": 577,
+						"y": 201,
+						"w": 563,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20006.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 72,
+						"y": 0,
+						"w": 552,
+						"h": 198
+					},
+					"frame": {
+						"x": 1142,
+						"y": 201,
+						"w": 552,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20020.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 304,
+						"y": 0,
+						"w": 320,
+						"h": 198
+					},
+					"frame": {
+						"x": 1696,
+						"y": 201,
+						"w": 320,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20007.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 87,
+						"y": 0,
+						"w": 537,
+						"h": 198
+					},
+					"frame": {
+						"x": 1,
+						"y": 401,
+						"w": 537,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20008.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 103,
+						"y": 0,
+						"w": 521,
+						"h": 198
+					},
+					"frame": {
+						"x": 540,
+						"y": 401,
+						"w": 521,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20009.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 121,
+						"y": 0,
+						"w": 503,
+						"h": 198
+					},
+					"frame": {
+						"x": 1063,
+						"y": 401,
+						"w": 503,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20011.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 170,
+						"y": 0,
+						"w": 454,
+						"h": 198
+					},
+					"frame": {
+						"x": 1568,
+						"y": 401,
+						"w": 454,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20010.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 143,
+						"y": 0,
+						"w": 481,
+						"h": 198
+					},
+					"frame": {
+						"x": 1,
+						"y": 601,
+						"w": 481,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20012.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 192,
+						"y": 0,
+						"w": 432,
+						"h": 198
+					},
+					"frame": {
+						"x": 484,
+						"y": 601,
+						"w": 432,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20013.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 208,
+						"y": 0,
+						"w": 416,
+						"h": 198
+					},
+					"frame": {
+						"x": 918,
+						"y": 601,
+						"w": 416,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20014.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 219,
+						"y": 0,
+						"w": 405,
+						"h": 198
+					},
+					"frame": {
+						"x": 1336,
+						"y": 601,
+						"w": 405,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20022.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 339,
+						"y": 0,
+						"w": 285,
+						"h": 198
+					},
+					"frame": {
+						"x": 1743,
+						"y": 601,
+						"w": 285,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20015.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 227,
+						"y": 0,
+						"w": 397,
+						"h": 198
+					},
+					"frame": {
+						"x": 1,
+						"y": 801,
+						"w": 397,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20016.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 237,
+						"y": 0,
+						"w": 387,
+						"h": 198
+					},
+					"frame": {
+						"x": 400,
+						"y": 801,
+						"w": 387,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20017.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 249,
+						"y": 0,
+						"w": 375,
+						"h": 198
+					},
+					"frame": {
+						"x": 789,
+						"y": 801,
+						"w": 375,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20018.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 265,
+						"y": 0,
+						"w": 359,
+						"h": 198
+					},
+					"frame": {
+						"x": 1166,
+						"y": 801,
+						"w": 359,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20019.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 283,
+						"y": 0,
+						"w": 341,
+						"h": 198
+					},
+					"frame": {
+						"x": 1527,
+						"y": 801,
+						"w": 341,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20032.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 460,
+						"y": 0,
+						"w": 164,
+						"h": 198
+					},
+					"frame": {
+						"x": 1870,
+						"y": 801,
+						"w": 164,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20021.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 324,
+						"y": 0,
+						"w": 300,
+						"h": 198
+					},
+					"frame": {
+						"x": 1,
+						"y": 1001,
+						"w": 300,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20023.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 352,
+						"y": 0,
+						"w": 272,
+						"h": 198
+					},
+					"frame": {
+						"x": 303,
+						"y": 1001,
+						"w": 272,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20024.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 362,
+						"y": 0,
+						"w": 262,
+						"h": 198
+					},
+					"frame": {
+						"x": 577,
+						"y": 1001,
+						"w": 262,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20025.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 372,
+						"y": 0,
+						"w": 252,
+						"h": 198
+					},
+					"frame": {
+						"x": 841,
+						"y": 1001,
+						"w": 252,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20026.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 385,
+						"y": 0,
+						"w": 239,
+						"h": 198
+					},
+					"frame": {
+						"x": 1095,
+						"y": 1001,
+						"w": 239,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20027.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 399,
+						"y": 0,
+						"w": 225,
+						"h": 198
+					},
+					"frame": {
+						"x": 1336,
+						"y": 1001,
+						"w": 225,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20029.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 429,
+						"y": 0,
+						"w": 195,
+						"h": 198
+					},
+					"frame": {
+						"x": 1563,
+						"y": 1001,
+						"w": 195,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20030.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 440,
+						"y": 0,
+						"w": 184,
+						"h": 198
+					},
+					"frame": {
+						"x": 1760,
+						"y": 1001,
+						"w": 184,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20040.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 538,
+						"y": 0,
+						"w": 86,
+						"h": 198
+					},
+					"frame": {
+						"x": 1946,
+						"y": 1001,
+						"w": 86,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20031.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 449,
+						"y": 0,
+						"w": 175,
+						"h": 198
+					},
+					"frame": {
+						"x": 1,
+						"y": 1201,
+						"w": 175,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20033.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 472,
+						"y": 0,
+						"w": 152,
+						"h": 198
+					},
+					"frame": {
+						"x": 178,
+						"y": 1201,
+						"w": 152,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20034.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 484,
+						"y": 0,
+						"w": 140,
+						"h": 198
+					},
+					"frame": {
+						"x": 332,
+						"y": 1201,
+						"w": 140,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20035.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 495,
+						"y": 0,
+						"w": 129,
+						"h": 198
+					},
+					"frame": {
+						"x": 474,
+						"y": 1201,
+						"w": 129,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20036.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 504,
+						"y": 0,
+						"w": 120,
+						"h": 198
+					},
+					"frame": {
+						"x": 605,
+						"y": 1201,
+						"w": 120,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20037.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 514,
+						"y": 0,
+						"w": 110,
+						"h": 198
+					},
+					"frame": {
+						"x": 727,
+						"y": 1201,
+						"w": 110,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20038.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 522,
+						"y": 0,
+						"w": 102,
+						"h": 198
+					},
+					"frame": {
+						"x": 839,
+						"y": 1201,
+						"w": 102,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20039.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 531,
+						"y": 0,
+						"w": 93,
+						"h": 198
+					},
+					"frame": {
+						"x": 943,
+						"y": 1201,
+						"w": 93,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20041.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 546,
+						"y": 0,
+						"w": 78,
+						"h": 198
+					},
+					"frame": {
+						"x": 1038,
+						"y": 1201,
+						"w": 78,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20042.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1118,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20043.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1193,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20044.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1268,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20045.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1343,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20046.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1418,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20047.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1493,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20048.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1568,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20049.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1643,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20050.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1718,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20051.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1793,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20052.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1868,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20053.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20054.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20055.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20056.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20057.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20058.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20059.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20060.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20061.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20062.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20063.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20064.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20065.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20066.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20067.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20068.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20069.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20070.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20071.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20072.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20073.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20074.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20075.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20076.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20077.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20078.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20079.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20080.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20081.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20082.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20083.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20084.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20085.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20086.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20087.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20088.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20089.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20090.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20091.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20092.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20093.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20094.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				},
+				{
+					"filename": "final_golf_win20095.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 624,
+						"h": 198
+					},
+					"spriteSourceSize": {
+						"x": 551,
+						"y": 0,
+						"w": 73,
+						"h": 198
+					},
+					"frame": {
+						"x": 1943,
+						"y": 1201,
+						"w": 73,
+						"h": 198
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:6750e287bd42bbffd125a33a3345bd13:2b325b5718154f1e4d957c75c3efc71a:ac61c8fae5599163591985bd1384e0e6$"
+	}
+}

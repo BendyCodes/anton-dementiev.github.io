@@ -1,0 +1,2015 @@
+{
+	"textures": [
+		{
+			"image": "final_golf_fail1.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 2035,
+				"h": 1940
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "final_golf_fail10001.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 613,
+						"h": 190
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 613,
+						"h": 190
+					}
+				},
+				{
+					"filename": "final_golf_fail10002.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 0,
+						"w": 597,
+						"h": 190
+					},
+					"frame": {
+						"x": 616,
+						"y": 1,
+						"w": 597,
+						"h": 190
+					}
+				},
+				{
+					"filename": "final_golf_fail10003.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 0,
+						"w": 582,
+						"h": 190
+					},
+					"frame": {
+						"x": 1215,
+						"y": 1,
+						"w": 582,
+						"h": 190
+					}
+				},
+				{
+					"filename": "final_golf_fail10039.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 383,
+						"y": 0,
+						"w": 230,
+						"h": 205
+					},
+					"frame": {
+						"x": 1799,
+						"y": 1,
+						"w": 230,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10004.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 41,
+						"y": 0,
+						"w": 572,
+						"h": 190
+					},
+					"frame": {
+						"x": 1,
+						"y": 193,
+						"w": 572,
+						"h": 190
+					}
+				},
+				{
+					"filename": "final_golf_fail10005.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 49,
+						"y": 0,
+						"w": 564,
+						"h": 190
+					},
+					"frame": {
+						"x": 575,
+						"y": 193,
+						"w": 564,
+						"h": 190
+					}
+				},
+				{
+					"filename": "final_golf_fail10007.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 63,
+						"y": 0,
+						"w": 550,
+						"h": 194
+					},
+					"frame": {
+						"x": 1141,
+						"y": 193,
+						"w": 550,
+						"h": 194
+					}
+				},
+				{
+					"filename": "final_golf_fail10025.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 272,
+						"y": 0,
+						"w": 341,
+						"h": 201
+					},
+					"frame": {
+						"x": 1693,
+						"y": 208,
+						"w": 341,
+						"h": 201
+					}
+				},
+				{
+					"filename": "final_golf_fail10006.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 56,
+						"y": 0,
+						"w": 557,
+						"h": 190
+					},
+					"frame": {
+						"x": 1,
+						"y": 385,
+						"w": 557,
+						"h": 190
+					}
+				},
+				{
+					"filename": "final_golf_fail10008.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 74,
+						"y": 0,
+						"w": 539,
+						"h": 190
+					},
+					"frame": {
+						"x": 560,
+						"y": 385,
+						"w": 539,
+						"h": 190
+					}
+				},
+				{
+					"filename": "final_golf_fail10009.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 85,
+						"y": 0,
+						"w": 528,
+						"h": 190
+					},
+					"frame": {
+						"x": 1101,
+						"y": 389,
+						"w": 528,
+						"h": 190
+					}
+				},
+				{
+					"filename": "final_golf_fail10020.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 218,
+						"y": 0,
+						"w": 395,
+						"h": 190
+					},
+					"frame": {
+						"x": 1631,
+						"y": 411,
+						"w": 395,
+						"h": 190
+					}
+				},
+				{
+					"filename": "final_golf_fail10010.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 98,
+						"y": 0,
+						"w": 515,
+						"h": 190
+					},
+					"frame": {
+						"x": 1,
+						"y": 577,
+						"w": 515,
+						"h": 190
+					}
+				},
+				{
+					"filename": "final_golf_fail10011.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 113,
+						"y": 0,
+						"w": 500,
+						"h": 190
+					},
+					"frame": {
+						"x": 518,
+						"y": 577,
+						"w": 500,
+						"h": 190
+					}
+				},
+				{
+					"filename": "final_golf_fail10012.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 130,
+						"y": 0,
+						"w": 483,
+						"h": 190
+					},
+					"frame": {
+						"x": 1020,
+						"y": 581,
+						"w": 483,
+						"h": 190
+					}
+				},
+				{
+					"filename": "final_golf_fail10013.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 147,
+						"y": 0,
+						"w": 466,
+						"h": 190
+					},
+					"frame": {
+						"x": 1505,
+						"y": 603,
+						"w": 466,
+						"h": 190
+					}
+				},
+				{
+					"filename": "final_golf_fail10014.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 161,
+						"y": 0,
+						"w": 452,
+						"h": 190
+					},
+					"frame": {
+						"x": 1,
+						"y": 769,
+						"w": 452,
+						"h": 190
+					}
+				},
+				{
+					"filename": "final_golf_fail10015.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 172,
+						"y": 0,
+						"w": 441,
+						"h": 190
+					},
+					"frame": {
+						"x": 455,
+						"y": 769,
+						"w": 441,
+						"h": 190
+					}
+				},
+				{
+					"filename": "final_golf_fail10018.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 198,
+						"y": 0,
+						"w": 415,
+						"h": 201
+					},
+					"frame": {
+						"x": 898,
+						"y": 773,
+						"w": 415,
+						"h": 201
+					}
+				},
+				{
+					"filename": "final_golf_fail10017.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 190,
+						"y": 0,
+						"w": 423,
+						"h": 195
+					},
+					"frame": {
+						"x": 1315,
+						"y": 795,
+						"w": 423,
+						"h": 195
+					}
+				},
+				{
+					"filename": "final_golf_fail10030.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 319,
+						"y": 0,
+						"w": 294,
+						"h": 196
+					},
+					"frame": {
+						"x": 1740,
+						"y": 795,
+						"w": 294,
+						"h": 196
+					}
+				},
+				{
+					"filename": "final_golf_fail10016.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 182,
+						"y": 0,
+						"w": 431,
+						"h": 190
+					},
+					"frame": {
+						"x": 1,
+						"y": 961,
+						"w": 431,
+						"h": 190
+					}
+				},
+				{
+					"filename": "final_golf_fail10019.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 208,
+						"y": 0,
+						"w": 405,
+						"h": 191
+					},
+					"frame": {
+						"x": 434,
+						"y": 961,
+						"w": 405,
+						"h": 191
+					}
+				},
+				{
+					"filename": "final_golf_fail10021.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 230,
+						"y": 0,
+						"w": 383,
+						"h": 190
+					},
+					"frame": {
+						"x": 1,
+						"y": 1153,
+						"w": 383,
+						"h": 190
+					}
+				},
+				{
+					"filename": "final_golf_fail10022.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 243,
+						"y": 0,
+						"w": 370,
+						"h": 190
+					},
+					"frame": {
+						"x": 841,
+						"y": 976,
+						"w": 370,
+						"h": 190
+					}
+				},
+				{
+					"filename": "final_golf_fail10023.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 255,
+						"y": 0,
+						"w": 358,
+						"h": 190
+					},
+					"frame": {
+						"x": 386,
+						"y": 1154,
+						"w": 358,
+						"h": 190
+					}
+				},
+				{
+					"filename": "final_golf_fail10024.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 264,
+						"y": 0,
+						"w": 349,
+						"h": 192
+					},
+					"frame": {
+						"x": 1,
+						"y": 1345,
+						"w": 349,
+						"h": 192
+					}
+				},
+				{
+					"filename": "final_golf_fail10026.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 281,
+						"y": 0,
+						"w": 332,
+						"h": 201
+					},
+					"frame": {
+						"x": 1213,
+						"y": 992,
+						"w": 332,
+						"h": 201
+					}
+				},
+				{
+					"filename": "final_golf_fail10027.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 290,
+						"y": 0,
+						"w": 323,
+						"h": 197
+					},
+					"frame": {
+						"x": 746,
+						"y": 1168,
+						"w": 323,
+						"h": 197
+					}
+				},
+				{
+					"filename": "final_golf_fail10028.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 300,
+						"y": 0,
+						"w": 313,
+						"h": 194
+					},
+					"frame": {
+						"x": 352,
+						"y": 1346,
+						"w": 313,
+						"h": 194
+					}
+				},
+				{
+					"filename": "final_golf_fail10029.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 310,
+						"y": 0,
+						"w": 303,
+						"h": 194
+					},
+					"frame": {
+						"x": 1,
+						"y": 1539,
+						"w": 303,
+						"h": 194
+					}
+				},
+				{
+					"filename": "final_golf_fail10031.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 327,
+						"y": 0,
+						"w": 286,
+						"h": 200
+					},
+					"frame": {
+						"x": 1,
+						"y": 1735,
+						"w": 286,
+						"h": 200
+					}
+				},
+				{
+					"filename": "final_golf_fail10032.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 334,
+						"y": 0,
+						"w": 279,
+						"h": 204
+					},
+					"frame": {
+						"x": 289,
+						"y": 1735,
+						"w": 279,
+						"h": 204
+					}
+				},
+				{
+					"filename": "final_golf_fail10033.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 341,
+						"y": 0,
+						"w": 272,
+						"h": 205
+					},
+					"frame": {
+						"x": 1547,
+						"y": 993,
+						"w": 272,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10043.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 401,
+						"y": 0,
+						"w": 212,
+						"h": 205
+					},
+					"frame": {
+						"x": 1821,
+						"y": 993,
+						"w": 212,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10034.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 349,
+						"y": 0,
+						"w": 264,
+						"h": 205
+					},
+					"frame": {
+						"x": 1071,
+						"y": 1195,
+						"w": 264,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10045.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 407,
+						"y": 0,
+						"w": 206,
+						"h": 205
+					},
+					"frame": {
+						"x": 1337,
+						"y": 1195,
+						"w": 206,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10035.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 357,
+						"y": 0,
+						"w": 256,
+						"h": 205
+					},
+					"frame": {
+						"x": 667,
+						"y": 1367,
+						"w": 256,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10036.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 364,
+						"y": 0,
+						"w": 249,
+						"h": 205
+					},
+					"frame": {
+						"x": 1545,
+						"y": 1200,
+						"w": 249,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10038.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 377,
+						"y": 0,
+						"w": 236,
+						"h": 205
+					},
+					"frame": {
+						"x": 1796,
+						"y": 1200,
+						"w": 236,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10037.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 371,
+						"y": 0,
+						"w": 242,
+						"h": 205
+					},
+					"frame": {
+						"x": 925,
+						"y": 1402,
+						"w": 242,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10040.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 388,
+						"y": 0,
+						"w": 225,
+						"h": 205
+					},
+					"frame": {
+						"x": 570,
+						"y": 1574,
+						"w": 225,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10041.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 393,
+						"y": 0,
+						"w": 220,
+						"h": 205
+					},
+					"frame": {
+						"x": 1169,
+						"y": 1402,
+						"w": 220,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10042.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 397,
+						"y": 0,
+						"w": 216,
+						"h": 205
+					},
+					"frame": {
+						"x": 1391,
+						"y": 1407,
+						"w": 216,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10044.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 404,
+						"y": 0,
+						"w": 209,
+						"h": 205
+					},
+					"frame": {
+						"x": 797,
+						"y": 1609,
+						"w": 209,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10046.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 410,
+						"y": 0,
+						"w": 203,
+						"h": 205
+					},
+					"frame": {
+						"x": 1008,
+						"y": 1609,
+						"w": 203,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10047.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 413,
+						"y": 0,
+						"w": 200,
+						"h": 205
+					},
+					"frame": {
+						"x": 1609,
+						"y": 1407,
+						"w": 200,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10048.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 414,
+						"y": 0,
+						"w": 199,
+						"h": 205
+					},
+					"frame": {
+						"x": 1811,
+						"y": 1407,
+						"w": 199,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10049.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 416,
+						"y": 0,
+						"w": 197,
+						"h": 205
+					},
+					"frame": {
+						"x": 1213,
+						"y": 1614,
+						"w": 197,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10050.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 417,
+						"y": 0,
+						"w": 196,
+						"h": 205
+					},
+					"frame": {
+						"x": 1412,
+						"y": 1614,
+						"w": 196,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10051.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1610,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10052.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10053.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10054.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10055.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10056.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10057.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10058.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10059.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10060.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10061.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10062.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10063.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10064.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10065.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10066.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10067.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10068.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10069.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10070.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10071.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10072.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10073.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10074.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10075.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10076.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10077.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10078.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10079.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10080.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10081.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10082.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10083.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10084.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10085.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10086.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10087.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10088.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10089.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10090.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10091.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10092.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10093.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10094.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				},
+				{
+					"filename": "final_golf_fail10095.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 621,
+						"h": 205
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 0,
+						"w": 195,
+						"h": 205
+					},
+					"frame": {
+						"x": 1807,
+						"y": 1614,
+						"w": 195,
+						"h": 205
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:b6578d54908ee706d9307f296eeeb6d1:c418e6c19f6314d1c733d2c8730680c2:d1e8c116956e12faef2c42c3928853f2$"
+	}
+}

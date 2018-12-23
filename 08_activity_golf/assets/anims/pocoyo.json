@@ -1,0 +1,608 @@
+{
+	"textures": [
+		{
+			"image": "pocoyo.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1873,
+				"h": 953
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "pocoyo0017.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 33,
+						"w": 592,
+						"h": 408
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 592,
+						"h": 408
+					}
+				},
+				{
+					"filename": "pocoyo0016.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 33,
+						"w": 523,
+						"h": 377
+					},
+					"frame": {
+						"x": 1,
+						"y": 411,
+						"w": 523,
+						"h": 377
+					}
+				},
+				{
+					"filename": "pocoyo0035.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 28,
+						"y": 40,
+						"w": 584,
+						"h": 162
+					},
+					"frame": {
+						"x": 1,
+						"y": 790,
+						"w": 584,
+						"h": 162
+					}
+				},
+				{
+					"filename": "pocoyo0015.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 33,
+						"w": 454,
+						"h": 344
+					},
+					"frame": {
+						"x": 526,
+						"y": 411,
+						"w": 454,
+						"h": 344
+					}
+				},
+				{
+					"filename": "pocoyo0025.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 28,
+						"y": 13,
+						"w": 141,
+						"h": 189
+					},
+					"frame": {
+						"x": 587,
+						"y": 757,
+						"w": 141,
+						"h": 189
+					}
+				},
+				{
+					"filename": "pocoyo0001.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 28,
+						"y": 13,
+						"w": 128,
+						"h": 189
+					},
+					"frame": {
+						"x": 730,
+						"y": 757,
+						"w": 128,
+						"h": 189
+					}
+				},
+				{
+					"filename": "pocoyo0010.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 17,
+						"y": 29,
+						"w": 139,
+						"h": 186
+					},
+					"frame": {
+						"x": 860,
+						"y": 757,
+						"w": 139,
+						"h": 186
+					}
+				},
+				{
+					"filename": "pocoyo0014.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 33,
+						"w": 385,
+						"h": 312
+					},
+					"frame": {
+						"x": 595,
+						"y": 1,
+						"w": 385,
+						"h": 312
+					}
+				},
+				{
+					"filename": "pocoyo0034.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 2,
+						"w": 475,
+						"h": 200
+					},
+					"frame": {
+						"x": 1001,
+						"y": 1,
+						"w": 475,
+						"h": 200
+					}
+				},
+				{
+					"filename": "pocoyo0033.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 2,
+						"w": 369,
+						"h": 200
+					},
+					"frame": {
+						"x": 1478,
+						"y": 1,
+						"w": 369,
+						"h": 200
+					}
+				},
+				{
+					"filename": "pocoyo0013.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 33,
+						"w": 316,
+						"h": 279
+					},
+					"frame": {
+						"x": 982,
+						"y": 203,
+						"w": 316,
+						"h": 279
+					}
+				},
+				{
+					"filename": "pocoyo0012.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 33,
+						"w": 247,
+						"h": 247
+					},
+					"frame": {
+						"x": 982,
+						"y": 484,
+						"w": 247,
+						"h": 247
+					}
+				},
+				{
+					"filename": "pocoyo0011.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 29,
+						"w": 180,
+						"h": 218
+					},
+					"frame": {
+						"x": 1001,
+						"y": 733,
+						"w": 180,
+						"h": 218
+					}
+				},
+				{
+					"filename": "pocoyo0032.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 2,
+						"w": 232,
+						"h": 200
+					},
+					"frame": {
+						"x": 1183,
+						"y": 733,
+						"w": 232,
+						"h": 200
+					}
+				},
+				{
+					"filename": "pocoyo0031.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 17,
+						"w": 135,
+						"h": 185
+					},
+					"frame": {
+						"x": 1231,
+						"y": 484,
+						"w": 135,
+						"h": 185
+					}
+				},
+				{
+					"filename": "pocoyo0026.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 28,
+						"y": 25,
+						"w": 141,
+						"h": 177
+					},
+					"frame": {
+						"x": 1300,
+						"y": 203,
+						"w": 141,
+						"h": 177
+					}
+				},
+				{
+					"filename": "pocoyo0002.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 28,
+						"y": 25,
+						"w": 128,
+						"h": 177
+					},
+					"frame": {
+						"x": 1368,
+						"y": 382,
+						"w": 128,
+						"h": 177
+					}
+				},
+				{
+					"filename": "pocoyo0029.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 28,
+						"y": 32,
+						"w": 126,
+						"h": 170
+					},
+					"frame": {
+						"x": 1368,
+						"y": 561,
+						"w": 126,
+						"h": 170
+					}
+				},
+				{
+					"filename": "pocoyo0030.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 28,
+						"y": 26,
+						"w": 146,
+						"h": 176
+					},
+					"frame": {
+						"x": 1443,
+						"y": 203,
+						"w": 146,
+						"h": 176
+					}
+				},
+				{
+					"filename": "pocoyo0003.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 26,
+						"y": 29,
+						"w": 130,
+						"h": 173
+					},
+					"frame": {
+						"x": 1417,
+						"y": 733,
+						"w": 130,
+						"h": 173
+					}
+				},
+				{
+					"filename": "pocoyo0004.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 26,
+						"y": 35,
+						"w": 130,
+						"h": 167
+					},
+					"frame": {
+						"x": 1496,
+						"y": 561,
+						"w": 130,
+						"h": 167
+					}
+				},
+				{
+					"filename": "pocoyo0027.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 26,
+						"y": 29,
+						"w": 130,
+						"h": 173
+					},
+					"frame": {
+						"x": 1498,
+						"y": 381,
+						"w": 130,
+						"h": 173
+					}
+				},
+				{
+					"filename": "pocoyo0009.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 31,
+						"w": 151,
+						"h": 171
+					},
+					"frame": {
+						"x": 1591,
+						"y": 203,
+						"w": 151,
+						"h": 171
+					}
+				},
+				{
+					"filename": "pocoyo0006.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 28,
+						"y": 36,
+						"w": 128,
+						"h": 166
+					},
+					"frame": {
+						"x": 1744,
+						"y": 203,
+						"w": 128,
+						"h": 166
+					}
+				},
+				{
+					"filename": "pocoyo0007.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 28,
+						"y": 36,
+						"w": 128,
+						"h": 166
+					},
+					"frame": {
+						"x": 1744,
+						"y": 371,
+						"w": 128,
+						"h": 166
+					}
+				},
+				{
+					"filename": "pocoyo0008.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 36,
+						"w": 154,
+						"h": 166
+					},
+					"frame": {
+						"x": 1549,
+						"y": 730,
+						"w": 154,
+						"h": 166
+					}
+				},
+				{
+					"filename": "pocoyo0005.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 40,
+						"w": 132,
+						"h": 162
+					},
+					"frame": {
+						"x": 1628,
+						"y": 556,
+						"w": 132,
+						"h": 162
+					}
+				},
+				{
+					"filename": "pocoyo0028.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 612,
+						"h": 441
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 49,
+						"w": 137,
+						"h": 153
+					},
+					"frame": {
+						"x": 1705,
+						"y": 720,
+						"w": 137,
+						"h": 153
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:845cce45be5cfbae8ddf8c8caa96ed3e:692e92c3aae20d602df79457b8d5a203:567b6afbcec3e42106ce0a71d8f483d2$"
+	}
+}
