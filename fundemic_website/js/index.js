@@ -88,39 +88,39 @@ let visible7 = Snap.select('#visible7');
 let visible8 = Snap.select('#visible8');
 
 svg1.addEventListener('mouseover',function() {
-      visible1.animate({ d: invisible_d }, 1000, mina.backout);
-      visible2.animate({ d: invisible_d }, 1000, mina.backout);
+      visible1.animate({ d: invisible_d }, 400, mina.backout);
+      visible2.animate({ d: invisible_d }, 400, mina.backout);
 });
 svg1.addEventListener('mouseout',function() {
-      visible1.animate({ d: visible_d }, 1000, mina.backout);
-      visible2.animate({ d: visible_d }, 1000, mina.backout);
+      visible1.animate({ d: visible_d }, 400, mina.backout);
+      visible2.animate({ d: visible_d }, 400, mina.backout);
 });
 
 svg3.addEventListener('mouseover',function() {
-      visible3.animate({ d: invisible_d }, 1000, mina.backout);
-      visible4.animate({ d: invisible_d }, 1000, mina.backout);
+      visible3.animate({ d: invisible_d }, 400, mina.backout);
+      visible4.animate({ d: invisible_d }, 400, mina.backout);
 });
 svg3.addEventListener('mouseout',function() {
-      visible3.animate({ d: visible_d }, 1000, mina.backout);
-      visible4.animate({ d: visible_d }, 1000, mina.backout);
+      visible3.animate({ d: visible_d }, 400, mina.backout);
+      visible4.animate({ d: visible_d }, 400, mina.backout);
 });
 
 svg5.addEventListener('mouseover',function() {
-      visible5.animate({ d: invisible_d }, 1000, mina.backout);
-      visible6.animate({ d: invisible_d }, 1000, mina.backout);
+      visible5.animate({ d: invisible_d }, 400, mina.backout);
+      visible6.animate({ d: invisible_d }, 400, mina.backout);
 });
 svg5.addEventListener('mouseout',function() {
-      visible5.animate({ d: visible_d }, 1000, mina.backout);
-      visible6.animate({ d: visible_d }, 1000, mina.backout);
+      visible5.animate({ d: visible_d }, 400, mina.backout);
+      visible6.animate({ d: visible_d }, 400, mina.backout);
 });
 
 svg7.addEventListener('mouseover',function() {
-      visible7.animate({ d: invisible_d }, 1000, mina.backout);
-      visible8.animate({ d: invisible_d }, 1000, mina.backout);
+      visible7.animate({ d: invisible_d }, 400, mina.backout);
+      visible8.animate({ d: invisible_d }, 400, mina.backout);
 });
 svg7.addEventListener('mouseout',function() {
-      visible7.animate({ d: visible_d }, 1000, mina.backout);
-      visible8.animate({ d: visible_d }, 1000, mina.backout);
+      visible7.animate({ d: visible_d }, 400, mina.backout);
+      visible8.animate({ d: visible_d }, 400, mina.backout);
 });
 
 

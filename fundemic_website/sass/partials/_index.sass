@@ -8,21 +8,27 @@
     padding-right: 7.3rem
     padding-top: 11.7vw
   +max(600)
-    padding-top: 23vw
+    padding-top: 47vw
     padding-bottom: 15vw
     padding-left: 3rem
     padding-right: 3rem
   +max(500)
     padding-right: 1.3rem
     padding-left: 1.3rem
+  +max(300)
+    padding-top: 50vw
+  +max(225)
+    padding-top: 30vw
   +e(title)
     width: 1000px
     font-size: 7.6rem
     line-height: 1.2em
     +max(1150)
-      font-size: 6.7vw
+      font-size: 6.5vw
     +max(600)
-      font-size: 9vw
+      margin-top: 2rem
+      font-size: 8.5vw
+      line-height: 1.1em
       padding: 0 13vw
   +e(sub-title)
     width: 770px
@@ -53,6 +59,7 @@
   +e(background-wrapper)
     z-index: -1
     position: absolute
+    height: 101rem
     right: -0.5rem
     width: 193rem
     height: 101rem
@@ -64,15 +71,17 @@
       right: -20rem
     +max(1150)
       width: 150%
-      height: 100%
+      height: 115%
     +max(600)
-      min-width: auto
-      right: 0
-      margin: unset
-      width: 115%
-      top: -19vw
-      left: -8vw
-      height: 131vw
+      width: 80%
+      top: 8vw
+      height: 90%
+      left: 50%
+      transform: translateX(-50%)
+    +max(225)
+      top: -5vw
+    +max(155)
+      top: -12vw
   +e(background)
     position: absolute
     width: 100%
@@ -90,34 +99,33 @@
         visibility: hidden
 
       .left-shape
-        transform: translateX(-10.7rem)
-        animation: left-shape 3s ease-in-out infinite alternate
+        transform: translateX(-5%)
         +max(1600)
-          transform: translateX(-3.7rem)
-          animation: left-shape-m 3s ease-in-out infinite alternate
+          display: none
       .top-shape
         transform: translatey(-6.7rem)
         animation: top-shape 3s ease-in-out infinite alternate
         +max(1600)
           transform: translatey(-6.7rem) translateX(-16.7rem)
           animation: top-shape-m 3s ease-in-out infinite alternate
+        +max(1000)
+          transform: translatey(-9.7vw) translateX(-16.7rem)
+
       .middle-shape
         +max(1150)
           display: none
 
 
   .animated-button
-    margin-top: 5rem
+    margin-top: 1rem
     transform: translateX(-.7rem)
-    width: 267px
-    height: 134px
+    width: 26.7rem
+    height: 13.4rem
     font-size: 25px !important
     transition: 1s ease all
-    +max(400)
-      margin-top: 13vw
-      width: 50%
-      height: 0
-      padding-bottom: 25%
+    +max(600)
+      width: 38vw !important
+      height: 15vw
 
     text
       text-transform: capitalize !important
@@ -174,6 +182,7 @@
     &:hover
       .glide__arrow
         opacity: 1
+        visibility: visible
 
     +e(slides)
       margin: 0
@@ -196,10 +205,12 @@
       transition: .1s ease all
       align-items: center
       display: flex
+      visibility: hidden
+
       polyline
         stroke: #fff
       svg
-        filter: drop-shadow(0px 0px 11px #393939)
+        filter: drop-shadow(0px 0px 8px #c2c2c2)
       +max(400)
         svg
           width: 11vw

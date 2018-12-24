@@ -18,21 +18,21 @@ let visible_d = visible9.node.getAttribute('d');
 let invisible_d = invisible9.node.getAttribute('d');
 
 svg9.addEventListener('mouseover', function () {
-    visible9.animate({d: invisible_d}, 1000, mina.backout);
-    visible10.animate({d: invisible_d}, 1000, mina.backout);
+    visible9.animate({d: invisible_d}, 400, mina.backout);
+    visible10.animate({d: invisible_d}, 400, mina.backout);
 });
 svg9.addEventListener('mouseout', function () {
-    visible9.animate({d: visible_d}, 1000, mina.backout);
-    visible10.animate({d: visible_d}, 1000, mina.backout);
+    visible9.animate({d: visible_d}, 400, mina.backout);
+    visible10.animate({d: visible_d}, 400, mina.backout);
 });
 
 svg11.addEventListener('mouseover', function () {
-    visible11.animate({d: invisible_d}, 1000, mina.backout);
-    visible12.animate({d: invisible_d}, 1000, mina.backout);
+    visible11.animate({d: invisible_d}, 400, mina.backout);
+    visible12.animate({d: invisible_d}, 400, mina.backout);
 });
 svg11.addEventListener('mouseout', function () {
-    visible11.animate({d: visible_d}, 1000, mina.backout);
-    visible12.animate({d: visible_d}, 1000, mina.backout);
+    visible11.animate({d: visible_d}, 400, mina.backout);
+    visible12.animate({d: visible_d}, 400, mina.backout);
 });
 
 
