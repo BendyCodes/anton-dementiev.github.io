@@ -1,0 +1,33 @@
+include templates/general/_mixins
+extends templates/general/_layout
+
+block config
+  - var pageTitle = 'Homepage'
+  - var footer_type = 'footer--bg-green'
+  - var overflow = 'true'
+
+block scripts-head
+
+block cookie
+  include templates/general/_cookie
+
+block header
+  include templates/general/_header
+
+block main
+  main.home-page
+    include templates/homepage/_hero
+    include templates/homepage/_projects-slider
+    include templates/homepage/_services
+    include templates/homepage/_template
+    include templates/homepage/_clients
+
+block footer
+  include templates/general/_footer
+
+block scripts-bottom
+  script(src="js/glide.min.js")
+  script(src="js/snap.svg-min.js")
+  script(src="js/jquery.min.js")
+  script(src="js/menu-control.js")
+  script(src="js/index.js")

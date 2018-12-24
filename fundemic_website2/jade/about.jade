@@ -1,0 +1,27 @@
+include templates/general/_mixins
+extends templates/general/_layout
+
+block config
+  - var pageTitle = 'About'
+  - var footer_type = 'footer--bg-green'
+
+//block cookie
+//  include templates/_cookie
+
+block header
+  include templates/general/_header
+
+block main
+  main.about-page
+    include templates/about/_description-main
+    include templates/about/_services
+    include templates/about/_description-secondary
+
+block footer
+  include templates/general/_footer
+
+block scripts-bottom
+  script(src="js/snap.svg-min.js")
+  script(src="js/jquery.min.js")
+  script(src="js/menu-control.js")
+  script(src="js/scroll.js")

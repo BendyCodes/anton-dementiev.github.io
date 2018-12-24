@@ -1,0 +1,34 @@
+footer(class='footer', class='#{footer_type}')
+  .wrapper
+    .footer__column.footer__column--logo
+      .footer__logo
+        .image-holder
+          img.image(src='./img/logo-icon.svg')
+        span.copyright
+          | Copyright © 2018 Fundemic
+    .footer__column.footer__column--links.footer__column--links-first
+      a.footer__link(href="./index.html")
+        | Home
+      a.footer__link(href="./projects.html")
+        | Projects
+      a.footer__link(href="./about.html")
+        | About
+      a.footer__link(href="./homegrown.html")
+        | Homegrown
+    .footer__column.footer__column--links.footer__column--links-second
+      a.footer__link(href="./about.html")
+        | Privacy
+      a.footer__link(href="./about.html")
+        | Terms
+    .footer__column.footer__column--contact
+      +button('Contact','--small animated-button--bg animated-button--footer','11','12','0','8','contact.html')
+      //- a.footer__link-contact(href="./contact.html")
+        | Contact
+    .footer__column.footer__column--social
+      a.footer__social(href="https://facebook.com" target="_blank")
+        img.logo(src="./img/fb.svg")
+      a.footer__social(href="https://instagram.com" target="_blank")
+        img.logo(src="./img/instagram.svg")
+      a.footer__social(href="https://linkedin.com" target="_blank")
+        img.logo(src="./img/linkedin.svg")
+

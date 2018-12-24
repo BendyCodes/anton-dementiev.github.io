@@ -1,0 +1,142 @@
+*
+  box-sizing: border-box
+main
+  display: block
+a
+  color: inherit
+  text-decoration: none
+
+  &:focus
+    outline: none
+
+html
+  height: 100%
+  font-size: 10px
+  +max(1150)
+    font-size: 9px
+  +max(991)
+    font-size: 8px
+
+body
+  font-family: "Montserrat", sans-serif
+  background: $white
+  margin: 0
+  font-size: 1.6rem
+  font-weight: 400
+  color: $gray
+  box-sizing: border-box
+  -webkit-tap-highlight-color: transparent
+  user-select: none
+
+h1, h2, h3, h4, h5
+  font-weight: normal
+  margin-bottom: 0
+
+h2
+  //
+  font-size: 5.6rem
+
+button
+ &:focus
+   outline: none
+ &::-moz-focus-inner
+   border-color: transparent
+.overflow
+  overflow: hidden
+  width: 100%
+
+.animated-button
+  cursor: pointer
+  position: relative
+  display: block
+  mix-blend-mode: lighten
+
+  +max(600)
+    width: 50% !important
+    transform: none !important
+    margin-left: auto !important
+    margin-right: auto !important
+
+  text
+    text-transform: uppercase
+    font-weight: 500
+    font-family: Montserrat, sans-serif
+    fill: $gray
+
+  .svg
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 100%
+    height: 100%
+
+    .visible
+      stroke-linecap: round
+      stroke-width: 85.5669
+
+    .invisible
+      opacity: 0
+
+  .svg--1
+    z-index: 2
+
+    .visible
+      stroke-width: 81.5669
+
+  .svg--2
+    z-index: 1
+    pointer-events: none
+
+  &--white
+    mix-blend-mode: darken
+    .visible
+      stroke: $white
+    .svg--2
+      .visible
+        stroke: $gray
+
+  &--bg
+    text
+      fill: $white
+    .svg--2
+      .visible
+        stroke: $white !important
+
+  &--mid
+    width: 177px
+    height: 94px
+    margin-top: 1rem
+    transform: translateX(-.5rem)
+
+    text
+      font-size: 18px
+
+  &--small
+    width: 137px
+    height: 74px
+
+    text
+      font-size: 25px
+
+    .svg--1
+      .visible
+        stroke-width: 80
+
+    +max(991)
+      width: 107px
+      height: 54px
+      text
+        font-size: 23px
+        transform: translateX(5px)
+
+  &--blue
+    .svg--1
+      .visible
+        stroke: $blue-mid !important
+
+  &--red
+    .svg--1
+      .visible
+        stroke: $red !important
+

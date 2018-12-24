@@ -1,0 +1,164 @@
++b(contact-page)
+  overflow: hidden
+
++b(form)
+  $margin: 3rem
+  $padding: 1.5rem
+  .wrapper
+    width: 62rem
+    margin: auto
+    +max(550)
+      width: 52rem
+    +max(470)
+      width: 100%
+      padding-left: $padding * 2
+      padding-right: $padding * 2
+
+  +e(title)
+    //
+    margin-top: 7vw
+    +max(400)
+      text-align: center
+    +max(320)
+      font-size: 4rem
+    +max(270)
+      font-size: 3rem
+
+  +e(form)
+    display: flex
+    flex-wrap: wrap
+    color: $gray
+    margin-top: 6rem
+    padding-bottom: 20vw
+
+  +e(input)
+    margin: 0
+    border: none
+    background: $gray-light
+    padding: 1.5rem
+    padding-right: 5rem
+    font-size: 1.8rem
+    font-family: "Montserrat", sans-serif
+    color: $gray
+    +m(company)
+      width: 100%
+    +m(firstname)
+      width: calc(50% - #{$margin / 2})
+      margin-right: $margin / 2
+      margin-top: $margin
+      +max(400)
+        width: 100%
+        margin-right: 0
+    +m(lastname)
+      width: calc(50% - #{$margin / 2})
+      margin-left: $margin / 2
+      margin-top: $margin
+      +max(400)
+        width: 100%
+        margin-left: 0
+    +m(email)
+      width: 100%
+      margin-top: $margin
+  +e(row)
+    width: 100%
+    +m(checkbox)
+      -webkit-tap-highlight-color: transparent
+      margin-top: $margin - .4rem
+      user-select: none
+      margin-left: -$margin / 2
+      margin-right: -$margin / 2
+      width: calc(100% + #{$margin})
+      display: flex
+      flex-wrap: wrap
+      +max(550)
+        width: 100%
+        margin-left: 0
+        margin-right: 0
+        justify-content: center
+    +m(submit)
+      margin-top: $margin
+  +e(checkbox)
+    display: inline-block
+    margin-top: $margin / 2
+    cursor: pointer
+    user-select: none
+    margin-left: $margin / 2
+    margin-right: $margin / 2
+    position: relative
+    &:focus
+      outline: none
+    .text
+      background: $gray-light
+      width: 100%
+      height: 100%
+      border-radius: 20rem
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%,-50%)
+      display: flex
+      align-items: center
+      justify-content: center
+    .text-invisible
+      opacity: 0
+      padding: 1.5rem 2.93rem
+      display: block
+      +max(550)
+        padding: 1.5rem 2rem
+      +max(470)
+        padding: 1.5rem 2.7rem
+    input
+      display: none
+      &:checked
+        & ~ .text
+          color: #fff
+          font-weight: 500
+          background: $green
+
+  +e(message)
+    width: 100%
+    margin-top: $margin * 1.5
+    background: $gray-light
+    min-height: 15rem
+    border: none
+    font-size: 1.8rem
+    font-family: "Montserrat", sans-serif
+    padding: $padding
+  +e(submit)
+    font-size: 2rem
+    border-width: .2rem
+    border-style: solid
+    border-radius: 4em
+    border-color: $gray
+    padding: 1.1rem 2.3rem
+    font-weight: 500
+    background: none
+    color: $gray
+    margin-left: auto
+    display: block
+    cursor: pointer
+    -webkit-tap-highlight-color: transparent
+    &:focus
+      outline: 0
+
+  +e(important)
+    background-image: url("../img/contact-important.svg")
+    background-repeat: no-repeat
+    background-size: 2.8rem
+    background-position: calc(100% - 1.2rem) 50%
+
+  .animated-button
+    margin-left: auto !important
+    margin-right: initial !important
+    transform: translateX(1rem) translatey(-1rem) !important
+    width: 137px !important
+    height: 74px !important
+    +max(350)
+      width: 100% !important
+      margin-right: auto !important
+
+  &__input,
+  &__message
+    &:focus
+      outline: 1px solid $green
+

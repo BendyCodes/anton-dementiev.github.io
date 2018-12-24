@@ -1,0 +1,27 @@
+include templates/general/_mixins
+extends templates/general/_layout
+
+block config
+  - var pageTitle = 'Projects'
+  - var footer_type = 'footer--bg-red'
+
+//block cookie
+//  include templates/_cookie
+
+block header
+  include templates/general/_header
+
+block main
+  main.projects-page
+    include templates/projects/_projects-grid
+    include templates/projects/_circles
+
+block footer
+  include templates/general/_footer
+
+block scripts-bottom
+  script(src="js/snap.svg-min.js")
+  script(src="js/jquery.min.js")
+  script(src="js/menu-control.js")
+  script(src="js/countup.js")
+  script(src="js/projects.js")

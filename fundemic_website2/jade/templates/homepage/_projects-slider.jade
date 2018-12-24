@@ -1,0 +1,24 @@
+section.projects-slider
+  h2.projects-slider__title
+    | Our Projects
+  .glide
+    .glide__track(data-glide-el="track")
+      ul.glide__slides
+        +card('./single-project.html','green','B2B / FACEBOOK','SOCCER', 'KICK & SHOOTOUT','Global audience segmentation to determine brand and content direction','2','li','default')
+        +card('./single-project.html','blue-light','B2B / CARTOON NETWORK','ADVENTURE TIME', ' AVALANCHE','Global audience segmentation to determine brand and content direction','3','li','avalanche')
+        +card('./single-project.html','orange','DIGITAL / GAME','SOCCER', 'KICK & SHOOTOUT','Global audience segmentation to determine brand and content direction','4','li','default')
+        +card('./single-project.html','orange','DIGITAL / GAME','SOCCER', 'KICK & SHOOTOUT','Global audience segmentation to determine brand and content direction','4','li','default')
+        +card('./single-project.html','blue-dark','B2B / CARTOON NETWORK','ADVENTURE TIME ', 'THE FROSTY FIGHTS','Global audience segmentation to determine brand and content direction','1','li','frosty')
+    .glide__arrows(data-glide-el='controls')
+      button.glide__arrow.glide__arrow--left(data-glide-dir='<')
+        +arrow-left
+      button.glide__arrow.glide__arrow--right(data-glide-dir='>')
+        +arrow-right
+
+
+
+  //- a.projects-slider__link(href="projects.html")
+    | View All
+  +button('View All','--white','3','4','4.3','8','projects.html')
+
+
