@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<localization languages="es,en,en_US,it,pt,zh">
+	<fonts>
+		<shared>
+			<font family="Futura Md">
+				<plain><![CDATA[ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ]]></plain>
+				<bold><![CDATA[ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ]]></bold>
+				<italic/>
+				<bold_italic/>
+			</font>
+		</shared>
+	</fonts>
+	<styles>
+		<style name="HelpHeader">
+			<data color="1189cc" fontFamily="Futura Md" fontSize="13.5" fontStyle="normal" fontWeight="bold" languages="en,en_US,es,it,pt" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+			<data color="1189cc" fontFamily="SimSun" fontSize="13.5" fontStyle="normal" fontWeight="bold" languages="zh" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+		</style>
+		<style name="HelpText">
+			<data color="1189cc" fontFamily="Futura Md" fontSize="10.5" fontStyle="normal" fontWeight="bold" languages="en,en_US,es,it,pt" multilineAlign="left_center" textAlign="left" textDecoration="none"/>
+			<data color="1189cc" fontFamily="SimSun" fontSize="10.5" fontStyle="normal" fontWeight="bold" languages="zh" multilineAlign="left_center" textAlign="left" textDecoration="none"/>
+		</style>
+		<style name="MdAzul26Centrado">
+			<data color="356a9f" fontFamily="Futura Md" fontSize="19.5" fontStyle="normal" fontWeight="normal" languages="en,en_US,es,it,pt" multilineAlign="center_center" textAlign="center" textDecoration="__ignore__"/>
+			<data color="356a9f" fontFamily="SimSun" fontSize="19.5" fontStyle="normal" fontWeight="normal" languages="zh" multilineAlign="center_center" textAlign="center" textDecoration="__ignore__"/>
+		</style>
+		<style name="MdBlanco100Centrado">
+			<data color="ffffff" fontFamily="Futura Md" fontSize="75.0" fontStyle="normal" fontWeight="bold" languages="en,en_US,es,it,pt" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+			<data color="ffffff" fontFamily="SimSun" fontSize="75.0" fontStyle="normal" fontWeight="bold" languages="zh" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+		</style>
+		<style name="MdBlanco16Centrado">
+			<data color="ffffff" fontFamily="Futura Md" fontSize="12.0" fontStyle="normal" fontWeight="normal" languages="en,en_US,es,it,pt" multilineAlign="center_center" textAlign="center" textDecoration="__ignore__"/>
+			<data color="ffffff" fontFamily="SimSun" fontSize="12.0" fontStyle="normal" fontWeight="normal" languages="zh" multilineAlign="center_center" textAlign="center" textDecoration="__ignore__"/>
+		</style>
+		<style name="MdBlanco39Centrado">
+			<data color="ffffff" fontFamily="Futura Md" fontSize="29.25" fontStyle="normal" fontWeight="normal" languages="en,en_US,es,it,pt" multilineAlign="center_center" textAlign="center" textDecoration="__ignore__"/>
+			<data color="ffffff" fontFamily="SimSun" fontSize="29.25" fontStyle="normal" fontWeight="normal" languages="zh" multilineAlign="center_center" textAlign="center" textDecoration="__ignore__"/>
+		</style>
+		<style name="MdCeleste48Centrado">
+			<data color="1189cc" fontFamily="Futura Md" fontSize="36.0" fontStyle="normal" fontWeight="bold" languages="en,en_US,es,it,pt" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+			<data color="1189cc" fontFamily="SimSun" fontSize="36.0" fontStyle="normal" fontWeight="bold" languages="zh" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+		</style>
+		<style name="MdCeleste50Centrado">
+			<data color="1189cc" fontFamily="Futura Md" fontSize="37.5" fontStyle="normal" fontWeight="bold" languages="en,en_US,es,it,pt" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+			<data color="1189cc" fontFamily="SimSun" fontSize="37.5" fontStyle="normal" fontWeight="bold" languages="zh" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+		</style>
+		<style name="MdGris24Centrado">
+			<data color="666666" fontFamily="Futura Md" fontSize="18.0" fontStyle="normal" fontWeight="normal" languages="en,en_US,es,it,pt" multilineAlign="center_center" textAlign="center" textDecoration="__ignore__"/>
+			<data color="666666" fontFamily="SimSun" fontSize="18.0" fontStyle="normal" fontWeight="normal" languages="zh" multilineAlign="center_center" textAlign="center" textDecoration="__ignore__"/>
+		</style>
+		<style name="MdNaranja100Centrado">
+			<data color="ff9900" fontFamily="Futura Md" fontSize="75.0" fontStyle="normal" fontWeight="bold" languages="en,en_US,es,it,pt" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+			<data color="ff9900" fontFamily="SimSun" fontSize="75.0" fontStyle="normal" fontWeight="bold" languages="zh" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+		</style>
+		<style name="Text">
+			<data color="1189cc" fontFamily="Futura Md" fontSize="24.0" fontStyle="normal" fontWeight="bold" languages="en,en_US,es,it,pt" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+			<data color="1189cc" fontFamily="SimSun" fontSize="24.0" fontStyle="normal" fontWeight="bold" languages="zh" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+		</style>
+		<style name="TextInvert">
+			<data color="a5c9de" fontFamily="Futura Md" fontSize="24.0" fontStyle="normal" fontWeight="bold" languages="en,en_US,es,it,pt" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+			<data color="a5c9de" fontFamily="SimSun" fontSize="24.0" fontStyle="normal" fontWeight="bold" languages="zh" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+		</style>
+		<style name="TextResult">
+			<data color="1189cc" fontFamily="Futura Md" fontSize="19.5" fontStyle="normal" fontWeight="bold" languages="en,en_US,es,it,pt" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+			<data color="1189cc" fontFamily="SimSun" fontSize="19.5" fontStyle="normal" fontWeight="bold" languages="zh" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+		</style>
+		<style name="TextResultInvert">
+			<data color="a5c9de" fontFamily="Futura Md" fontSize="19.5" fontStyle="normal" fontWeight="bold" languages="en,en_US,es,it,pt" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+			<data color="a5c9de" fontFamily="SimSun" fontSize="19.5" fontStyle="normal" fontWeight="bold" languages="zh" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+		</style>
+		<style name="Title">
+			<data color="1189cc" fontFamily="Futura Md" fontSize="26.25" fontStyle="normal" fontWeight="bold" languages="en,en_US,es,it,pt" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+			<data color="1189cc" fontFamily="SimSun" fontSize="26.25" fontStyle="normal" fontWeight="bold" languages="zh" multilineAlign="center_center" textAlign="center" textDecoration="none"/>
+		</style>
+		<style name="ToolTip">
+			<data color="ccebff" fontFamily="Futura Md" fontSize="10.5" fontStyle="normal" fontWeight="bold" languages="en,en_US,es,it,pt" multilineAlign="__ignore__" textAlign="left" textDecoration="none"/>
+			<data color="ccebff" fontFamily="SimSun" fontSize="10.5" fontStyle="normal" fontWeight="bold" languages="zh" multilineAlign="__ignore__" textAlign="left" textDecoration="none"/>
+		</style>
+	</styles>
+	<strings>
+		<client>
+			<string id="EstasSeguro">
+				<es><![CDATA[¿Seguro que quieres salir?]]></es>
+				<en><![CDATA[Are you sure you want exit?]]></en>
+				<en_US><![CDATA[Are you sure you want exit?]]></en_US>
+				<it><![CDATA[Sei sicuro di voler uscire?]]></it>
+				<pt><![CDATA[Tens a certeza de que queres sair?]]></pt>
+				<zh><![CDATA[不玩儿了？]]></zh>
+			</string>
+			<string id="NivelCompletado">
+				<es><![CDATA[¡Has completado el nivel!]]></es>
+				<en><![CDATA[Level completed!]]></en>
+				<en_US><![CDATA[Level completed!]]></en_US>
+				<it><![CDATA[Livello completato!]]></it>
+				<pt><![CDATA[Chegaste ao fim do nível!]]></pt>
+				<zh><![CDATA[过关啦！]]></zh>
+			</string>
+			<string id="NivelEstatico">
+				<es><![CDATA[Nivel]]></es>
+				<en><![CDATA[Level]]></en>
+				<en_US><![CDATA[Level]]></en_US>
+				<it><![CDATA[Livello]]></it>
+				<pt><![CDATA[Nível]]></pt>
+				<zh><![CDATA[级]]></zh>
+			</string>
+			<string id="OverEnhorabuena">
+				<es><![CDATA[¡Enhorabuena, has entrado en la lista de los mejores!]]></es>
+				<en><![CDATA[Congratulations, you're in the top rankings!]]></en>
+				<en_US><![CDATA[Congratulations, you're in the top rankings!]]></en_US>
+				<it><![CDATA[Congratulazioni, sei nella classifica dei migliori!]]></it>
+				<pt><![CDATA[Parabéns, entraste na lista dos melhores!]]></pt>
+				<zh><![CDATA[恭喜你，上榜啦！]]></zh>
+			</string>
+			<string id="OverPuntos">
+				<es><![CDATA[Has conseguido ${0} puntos.]]></es>
+				<en><![CDATA[You've got ${0} points.]]></en>
+				<en_US><![CDATA[You've got ${0} points.]]></en_US>
+				<it><![CDATA[Hai ${0} punti.]]></it>
+				<pt><![CDATA[Conseguiste ${0} pontos.]]></pt>
+				<zh><![CDATA[你得到${0}点。]]></zh>
+			</string>
+			<string id="OverTickets">
+				<es><![CDATA[Has ganado ${0} tickets.]]></es>
+				<en><![CDATA[You won ${0} tickets.]]></en>
+				<en_US><![CDATA[You won ${0} tickets.]]></en_US>
+				<it><![CDATA[Hai vinto ${0} ticket.]]></it>
+				<pt><![CDATA[Ganhaste ${0} tickets.]]></pt>
+				<zh><![CDATA[你赢得${0}优币。]]></zh>
+			</string>
+			<string id="PuntosEstatico">
+				<es><![CDATA[Puntos]]></es>
+				<en><![CDATA[Points]]></en>
+				<en_US><![CDATA[Points]]></en_US>
+				<it><![CDATA[Punti]]></it>
+				<pt><![CDATA[Pontos]]></pt>
+				<zh><![CDATA[点数]]></zh>
+			</string>
+			<string id="TiempoAgotado">
+				<es><![CDATA[Tiempo agotado,
+vuelve a intentarlo.]]></es>
+				<en><![CDATA[Time's up,
+try again.]]></en>
+				<en_US><![CDATA[Time's up,
+try again.]]></en_US>
+				<it><![CDATA[Tempo scaduto,
+prova di nuovo.]]></it>
+				<pt><![CDATA[O tempo acabou,
+volta a tentar.]]></pt>
+				<zh><![CDATA[时间到了，
+再来一次吧。]]></zh>
+			</string>
+			<string id="Titulo">
+				<es><![CDATA[El juego de las frutas]]></es>
+				<en><![CDATA[The fruit game]]></en>
+				<en_US><![CDATA[The fruit game]]></en_US>
+				<it><![CDATA[La frutta di Game]]></it>
+				<pt><![CDATA[O jogo de fruta]]></pt>
+				<zh><![CDATA[优优摘水果]]></zh>
+			</string>
+			<string id="Ya">
+				<es><![CDATA[¡ya!]]></es>
+				<en><![CDATA[Go!]]></en>
+				<en_US><![CDATA[Go!]]></en_US>
+				<it><![CDATA[Via!]]></it>
+				<pt><![CDATA[Vai!]]></pt>
+				<zh><![CDATA[开始！]]></zh>
+			</string>
+		</client>
+		<server/>
+	</strings>
+</localization>
