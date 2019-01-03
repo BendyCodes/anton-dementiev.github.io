@@ -59,7 +59,6 @@
   +e(background-wrapper)
     z-index: -1
     position: absolute
-    height: 101rem
     right: -0.5rem
     width: 193rem
     height: 101rem
@@ -97,24 +96,108 @@
       display: block
       +max(600)
         visibility: hidden
-
-      .left-shape
-        transform: translateX(-5%)
-        +max(1600)
-          display: none
-      .top-shape
-        transform: translatey(-6.7rem)
-        animation: top-shape 3s ease-in-out infinite alternate
-        +max(1600)
-          transform: translatey(-6.7rem) translateX(-16.7rem)
-          animation: top-shape-m 3s ease-in-out infinite alternate
-        +max(1000)
-          transform: translatey(-9.7vw) translateX(-16.7rem)
-
+        opacity: 0
       .middle-shape
         +max(1150)
           display: none
 
+      .curve
+        stroke-dasharray: 470
+        stroke-dashoffset: 470
+        visibility: hidden
+      .smile
+        stroke-dasharray: 250
+        stroke-dashoffset: 250
+        visibility: hidden
+      .line-big
+        stroke-dasharray: 85
+        stroke-dashoffset: 85
+        visibility: hidden
+      .line-small
+        stroke-dasharray: 55
+        stroke-dashoffset: 55
+        visibility: hidden
+      .circle
+        transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+  .left-shape
+    position: absolute
+    top: -5%
+    left: -16.5rem
+    transition: opacity .3s ease
+    opacity: 1
+    z-index: -2
+    stroke-dasharray: 85px
+    stroke-dashoffset: 85px
+    visibility: hidden
+    animation: stroke-line-big .8s ease-out 4.3s forwards
+    +max(1350)
+      opacity: 0
+  .top-shape
+    position: absolute
+    top: -25%
+    right: -15rem
+    z-index: -2
+    transition: .3s ease all
+    opacity: 1
+    stroke-dasharray: 85px
+    stroke-dashoffset: 85px
+    visibility: hidden
+    animation: stroke-line-big-reverse .7s ease-out 4.8s forwards
+
+    +max(1600)
+      transform: translatey(-1.7rem) translatex(8.7rem)
+    +max(1250)
+      visibility: hidden
+      opacity: 0
+  .hero__background--desktop.animating
+    .smile-1
+      animation: stroke-smile 1s ease-in forwards
+
+    .line-small-2
+      animation: stroke-line-small .6s ease-out .7s forwards
+
+    .curve
+      animation: stroke-curve 1.4s ease-in .65s forwards
+
+    .smile-2
+      animation: stroke-smile .7s ease-in 1.8s forwards
+
+    .line-big-2
+      animation: stroke-line-big .7s ease-in-out 2s forwards
+
+    .line-big-3
+      animation: stroke-line-big .8s ease-out 2.2s forwards
+
+    .line-big-1
+      animation: stroke-line-big 1s ease-out 0.8s forwards
+
+    .line-small-1
+      animation: stroke-line-small .5s ease-out 1.8s forwards
+
+    .smile-3
+      animation: stroke-smile .8s ease-in 1.7s forwards
+
+    .circle
+      transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+      @for $i from 1 through 11
+        @if $i % 2 == 0
+          &.circle-#{$i}
+            //animation: animation .15s linear both
+            //animation: animation2 2s linear forwards
+            animation: circle-1 2s linear forwards
+
+      @for $i from 1 through 11
+        @if $i % 2 != 0
+          &.circle-#{$i}
+            //animation: animation .15s linear both
+            //animation: animation2 2s linear forwards
+            animation: circle-2 2s linear forwards
+
+      @for $i from 1 through 11
+        &.circle-#{$i}
+          animation-delay: #{1+$i*0.1}s
 
   .animated-button
     margin-top: 1rem
@@ -122,13 +205,26 @@
     width: 26.7rem
     height: 13.4rem
     font-size: 25px !important
-    transition: 1s ease all
+    transition: .25s ease all
+    z-index: 0
     +max(600)
       width: 38vw !important
       height: 15vw
 
     text
       text-transform: capitalize !important
+  &.browser-fix
+    .curve,
+    .smile,
+    .line-big,
+    .line-small,
+    .left-shape,
+    .top-shape
+      visibility: visible !important
+      stroke-dashoffset: 0 !important
+      animation: none !important
+    .circle
+      transform: scale(1) !important
 
 +b(projects-slider)
   padding-bottom: 13vw
@@ -188,6 +284,7 @@
       margin: 0
       padding: 0
       display: flex
+      cursor: grab
     +e(arrows)
       width: 100%
       height: 100%
@@ -199,22 +296,23 @@
       position: absolute
       border: none
       cursor: pointer
-      height: 100%
       background: transparent
       opacity: 0
       transition: .1s ease all
       align-items: center
       display: flex
+      justify-content: center
       visibility: hidden
-
+      width: 7.5vw
+      +max(991)
+        width: 11vw
+      +max(500)
+        width: 20vw
+      svg
+        width: 100%
       polyline
         stroke: #fff
-      svg
-        filter: drop-shadow(0px 0px 8px #c2c2c2)
-      +max(400)
-        svg
-          width: 11vw
-          height: 11vw
+      +max(650)
         polyline
           stroke-width: 4
         &:hover
@@ -223,20 +321,48 @@
         outline: none
       +m(left)
         left: 0
+        padding-left: 2vw
+        +max(1300)
+          padding-left: 1vw
       +m(right)
         right: 0
+        padding-right: 2vw
+        +max(1300)
+          padding-right: 1vw
 
   .card
     +card
     margin: 0
     padding: 0
     cursor: grab
+    transition: transform .15s ease-in, box-shadow .2s ease
+    transform: translate3d(0, 0, 0)
     +e(wrapper)
       //
       padding-bottom: 140%
     +e(info-wrapper)
       position: absolute
       bottom: 0
+    +e(image)
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      height: auto
+      transform: translate3d(0, 0, 0)
+      transition: transform .15s ease-out
+      will-change: transform
+    +e(link)
+      width: 100%
+      height: 100%
+      display: block
+      cursor: pointer
+      z-index: 3
+      position: relative
+      &:focus,
+      &:active
+        cursor: grab
+
     +min(1301)
       +e(wrapper)
         width: calc(100% - 2vw * 2)
@@ -298,6 +424,12 @@
       +e(category)
         top: 12.3vw !important
         font-size: 3.9vw
+
+    &:hover
+      box-shadow: 2px 30px 25px -20px #c6bfbf
+      transform: translate3d(0, -.5%, 0)
+      .card__image
+        transform: translate3d(0%, -.6%, 0)
 
 +b(info)
   +shadow

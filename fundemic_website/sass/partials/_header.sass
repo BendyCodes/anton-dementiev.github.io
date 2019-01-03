@@ -2,12 +2,12 @@
   color: $white
   background: $gray
   padding: 2.4rem 3rem 2.6rem 3.5rem
-  display: flex
   justify-content: space-between
   font-size: 1.3vw
   margin-bottom: 0.8rem
   position: relative
   z-index: 2
+  display: none
   +min(1920)
     align-items: center
   +max(1150)
@@ -36,7 +36,9 @@
     height: 2.7rem
     margin-top: -.1rem
     cursor: pointer
-  &.animated
+  &.visible
+    display: flex
+  &.invisible
     display: none
 
 +b(header)
@@ -52,26 +54,64 @@
     position: relative
     align-self: stretch
     width: 17rem
-    transform: translateY(-.2rem) translateZ(0)
-    backface-visibility: hidden
+    transform: translateY(-.3rem) translateZ(0)
+    backface-visibility: visible
     +max(600)
-      width: 5.2rem
+      width: 4.8rem
       overflow: hidden
-    +min(601)
-      &:hover
-        .header__image
-          backface-visibility: hidden
-          animation: logo .9s linear forwards
-  +e(image)
-    position: absolute
-    width: 100%
-    bottom: 0%
-    left: 0%
-    +min(601)
-      animation: logo-reverse .3s ease alternate
-    +max(600)
-      width: 17rem
+    .logo
+      position: absolute
+      bottom: 50%
+      transform: translateY(50%)
       left: 0
+      width: 17rem
+      +max(600)
+        width: 16rem
+        left: 0
+    .logo.animating
+      .logo__big-line
+        stroke-dasharray: 33px
+        stroke-dashoffset: 33px
+        animation: stroke-reverse 1s cubic-bezier(0.86, 0.12, 1, 0.73) .7s forwards
+      .logo__smile
+        stroke-dasharray: 33px
+        stroke-dashoffset: 33px
+        animation: stroke 1.5s cubic-bezier(0, 0.9, 0.5, 1) 1.7s forwards
+      .logo__stroke
+        &.logo__big-line,
+        &.logo__smile
+          stroke-dashoffset: 66px
+      .logo__circle
+        transform: scale(0)
+      .logo__circle--scale
+        transform: scale(1)
+      .logo__circle--left
+        animation: bounceIn 0.2s linear 1.9s forwards
+      .logo__circle--right
+        animation: bounceIn 0.2s linear 2.1s forwards
+      .logo-animating-second
+        &.logo__big-line, &.logo__smile
+          animation: stroke-second-fix 0.8s cubic-bezier(0.5, 0.3, 1, 0.34) 0.1s forwards
+      .logo-animating
+        &.logo__big-line, &.logo__smile
+          animation: stroke-second 0.8s cubic-bezier(0.5, 0.3, 1, 0.34) 0.1s forwards
+      .logo-animating-second.logo__circle--left
+        animation: bounceOut-fix 0.4s cubic-bezier(0.5, 0.3, 1, 0.34) 0.1s 2 alternate
+      .logo-animating.logo__circle--left
+        animation: bounceOut 0.4s cubic-bezier(0.5, 0.3, 1, 0.34) 0.1s 2 alternate
+      .logo-animating-second.logo__circle--right
+        animation: bounceOut-fix 0.4s cubic-bezier(0.5, 0.3, 1, 0.34) 0.25s 2 alternate
+      .logo-animating.logo__circle--right
+        animation: bounceOut 0.4s cubic-bezier(0.5, 0.3, 1, 0.34) 0.25s 2 alternate
+      @for $i from 3 through 12
+        path:nth-child(#{$i})
+          opacity: 0
+          visibility: hidden
+          animation: appearance .2s ease #{1.6 + $i / 11}s forwards
+    +max(600)
+      path:nth-child(n+3)
+        display: none
+
   +e(link)
     text-transform: uppercase
     -webkit-tap-highlight-color: transparent
@@ -109,7 +149,7 @@
     background: rgba(21, 24, 59, 0.5)
     +max(800)
       &.visible
-        visibility: visible
+        visibility: visible !important
         transform: translate3d(0, 0, 0)
     @media(max-height: 400px)
       a

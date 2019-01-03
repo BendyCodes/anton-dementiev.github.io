@@ -151,13 +151,6 @@
           position: absolute
           left: 0
           transform: translateX(-100%)
-        +m(mobile)
-          display: none
-          +max(576)
-            display: inline-block
-        +m(desktop)
-          +max(576)
-            display: none
     +e(subtitle)
       transform: translateX(-1vw)
       font-size: 4.07vw
@@ -173,6 +166,8 @@
       margin: auto
       z-index: -1
       overflow: visible
+      path
+        transform: scale(0)
 
     .circles__image--mobile
       visibility: hidden
@@ -192,22 +187,27 @@
       width: 100%
       +max(1550)
         width: 140%
+        left: 43%
+        .top-left
+          visibility: hidden
       +max(1350)
         position: absolute
       +max(1150)
         width: 175%
+        left: 50%
       +max(991)
         width: 210%
       +max(576)
         visibility: hidden
-      path
-        transform: scale(0)
+
 
     &.animating
-      .circles__image--desktop
+      .circles__image
         @supports not (-ms-ime-align: auto)
           @for $i from 1 through 29
             path:nth-child(#{$i})
+              will-change: transform
+              backface-visibility: hidden
               animation: scale 2s ease #{$i / 13}s 1 forwards, flying 3s ease-in-out #{2 + $i / 8}s infinite alternate
         @supports (-ms-ime-align: auto)
           @for $i from 1 through 29

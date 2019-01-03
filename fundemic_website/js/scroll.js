@@ -1,3 +1,4 @@
+//Check if user scrolled to a specific part of the viewport.
 
 let content = document.getElementById("scroll");
 document.addEventListener("scroll", function() {

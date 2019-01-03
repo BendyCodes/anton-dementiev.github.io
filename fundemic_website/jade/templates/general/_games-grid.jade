@@ -12,7 +12,15 @@ section.games-grid
         | Time when flash was still on the run. Our proud beginning,
       div
         | our great experience...
+
     .games-grid__game-wrapper
+
+      //-  parameters of game mixin:
+           1) image $index that is inserted into src="img/oldgame#{$index}.png" for linking an image
+           2) title text
+           3) description text
+           4) color of the button
+           5) link to the game
       +game('1','SUN CHARMS','Global audience segmentation to determine brand and content direction','orange','./single-project.html')
       +game('7','ALIENANZA','Global audience segmentation to determine brand and content direction','light-blue','./single-project.html')
       +game('2','AMAZING GRABBER','Global audience segmentation to determine brand and content direction','pink','./single-project.html')

@@ -11,5 +11,15 @@ section.hero-secondary.hero-secondary--blue-darker
       h3.hero-secondary__subtitle
         | Global audience segmentation to determine brand and concept direction
 section.hero-secondary--mobile
-  +card('./single-project.html','blue-dark','RESEARCH / TV','SOCCER', 'KICK & SHOOTOUT','Global audience segmentation to determine brand and content direction','1','div')
+  //-  parameters of card mixin:
+       1) link to the project
+       2) color of the card
+       3) label text
+       4) upper title text
+       5) bottom title text
+       6) description text
+       7) image $index that is inserted into img/card#{$index}.png for linking an image
+       8) html tag which wraps the card
+       9) game classname modificator for adding extra styles for specific cards
+  +card('./single-project.html','blue-dark','RESEARCH / TV','SOCCER', 'KICK & SHOOTOUT','Global audience segmentation to determine brand and content direction','1','div','default')
 

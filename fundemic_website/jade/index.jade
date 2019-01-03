@@ -1,30 +1,35 @@
+//- Including mixins and extending default layout for html page.
 include templates/general/_mixins
 extends templates/general/_layout
 
+//- Asigning page title and footer color variables. Also initialising overflow wrapper for main section to help disable horizontal scrollbar bug on mobile devices.
 block config
   - var pageTitle = 'Homepage'
   - var footer_type = 'footer--bg-green'
   - var overflow = 'true'
 
-block scripts-head
-
+//- Including cookie dialog template.
 block cookie
   include templates/general/_cookie
 
+//- Including header template.
 block header
   include templates/general/_header
 
+//- Including main sections of index page.
 block main
   main.home-page
-    include templates/homepage/_hero
-    include templates/homepage/_projects-slider
-    include templates/homepage/_services
-    include templates/homepage/_template
-    include templates/homepage/_clients
+    include templates/index/_hero
+    include templates/index/_projects-slider
+    include templates/index/_services
+    include templates/index/_template
+    include templates/index/_clients
 
+//- Including footer template.
 block footer
   include templates/general/_footer
 
+//- Including scripts that are relative to this page.
 block scripts-bottom
   script(src="js/glide.min.js")
   script(src="js/snap.svg-min.js")

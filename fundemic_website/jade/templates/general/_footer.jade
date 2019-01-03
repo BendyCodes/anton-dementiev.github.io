@@ -21,9 +21,15 @@ footer(class='footer', class='#{footer_type}')
       a.footer__link(href="./about.html")
         | Terms
     .footer__column.footer__column--contact
+      //-  parameters of button mixin:
+           1) text of the button
+           2) modificator of the button
+           3) unique id for main button
+           4) unique id for secondary button that fakes stroke
+           5) dx attribute that helps to align svg text horizontally
+           6) dy attribute that helps to align svg text vertically
+           7) link of the button
       +button('Contact','--small animated-button--bg animated-button--footer','11','12','0','8','contact.html')
-      //- a.footer__link-contact(href="./contact.html")
-        | Contact
     .footer__column.footer__column--social
       a.footer__social(href="https://facebook.com" target="_blank")
         img.logo(src="./img/fb.svg")

@@ -42,20 +42,9 @@
     color: $gray
     +m(company)
       width: 100%
-    +m(firstname)
-      width: calc(50% - #{$margin / 2})
-      margin-right: $margin / 2
+    +m(name)
+      width: 100%
       margin-top: $margin
-      +max(400)
-        width: 100%
-        margin-right: 0
-    +m(lastname)
-      width: calc(50% - #{$margin / 2})
-      margin-left: $margin / 2
-      margin-top: $margin
-      +max(400)
-        width: 100%
-        margin-left: 0
     +m(email)
       width: 100%
       margin-top: $margin
@@ -103,10 +92,6 @@
       opacity: 0
       padding: 1.5rem 2.93rem
       display: block
-      +max(550)
-        padding: 1.5rem 2rem
-      +max(470)
-        padding: 1.5rem 2.7rem
     input
       display: none
       &:checked
