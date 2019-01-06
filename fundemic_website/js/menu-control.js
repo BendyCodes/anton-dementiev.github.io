@@ -1,57 +1,80 @@
-// Hamburger menu activation.
+//1// Hamburger menu activation.
 document.querySelector('.header__menu-button').addEventListener('click', function () {
   this.classList.toggle('is-active');
   document.querySelector('.header__menu-mobile').classList.toggle('visible');
 });
 
-// Animation of logo inside header.
-let logo = document.querySelectorAll(".logo")[0];
-let big = document.querySelectorAll(".logo__big-line")[0];
-let smile = document.querySelectorAll(".logo__smile")[0];
-let circle_left = document.querySelectorAll(".logo__circle--left")[0];
-let circle_right = document.querySelectorAll(".logo__circle--right")[0];
 
-// Checking if browser is not edge or ie .
-if (!document.documentMode && !/Edge/.test(navigator.userAgent)) {
-  // Creating function for asigning classes.
-  let if_check = function (el) {
-    if (el.classList.contains("logo-animating")) {
-      el.classList.remove("logo-animating");
-      el.classList.add("logo-animating-second");
-    } else {
-      el.classList.remove("logo-animating-second");
-      el.classList.add("logo-animating");
-    }
-  };
-  //- Asigning css values of transform-origin property to each circle in animation. Both mobile and desktop backgrounds are being targeted.
-  for (let i = 0; i < 2; i++) {
-    let path = document.querySelectorAll(".logo__circle")[i];
-    if (path) {
-      let x = path.getBBox().x;
-      let y = path.getBBox().y;
-      let w = path.getBBox().width;
-      let h = path.getBBox().height;
-      let xw = x + w / 2;
-      let yh = y + h / 2;
-      path.style = "transform-origin: " + xw + "px " + yh + "px";
+//2// Animation of logo inside header.
+let logo = document.querySelectorAll(".header__logo")[0];
+
+
+//2.1// Function for throttling the animation start.
+function throttle(callback, limit) {
+  let wait = false;
+  return function () {
+    if (!wait) {
+      callback.call();
+      wait = true;
+      setTimeout(function () {
+        wait = false;
+      }, limit);
     }
   }
-  // Event handler for animation.
-  logo.classList.add('animating');
-  logo.addEventListener("mouseenter", function () {
-    big.classList.add('logo__stroke');
-    smile.classList.add('logo__stroke');
-    circle_left.classList.add('logo__circle--scale');
-    circle_right.classList.add('logo__circle--scale');
-    if_check(big);
-    if_check(smile);
-    if_check(circle_left);
-    if_check(circle_right);
-  });
 }
 
 
-// Animation of buttons inside header and footer.
+//2.2// Function for debouncing the animation end.
+function debounce(func, wait, immediate) {
+  let timeout;
+  return function () {
+    let context = this, args = arguments;
+    let later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    let callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+}
+
+//2.3// Function for asigning class to start animation.
+let add_class = function () {
+  logo.classList.add('animating');
+};
+
+
+//2.4// Function for removing class to start animation next time.
+let remove_class = function () {
+  logo.classList.remove('animating');
+};
+
+
+//2.5// This is experimental, but important function. It helps to track if user mouse cursor coordinates were same as logo position and blocks the event asignment. The event is triggered only if user's cursor leaves the logo, and enters again. If the user clicked on the logo on the index page, the logo could be animated several times, which could lead to an edgy and broken animation.
+function handler(e) {
+  e = e || window.event;
+  let rect = logo.getBoundingClientRect();
+  let pageX = e.pageX;
+  let pageY = e.pageY;
+  if (pageX > rect.right || pageX < rect.left && pageY > rect.bottom || pageY < rect.top) {
+    logo.addEventListener("mouseenter", throttle(add_class, 1000));
+    logo.addEventListener("mouseleave", debounce(remove_class, 400));
+  } else {
+    logo.addEventListener("mouseleave", function () {
+      logo.addEventListener("mouseenter", throttle(add_class, 1000));
+      logo.addEventListener("mouseleave", debounce(remove_class, 400));
+    });
+  }
+}
+
+
+//2.6// Triggering main event to start animation.
+document.body.addEventListener('mouseenter', handler);
+
+
+//3// Animation of buttons inside header and footer.
 let header__button = document.getElementById("animated-button9");
 let footer__button = document.getElementById("animated-button11");
 
@@ -82,6 +105,7 @@ footer__button.addEventListener('mouseleave', function () {
   visible11.animate({d: visible_d}, 400, mina.backout);
   visible12.animate({d: visible_d}, 400, mina.backout);
 });
+
 
 
 

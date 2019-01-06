@@ -97,10 +97,6 @@
       +max(600)
         visibility: hidden
         opacity: 0
-      .middle-shape
-        +max(1150)
-          display: none
-
       .curve
         stroke-dasharray: 470
         stroke-dashoffset: 470
@@ -118,19 +114,64 @@
         stroke-dashoffset: 55
         visibility: hidden
       .circle
+        //
         transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+      &.animating
+        .smile-1
+          animation: stroke-smile 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s forwards
+
+        .line-small-2
+          animation: stroke-line-small .8s ease-in-out #{.7-$delta}s forwards
+
+        .curve
+          animation: stroke-curve 1.5s ease-in-out #{.85-$delta}s forwards
+
+        .smile-2
+          animation: stroke-smile .5s ease-in #{1.8-$delta}s forwards
+
+        .line-big-2
+          animation: stroke-line-big .5s ease-in-out #{2-$delta}s forwards
+
+        .line-big-3
+          animation: stroke-line-big .6s ease-out #{2.2-$delta}s forwards
+
+        .line-big-1
+          animation: stroke-line-big 1.3s cubic-bezier(0.19, 1, 0.22, 1) #{1.8-$delta}s forwards
+
+        .line-small-1
+          animation: stroke-line-small .5s ease-out #{1.8-$delta}s forwards
+
+        .smile-3
+          animation: stroke-smile .7s ease-in #{1.7-$delta}s forwards
+
+        .circle
+          transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+
+          @for $i from 1 through 11
+            @if $i % 2 == 0
+              &.circle-#{$i}
+                animation: circle-1 1.7s linear forwards
+
+          @for $i from 1 through 11
+            @if $i % 2 != 0
+              &.circle-#{$i}
+                animation: circle-2 1.7s linear forwards
+
+          @for $i from 1 through 11
+            &.circle-#{$i}
+              animation-delay: #{1+$i*0.15-$delta}s
 
   .left-shape
     position: absolute
     top: -5%
     left: -16.5rem
-    transition: opacity .3s ease
+    transition: opacity .15s ease
     opacity: 1
     z-index: -2
     stroke-dasharray: 85px
     stroke-dashoffset: 85px
     visibility: hidden
-    animation: stroke-line-big .8s ease-out 4.3s forwards
+    animation: stroke-line-big .8s ease-out #{2.7-$delta}s forwards
     +max(1350)
       opacity: 0
   .top-shape
@@ -138,74 +179,25 @@
     top: -25%
     right: -15rem
     z-index: -2
-    transition: .3s ease all
+    transition: .15s ease all
     opacity: 1
     stroke-dasharray: 85px
     stroke-dashoffset: 85px
     visibility: hidden
-    animation: stroke-line-big-reverse .7s ease-out 4.8s forwards
+    animation: stroke-line-big-reverse .7s ease-out #{3-$delta}s forwards
 
     +max(1600)
       transform: translatey(-1.7rem) translatex(8.7rem)
     +max(1250)
       visibility: hidden
       opacity: 0
-  .hero__background--desktop.animating
-    .smile-1
-      animation: stroke-smile 1s ease-in forwards
-
-    .line-small-2
-      animation: stroke-line-small .6s ease-out .7s forwards
-
-    .curve
-      animation: stroke-curve 1.4s ease-in .65s forwards
-
-    .smile-2
-      animation: stroke-smile .7s ease-in 1.8s forwards
-
-    .line-big-2
-      animation: stroke-line-big .7s ease-in-out 2s forwards
-
-    .line-big-3
-      animation: stroke-line-big .8s ease-out 2.2s forwards
-
-    .line-big-1
-      animation: stroke-line-big 1s ease-out 0.8s forwards
-
-    .line-small-1
-      animation: stroke-line-small .5s ease-out 1.8s forwards
-
-    .smile-3
-      animation: stroke-smile .8s ease-in 1.7s forwards
-
-    .circle
-      transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
-
-      @for $i from 1 through 11
-        @if $i % 2 == 0
-          &.circle-#{$i}
-            //animation: animation .15s linear both
-            //animation: animation2 2s linear forwards
-            animation: circle-1 2s linear forwards
-
-      @for $i from 1 through 11
-        @if $i % 2 != 0
-          &.circle-#{$i}
-            //animation: animation .15s linear both
-            //animation: animation2 2s linear forwards
-            animation: circle-2 2s linear forwards
-
-      @for $i from 1 through 11
-        &.circle-#{$i}
-          animation-delay: #{1+$i*0.1}s
-
   .animated-button
     margin-top: 1rem
     transform: translateX(-.7rem)
     width: 26.7rem
     height: 13.4rem
     font-size: 25px !important
-    transition: .25s ease all
+    transition: .15s ease all
     z-index: 0
     +max(600)
       width: 38vw !important
@@ -344,12 +336,7 @@
       position: absolute
       bottom: 0
     +e(image)
-      top: 0
-      left: 0
-      right: 0
-      bottom: 0
       height: auto
-      transform: translate3d(0, 0, 0)
       transition: transform .15s ease-out
       will-change: transform
     +e(link)
@@ -427,9 +414,9 @@
 
     &:hover
       box-shadow: 2px 30px 25px -20px #c6bfbf
-      transform: translate3d(0, -.5%, 0)
+      transform: translate3d(0%, -0.5%, 0)
       .card__image
-        transform: translate3d(0%, -.6%, 0)
+        transform: translate3d(-50%, -50.6%, 0)
 
 +b(info)
   +shadow

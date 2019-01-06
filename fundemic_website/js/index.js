@@ -86,19 +86,12 @@ if (!document.documentMode ) {
   }
 }
 
-// Checking if browser is not edge or ie.
-if (!document.documentMode && !/Edge/.test(navigator.userAgent)) {
+// Checking if browser is not ie.
+if (!document.documentMode) {
   //  Timeout for hero section animation initialisation.
   setTimeout(function () {
     desktop_background.classList.add('animating');
-  }, 2000);
-}
-// Different timeout for edge.
-if (/Edge/.test(navigator.userAgent)) {
-  //  Timeout for hero section animation initialisation.
-  setTimeout(function () {
-    desktop_background.classList.add('animating');
-  }, 500);
+  }, 220);
 }
 
 //  Disable hero section animation for ie.
@@ -116,7 +109,7 @@ Snap(project_button);
 Snap(services_button);
 Snap(template_button);
 
-//  Because of the limitations that css have, each animation has two paths that are being animated. Each of this paths must have unique id, so not to bother with naming it was called by index.
+//  Because of the limitations that css have, each animation has two paths that are being animated. Each of this path must have unique id, so not to bother with naming it was called by index.
 
 let visible1 = Snap.select('#visible1');
 let visible2 = Snap.select('#visible2');
