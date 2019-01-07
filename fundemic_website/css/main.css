@@ -2024,7 +2024,8 @@ button::-moz-focus-inner {
     font-size: 25px !important;
     -webkit-transition: .15s ease all;
     transition: .15s ease all;
-    z-index: 0; }
+    z-index: 1;
+    mix-blend-mode: normal; }
     @media (max-width: 600px) {
       .hero .animated-button {
         width: 38vw !important;
@@ -2687,7 +2688,13 @@ button::-moz-focus-inner {
       -webkit-tap-highlight-color: transparent;
       position: relative;
       margin-top: 3.3rem;
-      width: calc(100% / 3 - 2.2rem); }
+      width: calc(100% / 3 - 2.2rem);
+      -webkit-transition: -webkit-transform .15s ease-in, -webkit-box-shadow .2s ease;
+      transition: -webkit-transform .15s ease-in, -webkit-box-shadow .2s ease;
+      transition: transform .15s ease-in, box-shadow .2s ease;
+      transition: transform .15s ease-in, box-shadow .2s ease, -webkit-transform .15s ease-in, -webkit-box-shadow .2s ease;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0); }
       .projects-page .projects-grid .card__wrapper {
         position: relative;
         display: block;
@@ -2815,7 +2822,11 @@ button::-moz-focus-inner {
         -o-object-fit: unset;
            object-fit: unset;
         height: auto;
-        width: 101%; }
+        width: 101%;
+        -webkit-transition: -webkit-transform .15s ease-in;
+        transition: -webkit-transform .15s ease-in;
+        transition: transform .15s ease-in;
+        transition: transform .15s ease-in, -webkit-transform .15s ease-in; }
       .projects-page .projects-grid .card--frosty .card__image {
         top: 55%; }
       @media (max-width: 300px) {
@@ -2823,6 +2834,14 @@ button::-moz-focus-inner {
           top: 60%;
           height: 120%;
           width: auto; } }
+      .projects-page .projects-grid .card:hover {
+        -webkit-box-shadow: 2px 30px 25px -20px #c6bfbf;
+                box-shadow: 2px 30px 25px -20px #c6bfbf;
+        -webkit-transform: translate3d(0%, -0.5%, 0);
+                transform: translate3d(0%, -0.5%, 0); }
+        .projects-page .projects-grid .card:hover .card__image {
+          -webkit-transform: translate3d(-50%, -50.6%, 0);
+                  transform: translate3d(-50%, -50.6%, 0); }
   .projects-page .circles {
     position: relative;
     padding: 29vw 0 31vw 0;

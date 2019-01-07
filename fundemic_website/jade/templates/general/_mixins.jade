@@ -17,7 +17,8 @@ mixin card(link,color,category,title1,title2,description,img_src,tag,game)
 
 mixin game(img_src,title,description,color,link)
   li.game
-    img.game__image(src="img/oldgame#{img_src}.png")
+    a(class='game__image-link', href='#{link}')
+      img.game__image(src="img/oldgame#{img_src}.png")
     h4.game__title
       | !{title}
     p.game__description

@@ -59,6 +59,8 @@
       +card
       margin-top: 3.3rem
       width: calc(100% / 3 - 2.2rem)
+      transition: transform .15s ease-in, box-shadow .2s ease
+      transform: translate3d(0, 0, 0)
       +max(1350)
         width: calc(100% / 2 - 1.65rem)
       +max(576)
@@ -118,6 +120,7 @@
         object-fit: unset
         height: auto
         width: 101%
+        transition: transform .15s ease-in
       +m(frosty)
         .card__image
           top: 55%
@@ -128,6 +131,11 @@
             height: 120%
             width: auto
 
+      &:hover
+        box-shadow: 2px 30px 25px -20px #c6bfbf
+        transform: translate3d(0%, -0.5%, 0)
+        .card__image
+          transform: translate3d(-50%, -50.6%, 0)
   +b(circles)
     position: relative
     padding: 29vw 0 31vw 0

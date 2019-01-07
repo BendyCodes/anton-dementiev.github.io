@@ -98,6 +98,7 @@ if (!document.documentMode) {
 if (document.documentMode) {
   hero.classList.add('browser-fix');
 }
+
 //  Button animation.
 let hero_button = document.getElementById("animated-button1");
 let project_button = document.getElementById("animated-button3");
@@ -110,7 +111,6 @@ Snap(services_button);
 Snap(template_button);
 
 //  Because of the limitations that css have, each animation has two paths that are being animated. Each of this path must have unique id, so not to bother with naming it was called by index.
-
 let visible1 = Snap.select('#visible1');
 let visible2 = Snap.select('#visible2');
 let visible3 = Snap.select('#visible3');
