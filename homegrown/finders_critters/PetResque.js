@@ -123,7 +123,7 @@ pro.savePlayer = function() {
 
 /// starting
 function startPetResque(view) {
-    if(!PR.PetResque.instance) {
+    if(typeof(PR.PetResque.instance) == 'undefined') {
         var game = new PR.PetResque(view);
             game.div.style.margin = '0 auto';
             game.div.style['vertical-align'] = 'middle';
