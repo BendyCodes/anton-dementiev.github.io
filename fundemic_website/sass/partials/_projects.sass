@@ -61,6 +61,7 @@
       width: calc(100% / 3 - 2.2rem)
       transition: transform .15s ease-in, box-shadow .2s ease
       transform: translate3d(0, 0, 0)
+      z-index: 2
       +max(1350)
         width: calc(100% / 2 - 1.65rem)
       +max(576)
@@ -121,6 +122,7 @@
         height: auto
         width: 101%
         transition: transform .15s ease-in
+        will-change: transform
       +m(frosty)
         .card__image
           top: 55%

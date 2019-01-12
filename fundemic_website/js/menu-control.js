@@ -60,11 +60,11 @@ function handler(e) {
   let pageY = e.pageY;
   if (pageX > rect.right || pageX < rect.left && pageY > rect.bottom || pageY < rect.top) {
     logo.addEventListener("mouseenter", throttle(add_class, 1000));
-    logo.addEventListener("mouseleave", debounce(remove_class, 400));
+    logo.addEventListener("mouseleave", debounce(remove_class, 400,false));
   } else {
     logo.addEventListener("mouseleave", function () {
       logo.addEventListener("mouseenter", throttle(add_class, 1000));
-      logo.addEventListener("mouseleave", debounce(remove_class, 400));
+      logo.addEventListener("mouseleave", debounce(remove_class, 400,false));
     });
   }
 }

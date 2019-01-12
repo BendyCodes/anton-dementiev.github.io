@@ -2694,7 +2694,8 @@ button::-moz-focus-inner {
       transition: transform .15s ease-in, box-shadow .2s ease;
       transition: transform .15s ease-in, box-shadow .2s ease, -webkit-transform .15s ease-in, -webkit-box-shadow .2s ease;
       -webkit-transform: translate3d(0, 0, 0);
-              transform: translate3d(0, 0, 0); }
+              transform: translate3d(0, 0, 0);
+      z-index: 2; }
       .projects-page .projects-grid .card__wrapper {
         position: relative;
         display: block;
@@ -2826,7 +2827,8 @@ button::-moz-focus-inner {
         -webkit-transition: -webkit-transform .15s ease-in;
         transition: -webkit-transform .15s ease-in;
         transition: transform .15s ease-in;
-        transition: transform .15s ease-in, -webkit-transform .15s ease-in; }
+        transition: transform .15s ease-in, -webkit-transform .15s ease-in;
+        will-change: transform; }
       .projects-page .projects-grid .card--frosty .card__image {
         top: 55%; }
       @media (max-width: 300px) {
