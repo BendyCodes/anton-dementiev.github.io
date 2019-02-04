@@ -498,6 +498,7 @@ var PhaserGame;
                 _this.complete = false;
                 _this.collectBag = 0;
                 _this.tap = false;
+                _this.timeToJump = 0;
                 return _this;
             }
             Game.prototype.myDestroy = function () {
@@ -515,6 +516,7 @@ var PhaserGame;
                 this.collectBag = 0;
             };
             Game.prototype.create = function () {
+                this.timeToJump = 0;
                 if (Config.isMobile) {
                     this.tap = false;
                 }
@@ -728,14 +730,19 @@ var PhaserGame;
                 if (Config.isMobile) {
                     this.tap = false;
                 }
-                if (!this.exdlg.visible && !this.readySprite.visible)
-                    if (!this.complete) {
-                        if (this.player.body.touching.down) {
-                            this.player.setVelocityY(-820);
-                            this.player.anims.play('jump');
-                            SndMng.sfxPlay('sound1');
+                else {
+                    this.timeToJump = 0;
+                }
+                if (this.timeToJump <= 12)
+                    if (!this.exdlg.visible && !this.readySprite.visible)
+                        if (!this.complete) {
+                            if (this.player.body.touching.down) {
+                                this.player.setVelocityY(-820);
+                                this.player.anims.play('jump');
+                                SndMng.sfxPlay('sound1');
+                            }
                         }
-                    }
+                this.timeToJump = 0;
             };
             Game.prototype.Tap = function () {
                 this.tap = true;
@@ -808,6 +815,9 @@ var PhaserGame;
                 }
             };
             Game.prototype.update = function () {
+                if (this.tap) {
+                    this.timeToJump++;
+                }
                 this.input.setDefaultCursor('url(./assets/sprites/curs.cur), pointer');
                 this.pointText.text = score.value;
                 if (!this.exdlg.visible && !this.readySprite.visible) {
@@ -970,14 +980,14 @@ var PhaserGame;
                 logo.setScale(1 * Config.scaleFactor);
                 this.add.existing(logo);
                 var btnPlay = new Client.gButton(this, wW / 2, wH / 2, 'menu', 'btn_play0001', 'btn_play0002', 'btn_play0003');
-                btnPlay.setScale(Config.scaleFactor);
+                btnPlay.setScale(Config.scaleFactor / 1.3);
                 btnPlay.setEventName('startGame');
                 this.events.on(btnPlay.getEventName(), this.playGame, this);
                 this.add.existing(btnPlay);
                 btnPlay.x = wW - btnPlay.displayWidth;
                 btnPlay.y = wH - btnPlay.displayHeight;
                 var btnClose = new Client.gButton(this, wW / 2, wH / 2, 'menu', 'btn_close0001', 'btn_close0002', 'btn_close0003');
-                btnClose.setScale(Config.scaleFactor);
+                btnClose.setScale(Config.scaleFactor / 1.3);
                 btnClose.setEventName('ExitGame');
                 this.events.on(btnClose.getEventName(), this.closeGame, this);
                 this.add.existing(btnClose);
@@ -990,7 +1000,7 @@ var PhaserGame;
                 catch (error) {
                     Titletext = Config.langXML.querySelector('[id="Titulo"]').querySelector('en').textContent;
                 }
-                var gameNeme = new Phaser.GameObjects.Text(this, wW / 2, wH / 2, Titletext, { fontFamily: 'Arial', fontSize: 100 * Config.scaleFactor, color: '#3DA2E4', fontStyle: 'bold' });
+                var gameNeme = new Phaser.GameObjects.Text(this, wW / 2, wH / 2, Titletext, { fontFamily: 'Arial', fontSize: 80 * Config.scaleFactor, color: '#3DA2E4', fontStyle: 'bold' });
                 this.add.existing(gameNeme);
                 gameNeme.setOrigin(0.5);
                 gameNeme.y = gameNeme.displayHeight;
