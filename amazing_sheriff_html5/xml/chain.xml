@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<levels>
+		<item level="0,1,2,3,2,1,3,4,3,1,4,3" />
+		<item level="6,7,8,7,10,9,8,7,5,8,5,10,9" />
+		<item level="11,13,5,12,14,13,16,12,14,16,13,15,14,13" />
+		<item level="14,18,16,19,20,21,19,20,17,22,21,17,18" />
+		<end ligth="7,9,10,11,12,13,14,15,16" hard="19,18,20,21,22,23,24,24,25,25,26,26,27,27" />
+	</levels>
+	<!-- легкие нудные уровни -->
+	<!-- 0 -->
+  <variant gun_after_planet="0.03" gun_after_gun="0.030" planet_boss="0.100" gun_boss="0.700" second_boss="0.010" reverse_rotation="0.000">
+    <num_bottle_from_planet>
+      <min_max min="4" max="7"/>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-35" max="-20"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="300" max="400"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<min_max min="100" max="205" />
+		</planet_radius>
+    <land_rotation>
+      <min_max min="30" max="45"/>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="70" max="80"/>
+    </planet_rotation>
+  </variant>
+	<!-- 1 -->
+	<variant gun_after_planet="0.075" gun_after_gun="0.070" planet_boss="0.200" gun_boss="0.700" second_boss="0.100" reverse_rotation="0.000">
+    <num_bottle_from_planet>
+      <min_max min="5" max="10"/>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-55" max="-45"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="600" max="800"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<min_max min="150" max="225" />
+		</planet_radius>
+    <land_rotation>
+      <min_max min="-10" max="10"/>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="70" max="80"/>
+    </planet_rotation>
+  </variant>
+	<!-- 2 -->
+  <variant gun_after_planet="0.065" gun_after_gun="0.070" planet_boss="0.100" gun_boss="0.700" second_boss="0.010" reverse_rotation="0.000">
+    <num_bottle_from_planet>
+      <min_max min="3" max="7"/>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-55" max="-40"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="300" max="500"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<min_max min="110" max="225" />
+		</planet_radius>
+    <land_rotation>
+      <min_max min="-20" max="10"/>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="70" max="80"/>
+    </planet_rotation>
+  </variant>
+	<!-- 3 -->
+  <variant gun_after_planet="0.075" gun_after_gun="0.070" planet_boss="0.200" gun_boss="0.700" second_boss="0.100" reverse_rotation="0.000">
+    <num_bottle_from_planet>
+      <min_max min="3" max="7"/>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-15" max="5"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="300" max="500"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<min_max min="110" max="225" />
+		</planet_radius>
+    <land_rotation>
+      <min_max min="-20" max="20"/>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="70" max="80"/>
+    </planet_rotation>
+  </variant>
+	<!-- 4 -->
+  <variant gun_after_planet="0.05" gun_after_gun="0.070" planet_boss="0.500" gun_boss="0.700" second_boss="0.100" reverse_rotation="0.000">
+    <num_bottle_from_planet>
+      <min_max min="5" max="10"/>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-40" max="-30"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="550" max="700"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<min_max min="90" max="225" />
+		</planet_radius>
+    <land_rotation>
+      <min_max min="-20" max="20"/>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="80" max="90"/>
+    </planet_rotation>
+  </variant>
+	<!-- уровни с небольшой сложностью -->
+	<!-- 5 -->
+  <variant gun_after_planet="0.015" gun_after_gun="0.060" planet_boss="0.500" gun_boss="0.850" second_boss="0.100" reverse_rotation="0.000">
+    <num_bottle_from_planet>
+      <min_max min="6" max="10"/>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-70" max="-60"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="900" max="1100"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<min_max min="150" max="225" />
+		</planet_radius>
+    <land_rotation>
+      <min_max min="-20" max="0"/>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="80" max="100"/>
+    </planet_rotation>
+  </variant>
+	<!-- 6 -->
+  <variant gun_after_planet="0.03" gun_after_gun="0.030" planet_boss="0.100" gun_boss="0.700" second_boss="0.010" reverse_rotation="0.000">
+    <num_bottle_from_planet>
+      <min_max min="4" max="7"/>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-35" max="-25"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="350" max="450"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<min_max min="90" max="180" />
+		</planet_radius>
+    <land_rotation>
+      <min_max min="35" max="50"/>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="80" max="90"/>
+    </planet_rotation>
+  </variant>
+	<!-- 7 -->
+	<variant gun_after_planet="0.075" gun_after_gun="0.070" planet_boss="0.200" gun_boss="0.700" second_boss="0.100" reverse_rotation="0.000">
+    <num_bottle_from_planet>
+      <min_max min="5" max="10"/>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-60" max="-50"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="600" max="800"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<min_max min="100" max="180" />
+		</planet_radius>
+    <land_rotation>
+      <min_max min="-10" max="10"/>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="75" max="90"/>
+    </planet_rotation>
+  </variant>
+	<!-- 8 -->
+  <variant gun_after_planet="0.065" gun_after_gun="0.070" planet_boss="0.100" gun_boss="0.700" second_boss="0.010" reverse_rotation="0.000">
+    <num_bottle_from_planet>
+      <min_max min="3" max="7"/>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-55" max="-40"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="300" max="500"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<min_max min="90" max="200" />
+		</planet_radius>
+    <land_rotation>
+      <min_max min="-30" max="10"/>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="75" max="90"/>
+    </planet_rotation>
+  </variant>
+	<!-- 9 -->
+  <variant gun_after_planet="0.075" gun_after_gun="0.070" planet_boss="0.200" gun_boss="0.700" second_boss="0.100" reverse_rotation="0.000">
+    <num_bottle_from_planet>
+      <min_max min="3" max="7"/>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-15" max="10"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="300" max="550"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<min_max min="90" max="225" />
+		</planet_radius>
+    <land_rotation>
+      <min_max min="-30" max="30"/>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="70" max="80"/>
+    </planet_rotation>
+  </variant>
+	<!-- 10 -->
+  <variant gun_after_planet="0.065" gun_after_gun="0.070" planet_boss="0.300" gun_boss="0.700" second_boss="0.100" reverse_rotation="0.000">
+    <num_bottle_from_planet>
+      <min_max min="5" max="10"/>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-40" max="-30"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="550" max="700"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<min_max min="70" max="225" />
+		</planet_radius>
+    <land_rotation>
+      <min_max min="-35" max="35"/>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="80" max="90"/>
+    </planet_rotation>
+  </variant>
+	<!-- несложные, но и не очень простые уровни -->
+	<!-- 11 -->
+  <variant gun_after_planet="0.03" gun_after_gun="0.030" planet_boss="0.300" gun_boss="0.800" second_boss="0.100" reverse_rotation="0.000">
+    <num_bottle_from_planet>
+      <min_max min="3" max="7"/>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-35" max="-25"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="350" max="450"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<sequence>
+				<min_max min="80" max="100" />
+				<min_max min="200" max="225" />
+			</sequence>
+		</planet_radius>
+    <land_rotation>
+      <min_max min="35" max="45"/>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="80" max="90"/>
+    </planet_rotation>
+  </variant>
+	<!-- 12 -->
+	<variant gun_after_planet="0.025" gun_after_gun="0.030" planet_boss="0.400" gun_boss="0.700" second_boss="0.100" reverse_rotation="0.000">
+    <num_bottle_from_planet>
+      <min_max min="5" max="11"/>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-60" max="-50"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="600" max="850"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<min_max min="80" max="160" />
+		</planet_radius>
+    <land_rotation>
+      <min_max min="-30" max="30"/>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="80" max="100"/>
+    </planet_rotation>
+  </variant>
+	<!-- 13 -->
+  <variant gun_after_planet="0.065" gun_after_gun="0.070" planet_boss="0.100" gun_boss="0.700" second_boss="0.010" reverse_rotation="0.000">
+    <num_bottle_from_planet>
+      <min_max min="3" max="7"/>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-55" max="-40"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="300" max="500"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<min_max min="80" max="150" />
+		</planet_radius>
+    <land_rotation>
+      <min_max min="-50" max="15"/>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="80" max="100"/>
+    </planet_rotation>
+  </variant>
+	
+  <!-- 14 -->
+  <variant gun_after_planet="0.015" gun_after_gun="0.060" planet_boss="0.300" gun_boss="0.700" second_boss="0.100" reverse_rotation="0.000">
+    <num_bottle_from_planet>
+      <min_max min="3" max="7"/>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-10" max="15"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="300" max="550"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<rand_sequence>
+				<min_max min="80" max="120" />
+				<min_max min="180" max="225" />
+			</rand_sequence>	
+		</planet_radius>
+    <land_rotation>
+      <min_max min="-30" max="30"/>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="80" max="100"/>
+    </planet_rotation>
+  </variant>
+ 	<!-- 15 -->
+  <variant gun_after_planet="0.015" gun_after_gun="0.060" planet_boss="0.300" gun_boss="0.850" second_boss="0.100" reverse_rotation="0.000">
+    <num_bottle_from_planet>
+			<sequence>
+				<min_max min="3" max="6"/>
+				<min_max min="5" max="10"/>
+			</sequence>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-40" max="-30"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="550" max="700"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<min_max min="60" max="200" />
+		</planet_radius>
+    <land_rotation>
+      <min_max min="-50" max="50"/>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="80" max="100"/>
+    </planet_rotation>
+  </variant>
+	<!-- 16 -->
+	<variant gun_after_planet="0.015" gun_after_gun="0.020" planet_boss="0.500" gun_boss="0.850" second_boss="0.300" reverse_rotation="0.010">
+    <num_bottle_from_planet>
+      <min_max min="8" max="12"/>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-70" max="-60"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="950" max="1200"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<min_max min="100" max="200" />
+		</planet_radius>
+    <land_rotation>
+      <min_max min="-50" max="20"/>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="90" max="100"/>
+    </planet_rotation>
+  </variant>
+	<!-- сложные уровни -->
+	<!-- 17 -->
+  <variant gun_after_planet="0.02" gun_after_gun="0.030" planet_boss="0.400" gun_boss="0.800" second_boss="0.100" reverse_rotation="0.000">
+    <num_bottle_from_planet>
+      <min_max min="3" max="7"/>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-35" max="-25"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="400" max="500"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<min_max min="56" max="150" />
+		</planet_radius>
+    <land_rotation>
+      <min_max min="35" max="45"/>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="90" max="120"/>
+    </planet_rotation>
+  </variant>
+	<!-- 18 -->
+	<variant gun_after_planet="0.015" gun_after_gun="0.030" planet_boss="0.400" gun_boss="0.700" second_boss="0.100" reverse_rotation="0.000">
+    <num_bottle_from_planet>
+      <min_max min="4" max="9"/>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-60" max="-50"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="650" max="900"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<min_max min="56" max="150" />
+		</planet_radius>
+    <land_rotation>
+      <min_max min="-60" max="60"/>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="90" max="110"/>
+    </planet_rotation>
+  </variant>
+	<!-- 19 -->
+  <variant gun_after_planet="0.015" gun_after_gun="0.070" planet_boss="0.100" gun_boss="0.700" second_boss="0.010" reverse_rotation="0.030">
+    <num_bottle_from_planet>
+      <min_max min="3" max="7"/>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-55" max="-40"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="350" max="450"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<min_max min="80" max="150" />
+		</planet_radius>
+    <land_rotation>
+      <min_max min="-60" max="15"/>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="90" max="110"/>
+    </planet_rotation>
+  </variant>
+	
+  <!-- 20 -->
+  <variant gun_after_planet="0.015" gun_after_gun="0.060" planet_boss="0.300" gun_boss="0.700" second_boss="0.100" reverse_rotation="0.000">
+    <num_bottle_from_planet>
+      <min_max min="5" max="10"/>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="0" max="25"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="300" max="550"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<min_max min="80" max="120" />
+		</planet_radius>
+    <land_rotation>
+      <min_max min="-50" max="60"/>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="90" max="110"/>
+    </planet_rotation>
+  </variant>
+ 	<!-- 21 -->
+  <variant gun_after_planet="0.015" gun_after_gun="0.060" planet_boss="0.300" gun_boss="0.850" second_boss="0.100" reverse_rotation="0.000">
+    <num_bottle_from_planet>
+			<min_max min="5" max="10"/>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-45" max="-30"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="650" max="750"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<min_max min="70" max="140" />
+		</planet_radius>
+    <land_rotation>
+			<rand_sequence>
+				<min_max min="-50" max="-30"/>
+				<min_max min="30" max="50"/>
+			</rand_sequence>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="90" max="110"/>
+    </planet_rotation>
+  </variant>
+	<!-- 22 -->
+	<variant gun_after_planet="0.015" gun_after_gun="0.020" planet_boss="0.500" gun_boss="0.850" second_boss="0.300" reverse_rotation="0.000">
+    <num_bottle_from_planet>
+      <min_max min="6" max="10"/>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-65" max="-55"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="950" max="1200"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<min_max min="100" max="200" />
+		</planet_radius>
+    <land_rotation>
+      <min_max min="-50" max="50"/>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="90" max="110"/>
+    </planet_rotation>
+  </variant>
+	<!-- уровни с максимальной сложность и интересностью -->
+	<!-- 23 -->
+  <variant gun_after_planet="0.015" gun_after_gun="0.070" planet_boss="0.100" gun_boss="0.700" second_boss="0.010" reverse_rotation="0.030">
+    <num_bottle_from_planet>
+      <min_max min="3" max="7"/>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-55" max="-40"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="350" max="400"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<rand_sequence>
+				<min_max min="56" max="100" />
+			</rand_sequence>
+		</planet_radius>
+    <land_rotation>
+      <sequence>
+				<min_max min="-65" max="-45"/>
+			</sequence>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="90" max="120"/>
+    </planet_rotation>
+  </variant>
+  <!-- 24 -->
+  <variant gun_after_planet="0.015" gun_after_gun="0.060" planet_boss="0.300" gun_boss="0.700" second_boss="0.100" reverse_rotation="0.000">
+    <num_bottle_from_planet>
+			<sequence>
+				<min_max min="2" max="4"/>
+				<min_max min="5" max="8"/>
+			</sequence>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-5" max="20"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="500" max="750"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<min_max min="56" max="120" />
+		</planet_radius>
+    <land_rotation>
+      <min_max min="-50" max="60"/>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="90" max="110"/>
+    </planet_rotation>
+  </variant>
+ 	<!-- 25 -->
+  <variant gun_after_planet="0.015" gun_after_gun="0.060" planet_boss="0.300" gun_boss="0.850" second_boss="0.100" reverse_rotation="0.010">
+    <num_bottle_from_planet>
+			<sequence>
+				<min_max min="4" max="8"/>
+				<min_max min="2" max="4"/>
+			</sequence>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-45" max="-40"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="700" max="800"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<min_max min="56" max="140" />
+		</planet_radius>
+    <land_rotation>
+			<rand_sequence>
+				<min_max min="-55" max="-40"/>
+				<min_max min="40" max="55"/>
+			</rand_sequence>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="90" max="120"/>
+    </planet_rotation>
+  </variant>
+	<!-- 26 -->
+	<variant gun_after_planet="0.015" gun_after_gun="0.020" planet_boss="0.500" gun_boss="0.850" second_boss="0.300" reverse_rotation="0.000">
+    <num_bottle_from_planet>
+      <min_max min="2" max="7"/>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-65" max="-55"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="950" max="1200"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<min_max min="56" max="200" />
+		</planet_radius>
+    <land_rotation>
+			<rand_sequence>
+				<min_max min="-50" max="-30"/>
+				<min_max min="30" max="50"/>
+			</rand_sequence>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="90" max="110"/>
+    </planet_rotation>
+  </variant>
+	<!-- 27 -->
+	<variant gun_after_planet="0.015" gun_after_gun="0.020" planet_boss="0.500" gun_boss="0.850" second_boss="0.300" reverse_rotation="0.100">
+    <num_bottle_from_planet>
+      <min_max min="3" max="7"/>
+    </num_bottle_from_planet>
+    <jamp_rotate_from_planet>
+      <min_max min="-75" max="-65"/>
+    </jamp_rotate_from_planet>
+    <fly_distance_from_planet>
+      <min_max min="1000" max="1300"/>
+    </fly_distance_from_planet>
+		<planet_radius>
+			<sequence>
+				<min_max min="56" max="80" />
+				<min_max min="200" max="225" />
+			</sequence>
+		</planet_radius>
+    <land_rotation>
+      <min_max min="-10" max="10"/>
+    </land_rotation>
+    <planet_rotation>
+      <min_max min="90" max="110"/>
+    </planet_rotation>
+  </variant>
+</data>
