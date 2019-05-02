@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="score_effect.png">
+	<!-- Created with Adobe Flash Professional version 14.0.0.110 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="score_effect0000" x="370" y="510" width="25" height="110" pivotX="70.2" pivotY="97.85" frameX="-58" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0001" x="473" y="671" width="31" height="115" frameX="-56" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0002" x="584" y="659" width="42" height="121" frameX="-51" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0003" x="420" y="671" width="51" height="126" frameX="-47" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0004" x="360" y="671" width="58" height="130" frameX="-43" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0005" x="516" y="659" width="66" height="134" frameX="-40" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0006" x="537" y="294" width="72" height="138" frameX="-38" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0007" x="539" y="150" width="80" height="142" frameX="-34" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0008" x="539" y="2" width="87" height="146" frameX="-31" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0009" x="516" y="509" width="93" height="148" frameX="-27" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0010" x="271" y="510" width="97" height="150" frameX="-25" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0011" x="2" y="817" width="102" height="152" frameX="-23" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0012" x="124" y="816" width="107" height="155" frameX="-21" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0013" x="246" y="662" width="112" height="158" frameX="-19" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0014" x="399" y="509" width="115" height="160" frameX="-18" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0015" x="417" y="171" width="118" height="162" frameX="-16" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0016" x="399" y="343" width="123" height="164" frameX="-13" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0017" x="271" y="343" width="126" height="165" frameX="-11" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0018" x="2" y="343" width="129" height="166" frameX="-9" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0019" x="139" y="342" width="130" height="167" frameX="-8" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0020" x="139" y="173" width="132" height="167" frameX="-7" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0021" x="2" y="173" width="135" height="168" frameX="-5" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0022" x="279" y="172" width="135" height="169" frameX="-5" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0023" x="141" y="2" width="136" height="169" frameX="-4" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0024" x="2" y="2" width="137" height="169" frameX="-3" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0025" x="279" y="2" width="136" height="168" frameX="-3" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0026" x="417" y="2" width="120" height="167" frameX="-2" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0027" x="2" y="664" width="120" height="151" frameX="-2" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0028" x="2" y="511" width="121" height="151" frameX="-1" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0029" x="124" y="664" width="120" height="150" frameX="-1" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0030" x="125" y="511" width="120" height="149" frameX="0" frameY="0" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0031" x="473" y="788" width="28" height="56" frameX="0" frameY="-92" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0032" x="370" y="622" width="10" height="11" frameX="-1" frameY="-92" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0033" x="370" y="635" width="9" height="10" frameX="-1" frameY="-93" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0034" x="370" y="647" width="7" height="8" frameX="-2" frameY="-94" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0035" x="2" y="2" width="0" height="0" frameX="-973" frameY="421" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0036" x="2" y="2" width="0" height="0" frameX="-973" frameY="421" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0037" x="2" y="2" width="0" height="0" frameX="-973" frameY="421" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0038" x="2" y="2" width="0" height="0" frameX="-973" frameY="421" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0039" x="2" y="2" width="0" height="0" frameX="-973" frameY="421" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0040" x="2" y="2" width="0" height="0" frameX="-973" frameY="421" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0041" x="2" y="2" width="0" height="0" frameX="-973" frameY="421" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0042" x="2" y="2" width="0" height="0" frameX="-973" frameY="421" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0043" x="2" y="2" width="0" height="0" frameX="-973" frameY="421" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0044" x="2" y="2" width="0" height="0" frameX="-973" frameY="421" frameWidth="140" frameHeight="169"/>
+	<SubTexture name="score_effect0045" x="2" y="2" width="0" height="0" frameX="-973" frameY="421" frameWidth="140" frameHeight="169"/>
+</TextureAtlas>

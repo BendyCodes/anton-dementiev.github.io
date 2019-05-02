@@ -1,0 +1,48 @@
+html {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(transparent, white), url(img/promo.jpg) no-repeat center;
+    background-size: cover;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 480px;
+    height: 480px;
+    padding: 0;
+}
+
+.ppat-text {
+    text-shadow: 1px 1px #000000;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    margin: 0;
+    font: 16px/1 monospace;
+}
+
+@font-face {
+    font-family: 'cheeseFR';
+    src: url('fonts/cheeseFR-Semi-expandedBold.eot');
+    src: url('fonts/cheeseFR-Semi-expandedBold.eot?#iefix') format('embedded-opentype'),
+    url('fonts/cheeseFR-Semi-expandedBold.woff2') format('woff2'),
+    url('fonts/cheeseFR-Semi-expandedBold.woff') format('woff'),
+    url('fonts/cheeseFR-Semi-expandedBold.ttf') format('truetype'),
+    url('fonts/cheeseFR-Semi-expandedBold.svg#cheeseFR-Semi-expandedBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
