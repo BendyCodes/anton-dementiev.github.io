@@ -1,0 +1,311 @@
++b(projects-page)
+  overflow: hidden
+  
+  +b(projects-grid)
+    padding-top: 7.7vw
+    
+    .wrapper
+      width: 1400px
+      margin: auto
+      overflow: hidden
+      padding-bottom: 5rem
+      
+      +max(1550)
+        width: 1278px
+        
+      +max(1350)
+        width: 908px
+        
+      +max(1150)
+        width: 808px
+        
+      +max(991)
+        width: 100%
+        padding-right: 7.5vw
+        padding-left: 7.5vw
+        
+      +max(450)
+        width: 100%
+        padding-right: 2.5rem
+        padding-left: 2.5rem
+        
+    +e(title)
+      +max(576)
+        margin-right: 5vw
+        margin-left: 5vw
+        font-size: 5rem
+        
+      +max(450)
+        margin-top: 0
+        margin-right: 0
+        margin-left: 0
+        
+      +max(300)
+        font-size: 3rem
+        
+    +e(description)
+      margin-top: 3.8rem
+      font-size: 3.5rem
+      line-height: 1.3em
+      
+      +max(1350)
+        padding-right: 5rem
+        
+      +max(576)
+        margin-right: 5vw
+        margin-left: 5vw
+        font-size: 2.5rem
+        
+      +max(450)
+        margin-top: 1.8rem
+        margin-right: 0
+        margin-left: 0
+        
+      +max(300)
+        font-size: 1.5rem
+        
+    +e(card-wrapper)
+      margin-top: 5.4rem
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      
+      +max(300)
+        margin-top: 2.4rem
+        
+    +b(card)
+      margin-top: 3.3rem
+      width: calc(100% / 3 - 2.2rem)
+      transition: transform .15s ease-in, box-shadow .2s ease
+      transform: translate3d(0, 0, 0)
+      z-index: 2
+      
+      +max(1350)
+        width: calc(100% / 2 - 1.65rem)
+        
+      +max(576)
+        width: 100%
+        margin-right: 5vw
+        margin-left: 5vw
+        
+      +max(450)
+        margin-left: 0
+        margin-right: 0
+        
+      +e(link)
+        display: block
+        position: relative
+        z-index: 1
+        height: 100%
+        
+      +e(title)
+        padding-top: 123%
+        margin-top: auto
+        
+        +max(1350)
+          padding-top: 123%
+          font-size: 3rem
+        
+        +max(767)
+          font-size: 3vw
+          
+        +max(576)
+          padding-top: 122%
+          font-size: 4.8vw
+          
+        +max(450)
+          padding-top: 102%
+          font-size: 6.2vw
+          
+        +max(300)
+          padding-top: 100%
+          
+      +e(description)
+        font-size: 15px
+        margin-right: 10rem
+        
+        +min-max(1351,1550)
+          margin-right: 5rem
+          
+        +max(991)
+          margin-right: 0
+          font-size: 2vw
+          
+        +max(767)
+          margin-bottom: 2.5em
+          font-size: 1.8vw
+          
+        +max(576)
+          margin-bottom: 8vw
+          font-size: 3.3vw
+          
+        +max(450)
+          font-size: 4vw
+          
+        +max(350)
+          font-size: 4.1vw
+          margin-bottom: 7.5vw
+          
+      +e(logo)
+        +max(767)
+          top: 3rem
+          height: 30px
+          
+        +max(576)
+          top: 5.5vw
+          
+        +max(450)
+          top: 7.5vw
+          
+      +e(wrapper)
+        +max(767)
+          width: calc(100% - 3rem * 2)
+          
+        +max(576)
+          width: calc(100% - 5.5vw * 2)
+          
+        +max(450)
+          width: calc(100% - 7.5vw * 2)
+          
+      +e(image)
+        margin: auto
+        object-fit: unset
+        height: auto
+        width: 101%
+        will-change: transform
+        
+      +e(info-wrapper)
+        height: 100%
+        display: flex
+        flex-direction: column
+    
+      
+      &:hover
+        box-shadow: 2px 30px 25px -20px #c6bfbf
+        transform: translate3d(0%, -0.5%, 0)
+        
+        .card__image
+          transform: translate3d(-50%, -50.6%, 0)
+          
+  +b(circles)
+    position: relative
+    padding: 29vw 0 31vw 0
+    text-align: center
+    
+    +max(1350)
+      padding: 20vw 0 25vw 0
+      
+    +max(991)
+      padding: 23vw 0 29vw 0
+      
+    +max(576)
+      padding: 40vw 0 54vw 0
+      
+    +max(300)
+      padding: 55vw 0 74vw 0
+      
+    +e(title)
+      font-size: 0
+      display: inline-flex
+      position: relative
+      transform: translateX(5vw)
+      
+      +max(576)
+        transform: translateX(7vw)
+        
+      +max(350)
+        transform: translateX(9.5vw)
+        
+      .text
+        font-size: 7.3vw
+        display: inline-block
+        
+        +max(576)
+          font-size: 10vw
+          
+        +max(350)
+          font-size: 13vw
+          
+        +m(animated)
+          letter-spacing: -0.3rem
+          position: absolute
+          left: 0
+          transform: translateX(-100%)
+          
+    +e(subtitle)
+      transform: translateX(-1vw)
+      font-size: 4.07vw
+      margin-top: 0.3rem
+      
+      +max(576)
+        font-size: 4vw
+        
+      +max(350)
+        font-size: 5vw
+        
+    +e(image)
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      margin: auto
+      z-index: -1
+      overflow: visible
+      
+      path
+        transform: scale(0)
+
+    .circles__image--mobile
+      visibility: hidden
+      position: absolute
+      width: 110%
+      left: 47%
+      
+      +max(576)
+        visibility: visible
+        
+      +max(470)
+        width: 533px
+        top: 60%
+        
+      +max(300)
+        width: 433px
+
+    .circles__image--desktop
+      position: fixed
+      width: 100%
+      
+      +max(1550)
+        width: 140%
+        left: 43%
+        
+        .top-left
+          visibility: hidden
+          
+      +max(1350)
+        position: absolute
+        
+      +max(1150)
+        width: 175%
+        left: 50%
+        
+      +max(991)
+        width: 210%
+        
+      +max(576)
+        visibility: hidden
+
+    &.animating
+      .circles__image
+        @supports not (-ms-ime-align: auto)
+          @for $i from 1 through 29
+            path:nth-child(#{$i})
+              will-change: transform
+              backface-visibility: hidden
+              animation: scale 2s ease #{$i / 13}s 1 forwards, flying 3s ease-in-out #{2 + $i / 8}s infinite alternate
+              
+        @supports (-ms-ime-align: auto)
+          @for $i from 1 through 29
+            path:nth-child(#{$i})
+              animation: scale 2s ease #{$i / 13}s 1 forwards, flying-edge-fix 3s ease-in-out #{2 + $i / 8}s infinite alternate
+
+

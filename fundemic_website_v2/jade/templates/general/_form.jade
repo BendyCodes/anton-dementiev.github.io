@@ -1,0 +1,57 @@
+section.form
+  .wrapper
+    h2.form__title
+      | Let's make something awesome.
+    form(class="form__form" action="" method="")
+      input(type="text" class="form__input form__input--company" placeholder="Company")
+      input(type="text" class="form__input form__input--name form__important" placeholder="Your Name")
+      input(type="email" class="form__input form__input--email form__important" placeholder="Email Address" required)
+
+      .form__row.form__row--checkbox
+        label(class="form__checkbox")
+          input(type="checkbox")
+          span.text
+            | Programming
+          span.text-invisible
+            | Programming
+        label(class="form__checkbox")
+          input(type="checkbox")
+          span.text
+            | Art
+          span.text-invisible
+            | Art
+        label(class="form__checkbox")
+          input(type="checkbox")
+          span.text-invisible
+            | Other
+          span.text
+            | Other
+        label(class="form__checkbox")
+          input(type="checkbox")
+          span.text
+            | Technical Art
+          span.text-invisible
+            | Technical Art
+      textarea(class="form__message")
+
+
+      .form__row.form__row--submit
+
+        //-  parameters of button mixin:
+          1) text of the button
+          2) modificator of the button
+          3) unique id for main button
+          4) unique id for secondary button that fakes stroke
+          5) dx attribute that helps to align svg text horizontally
+          6) dy attribute that helps to align svg text vertically
+          7) link of the button
+
+        +button(
+          text='Submit',
+          modificator='--small animated-button--white',
+          id='1',
+          id2='2',
+          dx='5',
+          dy='8.5',
+          link='contact.html'
+        )

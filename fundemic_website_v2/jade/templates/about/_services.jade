@@ -1,0 +1,20 @@
+section.services#scroll
+  .wrapper
+    .services__column.services__column--info-col
+      h2.services__title
+        | Our Services.
+      p.services__description
+        span
+          | Art, code, design. We provide a complete game development service offering all you will ever need.
+        span
+          | With 100+ game projects under our belt, the Fundemic team is here for you to craft engaging and beautiful gameplay experiences that run on mobile, web, and desktop.
+      img.services__image.services__image--bg(src="./img/about-bg.svg")
+    .services__column.services__column--image-col
+      //-  Image $index that is inserted into src="img/about-laptop-#{$index}.svg" for linking an image.
+      +laptop('1')
+      +laptop('2')
+      +laptop('3')
+      +laptop('4')
+      +laptop('5')
+      +laptop('6')
+      +laptop('7')

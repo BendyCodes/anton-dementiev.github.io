@@ -1,0 +1,396 @@
+*
+  box-sizing: border-box
+
+main
+  display: block
+
+a
+  color: inherit
+  text-decoration: none
+
+  &:focus
+    outline: none
+
+html
+  height: 100%
+  font-size: 10px
+
+  +max(1150)
+    font-size: 9px
+
+  +max(991)
+    font-size: 8px
+
+body
+  font-family: "Montserrat", sans-serif
+  background: $white
+  margin: 0
+  font-size: 1.6rem
+  font-weight: 400
+  color: $gray
+  box-sizing: border-box
+  -webkit-tap-highlight-color: transparent
+  user-select: none
+
+h1, h2, h3, h4, h5
+  font-weight: normal
+  margin-bottom: 0
+
+h2
+  //
+  font-size: 5.6rem
+
+button
+ &:focus
+   outline: none
+ &::-moz-focus-inner
+   border-color: transparent
+
+.overflow
+  overflow: hidden
+  width: 100%
+
+.onload
+  transition: .25s ease all
+  opacity: 1 !important
+
++b(animated-button)
+  cursor: pointer
+  position: relative
+  display: block
+  mix-blend-mode: lighten
+
+  +max(600)
+    width: 50%
+    transform: none
+    margin-left: auto
+    margin-right: auto
+
+  text
+    text-transform: uppercase
+    font-weight: 500
+    font-family: Montserrat, sans-serif
+    fill: $gray
+
+  .svg
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 100%
+    height: 100%
+
+    .visible
+      stroke-linecap: round
+      stroke-width: 85.5669
+
+    .invisible
+      opacity: 0
+
+  .svg--1
+    z-index: 2
+
+    .visible
+      stroke-width: 81.5669
+
+  .svg--2
+    z-index: 1
+    pointer-events: none
+
+  +m(bg)
+    text
+      fill: $white
+    .svg--2
+      .visible
+        stroke: $white !important
+
+  +m(mid)
+    width: 177px
+    height: 94px
+    margin-top: 1rem
+    transform: translateX(-.5rem)
+
+    text
+      font-size: 18px
+
+  +m(small)
+    width: 137px
+    height: 74px
+
+    text
+      font-size: 25px
+
+    .svg--1
+      .visible
+        stroke-width: 80
+
+    +max(991)
+      width: 107px
+      height: 54px
+      
+      text
+        font-size: 23px
+        transform: translateX(5px)
+        
+  +m(white)
+    mix-blend-mode: darken
+    
+    .visible
+      stroke: $white
+      
+    .svg--2
+      .visible
+        stroke: $gray
+
+  +m(batman)
+    text
+      fill: $game-batman
+      
+    .svg--1
+      .visible
+        stroke: $white
+        
+    .svg--2
+      .visible
+        stroke: $game-batman
+
+  +m(gumball)
+    text
+      fill: $game-gumball
+      
+    .svg--1
+      .visible
+        stroke: $white
+        
+    .svg--2
+      .visible
+        stroke: $game-gumball
+
+  +m(soccer)
+    text
+      fill: $game-soccer
+      
+    .svg--1
+      .visible
+        stroke: $white
+        
+    .svg--2
+      .visible
+        stroke: $game-soccer
+
+  +m(city)
+    text
+      fill: $game-city
+      
+    .svg--1
+      .visible
+        stroke: $white
+        
+    .svg--2
+      .visible
+        stroke: $game-city
+
+  +m(titans)
+    text
+      fill: $game-titans
+      
+    .svg--1
+      .visible
+        stroke: $white
+        
+    .svg--2
+      .visible
+        stroke: $game-titans
+
+  +m(adventure-time)
+    text
+      fill: $game-adventure-time
+      
+    .svg--1
+      .visible
+        stroke: $white
+        
+    .svg--2
+      .visible
+        stroke: $game-adventure-time
+
+  +m(ben)
+    text
+      fill: $game-ben
+      
+    .svg--1
+      .visible
+        stroke: $white
+        
+    .svg--2
+      .visible
+        stroke: $game-ben
+
+  +m(regular-show)
+    text
+      fill: $game-regular-show-dark
+      
+    .svg--1
+      .visible
+        stroke: $white
+        
+    .svg--2
+      .visible
+        stroke: $game-regular-show-dark
+
+  +m(magicsword)
+    text
+      fill: $game-magicsword
+      
+    .svg--1
+      .visible
+        stroke: $white
+        
+    .svg--2
+      .visible
+        stroke: $game-magicsword
+
+  +m(restaurant)
+    text
+      fill: $game-restaurant
+      
+    .svg--1
+      .visible
+        stroke: $white
+        
+    .svg--2
+      .visible
+        stroke: $game-restaurant
+
+  +m(funbrain)
+    text
+      fill: $game-funbrain
+      
+    .svg--1
+      .visible
+        stroke: $white
+        
+    .svg--2
+      .visible
+        stroke: $game-funbrain
+
+  +m(webkinz)
+    text
+      fill: $game-webkinz
+      
+    .svg--1
+      .visible
+        stroke: $white
+        
+    .svg--2
+      .visible
+        stroke: $game-webkinz
+        
+
+  +m(blue)
+    .svg--1
+      .visible
+        stroke: $blue-mid !important
+
+  +m(red)
+    .svg--1
+      .visible
+        stroke: $red !important
+        
+        
+  +m(green)
+    .svg--1
+      .visible
+        stroke: $green !important
+
++b(card)
+  +shadow
+  display: inline-block
+  overflow: hidden
+  color: #fff
+  -webkit-tap-highlight-color: transparent
+  position: relative
+  +e(wrapper)
+    position: relative
+    display: block
+    width: calc(100% - 3.5rem * 2)
+    height: 100%
+    margin: auto
+
+  +e(logo)
+    position: absolute
+    top: 3.5rem
+    left: -.2rem
+    font-size: 1.4rem
+    z-index: 2
+    margin: 0
+    height: 50px
+    
+    img
+      height: 100%
+    
+  +e(title)
+    position: relative
+    z-index: 2
+    font-size: 3rem
+    margin-top: 0
+    font-weight: 600
+
+  +e(description)
+    position: relative
+    z-index: 2
+    margin-bottom: 3.5rem
+    line-height: 1.8
+    
+  +e(image)
+    color: #fff
+    position: absolute
+    top: 50%
+    left: 50%
+    margin: auto
+    transform: translate3d(-50%, -50%, 0)
+    width: 101%
+    height: 101%
+
+  +m(soccer)
+    background: $game-soccer
+
+  +m(gumball)
+    background: $game-gumball
+
+  +m(batman)
+    background: $game-batman
+    
+  +m(city)
+    background: $game-city
+    
+    +e(image, $smart: true)
+      top: 45%
+      bottom: auto
+      transform: translate3d(-50%, -50%, 0)
+    
+  +m(titans)
+    background: $game-titans
+    
+  +m(adventure-time)
+    background: $game-adventure-time
+    
+  +m(ben)
+    background: $game-ben
+    
+  +m(regular-show)
+    background: $game-regular-show
+    +g-s(title,description)
+      color: $game-regular-show-dark
+    
+  +m(magicsword)
+    background: $game-magicsword
+    
+  +m(restaurant)
+    background: $game-restaurant
+    
+  +m(funbrain)
+    background: $game-funbrain
+    
+  +m(webkinz)
+    background: $game-webkinz

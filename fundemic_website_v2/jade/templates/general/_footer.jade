@@ -1,0 +1,55 @@
+footer(class='footer', class='#{footerType}')
+  .wrapper
+
+    .footer__column.footer__column--logo
+      .footer__logo
+        .image-holder
+          img.image(src='./img/logo-icon.svg')
+        span.copyright
+          | Copyright © 2018 Fundemic
+
+    .footer__column.footer__column--links.footer__column--links-first
+      a.footer__link(href="./index.html")
+        | Home
+      a.footer__link(href="./projects.html")
+        | Projects
+      a.footer__link(href="./about.html")
+        | About
+      a.footer__link(href="./homegrown.html")
+        | Homegrown
+
+    .footer__column.footer__column--links.footer__column--links-second
+      a.footer__link(href="./privacy.html")
+        | Privacy
+      a.footer__link(href="./terms.html")
+        | Terms
+
+    .footer__column.footer__column--contact
+
+      //-parameters of button mixin:
+        1) text of the button
+        2) modificator of the button
+        3) unique id for main button
+        4) unique id for secondary button that fakes stroke
+        5) dx attribute that helps to align svg text horizontally
+        6) dy attribute that helps to align svg text vertically
+        7) link of the button
+
+      +button(
+        text='Contact',
+        modificator='--small animated-button--bg animated-button--footer',
+        id='-footer-1',
+        id2='-footer-2',
+        dx='0',
+        dy='8',
+        link='contact.html'
+      )
+
+    .footer__column.footer__column--social
+      a.footer__social(href="https://facebook.com" target="_blank")
+        img.logo(src="./img/fb.svg")
+      a.footer__social(href="https://instagram.com" target="_blank")
+        img.logo(src="./img/instagram.svg")
+      a.footer__social(href="https://linkedin.com" target="_blank")
+        img.logo(src="./img/linkedin.svg")
+

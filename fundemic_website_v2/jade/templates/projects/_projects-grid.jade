@@ -1,0 +1,134 @@
+section.projects-grid
+  .wrapper
+    h2.projects-grid__title
+      | Our Projects
+    h3.projects-grid__description
+      | We're happy when we're making things. Explore below to see some of our favourite interactive and research work.
+    .projects-grid__card-wrapper
+
+      //-  parameters of card mixin:
+        1) link to the project
+        2) logo name img/logo#{name}.svg
+        3) upper title text
+        4) bottom title text
+        5) description text
+        6) name variable for image and for assigning classes
+        7) html tag which wraps the card
+
+      +card()(
+        game='batman',
+        link='./game-batman.html',
+        logo='cartoon-network',
+        titleUp='BATMAN GAMES',
+        titleDown = '',
+        description='Global audience segmentation to determine brand and content direction',
+        tag='li'
+      )
+
+      +card()(
+        game='gumball',
+        link='./game-gumball.html',
+        logo='cartoon-network',
+        titleUp='GUMBALL GAMES',
+        titleDown = '',
+        description='Global audience segmentation to determine brand and content direction',
+        tag='li'
+      )
+
+      +card()(
+        game='soccer',
+        link='./game-soccer.html',
+        logo='moonfrog-cut',
+        titleUp='SOCCER',
+        titleDown = 'Kick & Shotout',
+        description='Global audience segmentation to determine brand and content direction',
+        tag='li'
+      )
+
+      +card()(
+        game='city',
+        link='./game-city.html',
+        logo='moonfrog-cut',
+        titleUp='CITY MERGE',
+        titleDown = '',
+        description='Global audience segmentation to determine brand and content direction',
+        tag='li'
+      )
+
+      +card()(
+        game='titans',
+        link='./game-titans.html',
+        logo='cartoon-network',
+        titleUp='TEEN TITANS GAMES',
+        titleDown = '',
+        description='Global audience segmentation to determine brand and content direction',
+        tag='li'
+      )
+
+      +card()(
+        game='adventure-time',
+        link='./game-adventure-time.html',
+        logo='cartoon-network',
+        titleUp='ADVENTURE TIME',
+        titleDown = 'GAMES',
+        description='Global audience segmentation to determine brand and content direction',
+        tag='li'
+      )
+
+      +card()(
+        game='regular-show',
+        link='./game-regular-show.html',
+        logo='cartoon-network-dark',
+        titleUp='REGULAR SHOW',
+        titleDown = 'GAMES',
+        description='Global audience segmentation to determine brand and content direction',
+        tag='li'
+      )
+
+      +card()(
+        game='ben',
+        link='./game-ben.html',
+        logo='cartoon-network',
+        titleUp='BEN GAMES',
+        titleDown = '',
+        description='Global audience segmentation to determine brand and content direction',
+        tag='li'
+      )
+
+      +card()(
+        game='magicsword',
+        link='./game-magicsword.html',
+        logo='cartoon-network',
+        titleUp='MIGHTY MAGICSWORD',
+        titleDown = '',
+        description='Global audience segmentation to determine brand and content direction',
+        tag='li'
+      )
+
+      +card()(
+        game='restaurant',
+        link='./game-restaurant.html',
+        logo='cartoon-network',
+        titleUp='MERGE',
+        titleDown = 'RESTAURANT',
+        description='Global audience segmentation to determine brand and content direction',
+        tag='li'
+      )
+
+      +card()(
+        game='funbrain',
+        link='./game-funbrain.html',
+        titleUp='FUNBRAIN',
+        titleDown = 'GAMES',
+        description='Global audience segmentation to determine brand and content direction',
+        tag='li'
+      )
+
+      +card()(
+        game='webkinz',
+        link='./game-webkinz.html',
+        titleUp='WEBKINZ',
+        titleDown = 'ARCADE GAMES',
+        description='Global audience segmentation to determine brand and content direction',
+        tag='li'
+      )

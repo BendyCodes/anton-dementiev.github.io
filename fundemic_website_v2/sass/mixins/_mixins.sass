@@ -1,0 +1,38 @@
+=contact
+  font-size: 1.4rem
+  border-width: .2rem
+  border-style: solid
+  border-radius: 4em
+  display: inline-block
+  text-transform: uppercase
+  font-weight: 500
+  padding: 1.4rem 2.1rem
+
+=shadow
+  box-shadow: 2px 20px 25px -20px #9a9494
+
+=shadow-surround
+  box-shadow: 0 5px 21px 3px #e6e6e6
+  box-shadow: 0px 10px 35px -16px #9b9b9b
+
+=shadow-none
+  box-shadow: none
+
+=shadow-text($color)
+  filter: drop-shadow(1px 1px 1px $color)
+
+=max($pixel)
+  @media(max-width: #{$pixel}px)
+    @content
+
+=min($pixel)
+  @media(min-width: #{$pixel}px)
+    @content
+
+=max-min($pixel1,$pixel2)
+  @media (max-width: #{$pixel1}px), (min-width: #{$pixel2}px)
+    @content
+
+=min-max($pixel1,$pixel2)
+  @media (min-width: #{$pixel1}px) and (max-width: #{$pixel2}px)
+    @content

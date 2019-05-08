@@ -1,0 +1,144 @@
+//- Including mixins and extending default layout for html page.
+include templates/general/_mixins
+extends templates/general/_layout
+
+
+//- Inserting main data into page.
+block config
+  -
+    var
+      game = 'titans'
+
+      pageTitle = 'Teen Titans'
+
+      logo = 'moonfrog'
+
+      footerType = 'footer--bg-titans'
+
+      mainTitle = 'Teen Titans Games'
+
+      description = 'The games were originally developed by Cartoon Network in Flash. The Teen Titans animated series is known for its colorful characters and crime-busting, supervillain-fighting action. The Fundemic team was tasked with rebuilding each game in HTML5 while keeping the same great user experience that kept players coming back for more. The sheer number of animations required lots of testing and playing around with the sprite sheets to ensure the efficient use of  resources. Huge win for Robin and his crew!'
+
+      client = 'Cartoon Network'
+
+      type = 'Conversion from Flash to HTML5'
+
+      photoType = 'desktop'
+
+      games = 'Teen Titans Go! Drillionaire, Tag Team Titans, Teen Titans Go! One on One, Teen Titans Go! Most Wanted, Teen Titans Go! Tower Lockdown'
+
+      galleries =
+      [
+        {
+          title:'Teen Titans Go Drillionaire:',
+          description:'Fire up Cyborg\'s rocket drill and collect treasure to fix the tower.',
+          images:[
+            'placeholder1.jpg',
+            'placeholder2.jpg',
+            'placeholder3.jpg',
+            'placeholder4.jpg',
+            'placeholder1.jpg',
+            'placeholder2.jpg',
+            'placeholder3.jpg',
+            'placeholder4.jpg'
+          ]
+        },
+        {
+          title:'Tag Team Titans:',
+          description:'Tag Team Titans: Defeat Brother Blood once and for all',
+          images:[
+            'placeholder1.jpg',
+            'placeholder2.jpg',
+            'placeholder3.jpg',
+            'placeholder4.jpg',
+            'placeholder1.jpg',
+            'placeholder2.jpg',
+            'placeholder3.jpg',
+            'placeholder4.jpg'
+          ]
+        },
+        {
+          title:'Tag Titans Go! One on One:',
+          description:'Take on 5 cunning villains in an epic one-on-one showdown',
+          images:[
+            'placeholder1.jpg',
+            'placeholder2.jpg',
+            'placeholder3.jpg',
+            'placeholder4.jpg',
+            'placeholder1.jpg',
+            'placeholder2.jpg',
+            'placeholder3.jpg',
+            'placeholder4.jpg'
+          ]
+        },
+        {
+          title:'Teens Titans Go! Most Wanted:',
+          description:'Team up as Robin, Cyborg, Raven, Starfire and Beast Boy for a tactical RPG battle.',
+          images:[
+            'placeholder1.jpg',
+            'placeholder2.jpg',
+            'placeholder3.jpg',
+            'placeholder4.jpg',
+            'placeholder1.jpg',
+            'placeholder2.jpg',
+            'placeholder3.jpg',
+            'placeholder4.jpg'
+          ]
+        },
+        {
+          title:'Teen Titans Go! Tower Lockdown:',
+          description:'Climbing Titans Tower to reach the top and teach Cyborg a lesson',
+          images:[
+            'placeholder1.jpg',
+            'placeholder2.jpg',
+            'placeholder3.jpg',
+            'placeholder4.jpg',
+            'placeholder1.jpg',
+            'placeholder2.jpg',
+            'placeholder3.jpg',
+            'placeholder4.jpg'
+          ]
+        }
+      ]
+
+
+//- Uncomment if need cookie dialog on this page.
+//- block cookie
+//- include templates/general/_cookie
+
+
+//- Including header template.
+block header
+  include templates/general/_header
+
+
+//- Including main sections of single project page.
+block main
+  main(class="single-project-page #{photoType}")
+    include templates/single-project/_hero
+
+
+      //- Including specific backgrounds.
+      block background
+        img(
+          src="./img/hero-bg-titans.png"
+          class="hero-game__bg hero-game__bg-main"
+          style="opacity:0"
+          onload="this.classList.add('onload')"
+        )
+
+    include templates/single-project/_photos
+    +gallery
+
+
+//- Including footer template.
+block footer
+  include templates/general/_footer
+
+
+//- Including scripts that are relative to this page.
+block scripts-bottom
+  script(src="js/snap.svg-min.js")
+  script(src="js/glide.min.js")
+  script(src="js/menu-control.js")
+  script(src="js/single-project.js")

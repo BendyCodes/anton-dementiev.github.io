@@ -1,0 +1,529 @@
++b(single-project-page)
+  
+  --gap: 12rem
+  
+  +max(1350)
+    --gap: 24rem
+    
+  +max(1200)
+    --gap: 10rem
+    
+  +max(350)
+    --gap: 7rem
+    
+    
+  .wrapper
+    margin: auto
+    position: relative
+    width: 110rem
+    
+    +max(1350)
+      width: calc(100% - var(--gap))
+      
+    +max(500)
+      padding-bottom: 6rem
+    
+    +m(hero)
+      padding-bottom: 12rem
+      position: relative
+      z-index: 2
+      
+    +m(info)
+      padding-top: 12rem
+      padding-bottom: 12rem
+      
+  &.desktop
+    .wrapper
+      +min-max(601, 700)
+        --gap: 20rem
+        
+      +m(hero)
+        +max(1200)
+          padding-bottom: calc(var(--gap) / 1.7)
+        
+      +m(info)
+        +max(1200)
+          padding-top: calc(var(--gap) / 1.5)
+          
+        +max(767)
+          padding-bottom: 6rem
+          
+  &.mobile
+    .wrapper
+      +max(1350)
+        --gap: 30rem
+        
+      +max(991)
+        --gap: 20rem
+        
+      +max(600)
+        //
+        --gap: 10rem
+        
+        +m(info)
+          padding-top: 9rem
+          
+        +m(hero)
+          padding-bottom: 7rem
+          
++b(hero-game)
+  margin-top: 2rem
+  position: relative
+  
+  &:not(.hero-game--restaurant)
+    overflow: hidden
+  
+    
+  +e(bg)
+    position: absolute
+    
+  +e(bg-main)
+    height: 100%
+    z-index: 1
+    top: 0
+    right: 7%
+    
+    +max(1200)
+      right: -3vw
+    
+    +max(700)
+      width: 80%
+      height: auto
+      left: 0
+      right: 0 !important
+      margin: auto
+      top: 0
+  
+  +m(soccer)
+    background-color: $game-soccer
+    
+    .wrapper
+        +shadow-text($game-soccer)
+        
+    +e(bg-main, $smart: true)
+      +min(701)
+        width: 45rem
+        height: auto
+        right: 25rem
+        top: -3vw
+      
+      +max(1300)
+        right: 8vw !important
+        
+      +max(700)
+        right: -6% !important
+    
+    +e(bg-asset, $smart: true)
+      width: 45rem
+      bottom: 0
+      right: calc(25rem - 10px)
+      z-index: 2
+      
+      +max(1300)
+        right: 8vw !important
+        
+      +max(700)
+        display: none
+      
+  +m(gumball)
+    background-color: $game-gumball
+    
+    .wrapper
+      +shadow-text($game-gumball)
+      
+    +e(bg-main, $smart: true)
+      
+      +max(1200)
+        top: -7vw
+        
+      +max(700)
+        top: 0
+      
+    +e(bg-asset, $smart: true)
+      width: 20%
+      bottom: 0
+      right: 10%
+      
+  +m(restaurant)
+    background-color: $game-restaurant
+    +max(1200)
+      overflow-x: hidden
+      
+    +max(700)
+      overflow: hidden
+    
+    .wrapper
+      +shadow-text($game-restaurant)
+
+    +e(bg-main, $smart: true)
+      height: 120%
+      top: -5%
+      
+      +max(1750)
+        height: 100%
+        top: 0
+      
+      +max(1200)
+        right: -10%
+  
+      +max(700)
+        height: auto
+        width: 120rem
+        left: 30%
+        transform: translateX(-50%)
+        top: -35rem
+      
+    +e(bg-asset, $smart: true)
+      width: 12%
+      bottom: auto
+      top: 5%
+      right: auto
+      left: 2%
+      
+      +max(1650)
+        display: none
+      
+  +m(batman)
+    background-color: $game-batman
+    
+    .wrapper
+      +shadow-text($game-batman)
+    
+    +e(bg-main,$smart:true)
+      transition: all 1s ease
+      +max(700)
+        filter: drop-shadow(-3px 10px 17px rgba(57, 78, 109, 0.4))
+        
+  +m(city)
+    background-color: $game-city
+    
+    +min-max(601,991)
+      .wrapper
+        +shadow-text($game-city)
+        
+    +e(bg-mobile,$smart:true)
+      top: 0
+      right: 0
+      height: 100%
+      opacity: 0 !important
+      
+      +max(1200)
+        display: block
+        opacity: 1 !important
+      
+      +max(700)
+        height: auto
+        width: 50%
+        
+    +e(bg-main,$smart:true)
+      +max(1200 )
+        opacity: 0 !important
+        
+  +m(titans)
+    background-color: $game-titans
+    
+    .wrapper
+      +shadow-text($game-titans)
+    
+    +e(bg-main,$smart:true)
+      height: 97%
+      
+      +max(700)
+        height: auto
+        top: 10vw
+        
+  +m(adventure-time)
+    background-color: $game-adventure-time
+    
+    .wrapper
+      +shadow-text($game-adventure-time)
+    
+    +e(bg-main,$smart:true)
+      right: 10vw
+      
+      +max(700)
+        top: -30vw
+        right: 5vw!important
+    
+  +m(ben)
+    background-color: $game-ben
+    
+    +e(bg-main,$smart:true)
+      right: 13vw
+      
+      +max(1650)
+        right: 5vw
+      
+      +max(700)
+    
+    .wrapper
+      +shadow-text($game-ben)
+    
+  +m(regular-show)
+    background-color: $game-regular-show
+    
+    .wrapper
+      +shadow-text($game-regular-show)
+    
+    +g-s(client, type, description, games, title)
+      color: $game-regular-show-dark
+      
+    +e(label, $smart: true)
+      background: rgba(138, 122, 122, 0.1)
+    
+  +m(magicsword)
+    background-color: $game-magicsword
+    
+    .wrapper
+      +shadow-text($game-ben)
+    
+  +m(funbrain)
+    background-color: $game-funbrain
+    
+    +e(bg-main,$smart:true)
+      top: 3%
+      
+      +max(700)
+        top: -3vw
+        width: calc(100% - var(--gap) * 1.4)
+      
+      +max(600)
+        top: -9vw
+        width: calc(100% - var(--gap) / 1.6)
+    
+    .wrapper
+      +shadow-text($game-funbrain)
+    
+  +m(webkinz)
+    background-color: $game-webkinz
+    
+    .wrapper
+      +shadow-text($game-webkinz)
+      
+  +e(logo)
+    position: absolute
+    top: 5rem
+    width: 90px
+    height: 60px
+    
+    +max(500)
+      width: 45px
+      height: 30px
+      
+    +m(moonfrog)
+      width: 150px
+      height: 100px
+      top: 3rem
+      left: -1.1rem
+      
+      +max(500)
+        width: 100px
+        height: 50px
+      
+    img
+      width: 100%
+      height: 100%
+  
+  +e(label)
+    background: rgba(255, 255, 255, 0.2)
+    padding: 0 .8rem
+    border-radius: 1.5rem
+    margin-right: 1rem
+    margin-left: -.9rem
+    display: inline-block
+  
+  +e(title)
+    font-size: 6.8rem
+    padding-top: 16rem
+    color: $white
+    font-weight: 500
+    line-height: 1.1em
+    margin-top: 0
+    margin-bottom: 3rem
+    
+    +max(700)
+      padding-top: 90vw
+      font-size: 8.2vw
+  
+      
+  +g(client, type, description, games)
+    margin-top: 2.2rem
+    color: $white
+    font-size: 1.8rem
+    line-height: 1.6em
+    
+    +max(991)
+      font-weight: 500
+    
+  +g(client, type, description, games,title)
+    width: 65%
+    
+    +min-max(992,1200)
+      width: 57%
+    
+    +max(700)
+      width: 100%
+  
++b(photos)
+  padding-bottom: 3.3vw
+  
+  +max(600)
+    padding-bottom: 5rem
+  
+  --image-width: 390px
+  --image-height: calc(var(--image-width) * 1.846)
+  --image-width-double: calc(var(--image-width) * 2)
+  
+  +m(desktop)
+    --gap--desktop: 7vw
+    
+    +max(1200)
+      --gap--desktop: calc(var(--gap) / 2)
+      
+    .wrapper
+      +m(photo)
+        width: calc(100% - var(--gap--desktop) * 2)
+        
+        +max(991)
+          width: 100%
+        
+    +e(image, $smart: true)
+      min-height: 100%
+      width: 100%
+      
+    +e(column, $smart: true)
+      +m(photo)
+        
+        --image-width: calc(50% - var(--gap--desktop) / 2)
+        --image-height: calc(var(--image-width) / 1.846)
+        
+        margin-bottom: calc(var(--gap--desktop) )
+        
+        +max(991)
+          --image-width: 50%
+          +shadow-none
+          border: none
+          margin-bottom: 0
+
+        +max(700)
+          --image-width: 100%
+        
+  +m(mobile)
+    +max(1350)
+      --image-width: 31vw
+      
+    +max(600)
+      --image-width: 100%
+      padding-bottom: 5rem
+      
+    .wrapper
+      +m(photo)
+        +max(500)
+          width: 100%
+          
+    +e(image, $smart: true)
+      min-width: 100%
+      height: 100%
+      
+    +e(column, $smart: true)
+      +m(photo)
+        margin-bottom: calc(100% / 1.7 - var(--image-width))
+        
+        +max(1200)
+          margin-bottom: calc(100% - var(--image-width-double))
+          
+        +max(600)
+          margin-bottom: 11rem
+          
+        +max(500)
+          +shadow-none
+          border: none
+          margin-bottom: 0
+  
+  +e(row)
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    
+    +max(767)
+      flex-wrap: wrap
+    
+    +m(photo)
+      flex-wrap: wrap
+      margin-top: 0
+    
+  +e(column)
+    width: var(--image-width)
+    display: inline-flex
+    flex-wrap: wrap
+    
+    +max(550)
+      width: 100%
+     
+    +m(button)
+      justify-content: flex-end
+      width: calc(var(--image-width) - 150px)
+      min-width: 224px
+      
+      +max(767)
+        margin-top: 5rem
+        width: 100%
+        
+      +max(550)
+        min-width: 100%
+        
+    +m(info)
+      width: calc(var(--image-width) + 150px)
+      max-width: 450px
+      
+    +m(photo)
+      +shadow-surround
+      overflow: hidden
+      position: relative
+      border: 13px solid $white
+      width: var(--image-width)
+      padding-bottom: var(--image-height)
+      
+  +e(image)
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+  
+  +e(title)
+    font-size: 4.4rem
+    margin-top: 0
+    width: 100%
+    font-weight: 500
+    line-height: 1
+    margin-bottom: 5rem
+    
+    
+    +max(550)
+      font-size: 4rem
+  
+  +e(description)
+    font-size: 2.8rem
+    line-height: 1.5em
+    margin-bottom: 0
+    margin-top: 0
+  
+  +b(animated-button)
+    width: 227px
+    height: 107px
+    font-size: 24px
+    position: relative
+    top: -15px
+    right: -15px
+    margin: 0
+    +max(991)
+      width: 187px
+      height: 87px
+    
+    +max(600)
+      top: 0
+      right: 0
+      
+    +max(500)
+      width: 80%
+      margin: auto

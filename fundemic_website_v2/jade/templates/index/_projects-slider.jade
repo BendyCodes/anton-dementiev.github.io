@@ -1,0 +1,159 @@
+section.projects-slider
+  h2.projects-slider__title
+    | Our Projects
+
+  .glide
+    .glide__track(data-glide-el="track")
+      ul.glide__slides
+
+        //-  parameters of card mixin:
+          1) link to the project
+          2) logo name img/logo#{name}.svg
+          3) upper title text
+          4) bottom title text
+          5) description text
+          6) name variable for image and for assigning classes
+          7) html tag which wraps the card
+
+        +card()(
+          link='./game-batman.html',
+          logo='cartoon-network',
+          titleUp='BATMAN GAMES',
+          titleDown = '',
+          description='Global audience segmentation to determine brand and content direction',
+          game='batman',
+          tag='li'
+        )
+
+        +card()(
+          link='./game-gumball.html',
+          logo='cartoon-network',
+          titleUp='GUMBALL GAMES',
+          titleDown = '',
+          description='Global audience segmentation to determine brand and content direction',
+          game='gumball',
+          tag='li'
+        )
+
+        +card()(
+          link='./game-soccer.html',
+          logo='moonfrog',
+          titleUp='GUMBAL GAMES',
+          titleDown = '',
+          description='Global audience segmentation to determine brand and content direction',
+          game='soccer',
+          tag='li'
+        )
+
+        +card()(
+          link='./game-city.html',
+          logo='moonfrog',
+          titleUp='CITY MERGE',
+          titleDown = '',
+          description='Global audience segmentation to determine brand and content direction',
+          game='city',
+          tag='li'
+        )
+
+        +card()(
+          link='./game-titans.html',
+          logo='cartoon-network',
+          titleUp='TEEN TITANS GAMES',
+          titleDown = '',
+          description='Global audience segmentation to determine brand and content direction',
+          game='titans',
+          tag='li'
+        )
+
+        +card()(
+          link='./game-adventure-time.html',
+          logo='cartoon-network',
+          titleUp='ADVENTURE TIME',
+          titleDown = 'GAMES',
+          description='Global audience segmentation to determine brand and content direction',
+          game='adventure-time',
+          tag='li'
+        )
+
+        +card()(
+          link='./game-regular-show.html',
+          logo='cartoon-network',
+          titleUp='REGULAR SHOW',
+          titleDown = 'GAMES',
+          description='Global audience segmentation to determine brand and content direction',
+          game='regular-show',
+          tag='li'
+        )
+
+        +card()(
+          link='./game-ben.html',
+          logo='cartoon-network',
+          titleUp='BEN GAMES',
+          titleDown = '',
+          description='Global audience segmentation to determine brand and content direction',
+          game='ben',
+          tag='li'
+        )
+
+        +card()(
+          link='./game-magicsword.html',
+          logo='cartoon-network',
+          titleUp='MIGHTY MAGICSWORD',
+          titleDown = '',
+          description='Global audience segmentation to determine brand and content direction',
+          game='magicsword',
+          tag='li'
+        )
+
+        +card()(
+          link='./game-restaurant.html',
+          logo='cartoon-network',
+          titleUp='MERGE',
+          titleDown = 'RESTAURANT',
+          description='Global audience segmentation to determine brand and content direction',
+          game='restaurant',
+          tag='li'
+        )
+
+        +card()(
+          link='./game-funbrain.html',
+          titleUp='FUNBRAIN',
+          titleDown = 'GAMES',
+          description='Global audience segmentation to determine brand and content direction',
+          game='funbrain',
+          tag='li'
+        )
+
+        +card()(
+          link='./game-webkinz.html',
+          titleUp='WEBKINZ',
+          titleDown = 'ARCADE GAMES',
+          description='Global audience segmentation to determine brand and content direction',
+          game='webkinz',
+          tag='li'
+        )
+
+    .glide__arrows(data-glide-el='controls')
+      button.glide__arrow.glide__arrow--left(data-glide-dir='<')
+        +arrow-left-index
+      button.glide__arrow.glide__arrow--right(data-glide-dir='>')
+        +arrow-right-index
+
+  //-parameters of button mixin:
+    1) text of the button
+    2) modificator of the button
+    3) unique id for main button
+    4) unique id for secondary button that fakes stroke
+    5) dx attribute that helps to align svg text horizontally
+    6) dy attribute that helps to align svg text vertically
+    7) link of the button
+
+  +button(
+    text='View All',
+    modificator='--white',
+    id='3',
+    id2='4',
+    dx='4.3',
+    dy='8',
+    link='projects.html'
+  )

@@ -1,0 +1,37 @@
+section(class="hero-game hero-game--#{game}")
+  .wrapper.wrapper--hero
+    if (logo)
+      div(class="hero-game__logo hero-game__logo--#{logo}")
+        img(src="./img/logo-#{logo}.svg")
+
+    h1.hero-game__title
+      div
+        | #{mainTitle}
+      if(subTitle)
+        div
+          | #{subTitle}
+
+    if (games)
+      div.hero-game__games
+        label.hero-game__label
+          | Games:
+        span.hero-game__text
+          | #{games}
+
+    div.hero-game__client
+      label.hero-game__label
+        | Client:
+      span.hero-game__text
+        | #{client}
+
+    div.hero-game__type
+      label.hero-game__label
+        | Type of work:
+      span.hero-game__text
+        | #{type}
+
+    div.hero-game__description
+      | #{description}
+
+  //- Slot for including specific backgrounds.
+  block background
