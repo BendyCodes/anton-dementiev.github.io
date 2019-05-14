@@ -3,16 +3,11 @@ section.clients#scroll2
     h2.clients__title
       | Our Clients.
 
-    //-  image $index that is inserted into img/logo-#{$index}.svg for linking an image
-    +logo('1')
-    +logo('2')
-    +logo('3')
-    +logo('4')
-    +logo('5')
-    +logo('6')
-    +logo('7')
-    +logo('8')
-    +logo('9')
-    +logo('10')
-    +logo('11')
-    +logo('12')
+    //-  image index that is inserted into img/logo-clients-#{index}.svg for linking an image
+
+    +logo-clients()(index='1')
+    +logo-clients()(index='2')
+    +logo-clients()(index='3')
+    +logo-clients()(index='4')
+    +logo-clients()(index='5')
+    +logo-clients()(index='6')

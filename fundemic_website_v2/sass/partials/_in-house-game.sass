@@ -1,0 +1,88 @@
++b(in-house-game)
+  
+  .wrapper
+    width: 1250px
+    margin: auto
+    position: relative
+    margin-top: 20rem
+    
+    +max(1350)
+      width: 70%
+      margin-top: 10rem
+      
+    +max(991)
+      width: 85%
+      
+    +m(play)
+      +max(767)
+        width: 100%
+    
+  +g(description, title)
+    width: 50%
+    
+    +max(1350)
+      width: 70%
+      max-width: calc(100% - 30rem)
+      
+    +max(991)
+      width: 100%
+      max-width: 100%
+  
+  +e(image)
+    +shadow
+    border-radius: 4rem
+    overflow: hidden
+    position: absolute
+    top: 0
+    right: 0
+    display: block
+    
+    +max(991)
+      position: static
+      margin: auto
+      margin-bottom: 10rem
+    
+  +e(title)
+    font-size: 6.8rem
+    font-weight: 500
+    line-height: 1.1em
+    margin-top: 0
+    margin-bottom: 3rem
+    
+    +max(700)
+      font-size: 5.2rem
+    
+  +e(description)
+    margin-top: 2.2rem
+    font-size: 1.8rem
+    line-height: 1.6em
+    
+    +max(991)
+      font-weight: 500
+      
+  +e(play)
+    +shadow-surround
+    width: 100%
+    padding-bottom: 50%
+    margin: 20rem auto 30rem
+    position: relative
+    
+    +max(1350)
+      margin: 10rem auto 15rem
+      
+    +max(767)
+      box-shadow: none
+    
+  .animated-button
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    width: 30%
+    padding-bottom: 30%
+    font-size: 25px
+    max-width: 300px
+    min-width: 150px
+    
+    text
+      text-transform: capitalize

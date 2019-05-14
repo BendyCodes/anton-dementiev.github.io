@@ -19,32 +19,32 @@
       width: 85%
 
   .animated-button
-      transform: translate(-2rem, -3rem)
-  
-      +max(1150)
-        width: 130px !important
-        height: 60px !important
-        transform: translate(-5rem, -3rem) !important
-  
-      +max(991)
-        width: 117px !important
-        height: 54px !important
-  
-        text
-          font-size: 23px !important
-  
-      +max(700)
-        transform: translate(0.5rem, -3.2rem) !important
-        margin-left: auto !important
-        margin-right: initial !important
-  
-      +max(500)
-        transform: none !important
-        margin-left: auto !important
-        margin-right: auto !important
-  
-      +max(300)
-        width: 100%!important
+    transform: translate(-2rem, -3rem)
+
+    +max(1150)
+      width: 130px !important
+      height: 60px !important
+      transform: translate(-5rem, -3rem) !important
+
+    +max(991)
+      width: 117px !important
+      height: 54px !important
+
+      text
+        font-size: 23px !important
+
+    +max(700)
+      transform: translate(0.5rem, -3.2rem) !important
+      margin-left: auto !important
+      margin-right: initial !important
+
+    +max(500)
+      transform: none !important
+      margin-left: auto !important
+      margin-right: auto !important
+
+    +max(300)
+      width: 100%!important
         
   +e(column)
     padding-top: 7.4rem
@@ -226,11 +226,13 @@
         transform: translateY(-1.2rem)
 
   +m(bg-blue)
+    background-color: $blue
     .svg--1
       .visible
         stroke: $blue  !important
   
   +m(bg-red)
+    background-color: $red
     .svg--1
       .visible
         stroke: $red  !important
@@ -238,7 +240,6 @@
   +m(bg-green)
     background-image: url(../img/footer-bg-dark.svg)
     background-color: $green
-
     text
       font-weight: 600
       
@@ -249,11 +250,12 @@
         +max(600)
           stroke: #64d6a2 !important
     
-  +m(bg-red)
-    background-color: $red
     
-  +m(bg-blue)
-    background-color: $blue
+  +m(bg-orange)
+    background-color: $game-gumball
+    .svg--1
+      .visible
+        stroke: $game-gumball  !important
     
   +m(bg-batman)
     background-color: $game-batman

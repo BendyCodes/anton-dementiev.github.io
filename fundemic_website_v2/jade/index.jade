@@ -4,6 +4,7 @@ extends templates/general/_layout
 
 //- Asigning page title and footer color variables. Also initialising overflow wrapper for main section to help disable horizontal scrollbar bug on mobile devices.
 block config
+  - var css = './css/main.css'
   - var pageTitle = 'Homepage'
   - var footerType = 'footer--bg-green'
   - var overflow = 'true'
@@ -22,7 +23,7 @@ block main
     include templates/index/_hero
     include templates/index/_projects-slider
     include templates/index/_services
-    include templates/index/_template
+    include templates/index/_vision
     include templates/index/_clients
 
 //- Including footer template.

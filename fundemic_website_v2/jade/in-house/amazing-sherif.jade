@@ -1,0 +1,42 @@
+//- Including mixins and extending default layout for html page.
+include ../templates/general/_mixins
+extends ../templates/general/_layout
+
+
+//- Inserting main data into page.
+block config
+  -
+    var
+      path = '../'
+      pageTitle = 'Amazing Sheriff'
+      footerType = 'footer--bg-orange'
+      imageLink = '4'
+      description = 'Pin on your shiny sheriff\'s badge, load up your six-shooters, and get ready for some amazing action. Take control of this high flying Sheriff on a wheel-spinning, bottle-breaking wild ride! Yee-haw!'
+
+
+//- Uncomment if need cookie dialog on this page.
+//- block cookie
+//- include templates/general/_cookie
+
+
+//- Including header template.
+block header
+  include ../templates/general/_header
+
+
+//- Including main sections of single project page.
+block main
+  main
+    include ../templates/general/_game-in-house
+
+
+//- Including footer template.
+block footer
+  include ../templates/general/_footer
+
+
+//- Including scripts that are relative to this page.
+block scripts-bottom
+  script(src="../js/snap.svg-min.js")
+  script(src="../js/menu-control.js")
+  script(src="../js/single-button.js")

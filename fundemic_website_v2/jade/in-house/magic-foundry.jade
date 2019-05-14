@@ -1,0 +1,42 @@
+//- Including mixins and extending default layout for html page.
+include ../templates/general/_mixins
+extends ../templates/general/_layout
+
+
+//- Inserting main data into page.
+block config
+  -
+    var
+      path = '../'
+      pageTitle = 'Magic Foundry'
+      footerType = 'footer--bg-orange'
+      imageLink = '3'
+      description = 'Do you have what it takes to solve ancient puzzles devised by mages of yore? Rise from apprentice to  master in Magic Foundry! Unravel the secrets of runes and collect them all to prove your worth.   More than 150 challenging levels await in this fun puzzler that will put your magic skills to test!'
+
+
+//- Uncomment if need cookie dialog on this page.
+//- block cookie
+//- include templates/general/_cookie
+
+
+//- Including header template.
+block header
+  include ../templates/general/_header
+
+
+//- Including main sections of single project page.
+block main
+  main
+    include ../templates/general/_game-in-house
+
+
+//- Including footer template.
+block footer
+  include ../templates/general/_footer
+
+
+//- Including scripts that are relative to this page.
+block scripts-bottom
+  script(src="../js/snap.svg-min.js")
+  script(src="../js/menu-control.js")
+  script(src="../js/single-button.js")

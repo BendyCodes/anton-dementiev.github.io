@@ -1,12 +1,12 @@
 header.header
-  a.header__logo(href="./index.html")
+  a.header__logo(href="#{path}index.html")
     +fundemic-logo
 
   nav.header__nav
-    a.header__link.header__link--nav(href="./index.html") Home
-    a.header__link.header__link--nav(href="./projects.html") Projects
-    a.header__link.header__link--nav(href="./about.html") About
-    a.header__link.header__link--nav(href="./homegrown.html") Homegrown
+    a.header__link.header__link--nav(href="#{path}index.html") Home
+    a.header__link.header__link--nav(href="#{path}projects.html") Projects
+    a.header__link.header__link--nav(href="#{path}about.html") About
+    a.header__link.header__link--nav(href="#{path}in-house.html") In-House
 
   .header__contact
 
@@ -26,7 +26,7 @@ header.header
       id2='-header-2',
       dx='0',
       dy='8',
-      link='contact.html'
+      link='#{path}contact.html'
     )
 
   button.header__menu-button.hamburger.hamburger--elastic(type='button')
@@ -34,17 +34,17 @@ header.header
       span.hamburger-inner
 
 .header__menu-mobile(style="visibility: hidden")
-  a.header__menu-mobile-link(href="./index.html")
+  a.header__menu-mobile-link(href="#{path}index.html")
     | Home
-  a.header__menu-mobile-link(href="./projects.html")
+  a.header__menu-mobile-link(href="#{path}projects.html")
     | Projects
-  a.header__menu-mobile-link(href="./about.html")
+  a.header__menu-mobile-link(href="#{path}about.html")
     | About
-  a.header__menu-mobile-link(href="./homegrown.html")
-    | Homegrown
-  a.header__menu-mobile-link(href="./about.html")
+  a.header__menu-mobile-link(href="#{path}in-house.html")
+    | In-House
+  a.header__menu-mobile-link(href="#{path}about.html")
     | Privacy
-  a.header__menu-mobile-link(href="./about.html")
+  a.header__menu-mobile-link(href="#{path}privacy.html")
     | Terms
-  a.header__menu-mobile-link.header__menu-mobile-link--contact(href="./contact.html")
+  a.header__menu-mobile-link.header__menu-mobile-link--contact(href="#{path}terms.html")
     | Contact

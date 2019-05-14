@@ -505,12 +505,19 @@
   +shadow
   margin-bottom: 12.4rem
   display: flex
+  min-height: 52.7rem
+  
+  +max(650)
+    min-height: 32.7rem
 
   +e(column)
     +m(image)
       width: 59%
       position: relative
       overflow: hidden
+      background-repeat: no-repeat
+      background-size: cover
+      background-position: center
 
       +max(1250)
         width: 50%
@@ -600,13 +607,6 @@
     +m(tablet)
       transform: translate3d(-100%, 0, 0)
 
-  +e(image)
-    position: absolute
-    height: 100%
-    left: 50%
-    transform: translateX(-50%)
-    top: 0
-
   +e(title)
     font-size: 4.3rem
     margin-top: 9rem
@@ -654,8 +654,11 @@
     +e(column, $smart: true)
       +m(info)
         background: $blue-mid
-
-  +m(template)
+      
+      +m(image)
+        background-image: url("../img/people1.png")
+        
+  +m(vision)
     +max(500)
       margin-bottom: 7rem
 
@@ -665,6 +668,9 @@
         justify-content: center
         flex-wrap: wrap
         background: $red
+        
+      +m(image)
+        background-image: url("../img/people2.png")
 
     +e(title, $smart: true)
       //
@@ -725,7 +731,7 @@
       font-size: 10vw
 
   +e(image-wrapper)
-    width: 25%
+    width: calc(100% / 3.01)
     height: 17rem
     margin-top: 2rem
     position: relative

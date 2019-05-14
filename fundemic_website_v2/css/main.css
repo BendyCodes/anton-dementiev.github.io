@@ -1416,6 +1416,12 @@ button::-moz-focus-inner {
       stroke: #fff; }
     .animated-button--white .svg--2 .visible {
       stroke: #606881; }
+  .animated-button--blue .svg--1 .visible {
+    stroke: #58B5EF !important; }
+  .animated-button--red .svg--1 .visible {
+    stroke: #FC8D80 !important; }
+  .animated-button--green .svg--1 .visible {
+    stroke: #77dfad !important; }
   .animated-button--batman text {
     fill: #1a1a1a; }
   .animated-button--batman .svg--1 .visible {
@@ -1488,12 +1494,12 @@ button::-moz-focus-inner {
     stroke: #fff; }
   .animated-button--webkinz .svg--2 .visible {
     stroke: #F7764F; }
-  .animated-button--blue .svg--1 .visible {
-    stroke: #58B5EF !important; }
-  .animated-button--red .svg--1 .visible {
-    stroke: #FC8D80 !important; }
-  .animated-button--green .svg--1 .visible {
-    stroke: #77dfad !important; }
+  .animated-button--in-house-game text {
+    fill: #F47220; }
+  .animated-button--in-house-game .svg--1 .visible {
+    stroke: #fff; }
+  .animated-button--in-house-game .svg--2 .visible {
+    stroke: #F47220; }
 
 .card {
   -webkit-box-shadow: 2px 20px 25px -20px #9a9494;
@@ -1524,7 +1530,8 @@ button::-moz-focus-inner {
     z-index: 2;
     font-size: 3rem;
     margin-top: 0;
-    font-weight: 600; }
+    font-weight: 600;
+    color: #fff; }
   .card__description {
     position: relative;
     z-index: 2;
@@ -2060,10 +2067,14 @@ button::-moz-focus-inner {
       .footer__social .logo {
         -webkit-transform: translateY(-1.2rem);
                 transform: translateY(-1.2rem); } }
-  .footer--bg-blue .svg--1 .visible {
-    stroke: #5EC1FF !important; }
-  .footer--bg-red .svg--1 .visible {
-    stroke: #FC8D80 !important; }
+  .footer--bg-blue {
+    background-color: #5EC1FF; }
+    .footer--bg-blue .svg--1 .visible {
+      stroke: #5EC1FF !important; }
+  .footer--bg-red {
+    background-color: #FC8D80; }
+    .footer--bg-red .svg--1 .visible {
+      stroke: #FC8D80 !important; }
   .footer--bg-green {
     background-image: url(../img/footer-bg-dark.svg);
     background-color: #77dfad; }
@@ -2074,10 +2085,10 @@ button::-moz-focus-inner {
       @media (max-width: 600px) {
         .footer--bg-green .svg--1 .visible {
           stroke: #64d6a2 !important; } }
-  .footer--bg-red {
-    background-color: #FC8D80; }
-  .footer--bg-blue {
-    background-color: #5EC1FF; }
+  .footer--bg-orange {
+    background-color: #F47220; }
+    .footer--bg-orange .svg--1 .visible {
+      stroke: #F47220 !important; }
   .footer--bg-batman {
     background-color: #1a1a1a; }
     .footer--bg-batman .svg--1 .visible {
@@ -2663,11 +2674,18 @@ button::-moz-focus-inner {
   margin-bottom: 12.4rem;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  min-height: 52.7rem; }
+  @media (max-width: 650px) {
+    .info {
+      min-height: 32.7rem; } }
   .info__column--image {
     width: 59%;
     position: relative;
-    overflow: hidden; }
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; }
     @media (max-width: 1250px) {
       .info__column--image {
         width: 50%; } }
@@ -2754,13 +2772,6 @@ button::-moz-focus-inner {
     .info__svg--tablet {
       -webkit-transform: translate3d(-100%, 0, 0);
               transform: translate3d(-100%, 0, 0); }
-  .info__image {
-    position: absolute;
-    height: 100%;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    top: 0; }
   .info__title {
     font-size: 4.3rem;
     margin-top: 9rem; }
@@ -2802,10 +2813,12 @@ button::-moz-focus-inner {
     mix-blend-mode: lighten; }
   .info--services .info__column--info {
     background: #58B5EF; }
+  .info--services .info__column--image {
+    background-image: url("../img/people1.png"); }
   @media (max-width: 500px) {
-    .info--template {
+    .info--vision {
       margin-bottom: 7rem; } }
-  .info--template .info__column--info {
+  .info--vision .info__column--info {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2815,7 +2828,9 @@ button::-moz-focus-inner {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     background: #FC8D80; }
-  .info--template .info__title {
+  .info--vision .info__column--image {
+    background-image: url("../img/people2.png"); }
+  .info--vision .info__title {
     display: inline-block; }
   @media (max-width: 650px) {
     .info .animated-button {
@@ -2872,7 +2887,7 @@ button::-moz-focus-inner {
         margin-bottom: 5rem;
         font-size: 10vw; } }
   .clients__image-wrapper {
-    width: 25%;
+    width: calc(100% / 3.01);
     height: 17rem;
     margin-top: 2rem;
     position: relative;
@@ -3664,7 +3679,8 @@ button::-moz-focus-inner {
     font-size: 5.2rem;
     margin-left: -0.5rem;
     position: relative;
-    z-index: 2; }
+    z-index: 2;
+    color: #fff; }
     @media (max-width: 576px) {
       .about-page .services__title {
         font-size: 7.2vw;
@@ -3908,38 +3924,33 @@ button::-moz-focus-inner {
     margin-top: 13.5vw;
     font-size: 7.2rem;
     line-height: 1.25em; }
+    .games-grid__title div {
+      display: inline-block; }
     @media (max-width: 1350px) {
       .games-grid__title {
-        line-height: 0.8em; }
-        .games-grid__title div {
-          font-size: 5.4rem;
-          display: inline; } }
+        line-height: 1.2em;
+        font-size: 5.4rem; } }
     @media (max-width: 600px) {
       .games-grid__title {
-        line-height: 0.4em; }
-        .games-grid__title div {
-          font-size: 3.4rem; } }
+        font-size: 3.4rem; } }
     @media (max-width: 275px) {
       .games-grid__title {
-        line-height: 2rem;
-        font-weight: 500; }
-        .games-grid__title div {
-          font-size: 2.4rem; } }
+        font-weight: 500;
+        font-size: 2.4rem; } }
   .games-grid__sub-title {
-    font-size: 3.5rem;
-    margin-top: 1.6rem;
+    font-size: 3.2rem;
     line-height: 1.3em; }
+    .games-grid__sub-title div {
+      margin-top: 1.6rem; }
     @media (max-width: 1350px) {
       .games-grid__sub-title {
-        line-height: 1em; }
-        .games-grid__sub-title div {
-          font-size: 3.2rem;
-          display: inline; } }
+        line-height: 1em;
+        font-size: 2.5rem; } }
     @media (max-width: 600px) {
-      .games-grid__sub-title div {
+      .games-grid__sub-title {
         font-size: 2.4rem; } }
     @media (max-width: 275px) {
-      .games-grid__sub-title div {
+      .games-grid__sub-title {
         font-size: 1.9rem;
         line-height: 1em; } }
   .games-grid__game-wrapper {
@@ -4045,6 +4056,108 @@ button::-moz-focus-inner {
         background: #1696EA; }
       .games-grid .game__link.purple {
         background: #7A3589; }
+
+.in-house-game .wrapper {
+  width: 1250px;
+  margin: auto;
+  position: relative;
+  margin-top: 20rem; }
+  @media (max-width: 1350px) {
+    .in-house-game .wrapper {
+      width: 70%;
+      margin-top: 10rem; } }
+  @media (max-width: 991px) {
+    .in-house-game .wrapper {
+      width: 85%; } }
+  @media (max-width: 767px) {
+    .in-house-game .wrapper--play {
+      width: 100%; } }
+
+.in-house-game__description {
+  width: 50%; }
+  @media (max-width: 1350px) {
+    .in-house-game__description {
+      width: 70%;
+      max-width: calc(100% - 30rem); } }
+  @media (max-width: 991px) {
+    .in-house-game__description {
+      width: 100%;
+      max-width: 100%; } }
+
+.in-house-game__title {
+  width: 50%; }
+  @media (max-width: 1350px) {
+    .in-house-game__title {
+      width: 70%;
+      max-width: calc(100% - 30rem); } }
+  @media (max-width: 991px) {
+    .in-house-game__title {
+      width: 100%;
+      max-width: 100%; } }
+
+.in-house-game__image {
+  -webkit-box-shadow: 2px 20px 25px -20px #9a9494;
+          box-shadow: 2px 20px 25px -20px #9a9494;
+  border-radius: 4rem;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block; }
+  @media (max-width: 991px) {
+    .in-house-game__image {
+      position: static;
+      margin: auto;
+      margin-bottom: 10rem; } }
+
+.in-house-game__title {
+  font-size: 6.8rem;
+  font-weight: 500;
+  line-height: 1.1em;
+  margin-top: 0;
+  margin-bottom: 3rem; }
+  @media (max-width: 700px) {
+    .in-house-game__title {
+      font-size: 5.2rem; } }
+
+.in-house-game__description {
+  margin-top: 2.2rem;
+  font-size: 1.8rem;
+  line-height: 1.6em; }
+  @media (max-width: 991px) {
+    .in-house-game__description {
+      font-weight: 500; } }
+
+.in-house-game__play {
+  -webkit-box-shadow: 0 5px 21px 3px #e6e6e6;
+          box-shadow: 0 5px 21px 3px #e6e6e6;
+  -webkit-box-shadow: 0px 10px 35px -16px #9b9b9b;
+          box-shadow: 0px 10px 35px -16px #9b9b9b;
+  width: 100%;
+  padding-bottom: 50%;
+  margin: 20rem auto 30rem;
+  position: relative; }
+  @media (max-width: 1350px) {
+    .in-house-game__play {
+      margin: 10rem auto 15rem; } }
+  @media (max-width: 767px) {
+    .in-house-game__play {
+      -webkit-box-shadow: none;
+              box-shadow: none; } }
+
+.in-house-game .animated-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 30%;
+  padding-bottom: 30%;
+  font-size: 25px;
+  max-width: 300px;
+  min-width: 150px; }
+  .in-house-game .animated-button text {
+    text-transform: capitalize; }
 
 .single-project-page {
   --gap: 12rem; }
@@ -4179,7 +4292,8 @@ button::-moz-focus-inner {
               filter: drop-shadow(1px 1px 1px #2D5451); }
     .hero-game--restaurant .hero-game__bg-main {
       height: 120%;
-      top: -5%; }
+      top: -5%;
+      right: 0; }
       @media (max-width: 1750px) {
         .hero-game--restaurant .hero-game__bg-main {
           height: 100%;
@@ -4439,7 +4553,8 @@ button::-moz-focus-inner {
       .photos--desktop {
         --gap--desktop: calc(var(--gap) / 2); } }
     .photos--desktop .wrapper--photo {
-      width: calc(100% - var(--gap--desktop) * 2); }
+      width: calc(100% - var(--gap--desktop) * 2);
+      max-width: 1920px; }
       @media (max-width: 991px) {
         .photos--desktop .wrapper--photo {
           width: 100%; } }

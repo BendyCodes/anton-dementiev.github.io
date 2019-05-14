@@ -8,17 +8,17 @@ for (let i = 0, j = 1; i<=button.length; i++, j++){
 
     buttonNode = document.getElementById('animated-button-photo-'+i);
 
-    let test1 = Snap.select('#visible-photo-'+i);
-    let test2 = Snap.select('#visible-photo-'+j);
+    let path1single = Snap.select('#visible-photo-'+i);
+    let path2single = Snap.select('#visible-photo-'+j);
 
     buttonNode.addEventListener('mouseenter', function () {
-      test1.animate({d: invisible_d}, 400, mina.backout);
-      test2.animate({d: invisible_d}, 400, mina.backout);
+      path1single.animate({d: invisible_d}, 400, mina.backout);
+      path2single.animate({d: invisible_d}, 400, mina.backout);
     });
 
     buttonNode.addEventListener('mouseleave', function () {
-      test1.animate({d: visible_d}, 400, mina.backout);
-      test2.animate({d: visible_d}, 400, mina.backout);
+      path1single.animate({d: visible_d}, 400, mina.backout);
+      path2single.animate({d: visible_d}, 400, mina.backout);
     });
   }
 }

@@ -1,0 +1,25 @@
+section.in-house-game
+
+  .wrapper
+
+    img.in-house-game__image(src="../img/oldgame#{imageLink}.png")
+
+    h1.in-house-game__title
+      | #{pageTitle}
+
+    p.in-house-game__description
+      | #{description}
+
+  .wrapper.wrapper--play
+    .in-house-game__play
+      +button(
+      text='Play',
+        modificator='--in-house-game animated-button--white',
+        id='1',
+        id2='2',
+        dx='15',
+        dy='8',
+        link='/'
+      )
+
+

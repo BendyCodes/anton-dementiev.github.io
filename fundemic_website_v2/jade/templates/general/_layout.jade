@@ -4,8 +4,11 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name='viewport', content='width=device-width, initial-scale=1')
 
-    block config
+    block default
       - var game = false
+      - var path = ''
+
+    block config
 
     block scripts-head
 
@@ -15,7 +18,7 @@ html(lang="en")
 
     link(rel='icon', type='image/x-icon', href='favicon.ico')
 
-    link(rel="stylesheet", href="./css/main.css")
+    link(rel="stylesheet", href="#{path}css/main.css")
 
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600" )
 
