@@ -1,0 +1,46 @@
+//- Including mixins and extending default layout for html page.
+include ../../templates/general/_mixins
+extends ../../templates/general/_layout
+
+
+//- Inserting main data into page.
+block config
+  -
+    var
+      path = '../../'
+      pageTitle = 'Zippy Boxes'
+      footerType = 'footer--bg-orange'
+      gameTitle = 'zippy-boxes'
+      gameContainer = 'ZippyBoxes'
+      description = 'What’s inside the box? Help Piggy the key-keeper free his friends locked inside! Touch and guide the colored boxes to their matching keys. Solving each puzzle makes Piggy happy! If you are stuck on a level, you can always go back a step. Boxes can move other boxes. Arrows on the game field change the direction of a box.'
+
+block scripts-head
+  script(src="./src/lq/Mejdu.min.js")
+  script(src="./src/ZippyBoxes.min.js")
+
+//- Uncomment if need cookie dialog on this page.
+//- block cookie
+//- include templates/general/_cookie
+
+
+//- Including header template.
+block header
+  include ../../templates/general/_header
+
+
+//- Including main section of in-house game.
+block main
+  main
+    include ../../templates/general/_game-in-house
+
+
+//- Including footer template.
+block footer
+  include ../../templates/general/_footer
+
+
+//- Including scripts that are relative to this page.
+block scripts-bottom
+  script(src="../../../js/snap.svg-min.js")
+  script(src="../../../js/menu-control.js")
+  script(src="../../../js/single-button.js")

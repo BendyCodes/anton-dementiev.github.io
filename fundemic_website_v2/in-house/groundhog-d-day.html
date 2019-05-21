@@ -43,24 +43,29 @@
   </header>
   <div style="visibility: hidden" class="header__menu-mobile"><a href="../index.html" class="header__menu-mobile-link">Home</a><a href="../projects.html" class="header__menu-mobile-link">Projects</a><a href="../about.html" class="header__menu-mobile-link">About</a><a href="../in-house.html" class="header__menu-mobile-link">In-House</a><a href="../about.html" class="header__menu-mobile-link">Privacy</a><a href="../privacy.html" class="header__menu-mobile-link">Terms</a><a href="../terms.html" class="header__menu-mobile-link header__menu-mobile-link--contact">Contact</a></div>
   <main>
-    <section class="in-house-game">
-      <div class="wrapper"><img src="../img/oldgame5.png" class="in-house-game__image">
+    <section class="in-house-game in-house-game--ground-d-day">
+      <div class="wrapper"><img src="../../img/oldgame-ground-d-day.png" onload=" startundefined()" class="in-house-game__image">
         <h1 class="in-house-game__title">Groundhog D-Day</h1>
         <p class="in-house-game__description">The evil squirrels have declared war on the peaceful inhabitants of the forest! Take control of the brave groundhog stop the invasion. Use the cannon to knockout the squirrels invading your world!</p>
+        <button onclick="this.classList.toggle('disabled');document.querySelector('.in-house-game__play').classList.add('visible');document.querySelector('.in-house-game__canvas div').classList.add('visible')" class="animated-button--in-house-game animated-button--white animated-button">
+          <svg id="animated-button1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="227.991px" height="104.335px" viewBox="0 0 227.991 104.335" class="svg svg--1">
+            <path id="visible1" fill="none" stroke="#000000" stroke-width="0.5669" stroke-miterlimit="22.9256" d="M51.523,52.167c40.648,0,81.296,0,121.945,0" class="visible"></path>
+            <path id="none" d="M51.523,52.167
+      c40.648,0,81.296,0,121.945,0" class="invisible"></path>
+            <text dx="15%" dy="8%">
+              <textpath xlink:href="#none">Play</textpath>
+            </text>
+          </svg>
+          <svg id="animated-button2" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="227.991px" height="104.335px" viewBox="0 0 227.991 104.335" class="svg svg--2">
+            <path id="visible2" fill="none" stroke="#000000" stroke-width="0.5669" stroke-miterlimit="22.9256" d="M51.523,52.167c40.648,0,81.296,0,121.945,0" class="visible"></path>
+          </svg>
+        </button>
       </div>
       <div class="wrapper wrapper--play">
-        <div class="in-house-game__play"><a href="/" class="animated-button--in-house-game animated-button--white animated-button">
-            <svg id="animated-button1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="227.991px" height="104.335px" viewBox="0 0 227.991 104.335" class="svg svg--1">
-              <path id="visible1" fill="none" stroke="#000000" stroke-width="0.5669" stroke-miterlimit="22.9256" d="M51.523,52.167c40.648,0,81.296,0,121.945,0" class="visible"></path>
-              <path id="none" d="M51.523,52.167
-      c40.648,0,81.296,0,121.945,0" class="invisible"></path>
-              <text dx="15%" dy="8%">
-                <textpath xlink:href="#none">Play</textpath>
-              </text>
-            </svg>
-            <svg id="animated-button2" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="227.991px" height="104.335px" viewBox="0 0 227.991 104.335" class="svg svg--2">
-              <path id="visible2" fill="none" stroke="#000000" stroke-width="0.5669" stroke-miterlimit="22.9256" d="M51.523,52.167c40.648,0,81.296,0,121.945,0" class="visible"></path>
-            </svg></a>
+        <div class="in-house-game__play">
+          <div class="in-house-game__canvas">
+            <div id="undefined"></div>
+          </div>
         </div>
       </div>
     </section>

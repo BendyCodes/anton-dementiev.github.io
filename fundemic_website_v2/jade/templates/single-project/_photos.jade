@@ -29,6 +29,7 @@ mixin gallery
               6) dy attribute that helps to align svg text vertically
               7) link of the button
 
+          if(galleries[counter].link)
             +button(
               text='Play'
               modificator='--'+game+' single animated-button--white'
@@ -36,7 +37,7 @@ mixin gallery
               id2='-photo-'+index2
               dx='12'
               dy='9'
-              link='contact.html'
+              link='#{galleries[counter].link}'
             )
 
       .wrapper.wrapper--photo

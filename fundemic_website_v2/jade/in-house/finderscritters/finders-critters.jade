@@ -1,0 +1,46 @@
+//- Including mixins and extending default layout for html page.
+include ../../templates/general/_mixins
+extends ../../templates/general/_layout
+
+
+//- Inserting main data into page.
+block config
+  -
+    var
+      path = '../../'
+      pageTitle = 'Finders Critters'
+      footerType = 'footer--bg-orange'
+      gameTitle = 'finders-critters'
+      gameContainer = 'FindersCritters'
+      description = 'Match two or more blocks of the same color to help critters reach the ground! Plan your moves carefully to avoid getting stuck. Use bombs and firecrackers to pop even more blocks and make critters happy. Play on to unlock extra characters like the extraterrestrial and baby shark!'
+
+block scripts-head
+  script(src="./src/lq/Mejdu.min.js")
+  script(src="./src/FindersCritters.min.js")
+
+//- Uncomment if need cookie dialog on this page.
+//- block cookie
+//- include templates/general/_cookie
+
+
+//- Including header template.
+block header
+  include ../../templates/general/_header
+
+
+//- Including main section of in-house game.
+block main
+  main
+    include ../../templates/general/_game-in-house
+
+
+//- Including footer template.
+block footer
+  include ../../templates/general/_footer
+
+
+//- Including scripts that are relative to this page.
+block scripts-bottom
+  script(src="../../../js/snap.svg-min.js")
+  script(src="../../../js/menu-control.js")
+  script(src="../../../js/single-button.js")

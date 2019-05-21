@@ -16,14 +16,14 @@ mixin card()
             | !{attributes.description}
     img.card__image(
       src="img/card-#{attributes.game}.png",
-      style="opacity:0;transition: all 1s ease",
+      style="opacity:0;transition: all .3s ease",
       onload="this.style.opacity='1'"
     )
 
 mixin game()
   li.game
     a(class='game__image-link', href='#{attributes.link}')
-      img.game__image(src="img/oldgame#{attributes.img}.png")
+      img.game__image(src="img/oldgame-#{attributes.img}.png")
     h4.game__title
       | !{attributes.title}
     p.game__description
@@ -49,15 +49,28 @@ mixin arrow-right
     335.191,469.145 383.391,420.945 335.191,372.745 ')
 
 mixin button()
-  a(class="animated-button#{attributes.modificator}", class="animated-button", href="#{attributes.link}")
-    svg.svg.svg--1(id="animated-button#{attributes.id}" xmlns='http://www.w3.org/2000/svg', x='0px', y='0px', width='227.991px', height='104.335px', viewBox='0 0 227.991 104.335')
-      path.visible(id="visible#{attributes.id}" fill='none', stroke='#000000', stroke-width='0.5669', stroke-miterlimit='22.9256', d='M51.523,52.167\c40.648,0,81.296,0,121.945,0')
-      path.invisible(id="none"  d='M51.523,52.167\n      c40.648,0,81.296,0,121.945,0')
-      text(dx="#{attributes.dx}%" dy="#{attributes.dy}%")
-        textpath(xlink:href='#none')
-          | !{attributes.text}
-    svg.svg.svg--2(id="animated-button#{attributes.id2}" xmlns='http://www.w3.org/2000/svg', x='0px', y='0px', width='227.991px', height='104.335px', viewBox='0 0 227.991 104.335')
-      path.visible(id="visible#{attributes.id2}" fill='none', stroke='#000000', stroke-width='0.5669', stroke-miterlimit='22.9256', d='M51.523,52.167\c40.648,0,81.296,0,121.945,0')
+  if(!attributes.click)
+    a(class="animated-button#{attributes.modificator}", class="animated-button", href="#{attributes.link}")
+      svg.svg.svg--1(id="animated-button#{attributes.id}" xmlns='http://www.w3.org/2000/svg', x='0px', y='0px', width='227.991px', height='104.335px', viewBox='0 0 227.991 104.335')
+        path.visible(id="visible#{attributes.id}" fill='none', stroke='#000000', stroke-width='0.5669', stroke-miterlimit='22.9256', d='M51.523,52.167\c40.648,0,81.296,0,121.945,0')
+        path.invisible(id="none"  d='M51.523,52.167\n      c40.648,0,81.296,0,121.945,0')
+        text(dx="#{attributes.dx}%" dy="#{attributes.dy}%")
+          textpath(xlink:href='#none')
+            | !{attributes.text}
+      svg.svg.svg--2(id="animated-button#{attributes.id2}" xmlns='http://www.w3.org/2000/svg', x='0px', y='0px', width='227.991px', height='104.335px', viewBox='0 0 227.991 104.335')
+        path.visible(id="visible#{attributes.id2}" fill='none', stroke='#000000', stroke-width='0.5669', stroke-miterlimit='22.9256', d='M51.523,52.167\c40.648,0,81.296,0,121.945,0')
+
+
+  if(attributes.click)
+    button(class="animated-button#{attributes.modificator}", class="animated-button", onclick="this.classList.toggle('disabled');document.querySelector('.in-house-game__play').classList.add('visible');document.querySelector('.in-house-game__canvas div').classList.add('visible')")
+      svg.svg.svg--1(id="animated-button#{attributes.id}" xmlns='http://www.w3.org/2000/svg', x='0px', y='0px', width='227.991px', height='104.335px', viewBox='0 0 227.991 104.335')
+        path.visible(id="visible#{attributes.id}" fill='none', stroke='#000000', stroke-width='0.5669', stroke-miterlimit='22.9256', d='M51.523,52.167\c40.648,0,81.296,0,121.945,0')
+        path.invisible(id="none"  d='M51.523,52.167\n      c40.648,0,81.296,0,121.945,0')
+        text(dx="#{attributes.dx}%" dy="#{attributes.dy}%")
+          textpath(xlink:href='#none')
+            | !{attributes.text}
+      svg.svg.svg--2(id="animated-button#{attributes.id2}" xmlns='http://www.w3.org/2000/svg', x='0px', y='0px', width='227.991px', height='104.335px', viewBox='0 0 227.991 104.335')
+        path.visible(id="visible#{attributes.id2}" fill='none', stroke='#000000', stroke-width='0.5669', stroke-miterlimit='22.9256', d='M51.523,52.167\c40.648,0,81.296,0,121.945,0')
 
 mixin circles
   svg.circles__image.circles__image--mobile(xmlns='http://www.w3.org/2000/svg', x='0px', y='0px', width='700', height='900',  viewBox='180 350 2000 2908')

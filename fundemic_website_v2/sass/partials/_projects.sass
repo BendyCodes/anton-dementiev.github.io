@@ -74,11 +74,22 @@
         margin-top: 2.4rem
         
     +b(card)
-      margin-top: 3.3rem
-      width: calc(100% / 3 - 2.2rem)
-      transition: transform .15s ease-in, box-shadow .2s ease
-      transform: translate3d(0, 0, 0)
-      z-index: 2
+      &:not(&.empty)
+        margin-top: 3.3rem
+        width: calc(100% / 3 - 2.2rem)
+        transition: transform .15s ease-in, box-shadow .2s ease
+        transform: translate3d(0, 0, 0)
+        z-index: 2
+        
+        &:hover
+          box-shadow: 2px 30px 25px -20px #c6bfbf
+          transform: translate3d(0%, -0.5%, 0)
+          
+          .card__image
+            transform: translate3d(-50%, -50.6%, 0)
+      
+      &.empty
+        box-shadow: none !important
       
       +max(1350)
         width: calc(100% / 2 - 1.65rem)
@@ -91,6 +102,7 @@
       +max(450)
         margin-left: 0
         margin-right: 0
+        
         
       +e(link)
         display: block
@@ -180,12 +192,7 @@
         flex-direction: column
     
       
-      &:hover
-        box-shadow: 2px 30px 25px -20px #c6bfbf
-        transform: translate3d(0%, -0.5%, 0)
-        
-        .card__image
-          transform: translate3d(-50%, -50.6%, 0)
+      
           
   +b(circles)
     position: relative
@@ -203,6 +210,7 @@
       
     +max(300)
       padding: 55vw 0 74vw 0
+      
       
     +e(title)
       font-size: 0
@@ -254,6 +262,7 @@
       path
         transform: scale(0)
 
+        
     .circles__image--mobile
       visibility: hidden
       position: absolute

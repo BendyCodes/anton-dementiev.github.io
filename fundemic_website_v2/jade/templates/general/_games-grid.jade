@@ -15,7 +15,7 @@ section.games-grid
     .games-grid__game-wrapper
 
       //-  parameters of game mixin:
-           1) image $index that is inserted into src="img/oldgame#{$index}.png" for linking an image
+           1) image name that is inserted into src="img/oldgame-#{name}.png" for linking an image
            2) title text
            3) description text
            4) color of the button
@@ -23,114 +23,120 @@ section.games-grid
             img_src,title,description,color,link
 
       +game()(
-        img='1',
+        img='sun-charms',
         title='SUN CHARMS',
-        description='Global audience segmentation to determine brand and content direction',
+        description='Take a whirlwind tour across the magical land populated by cute wizzies and wake them from slumber!',
         color='orange',
-        link='./in-house/sun-charms.html'
+        link='./in-house/suncharms/sun-charms.html'
       )
       +game()(
-        img='2',
+        img='alienanza',
         title='ALIENANZA',
-        description='Global audience segmentation to determine brand and content direction',
+        description='Put your memory and reflexes to a test in Alienanza, the fun mind-bending space game!',
         color='light-blue',
-        link='./in-house/alienanza.html'
+        link='./in-house/alienanza/alienanza.html'
       )
       +game()(
-        img='3',
-        title='BUBBLE MONSTERS',
-        description='Global audience segmentation to determine brand and content direction',
-        color='pink',
-        link='./in-house/bubble-monsters.html'
-      )
-      +game()(
-        img='4',
+        img='finders-critters',
         title='FINDERS CRITTERS',
-        description='Global audience segmentation to determine brand and content direction',
-        color='light-blue',
-        link='./in-house/finders-critters.html'
-      )
-      +game()(
-        img='5',
-        title='CHIN UP SHIN UP',
-        description='Global audience segmentation to determine brand and content direction',
-        color='redpink',
-        link='./in-house/chin-up-shine-up.html'
-      )
-      +game()(
-        img='6',
-        title='ZIPPY BOXES',
-        description='Global audience segmentation to determine brand and content direction',
-        color='orange',
-        link='./in-house/zippy-boxes.html'
-      )
-      +game()(
-        img='7',
-        title='AMAZING GRABBER',
-        description='Global audience segmentation to determine brand and content direction',
-        color='blue',
-        link='./in-house/amazing-gabber.html'
-      )
-      +game()(
-        img='3',
-        title='HATCH THE UNICORN',
-        description='Global audience segmentation to determine brand and content direction',
-        color='orange',
-        link='./in-house/hatch-the-unicorn.html'
-      )
-      +game()(
-        img='1',
-        title='WAKE THE RABBIT',
-        description='Global audience segmentation to determine brand and content direction',
-        color='orange',
-        link='./in-house/wake-the-rabbit.html'
-      )
-      +game()(
-        img='2',
-        title='POMME POMME',
-        description='Global audience segmentation to determine brand and content direction',
-        color='light-blue',
-        link='./in-house/pomme-pomme.html'
-      )
-      +game()(
-        img='3',
-        title='CANDY BUFF',
-        description='Global audience segmentation to determine brand and content direction',
+        description='Match two or more blocks of the same color to help critters reach the ground!',
         color='pink',
-        link='./in-house/candy-buff.html'
+        link='./in-house/finderscritters/finders-critters.html'
       )
       +game()(
-        img='4',
-        title='AMAZING SHERIFF',
-        description='Global audience segmentation to determine brand and content direction',
-        color='light-blue',
-        link='./in-house/amazing-sherif.html'
-      )
-      +game()(
-        img='5',
-        title='GROUNDHOG D-DAY',
-        description='Global audience segmentation to determine brand and content direction',
+        img='chin-up-shin-up',
+        title='CHIN UP SHIN UP',
+        description='Help Haru climb as high as he can and not lose the swag!',
         color='redpink',
-        link='./in-house/groundhog-d-day.html'
+        link='./in-house/chinupshinup/chin-up-shin-up.html'
       )
       +game()(
-        img='6',
-        title='GO SANTA GO',
-        description='Global audience segmentation to determine brand and content direction',
+        img='zippy-boxes',
+        title='ZIPPY BOXES',
+        description='Help Piggy the key-keeper free his friends locked inside!',
         color='orange',
-        link='./in-house/go-santa-go.html'
+        link='./in-house/zippyboxes/zippy-boxes.html'
       )
       +game()(
-        img='7',
-        title='GEMAICA',
-        description='Global audience segmentation to determine brand and content direction',
+        img='amazing-grabber',
+        title='AMAZING GRABBER',
+        description='Tap the screen to the mischievous pink monster snatch as many precious goodiesf as possible.',
         color='blue',
-        link='./in-house/gemaica.html'
+        link='./in-house/amazinggrabber/amazing-grabber.html'
       )
       +game()(
-        img='3',
-        title='MAGIC FOUNDRY',
-        description='Global audience segmentation to determine brand and content direction',
+        img='hatch-the-unicorn',
+        title='HATCH THE UNICORN',
+        description='Match raindrops to grow your very own unicorn!',
         color='orange',
-        link='./in-house/magic-foundry.html'
+        link='./in-house/hatchtheunicorn/hatch-the-unicorn.html'
       )
+
+      //- this is one of the ways to make grid with flex, because of the limitations of support for grid property this can be used for a more crossbrowser approach.
+      .game.empty
+
+
+      //- uncomment if needed.
+      //-+game()(
+      //-  img='wake-the-rabbit',
+      //-  title='WAKE THE RABBIT',
+      //-  description="Use your jumping and wall-sliding skills to save the sleepwalking bunny from the hazards of the forest before it's too late!",
+      //-  color='orange',
+      //-  link='./in-house/wake-the-rabbit.html'
+      //-)
+      //-+game()(
+      //-  img='pomme-pomme',
+      //-  title='POMME POMME',
+      //-  description='Bounce the fruit on the trampoline and get them safely to the juicer.',
+      //-  color='light-blue',
+      //-  link='./in-house/pomme-pomme.html'
+      //-)
+      //-+game()(
+      //-  img='candy-buff',
+      //-  title='CANDY BUFF',
+      //-  description='Eat candy to get buff and to refill your energy!',
+      //-  color='pink',
+      //-  link='./in-house/candy-buff.html'
+      //-)
+      //-+game()(
+      //-  img='amazing-sheriff',
+      //-  title='AMAZING SHERIFF',
+      //-  description="Pin on your shiny sheriff's badge, load up your six-shooters, and get ready for some amazing action.",
+      //-  color='light-blue',
+      //-  link='./in-house/amazing-sherif.html'
+      //-)
+      //-+game()(
+      //-  img='ground-d-day',
+      //-  title='GROUNDHOG D-DAY',
+      //-  description='Global audience segmentation to determine brand and content direction',
+      //-  color='redpink',
+      //-  link='./in-house/groundhog-d-day.html'
+      //-)
+      //-+game()(
+      //-  img='go-santa-go',
+      //-  title='GO SANTA GO',
+      //-  description='Global audience segmentation to determine brand and content direction',
+      //-  color='orange',
+      //-  link='./in-house/go-santa-go.html'
+      //-)
+      //-+game()(
+      //-  img='gemaica',
+      //-  title='GEMAICA',
+      //-  description='Global audience segmentation to determine brand and content direction',
+      //-  color='blue',
+      //-  link='./in-house/gemaica.html'
+      //-)
+      //- +game()(
+      //-   img='3',
+      //-   title='MAGIC FOUNDRY',
+      //-   description='Global audience segmentation to determine brand and content direction',
+      //-   color='orange',
+      //-   link='./in-house/magic-foundry.html'
+      //- )
+      //- +game()(
+      //-   img='',
+      //-   title='BUBBLE MONSTERS',
+      //-   description='The bubble party is on and the bubble monsters are dancing to  the beat!',
+      //-   color='pink',
+      //-   link='./in-house/bubble-monsters.html'
+      //- )

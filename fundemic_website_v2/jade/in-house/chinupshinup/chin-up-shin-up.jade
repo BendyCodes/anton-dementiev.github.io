@@ -1,0 +1,46 @@
+//- Including mixins and extending default layout for html page.
+include ../../templates/general/_mixins
+extends ../../templates/general/_layout
+
+
+//- Inserting main data into page.
+block config
+  -
+    var
+      path = '../../'
+      pageTitle = 'Chin Up Shin Up'
+      footerType = 'footer--bg-orange'
+      gameTitle = 'chin-up-shin-up'
+      gameContainer = 'ChinUpShinUp'
+      description = 'Help Haru climb as high as he can and not lose the swag! Get more stylish goodies for Haru by collecting coins and unlocking them at the store.  Avoid hammers blocking your way by tapping right and left sides of the screen. Keep moving and don’t let the pesky Sheriff catch Haru.'
+
+block scripts-head
+  script(src="./src/lq/Mejdu.min.js")
+  script(src="./src/ChinUpShinUp.min.js")
+
+//- Uncomment if need cookie dialog on this page.
+//- block cookie
+//- include templates/general/_cookie
+
+
+//- Including header template.
+block header
+  include ../../templates/general/_header
+
+
+//- Including main section of in-house game.
+block main
+  main
+    include ../../templates/general/_game-in-house
+
+
+//- Including footer template.
+block footer
+  include ../../templates/general/_footer
+
+
+//- Including scripts that are relative to this page.
+block scripts-bottom
+  script(src="../../../js/snap.svg-min.js")
+  script(src="../../../js/menu-control.js")
+  script(src="../../../js/single-button.js")

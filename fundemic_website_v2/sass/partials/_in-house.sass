@@ -10,58 +10,6 @@
     +max(1350)
       width: 70%
       
-  +e(title)
-    margin-top: 13.5vw
-    font-size: 7.2rem
-    line-height: 1.25em
-    
-    div
-      display: inline-block
-    
-    +max(1350)
-      line-height: 1.2em
-      font-size: 5.4rem
-      
-    +max(600)
-      font-size: 3.4rem
-      
-    +max(275)
-      font-weight: 500
-      font-size: 2.4rem
-      
-  +e(sub-title)
-    font-size: 3.2rem
-    line-height: 1.3em
-    
-    div
-      margin-top: 1.6rem
-    
-    +max(1350)
-      line-height: 1em
-      font-size: 2.5rem
-      
-    +max(600)
-      font-size: 2.4rem
-      
-    +max(275)
-      font-size: 1.9rem
-      line-height: 1em
-      
-  +e(game-wrapper)
-    display: flex
-    flex-wrap: wrap
-    margin-top: 2rem
-    margin-right: -$margin
-    justify-content: space-between
-    
-    +max(1350)
-      margin-right: -$margin - 2
-      
-    +max(880)
-      justify-content: space-around
-      margin-top: -2rem
-      margin-right: -$margin * 2
-
   .game
     margin-top: $margin * 1.1
     display: block
@@ -70,10 +18,11 @@
     position: relative
     max-width: 190px
     min-width: 150px
+    transform: translateZ(0) perspective(1px)
     
     &.active
       .game__image
-        transform: rotate(10deg) translatey(-5%) translateZ(0)
+        transform: rotate(10deg) translatey(-5%) translateZ(0) perspective(1px)
         box-shadow: 10px 15px 25px -15px #a49898
         
     +max(1350)
@@ -82,11 +31,11 @@
       
     +max(880)
       margin-right: $margin * 2
-      width: calc(100% / 2 - #{$margin} * 2)
+      width: 200px
       margin-top: 10rem
-      max-width: 180px
+      max-width: 200px
       
-    +max(400)
+    +max(350)
       margin-top: 10rem
       max-width: 150px
       
@@ -153,3 +102,58 @@
         
       &.purple
         background: #7A3589
+      
+  +e(title)
+    margin-top: 13.5vw
+    font-size: 7.2rem
+    line-height: 1.25em
+    
+    div
+      display: inline-block
+    
+    +max(1350)
+      line-height: 1.2em
+      font-size: 5.4rem
+      
+    +max(600)
+      font-size: 3.4rem
+      
+    +max(275)
+      font-weight: 500
+      font-size: 2.4rem
+      
+  +e(sub-title)
+    font-size: 3.2rem
+    line-height: 1.3em
+    
+    div
+      margin-top: 1.6rem
+    
+    +max(1350)
+      line-height: 1em
+      font-size: 2.5rem
+      
+    +max(600)
+      font-size: 2.4rem
+      
+    +max(275)
+      font-size: 1.9rem
+      line-height: 1em
+      
+  +e(game-wrapper)
+    display: flex
+    flex-wrap: wrap
+    margin-top: 2rem
+    margin-right: -$margin
+    justify-content: space-between
+    
+    +max(1350)
+      margin-right: -$margin - 2
+      
+    +max(880)
+      justify-content: space-around
+      margin-top: -2rem
+      margin-right: -$margin * 2
+
+      
+  

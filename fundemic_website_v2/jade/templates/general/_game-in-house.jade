@@ -1,8 +1,8 @@
-section.in-house-game
+section(class='in-house-game in-house-game--#{gameTitle}')
 
   .wrapper
 
-    img.in-house-game__image(src="../img/oldgame#{imageLink}.png")
+    img.in-house-game__image(src="../../img/oldgame-#{gameTitle}.png" onload=" start#{gameContainer}()")
 
     h1.in-house-game__title
       | #{pageTitle}
@@ -10,16 +10,18 @@ section.in-house-game
     p.in-house-game__description
       | #{description}
 
-  .wrapper.wrapper--play
-    .in-house-game__play
-      +button(
+    +button()(
       text='Play',
-        modificator='--in-house-game animated-button--white',
-        id='1',
-        id2='2',
-        dx='15',
-        dy='8',
-        link='/'
-      )
+      modificator='--in-house-game animated-button--white',
+      id='1',
+      id2='2',
+      dx='15',
+      dy='8',
+      link='/',
+      click='true'
+    )
 
-
+  .wrapper.wrapper--play
+    div(class='in-house-game__play')
+      div.in-house-game__canvas
+        div(id="#{gameContainer}")
