@@ -4064,7 +4064,7 @@ button::-moz-focus-inner {
 
 .in-house-game {
   overflow: hidden;
-  min-height: 80vh; }
+  min-height: 100vh; }
   .in-house-game .wrapper {
     width: 1250px;
     margin: auto;
@@ -4089,14 +4089,14 @@ button::-moz-focus-inner {
     z-index: 1;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10rem;
+    margin-top: 7rem;
     margin-bottom: 20rem; }
     @media (max-width: 1350px) {
       .in-house-game .animated-button {
         min-width: 250px; } }
     @media (max-width: 991px) {
       .in-house-game .animated-button {
-        margin-top: 20rem; } }
+        margin-top: 15rem; } }
     @media (max-width: 400px) {
       .in-house-game .animated-button {
         min-width: 180px; } }
@@ -4156,8 +4156,7 @@ button::-moz-focus-inner {
       .in-house-game__description {
         font-weight: 500; } }
   .in-house-game__play {
-    position: relative;
-    margin-top: -100vh; }
+    position: relative; }
     .in-house-game__play.visible {
       margin: 20rem auto 30rem; }
       @media (max-width: 1350px) {
