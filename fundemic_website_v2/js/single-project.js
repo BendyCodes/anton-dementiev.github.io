@@ -23,6 +23,18 @@ for (let i = 0, j = 1; i<=button.length; i++, j++){
   }
 }
 
+// Slider initialisation.
+let glideEl = document.querySelectorAll('.glide');
+Array.prototype.forEach.call(glideEl, node => {
+  let glide = new Glide(node, {
+    type: 'carousel',
+    startAt: 0,
+    perView: 1
+  });
+  glide.mount();
+
+});
+
 
 
 

@@ -1,71 +1,30 @@
 +b(single-project-page)
-  
   --gap: 12rem
   
   +max(1350)
     --gap: 24rem
-    
+  
   +max(1200)
     --gap: 10rem
-    
+  
   +max(350)
     --gap: 7rem
-    
-    
+  
+  
   .wrapper
     margin: auto
     position: relative
-    width: 110rem
+    width: 115rem
     
     +max(1350)
-      width: calc(100% - var(--gap))
-      
-    +max(500)
-      padding-bottom: 6rem
+      width: calc(100% - var(--gap)) !important
+    
     
     +m(hero)
       padding-bottom: 12rem
       position: relative
       z-index: 2
-      
-    +m(info)
-      padding-top: 12rem
-      padding-bottom: 12rem
-      
-  &.desktop
-    .wrapper
-      +min-max(601, 700)
-        --gap: 20rem
-        
-      +m(hero)
-        +max(1200)
-          padding-bottom: calc(var(--gap) / 1.7)
-        
-      +m(info)
-        +max(1200)
-          padding-top: calc(var(--gap) / 1.5)
-          
-        +max(767)
-          padding-bottom: 6rem
-          
-  &.mobile
-    .wrapper
-      +max(1350)
-        --gap: 30rem
-        
-      +max(991)
-        --gap: 20rem
-        
-      +max(600)
-        //
-        --gap: 10rem
-        
-        +m(info)
-          padding-top: 9rem
-          
-        +m(hero)
-          padding-bottom: 7rem
-          
+
 +b(hero-game)
   margin-top: 2rem
   position: relative
@@ -73,10 +32,220 @@
   &:not(.hero-game--restaurant)
     overflow: hidden
   
+  
+  +m(soccer)
+    background-color: $game-soccer
     
+    .wrapper
+      +shadow-text($game-soccer)
+    
+    +e(bg-main, $smart: true)
+      +min(701)
+        width: 45rem
+        height: auto
+        right: 25rem
+        top: -3vw
+      
+      +max(1300)
+        right: 8vw !important
+      
+      +max(700)
+        right: -6% !important
+    
+    +e(bg-asset, $smart: true)
+      width: 45rem
+      bottom: 0
+      right: calc(25rem - 10px)
+      z-index: 2
+      
+      +max(1300)
+        right: 8vw !important
+      
+      +max(700)
+        display: none
+  
+  +m(gumball)
+    background-color: $game-gumball
+    
+    .wrapper
+      +shadow-text($game-gumball)
+    
+    +e(bg-main, $smart: true)
+      
+      +max(1200)
+        top: -7vw
+      
+      +max(700)
+        top: 0
+    
+    +e(bg-asset, $smart: true)
+      width: 20%
+      bottom: 0
+      right: 10%
+  
+  +m(restaurant)
+    background-color: $game-restaurant
+    +max(1200)
+      overflow-x: hidden
+    
+    +max(700)
+      overflow: hidden
+    
+    .wrapper
+      +shadow-text($game-restaurant)
+    
+    +e(bg-main, $smart: true)
+      height: 120%
+      top: -5%
+      right: 0
+      
+      +max(1750)
+        height: 100%
+        top: 0
+      
+      +max(1200)
+        right: -10%
+      
+      +max(700)
+        height: auto
+        width: 120rem
+        left: 30%
+        transform: translateX(-50%)
+        top: -35rem
+    
+    +e(bg-asset, $smart: true)
+      width: 12%
+      bottom: auto
+      top: 5%
+      right: auto
+      left: 2%
+      
+      +max(1650)
+        display: none
+  
+  +m(batman)
+    background-color: $game-batman
+    
+    .wrapper
+      +shadow-text($game-batman)
+    
+    +e(bg-main, $smart: true)
+      transition: all 1s ease
+      right: 9%
+      
+      +max(700)
+        filter: drop-shadow(-3px 10px 17px rgba(57, 78, 109, 0.4))
+  
+  +m(city)
+    background-color: $game-city
+    
+    +min-max(601, 991)
+      .wrapper
+        +shadow-text($game-city)
+    
+    +e(bg-mobile, $smart: true)
+      top: 0
+      right: 0
+      height: 100%
+      opacity: 0 !important
+      
+      +max(1200)
+        display: block
+        opacity: 1 !important
+      
+      +max(700)
+        height: auto
+        width: 50%
+    
+    +e(bg-main, $smart: true)
+      +max(1200)
+        opacity: 0 !important
+  
+  +m(titans)
+    background-color: $game-titans
+    
+    .wrapper
+      +shadow-text($game-titans)
+    
+    +e(bg-main, $smart: true)
+      height: 97%
+      +max(850)
+        right: -20%
+      
+      +max(700)
+        height: auto
+        top: 10vw
+  
+  +m(adventure-time)
+    background-color: $game-adventure-time
+    
+    .wrapper
+      +shadow-text($game-adventure-time)
+    
+    +e(bg-main, $smart: true)
+      right: 10vw
+      
+      +max(700)
+        top: -30vw
+        right: 5vw !important
+  
+  +m(ben)
+    background-color: $game-ben
+    
+    +e(bg-main, $smart: true)
+      right: 13vw
+      
+      +max(1200)
+        right: 5vw
+    
+    .wrapper
+      +shadow-text($game-ben)
+  
+  +m(regular-show)
+    background-color: $game-regular-show
+    
+    .wrapper
+      +shadow-text($game-regular-show)
+    
+    +g-s(client, type, description, games, title)
+      color: $game-regular-show-dark
+    
+    +e(label, $smart: true)
+      background: rgba(138, 122, 122, 0.1)
+  
+  +m(magicsword)
+    background-color: $game-magicsword
+    
+    .wrapper
+      +shadow-text($game-ben)
+  
+  +m(funbrain)
+    background-color: $game-funbrain
+    
+    +e(bg-main, $smart: true)
+      top: 3%
+      
+      +max(700)
+        top: -3vw
+        width: calc(100% - var(--gap) * 1.4)
+      
+      +max(600)
+        top: -9vw
+        width: calc(100% - var(--gap) / 1.6)
+    
+    .wrapper
+      +shadow-text($game-funbrain)
+  
+  +m(webkinz)
+    background-color: $game-webkinz
+    
+    .wrapper
+      +shadow-text($game-webkinz)
+  
+  
   +e(bg)
     position: absolute
-    
+  
   +e(bg-main)
     height: 100%
     z-index: 1
@@ -94,213 +263,6 @@
       margin: auto
       top: 0
   
-  +m(soccer)
-    background-color: $game-soccer
-    
-    .wrapper
-        +shadow-text($game-soccer)
-        
-    +e(bg-main, $smart: true)
-      +min(701)
-        width: 45rem
-        height: auto
-        right: 25rem
-        top: -3vw
-      
-      +max(1300)
-        right: 8vw !important
-        
-      +max(700)
-        right: -6% !important
-    
-    +e(bg-asset, $smart: true)
-      width: 45rem
-      bottom: 0
-      right: calc(25rem - 10px)
-      z-index: 2
-      
-      +max(1300)
-        right: 8vw !important
-        
-      +max(700)
-        display: none
-      
-  +m(gumball)
-    background-color: $game-gumball
-    
-    .wrapper
-      +shadow-text($game-gumball)
-      
-    +e(bg-main, $smart: true)
-      
-      +max(1200)
-        top: -7vw
-        
-      +max(700)
-        top: 0
-      
-    +e(bg-asset, $smart: true)
-      width: 20%
-      bottom: 0
-      right: 10%
-      
-  +m(restaurant)
-    background-color: $game-restaurant
-    +max(1200)
-      overflow-x: hidden
-      
-    +max(700)
-      overflow: hidden
-    
-    .wrapper
-      +shadow-text($game-restaurant)
-
-    +e(bg-main, $smart: true)
-      height: 120%
-      top: -5%
-      right: 0
-      
-      +max(1750)
-        height: 100%
-        top: 0
-      
-      +max(1200)
-        right: -10%
-  
-      +max(700)
-        height: auto
-        width: 120rem
-        left: 30%
-        transform: translateX(-50%)
-        top: -35rem
-      
-    +e(bg-asset, $smart: true)
-      width: 12%
-      bottom: auto
-      top: 5%
-      right: auto
-      left: 2%
-      
-      +max(1650)
-        display: none
-      
-  +m(batman)
-    background-color: $game-batman
-    
-    .wrapper
-      +shadow-text($game-batman)
-    
-    +e(bg-main,$smart:true)
-      transition: all 1s ease
-      +max(700)
-        filter: drop-shadow(-3px 10px 17px rgba(57, 78, 109, 0.4))
-        
-  +m(city)
-    background-color: $game-city
-    
-    +min-max(601,991)
-      .wrapper
-        +shadow-text($game-city)
-        
-    +e(bg-mobile,$smart:true)
-      top: 0
-      right: 0
-      height: 100%
-      opacity: 0 !important
-      
-      +max(1200)
-        display: block
-        opacity: 1 !important
-      
-      +max(700)
-        height: auto
-        width: 50%
-        
-    +e(bg-main,$smart:true)
-      +max(1200 )
-        opacity: 0 !important
-        
-  +m(titans)
-    background-color: $game-titans
-    
-    .wrapper
-      +shadow-text($game-titans)
-    
-    +e(bg-main,$smart:true)
-      height: 97%
-      
-      +max(700)
-        height: auto
-        top: 10vw
-        
-  +m(adventure-time)
-    background-color: $game-adventure-time
-    
-    .wrapper
-      +shadow-text($game-adventure-time)
-    
-    +e(bg-main,$smart:true)
-      right: 10vw
-      
-      +max(700)
-        top: -30vw
-        right: 5vw!important
-    
-  +m(ben)
-    background-color: $game-ben
-    
-    +e(bg-main,$smart:true)
-      right: 13vw
-      
-      +max(1650)
-        right: 5vw
-      
-      +max(700)
-    
-    .wrapper
-      +shadow-text($game-ben)
-    
-  +m(regular-show)
-    background-color: $game-regular-show
-    
-    .wrapper
-      +shadow-text($game-regular-show)
-    
-    +g-s(client, type, description, games, title)
-      color: $game-regular-show-dark
-      
-    +e(label, $smart: true)
-      background: rgba(138, 122, 122, 0.1)
-    
-  +m(magicsword)
-    background-color: $game-magicsword
-    
-    .wrapper
-      +shadow-text($game-ben)
-    
-  +m(funbrain)
-    background-color: $game-funbrain
-    
-    +e(bg-main,$smart:true)
-      top: 3%
-      
-      +max(700)
-        top: -3vw
-        width: calc(100% - var(--gap) * 1.4)
-      
-      +max(600)
-        top: -9vw
-        width: calc(100% - var(--gap) / 1.6)
-    
-    .wrapper
-      +shadow-text($game-funbrain)
-    
-  +m(webkinz)
-    background-color: $game-webkinz
-    
-    .wrapper
-      +shadow-text($game-webkinz)
-      
   +e(logo)
     position: absolute
     top: 5rem
@@ -310,7 +272,7 @@
     +max(500)
       width: 45px
       height: 30px
-      
+    
     +m(moonfrog)
       width: 150px
       height: 100px
@@ -320,7 +282,7 @@
       +max(500)
         width: 100px
         height: 50px
-      
+    
     img
       width: 100%
       height: 100%
@@ -341,156 +303,253 @@
     line-height: 1.1em
     margin-top: 0
     margin-bottom: 3rem
+    width: 65%
+    
+    +max(1300)
+      font-size: 6.2rem
     
     +max(700)
+      font-size: 9.2vw
+      width: 100%
       padding-top: 90vw
-      font-size: 8.2vw
+    
+    +max(500)
+      font-size: 5.2rem
   
-      
+  
   +g(client, type, description, games)
     margin-top: 2.2rem
     color: $white
     font-size: 1.8rem
     line-height: 1.6em
+    width: 52%
+    
+    +min-max(992, 1200)
+      width: 57%
     
     +max(991)
       font-weight: 500
-    
-  +g(client, type, description, games,title)
-    width: 65%
-    
-    +min-max(992,1200)
-      width: 57%
-    
+      
     +max(700)
       width: 100%
-  
-+b(photos)
-  padding-bottom: 3.3vw
-  
-  +max(600)
-    padding-bottom: 5rem
-  
-  --image-width: 390px
-  --image-height: calc(var(--image-width) * 1.846)
-  --image-width-double: calc(var(--image-width) * 2)
-  
-  +m(desktop)
-    --gap--desktop: 7vw
-    
-    +max(1200)
-      --gap--desktop: calc(var(--gap) / 2)
-      
-    .wrapper
-      +m(photo)
-        width: calc(100% - var(--gap--desktop) * 2)
-        max-width: 1920px
-        
-        +max(991)
-          width: 100%
-        
-    +e(image, $smart: true)
-      min-height: 100%
-      width: 100%
-      
-    +e(column, $smart: true)
-      +m(photo)
-        
-        --image-width: calc(50% - var(--gap--desktop) / 2)
-        --image-height: calc(var(--image-width) / 1.846)
-        
-        margin-bottom: calc(var(--gap--desktop) )
-        
-        +max(991)
-          --image-width: 50%
-          +shadow-none
-          border: none
-          margin-bottom: 0
 
-        +max(700)
-          --image-width: 100%
-        
-  +m(mobile)
-    +max(1350)
-      --image-width: 31vw
-      
-    +max(600)
-      --image-width: 100%
-      padding-bottom: 5rem
-      
-    .wrapper
-      +m(photo)
-        +max(500)
-          width: 100%
-          
-    +e(image, $smart: true)
-      min-width: 100%
-      height: 100%
-      
-    +e(column, $smart: true)
-      +m(photo)
-        margin-bottom: calc(100% / 1.7 - var(--image-width))
-        
-        +max(1200)
-          margin-bottom: calc(100% - var(--image-width-double))
-          
-        +max(600)
-          margin-bottom: 11rem
-          
-        +max(500)
-          +shadow-none
-          border: none
-          margin-bottom: 0
+
++b(photos)
+  padding-bottom: 13.3vw
   
+  +max(991)
+    padding-bottom: 13.3rem
+  
+    
+  +m(desktop)
+    --glide-width: 660px
+    --glide-height: 430px
+    
+    +min-max(1101, 1350)
+      --glide-width: 520px
+      --glide-height: 330px
+    
+    +max(770)
+      --glide-width: 100%
+      --glide-height: 65vw
+    
+    .wrapper
+      width: 120rem
+      position: relative
+      
+      +max(770)
+        width: 100% !important
+    
+    .photos__row
+      margin-left: -5rem
+      margin-right: -5rem
+      
+      
+      +min-max(1101, 1350)
+        &:first-child
+          .glide__track
+            margin-top: 0
+          
+          .photos__slider
+            margin-top: 5rem !important
+      
+      +max(1350)
+        margin-left: -3rem
+        margin-right: -3rem
+        
+      +max(1100)
+        flex-wrap: wrap
+        
+        &:first-child
+          .photos__info
+            margin-top: 0
+      
+      +min(1100)
+        &:nth-child(even)
+          .photos__column
+            &:first-child
+              order: 2
+            
+            &:last-child
+              order: 1
+      
+      +max(770)
+        margin-left: 0
+        margin-right: 0
+        
+    .photos__column
+      margin-left: 5rem
+      margin-right: 5rem
+      
+      +max(1350)
+        margin-left: 3rem
+        margin-right: 3rem
+      
+      +max(1100)
+        width: 100%
+      
+      +max(770)
+        margin-left: 0
+        margin-right: 0
+    
+    .photos__slider
+      +max(1100)
+        margin-bottom: 14rem
+    
+    .photos__info
+      +max(1100)
+        width: calc(var(--glide-width) / 1.5)
+        margin: auto
+      
+      +max(550)
+        width: calc(100% - var(--gap))
+    
+    .animated-button
+      +max(1100)
+        margin-left: auto !important
+      
+      +max(550)
+        margin: auto !important
+    
+    .glide__track
+      +max(1100)
+        border: none
+  
+  
+  +m(mobile)
+    --glide-width: 380px
+    --glide-height: 700px
+    
+    +max(991)
+      .wrapper
+        width: var(--glide-width) !important
+    
+    +max(500)
+      --glide-width: 100%
+      --glide-height: 150vw
+      
+      .wrapper
+        width: 100%
+    
+    
+    .photos__row
+      &:first-child
+        +max(991)
+          margin-top: 0
+      
+      +min(992)
+        &:nth-child(even)
+          .photos__column
+            &:first-child
+              order: 2
+            
+            &:last-child
+              order: 1
+      
+      +max(991)
+        flex-wrap: wrap
+        
+        &:first-child
+          .photos__info
+            margin-top: 0
+    
+    .photos__slider
+      width: 530px
+      
+      +max(991)
+        width: 100%
+        margin-bottom: 13rem
+    
+    .photos__info
+      width: 400px
+      
+      +max(991)
+        width: 100%
+      
+      +max(500)
+        padding: 0 5rem
+      
+      +max(350)
+        padding: 0 3.5rem
+    
+    .animated-button
+      +max(991)
+        margin-left: auto !important
+  
+      +max(500)
+        margin: auto !important
+  
+        
   +e(row)
     display: flex
     align-items: flex-start
     justify-content: space-between
+    flex-wrap: nowrap
+    z-index: 3
+    position: relative
     
-    +max(767)
-      flex-wrap: wrap
+    &:first-child
+      .photos__info
+        margin-top: 7rem
+      
+      .photos__slider
+        margin-top: -5rem
+        
+    &:not(:first-child)
+      margin-top: 25rem
+      
+      +max(1350)
+        margin-top: 20rem
+        
+      +max(770)
+        margin-top: 10rem
     
-    +m(photo)
-      flex-wrap: wrap
-      margin-top: 0
-    
+  
   +e(column)
-    width: var(--image-width)
     display: inline-flex
     flex-wrap: wrap
-    
-    +max(550)
-      width: 100%
-     
-    +m(button)
-      justify-content: flex-end
-      width: calc(var(--image-width) - 150px)
-      min-width: 224px
-      
-      +max(767)
-        margin-top: 5rem
-        width: 100%
-        
-      +max(550)
-        min-width: 100%
-        
-    +m(info)
-      width: calc(var(--image-width) + 150px)
-      max-width: 450px
-      
-    +m(photo)
-      +shadow-surround
-      overflow: hidden
-      position: relative
-      border: 13px solid $white
-      width: var(--image-width)
-      padding-bottom: var(--image-height)
-      
+  
+  
+  +e(slider)
+    display: flex
+    justify-content: center
+  
+  
+  +e(button)
+    width: 100%
+    margin-top: 3rem
+  
+  
   +e(image)
+    display: block
     position: absolute
     top: 50%
     left: 50%
     transform: translate(-50%, -50%)
+    width: 100%
+    height: 100%
+    object-fit: cover
+  
   
   +e(title)
     font-size: 4.4rem
@@ -498,34 +557,123 @@
     width: 100%
     font-weight: 500
     line-height: 1
-    margin-bottom: 5rem
+    margin-bottom: 3rem
     
+    +max(1350)
+      font-size: 4rem
     
     +max(550)
       font-size: 4rem
   
+  
   +e(description)
-    font-size: 2.8rem
+    font-size: 2.1rem
     line-height: 1.5em
     margin-bottom: 0
     margin-top: 0
+  
   
   +b(animated-button)
     width: 227px
     height: 107px
     font-size: 24px
     position: relative
-    top: -15px
-    right: -15px
+    right: 5px
     margin: 0
+    
     +max(991)
       width: 187px
       height: 87px
     
-    +max(600)
-      top: 0
-      right: 0
-      
     +max(500)
       width: 80%
-      margin: auto
+  
+  
+  +b(glide)
+    position: relative
+    width: var(--glide-width)
+    height: var(--glide-height)
+    
+    +e(track)
+      +shadow-big
+      overflow: hidden
+      width: var(--glide-width)
+      height: var(--glide-height)
+      border: 10px solid #fff
+      margin-top: -10px
+    
+    +e(slides)
+      margin: 0
+      padding: 0
+      display: flex
+      cursor: grab
+      flex-wrap: nowrap
+    
+    +e(slide)
+      list-style-type: none
+      position: relative
+      width: var(--glide-width)
+      height: var(--glide-height)
+      background: #fff
+    
+    +e(controls)
+      display: flex
+      align-items: center
+      justify-content: center
+      margin-top: 30px
+    
+    +e(bullet)
+      border: none
+      border-radius: 50%
+      padding: 6px
+      margin: 0 7px
+      cursor: pointer
+      background: #fff
+      
+      +m(soccer)
+        +is(glide__bullet--active)
+          background: $game-soccer
+      
+      +m(gumball)
+        +is(glide__bullet--active)
+          background: $game-gumball
+      
+      +m(batman)
+        +is(glide__bullet--active)
+          background: $game-batman
+      
+      +m(city)
+        +is(glide__bullet--active)
+          background: $game-city
+      
+      +m(titans)
+        +is(glide__bullet--active)
+          background: $game-titans
+      
+      +m(adventure-time)
+        +is(glide__bullet--active)
+          background: $game-adventure-time
+      
+      +m(ben)
+        +is(glide__bullet--active)
+          background: $game-ben
+      
+      +m(regular-show)
+        +is(glide__bullet--active)
+          background: $game-regular-show-dark
+      
+      +m(magicsword)
+        +is(glide__bullet--active)
+          background: $game-magicsword
+      
+      +m(restaurant)
+        +is(glide__bullet--active)
+          background: $game-restaurant
+      
+      +m(funbrain)
+        +is(glide__bullet--active)
+          background: $game-funbrain
+      
+      +m(webkinz)
+        +is(glide__bullet--active)
+          background: $game-webkinz

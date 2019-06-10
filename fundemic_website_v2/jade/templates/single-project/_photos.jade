@@ -1,24 +1,43 @@
 mixin gallery
   section(class="photos photos--#{photoType}")
-    -var counter = 0
-    -var index1
-    -var index2
+    .wrapper
+      -var counter = 0
+      -var index1
+      -var index2
+      //-  function for rendering photos depending on their amount
+      while counter < galleries.length
+        -index1 = counter * 2 + 1
+        -index2 = index1 + 1
 
-    //-  function for rendering photos depending on their amount
-    while counter < galleries.length
-      -index1 = counter * 2 + 1
-      -index2 = index1 + 1
 
-      .wrapper.wrapper--info
-        .photos__row.photos__row--info
-          .photos__column.photos__column--info
+        .photos__row
+
+          .photos__column.photos__slider
+
+            .glide
+
+              .glide__track(data-glide-el="track")
+                ul.glide__slides
+                  each val  in galleries[counter].images
+                    li.glide__slide
+                      img.photos__image(
+                        src="./img/#{val}"
+                      )
+
+              div(class='glide__controls' data-glide-el='controls[nav]')
+
+                each val, index in galleries[counter].images
+
+                  button(class='glide__bullet--#{game} glide__bullet' data-glide-dir='=#{index}')
+
+          .photos__column.photos__info
+
             if(galleries[counter].title)
               h2.photos__title
                 | #{galleries[counter].title}
+
             p.photos__description
               | #{galleries[counter].description}
-
-          .photos__column.photos__column--button
 
             //-parameters of button mixin:
               1) text of the button
@@ -29,25 +48,17 @@ mixin gallery
               6) dy attribute that helps to align svg text vertically
               7) link of the button
 
-          if(galleries[counter].link)
-            +button(
-              text='Play'
-              modificator='--'+game+' single animated-button--white'
-              id='-photo-'+index1
-              id2='-photo-'+index2
-              dx='12'
-              dy='9'
-              link='#{galleries[counter].link}'
-            )
+            if(galleries[counter].link)
+              .photos__button
 
-      .wrapper.wrapper--photo
-        .photos__row.photos__row--photo
-          each val in galleries[counter].images
-            .photos__column.photos__column--photo
-              img.photos__image(
-                src="./img/#{val}"
-                style="opacity:0;transition:.15s ease all"
-                onload="this.style.opacity='1'"
-              )
+                +button(
+                  text='Play'
+                  modificator='--' + game + ' single animated-button--white'
+                  id='-photo-' + index1
+                  id2='-photo-' + index2
+                  dx='12'
+                  dy='9'
+                  link='#{galleries[counter].link}'
+                )
 
-      - counter++
+        - counter++

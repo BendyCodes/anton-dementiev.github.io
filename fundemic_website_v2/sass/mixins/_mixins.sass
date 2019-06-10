@@ -10,6 +10,9 @@
 
 =shadow
   box-shadow: 2px 20px 25px -20px #9a9494
+  
+=shadow-big
+  box-shadow: 2px 46px 78px -22px #a9a9a9
 
 =shadow-surround
   box-shadow: 0 5px 21px 3px #e6e6e6
@@ -19,7 +22,7 @@
   box-shadow: none
 
 =shadow-text($color)
-  filter: drop-shadow(1px 1px 1px $color)
+  filter: drop-shadow(1px 1px 0px $color)
 
 =max($pixel)
   @media(max-width: #{$pixel}px)

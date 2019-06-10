@@ -59,25 +59,37 @@
       </div><img src="./img/hero-bg-restaurant.png" style="opacity:0" onload="this.classList.add('onload')" class="hero-game__bg hero-game__bg-main"><img src="./img/hero-bg-restaurant-asset.png" style="opacity:0" onload="this.classList.add('onload')" class="hero-game__bg hero-game__bg-asset">
     </section>
     <section class="photos photos--desktop">
-      <div class="wrapper wrapper--info">
-        <div class="photos__row photos__row--info">
-          <div class="photos__column photos__column--info">
+      <div class="wrapper">
+        <div class="photos__row">
+          <div class="photos__column photos__slider">
+            <div class="glide">
+              <div data-glide-el="track" class="glide__track">
+                <ul class="glide__slides">
+                  <li class="glide__slide"><img src="./img/placeholder1.jpg" class="photos__image"></li>
+                  <li class="glide__slide"><img src="./img/placeholder2.jpg" class="photos__image"></li>
+                  <li class="glide__slide"><img src="./img/placeholder3.jpg" class="photos__image"></li>
+                  <li class="glide__slide"><img src="./img/placeholder4.jpg" class="photos__image"></li>
+                  <li class="glide__slide"><img src="./img/placeholder1.jpg" class="photos__image"></li>
+                  <li class="glide__slide"><img src="./img/placeholder2.jpg" class="photos__image"></li>
+                  <li class="glide__slide"><img src="./img/placeholder3.jpg" class="photos__image"></li>
+                  <li class="glide__slide"><img src="./img/placeholder4.jpg" class="photos__image"></li>
+                </ul>
+              </div>
+              <div data-glide-el="controls[nav]" class="glide__controls">
+                <button data-glide-dir="=0" class="glide__bullet--restaurant glide__bullet"></button>
+                <button data-glide-dir="=1" class="glide__bullet--restaurant glide__bullet"></button>
+                <button data-glide-dir="=2" class="glide__bullet--restaurant glide__bullet"></button>
+                <button data-glide-dir="=3" class="glide__bullet--restaurant glide__bullet"></button>
+                <button data-glide-dir="=4" class="glide__bullet--restaurant glide__bullet"></button>
+                <button data-glide-dir="=5" class="glide__bullet--restaurant glide__bullet"></button>
+                <button data-glide-dir="=6" class="glide__bullet--restaurant glide__bullet"></button>
+                <button data-glide-dir="=7" class="glide__bullet--restaurant glide__bullet"></button>
+              </div>
+            </div>
+          </div>
+          <div class="photos__column photos__info">
             <p class="photos__description">Merge meals, upgrade your kitchen, and serve customers to expand your restaurant business.</p>
           </div>
-          <div class="photos__column photos__column--button">
-          </div>
-        </div>
-      </div>
-      <div class="wrapper wrapper--photo">
-        <div class="photos__row photos__row--photo">
-          <div class="photos__column photos__column--photo"><img src="./img/placeholder1.jpg" style="opacity:0;transition:.15s ease all" onload="this.style.opacity='1'" class="photos__image"></div>
-          <div class="photos__column photos__column--photo"><img src="./img/placeholder2.jpg" style="opacity:0;transition:.15s ease all" onload="this.style.opacity='1'" class="photos__image"></div>
-          <div class="photos__column photos__column--photo"><img src="./img/placeholder3.jpg" style="opacity:0;transition:.15s ease all" onload="this.style.opacity='1'" class="photos__image"></div>
-          <div class="photos__column photos__column--photo"><img src="./img/placeholder4.jpg" style="opacity:0;transition:.15s ease all" onload="this.style.opacity='1'" class="photos__image"></div>
-          <div class="photos__column photos__column--photo"><img src="./img/placeholder1.jpg" style="opacity:0;transition:.15s ease all" onload="this.style.opacity='1'" class="photos__image"></div>
-          <div class="photos__column photos__column--photo"><img src="./img/placeholder2.jpg" style="opacity:0;transition:.15s ease all" onload="this.style.opacity='1'" class="photos__image"></div>
-          <div class="photos__column photos__column--photo"><img src="./img/placeholder3.jpg" style="opacity:0;transition:.15s ease all" onload="this.style.opacity='1'" class="photos__image"></div>
-          <div class="photos__column photos__column--photo"><img src="./img/placeholder4.jpg" style="opacity:0;transition:.15s ease all" onload="this.style.opacity='1'" class="photos__image"></div>
         </div>
       </div>
     </section>
