@@ -4770,8 +4770,6 @@ button::-moz-focus-inner {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      cursor: -webkit-grab;
-      cursor: grab;
       -ms-flex-wrap: nowrap;
           flex-wrap: nowrap; }
     .photos .glide__slide {
@@ -4779,7 +4777,11 @@ button::-moz-focus-inner {
       position: relative;
       width: var(--glide-width);
       height: var(--glide-height);
-      background: #fff; }
+      background: #fff;
+      -webkit-perspective: 2000px;
+              perspective: 2000px;
+      -webkit-backface-visibility: hidden;
+              backface-visibility: hidden; }
     .photos .glide__controls {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -4822,6 +4824,16 @@ button::-moz-focus-inner {
         background: #333333; }
       .photos .glide__bullet--webkinz.glide__bullet--active {
         background: #F7764F; }
+    .photos .glide__next {
+      position: absolute;
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      background: transparent;
+      height: 100%;
+      left: 0;
+      top: 0;
+      display: none; }
 
 .terms,
 .privacy {

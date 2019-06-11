@@ -25,11 +25,18 @@ for (let i = 0, j = 1; i<=button.length; i++, j++){
 
 // Slider initialisation.
 let glideEl = document.querySelectorAll('.glide');
+let glideSlider = document.querySelectorAll('.glide__slides');
+
+Array.prototype.forEach.call(glideSlider, (node, index) => {
+  node.addEventListener('click', function () {
+    this.parentNode.parentNode.querySelector('.glide__next').click();
+  })
+});
 Array.prototype.forEach.call(glideEl, node => {
   let glide = new Glide(node, {
     type: 'carousel',
-    startAt: 0,
-    perView: 1
+    perView: 1,
+    useTransform: false
   });
   glide.mount();
 

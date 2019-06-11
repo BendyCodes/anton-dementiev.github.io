@@ -606,7 +606,6 @@
       margin: 0
       padding: 0
       display: flex
-      cursor: grab
       flex-wrap: nowrap
     
     +e(slide)
@@ -615,6 +614,8 @@
       width: var(--glide-width)
       height: var(--glide-height)
       background: #fff
+      perspective: 2000px
+      backface-visibility: hidden
     
     +e(controls)
       display: flex
@@ -677,3 +678,15 @@
       +m(webkinz)
         +is(glide__bullet--active)
           background: $game-webkinz
+    +e(next)
+      position: absolute
+      width: 100%
+      border: none
+      cursor: pointer
+      background: transparent
+      height: 100%
+      left: 0
+      top: 0
+      display: none
+      
+      

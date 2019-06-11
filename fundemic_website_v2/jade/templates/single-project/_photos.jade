@@ -24,6 +24,9 @@ mixin gallery
                         src="./img/#{val}"
                       )
 
+              div( data-glide-el='controls')
+                button(class='glide__next' data-glide-dir='>')
+
               div(class='glide__controls' data-glide-el='controls[nav]')
 
                 each val, index in galleries[counter].images
@@ -59,6 +62,7 @@ mixin gallery
                   dx='12'
                   dy='9'
                   link='#{galleries[counter].link}'
+                  target="_blank"
                 )
 
         - counter++
