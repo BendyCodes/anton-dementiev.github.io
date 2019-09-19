@@ -11,7 +11,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-
 var PhaserGame;
 (function (PhaserGame) {
     var Client;
@@ -116,9 +115,7 @@ var PhaserGame;
     })(Client = PhaserGame.Client || (PhaserGame.Client = {}));
 })(PhaserGame || (PhaserGame = {}));
 window.onload = function () {
-    FBInstant.initializeAsync().then(function () {
-        new PhaserGame.Client.GameEngine();
-    });
+    new PhaserGame.Client.GameEngine();
 };
 var Config;
 (function (Config) {
@@ -2513,17 +2510,6 @@ var PhaserGame;
                     score.bestDistance = score.runDistance;
                     this.shownewRecordEffect = true;
                 }
-
-                FBInstant
-                    .getLeaderboardAsync('Highscore')
-                    .then(leaderboard => {
-                        let p = leaderboard.setScoreAsync(score.bestDistance);
-                        p.then((entry) => { });
-                        return p;
-                    })
-                    .then(() => console.log('Score saved: ', score.bestDistance))
-                    .catch(error => console.error(error));
-
                 var FrameHeroFace = 1;
                 if (score.runDistance > oldBestScore / 2) {
                     FrameHeroFace = 2;
@@ -2547,7 +2533,6 @@ var PhaserGame;
                     ease: 'Power1',
                     duration: 300
                 });
-
                 this.panelContainer = this.add.container(Config.GW / 2 + 30, -Config.GH / 2);
                 this.panelComplete = new Phaser.GameObjects.Sprite(this, 0, -25, 'game', 'scorepanel');
                 this.bestScoreText = this.add.dynamicBitmapText(0, -100, 'font', 'Best score   ' + score.bestDistance, 25);
@@ -2609,108 +2594,6 @@ var PhaserGame;
                 this.btnCloseMedalPanel.setEventName('btnCloseCredits');
                 this.events.on(this.btnCloseMedalPanel.getEventName(), this.CloseMedals, this);
                 this.add.existing(this.btnCloseMedalPanel);
-
-                var fbbuttons = this.add.image(-175, -120, 'fbbuttons').setInteractive();
-                fbbuttons.on('pointerdown', function() {
-                    var leaderboardContainer = this.add.container(this.screen.width/2, this.screen.height/2);
-                    /*for (let i = 0; i < 7; i++) {
-                        var _y = (i-7/2) * 40 + 17 + 20;
-
-                        var text1 = this.add.text(80-230, _y, '1');
-                        text1.setAlign('center');
-                        text1.setOrigin(0.5);
-                        leaderboardContainer.add(text1);
-
-                        var text2 = this.add.text(240-40-4-230, _y, 'getName');
-                        text2.setAlign('center');
-                        text2.setOrigin(0, 0.5);
-                        leaderboardContainer.add(text2);
-
-                        var text3 = this.add.text(378-230, _y, '1');
-                        text3.setAlign('center');
-                        leaderboardContainer.add(text3);
-                    }*/
-                    var fetchData = (function() {
-                        this.fetchedHighscore = score.bestDistance;
-
-                        FBInstant
-                            .getLeaderboardAsync('Highscore')
-                            .then(leaderboard => leaderboard.getEntriesAsync(7, 0))
-                            .then(entries => {
-                                leaderboardContainer.removeAll(true);
-                                var leaderboardBG = this.add.image(0, 0, 'leaderboardBG').setInteractive();
-                                leaderboardBG.setOrigin(0.5, 0.5);
-                                leaderboardContainer.add(leaderboardBG);
-
-                                var buttonClose = new Client.gButton(this, -leaderboardBG.width / 2 + 25, -leaderboardBG.height / 2 + 25, 'menu', 'close_btn0001', 'close_btn0002', 'close_btn0003');
-                                buttonClose.on('pointerdown', function() {
-                                    if (leaderboardContainer) {
-                                        leaderboardContainer.destroy();
-                                        leaderboardContainer = null;
-                                    }
-                                }, this);
-                                leaderboardContainer.add(buttonClose);
-
-                                var yhlb = this.add.text(-50, -135, 'Your Highscore :');
-                                yhlb.setAlign('center');
-                                yhlb.setOrigin(0.5);
-                                leaderboardContainer.add(yhlb);
-
-                                this.highscoreValueTF = this.add.text(95, -135, '' + this.fetchedHighscore);
-                                this.highscoreValueTF.setAlign('center');
-                                this.highscoreValueTF.setOrigin(0, 0.5);
-                                leaderboardContainer.add(this.highscoreValueTF);
-
-                                var dy = 40;
-                                var num = entries.length;
-                                var nm = Math.floor(num / 2);
-                                if (num % 2 == 0)
-                                    nm -= 0.5;
-                                var __dx = 40;
-                                var loadedPhotosNum = 0;
-
-                                this.load.off('progress');
-                                this.load.off('complete');
-
-                                this.load.on('complete', (function () {
-                                    for (let i = 0; i < num; i++) {
-                                        let _y = (i - nm / 2) * dy + 17 + 20;
-                                        let ph = this.add.image(((80 - 230) + (240 - 40 - 4 - 230)) / 2, _y, '__' + i);
-                                        ph.setOrigin(0.5, 0.5);
-                                        ph.setScale(dy / ph.width * 0.75, dy / ph.height * 0.75);
-                                        leaderboardContainer.add(ph);
-                                    }
-                                    this.load.off('complete');
-                                }).bind(this));
-
-                                for (let i = 0; i < num; i++) {
-                                    let _y = (i - nm / 2) * dy + 17 + 20;
-
-                                    let pldr = this.load.image('__' + i, entries[i].getPlayer().getPhoto());
-                                    pldr.start();
-
-                                    var text1 = this.add.text(80-230, _y, '' + entries[i].getRank());
-                                    text1.setAlign('center');
-                                    text1.setOrigin(0.5);
-                                    leaderboardContainer.add(text1);
-
-                                    var text2 = this.add.text(240-40-4-230, _y, entries[i].getPlayer().getName());
-                                    text2.setAlign('center');
-                                    text2.setOrigin(0, 0.5);
-                                    leaderboardContainer.add(text2);
-
-                                    var text3 = this.add.text(378-230, _y, '' + entries[i].getScore());
-                                    text3.setAlign('center');
-                                    leaderboardContainer.add(text3);
-                                }
-                            }).catch((error) => {
-                            createTimer(250, () => { if (this && this.parent) fetchData(); }, this);
-                        });
-                    }).bind(this);
-                    fetchData();
-                }, this);
-                this.panelContainer.add(fbbuttons);
-
                 AchEngine.saveData();
             };
             Complete.prototype.CloseMedals = function () {
@@ -2828,8 +2711,6 @@ var PhaserGame;
                     duration: 300,
                     onComplete: function showMenu(a) { a.parent.scene.scene.stop(Scenes.GAME); a.parent.scene.scene.start(Scenes.GAME); },
                 });
-
-                createTimer(500, tryToShowAd);
             };
             Complete.prototype.clickMenu = function () {
                 this.scene.stop(Scenes.GAME);
@@ -2841,8 +2722,6 @@ var PhaserGame;
                     duration: 300,
                     onComplete: function showMenu(a) { a.parent.scene.scene.stop(Scenes.GAME); a.parent.scene.scene.start(Scenes.MAINMENU); },
                 });
-
-                createTimer(500, tryToShowAd);
             };
             Complete.prototype.update = function () {
                 this.medalsPanel.update();
@@ -4181,56 +4060,7 @@ var PhaserGame;
         Client.Panel = Panel;
     })(Client = PhaserGame.Client || (PhaserGame.Client = {}));
 })(PhaserGame || (PhaserGame = {}));
-
-function isAdSupported() {
-    return FBInstant.getSupportedAPIs().indexOf('getInterstitialAdAsync') >= 0;
-}
-let preloadedInterstitial = null;
-function tryToPreloadAd() {
-    if (!isAdSupported())
-        return;
-    if (preloadedInterstitial)
-        return;
-    FBInstant.getInterstitialAdAsync('288393711767551_288396658433923').then(function (interstitial) {
-        // Load the Ad asynchronously
-        preloadedInterstitial = interstitial;
-        return preloadedInterstitial.loadAsync();
-    }).then(function () {
-        // console.log('Interstitial preloaded')
-    }).catch(function (err) {
-        // console.error('Interstitial failed to preload: ' + err.message);
-    });
-}
-;
-function tryToShowAd() {
-    if (!isAdSupported())
-        return;
-    if (!preloadedInterstitial) {
-        tryToPreloadAd();
-        return;
-    }
-    let pa = preloadedInterstitial;
-    preloadedInterstitial = null;
-    pa.showAsync()
-        .then(function () {
-            // Perform post-ad success operation
-            // console.log('Interstitial ad finished successfully');
-            tryToPreloadAd();
-        })
-        .catch(function (e) {
-            // console.error(e.message);
-            tryToPreloadAd();
-        });
-}
-;
-tryToPreloadAd();
-
-function createTimer(delay, callback, callbackContext, ...args) {
-    setTimeout(callback.bind(callbackContext), delay);
-}
-
 var PhaserGame;
-var fbStorage;
 (function (PhaserGame) {
     var Client;
     (function (Client) {
@@ -4248,13 +4078,9 @@ var fbStorage;
                 this.load.atlas('background2', './assets/atlases/background2.png', './assets/atlases/background2.json');
                 this.load.atlas('player', './assets/atlases/player.png', './assets/atlases/player.json');
                 this.load.atlas('objects', './assets/atlases/objects.png', './assets/atlases/objects.json');
-                this.load.image('leaderboardBG', './assets/sprites/leaderboardBG.png');
-                this.load.image('fbbuttons', './assets/sprites/fbbuttons.png');
-                this.load.image('buttonClose', './assets/sprites/buttonClose.png');
                 this.load.json('level', './data/level.json');
                 this.load.json('build', './data/build.json');
                 for (var i = 1; i <= 51; i++) {
-                    // if (i == 12) continue;
                     this.load.audio('sound' + i, './assets/audio/' + i + '.mp3');
                 }
                 this.load.on('progress', this.onProgress, this);
@@ -4270,58 +4096,24 @@ var fbStorage;
                 this.progressText.setOrigin(0.5);
             };
             Preloader.prototype.create = function () {
-
+                AchEngine.init(this);
             };
             Preloader.prototype.onLoadComplete = function () {
-                FBInstant.startGameAsync().then((function() {
-                    var onComplete = (function() {
-                        AchEngine.init(this);
-
-                        var wH = Number(this.game.config.height);
-                        var wW = Number(this.game.config.width);
-                        this.screen = new Phaser.GameObjects.Sprite(this, wW / 2, wH / 2, 'preload', 'black');
-                        this.screen.alpha = 0;
-                        this.add.existing(this.screen);
-                        this.tTween = this.tweens.add({
-                            targets: this.screen,
-                            alpha: 1,
-                            ease: 'Power1',
-                            duration: 300,
-                            onComplete: function showMenu(a) { a.parent.scene.scene.start(Scenes.MAINMENU); },
-                        });
-                    }).bind(this);
-
-                    var dataKeys = [];
-                    var achArrJSON = this.cache.json.get('achievs');
-                    for (var i = 0; i < achArrJSON['data']['achievement'].length; i++) {
-                        var keyPass = achArrJSON['data']['achievement'][i]['-name'] + 'pass';
-                        var keyShow = achArrJSON['data']['achievement'][i]['-name'] + 'show';
-                        {
-                            dataKeys.push(keyPass);
-                            dataKeys.push(keyShow);
-                        }
-                    }
-                    for (var i = 0; i < _achComplete_global_.length; i++) {
-                        var tkey = _achComplete_global_[i];
-                        dataKeys.push(tkey);
-                    }
-                    dataKeys.push('best');
-
-                    FBInstant.player
-                        .getDataAsync(dataKeys)
-                        .then(function(data) {
-                            console.log('data is loaded', data);
-                            fbStorage = data;
-                            onComplete();
-                        }, function() {
-                            fbStorage = {};
-                            onComplete();
-                        });
-                }).bind(this));
+                var wH = Number(this.game.config.height);
+                var wW = Number(this.game.config.width);
+                this.screen = new Phaser.GameObjects.Sprite(this, wW / 2, wH / 2, 'preload', 'black');
+                this.screen.alpha = 0;
+                this.add.existing(this.screen);
+                this.tTween = this.tweens.add({
+                    targets: this.screen,
+                    alpha: 1,
+                    ease: 'Power1',
+                    duration: 300,
+                    onComplete: function showMenu(a) { a.parent.scene.scene.start(Scenes.MAINMENU); },
+                });
             };
             Preloader.prototype.onProgress = function (value) {
                 this.progressText.text = 'Loading ' + Math.round(value * 100) + '%';
-                FBInstant.setLoadingProgress(Math.ceil(value * 100));
             };
             Preloader.prototype.update = function () {
             };
@@ -4340,7 +4132,6 @@ var Scenes;
     Scenes.HUDPANEL = 'Panel';
 })(Scenes || (Scenes = {}));
 var AchEngine;
-var _achComplete_global_ = ['distanceMax', 'magnetoTotal', 'birdTotal', 'dinoTotal', 'mouseTotal', 'starMax', 'doubleJumpMax', 'jumpMax'];
 (function (AchEngine) {
     AchEngine.distanceMax = 0;
     AchEngine.magnetoTotal = 0;
@@ -4353,7 +4144,7 @@ var _achComplete_global_ = ['distanceMax', 'magnetoTotal', 'birdTotal', 'dinoTot
     AchEngine.completed = [];
     var MUS_MAX_VOL = 1;
     var achArrJSON;
-    var achComplete = _achComplete_global_.slice();
+    var achComplete = ['distanceMax', 'magnetoTotal', 'birdTotal', 'dinoTotal', 'mouseTotal', 'starMax', 'doubleJumpMax', 'jumpMax'];
     function init(scene) {
         achArrJSON = scene.cache.json.get('achievs');
         getDescriptionFromStr(parseSTR(achArrJSON['data']['achievement'][3]['-description_lock']));
@@ -4383,23 +4174,22 @@ var _achComplete_global_ = ['distanceMax', 'magnetoTotal', 'birdTotal', 'dinoTot
             var keyPass = achArrJSON['data']['achievement'][i]['-name'] + 'pass';
             var keyShow = achArrJSON['data']['achievement'][i]['-name'] + 'show';
             {
-                AchEngine.completed[i].pass = Boolean(fbStorage[keyPass]);
-                AchEngine.completed[i].show = Boolean(fbStorage[keyShow]);
+                AchEngine.completed[i].pass = Boolean(localStorage.getItem(keyPass));
+                AchEngine.completed[i].show = Boolean(localStorage.getItem(keyShow));
             }
         }
         for (var i = 0; i < achComplete.length; i++) {
             var tkey = achComplete[i];
-            AchEngine[achComplete[i]] = Number(fbStorage[tkey] || 0);
+            AchEngine[achComplete[i]] = Number(localStorage.getItem(tkey) || 0);
         }
-        score.bestDistance = Number(fbStorage['best'] || 0);
+        score.bestDistance = Number(localStorage.getItem('best') || 0);
     }
     function saveData() {
         for (var i = 0; i < achComplete.length; i++) {
             var tkey = achComplete[i];
-            fbStorage[tkey] = AchEngine[achComplete[i]];
+            localStorage.setItem(tkey, AchEngine[achComplete[i]]);
         }
-        fbStorage['best'] = '' + score.bestDistance;
-        FBInstant.player.setDataAsync(fbStorage).then(FBInstant.player.flushDataAsync).then(function () {console.log('Data persisted to FB!');});
+        localStorage.setItem('best', '' + score.bestDistance);
     }
     AchEngine.saveData = saveData;
     function ButtonNewMedal() {
@@ -4414,17 +4204,15 @@ var _achComplete_global_ = ['distanceMax', 'magnetoTotal', 'birdTotal', 'dinoTot
     AchEngine.ButtonNewMedal = ButtonNewMedal;
     function unlockAchByID(id) {
         var keyPass = achArrJSON['data']['achievement'][id]['-name'] + 'pass';
-        fbStorage[keyPass] = 'true';
+        localStorage.setItem(keyPass, 'true');
         AchEngine.completed[id].pass = true;
-        FBInstant.player.setDataAsync(fbStorage).then(FBInstant.player.flushDataAsync).then(function () {console.log('Data persisted to FB!');});
     }
     function iAmShowAllAchievement() {
         for (var i = 0; i < AchEngine.completed.length; i++) {
             if (AchEngine.completed[i].pass) {
                 var keyShow = achArrJSON['data']['achievement'][i]['-name'] + 'show';
-                fbStorage[keyShow] = 'true';
+                localStorage.setItem(keyShow, 'true');
                 AchEngine.completed[i].show = true;
-                FBInstant.player.setDataAsync(fbStorage).then(FBInstant.player.flushDataAsync).then(function () {console.log('Data persisted to FB!');});
             }
         }
     }
