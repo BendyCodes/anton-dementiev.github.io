@@ -1,0 +1,106 @@
+{
+  "data": {
+    "achievement": [
+      {
+        "-name": "Morning Jog",
+        "-description": "Ran 1 km",
+        "-description_lock": "Run {distanceMax}/1 km",
+        "-mc": "Medal1",
+        "lock": {
+          "-property": "distanceMax",
+          "-value": "1000"
+        }
+      },
+      {
+        "-name": "Sugar High",
+        "-description": "Ran 3 km",
+        "-description_lock": "Run {distanceMax}/3 km",
+        "-mc": "Medal2",
+        "lock": {
+          "-property": "distanceMax",
+          "-value": "3000"
+        }
+      },
+      {
+        "-name": "Champ",
+        "-description": "Ran 10 km",
+        "-description_lock": "Run {distanceMax}/10 km",
+        "-mc": "Medal3",
+        "lock": {
+          "-property": "distanceMax",
+          "-value": "10000"
+        }
+      },
+      {
+        "-name": "Candy Magnet",
+        "-description": "Used magnet 25 times",
+        "-description_lock": "Use magnet {magnetoTotal}/25 times",
+        "-mc": "Medal9",
+        "lock": {
+          "-property": "magnetoTotal",
+          "-value": "25"
+        }
+      },
+      {
+        "-name": "Too Chicken",
+        "-description": "Knocked over 25 birds",
+        "-description_lock": "Knock over {birdTotal}/25 birds",
+        "-mc": "Medal5",
+        "lock": {
+          "-property": "birdTotal",
+          "-value": "25"
+        }
+      },
+      {
+        "-name": "Sweet Monstrosity",
+        "-description": "Wore a Mr Stuffer mask 25 times",
+        "-description_lock": "Wear Mr Stuffer mask {dinoTotal}/25 times",
+        "-mc": "Medal10",
+        "lock": {
+          "-property": "dinoTotal",
+          "-value": "25"
+        }
+      },
+      {
+        "-name": "Hide and Squeak",
+        "-description": "Knocked over 25 mice",
+        "-description_lock": "Knock over {mouseTotal}/25 mice",
+        "-mc": "Medal4",
+        "lock": {
+          "-property": "mouseTotal",
+          "-value": "25"
+        }
+      },
+      {
+        "-name": "Sweet Tooth",
+        "-description": "Ate 50 large candies",
+        "-description_lock": "Eat {starMax}/50 large candies",
+        "-mc": "Medal8",
+        "lock": {
+          "-property": "starMax",
+          "-value": "50"
+        }
+      },
+      {
+        "-name": "Jumpy",
+        "-description": "Jumped 100 times",
+        "-description_lock": "Jump {jumpMax}/100 times",
+        "-mc": "Medal6",
+        "lock": {
+          "-property": "jumpMax",
+          "-value": "100"
+        }
+      },
+      {
+        "-name": "Down With The Gravity",
+        "-description": "Double Jumped 100 times",
+        "-description_lock": "Double Jump {doubleJumpMax}/100 times",
+        "-mc": "Medal7",
+        "lock": {
+          "-property": "doubleJumpMax",
+          "-value": "100"
+        }
+      }
+    ]
+  }
+}
