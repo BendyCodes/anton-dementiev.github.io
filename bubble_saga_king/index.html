@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui, shrink-to-fit=no">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+
+      <style type='text/css'>
+          * {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+          }
+
+          body {
+            background-color: #ffffff;
+            position: fixed; 
+          }
+
+          #canvas {
+            outline: none;
+            border: 0;
+            width: 100%;
+            vertical-align: bottom;
+          }
+      
+          canvas:focus, canvas:active {
+            outline: none;
+            border: 0;
+            ie-dummy: expression(this.hideFocus=true);
+            -moz-outline-style: none;
+          }
+
+          div {
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+          }
+      
+          .canvas-app-container {
+            background: rgba(250,252,255,1);
+            background: -moz-linear-gradient(-45deg, rgba(250,252,255,1) 0%, rgba(250,252,255,1) 50%, rgba(245,249,255,1) 50%, rgba(245,249,255,1) 100%);
+            background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(250,252,255,1)), color-stop(50%, rgba(250,252,255,1)), color-stop(50%, rgba(245,249,255,1)), color-stop(100%, rgba(245,249,255,1)));
+            background: -webkit-linear-gradient(-45deg, rgba(250,252,255,1) 0%, rgba(250,252,255,1) 50%, rgba(245,249,255,1) 50%, rgba(245,249,255,1) 100%);
+            background: -o-linear-gradient(-45deg, rgba(250,252,255,1) 0%, rgba(250,252,255,1) 50%, rgba(245,249,255,1) 50%, rgba(245,249,255,1) 100%);
+            background: -ms-linear-gradient(-45deg, rgba(250,252,255,1) 0%, rgba(250,252,255,1) 50%, rgba(245,249,255,1) 50%, rgba(245,249,255,1) 100%);
+            background: linear-gradient(135deg, rgba(250,252,255,1) 0%, rgba(250,252,255,1) 50%, rgba(245,249,255,1) 50%, rgba(245,249,255,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafcff', endColorstr='#f5f9ff', GradientType=1 );
+          }
+        </style>
+        
+    </head>
+
+    <script>
+
+      function handleGameEvent(command, args)
+      {
+        //console.log("handleGameEvent", command, args)
+      }
+
+      function playData(command, args)
+      {
+        //console.log("playData", command, args)
+
+        var now = new Date();
+
+        console.log(`<entry id="1" time="`+ formatDate(now) +`"><![CDATA[`+command+`]]></entry>`)
+      }
+
+      function formatDate(date) {
+
+        var dd = date.getDate();
+        if (dd < 10) dd = '0' + dd;
+
+        var mm = date.getMonth() + 1;
+        if (mm < 10) mm = '0' + mm;
+
+        var yy = date.getFullYear();
+        if (yy < 10) yy = '0' + yy;
+
+        var hh = date.getHours();
+
+        var mm = date.getMinutes();
+
+        var ss = date.getSeconds();
+
+        return yy + '-' + mm + '-' + dd + " " + hh + ":" + mm + ":"+ss;
+      }
+
+      function getGameData()
+      {
+          
+          var o = new Object();
+          o.message = `
+          <gamedata randomseed="1358440986" lang="en_US" levelscleared="0" largecombos="0" bonusbetween="0" reachedlevel="0" personalbest="0" musicon="1" soundson="1" relaxMode="false">
+          <text id="open_game_text">Did you like it? Register to play the full game!</text>
+          <text id="end_screen_level_bonus">Level Bonus</text>
+          <text id="game_starts_in">Game Starts in [0] seconds</text>
+          <text id="end_screen_header">Game Over</text>
+          <text id="game_ends_in">Game ends in [0] seconds</text>
+          <text id="level_bonus">Level Bonus:</text>
+          <text id="instructions_header">Instructions</text>
+          <text id="end_screen_personal_best">Personal Best</text>
+          <text id="instructions_text1">Create groups of 3 or more bubbles to remove them. Spin the flower and use the walls to hit the hard to reach spots.</text>
+          <text id="end_screen_trophy3_info">Complete two consecutive levels with a full bonus meter</text>
+          <text id="end_screen_score">Score</text>
+          <text id="end_screen_trophy4_info">Reach level 5</text>
+          <text id="end_screen_new_best">New Best</text>
+          <text id="end_screen_trophy1_info">Pick 18 flowers</text>
+          <text id="end_screen_trophy2_info">Get 300 000 points or more in a game</text>
+          <text id="end_screen_total_score">Total Score</text>
+        <userType id="0">0</userType>
+        <boosters>
+        <a value="0" />
+        <b value="0" />
+        <c value="0" />
+        <d value="0" />
+        </boosters>
+        </gamedata>`;
+          o.success = true;
+          return o;
+      }
+
+    </script>    
+
+    <body> 
+
+      <div id="app-container" class="canvas-app-container">
+        <canvas id="canvas" class="canvas-app-canvas" tabindex="1" width="755" height="600"></canvas>
+      </div>
+
+      <script src="src/libs.js"></script>
+      <script src="src/bundle.min.js"></script>
+      
+      <script>
+        window.onload = function() {
+          new Game.Main({
+            gamePath: ""
+          });
+        }
+      </script>
+
+    </body> 
+
+</html>

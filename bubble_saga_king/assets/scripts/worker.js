@@ -1,0 +1,1 @@
+var timers={};function fireTimeout(e){this.postMessage({id:e}),delete timers[e]}this.addEventListener("message",function(e){var t=e.data;switch(t.command){case"setInterval":var i=parseInt(t.timeout||0,10),a=setInterval(fireTimeout.bind(null,t.id),i);timers[t.id]=a;break;case"clearInterval":(a=timers[t.id])&&clearInterval(a),delete timers[t.id]}});
